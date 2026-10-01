@@ -1,0 +1,505 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "well_supported",
+      "dominant_themes": [
+        "scope-mismatched regime models",
+        "orderly equity deterioration",
+        "unmeasured liquidity behavior",
+        "absent dependence statistics"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "recent months through the current week",
+      "timezone": "America/New_York"
+    },
+    "asset_scope": [
+      "U.S. equities",
+      "unprofitable technology companies",
+      "megacap growth companies",
+      "two-year U.S. Treasury yields",
+      "equity volatility"
+    ],
+    "raw_text": "The Fed's hawkish turn is doing real damage now, and the selling is no longer contained to the speculative corners. The unprofitable tech trade has bled for months, but this week the knife turned on the megacaps — the likes of Nvidia and Tesla are breaking technical levels and the dip-buyers who rescued every pullback last year are simply absent. I watch the two-year make higher highs every morning as the market prices a more aggressive hiking path, and every tick takes another leg out of duration-heavy growth. What strikes me most is the absence of panic: no capitulation volume, no VIX above 30, just a relentless grind that bleeds out anyone who bought the last dip. Managers are cutting winners to raise cash because their losers are unsellable. The buy-every-correction playbook is dead, and I suspect more air comes out before this finds a floor.\n",
+    "summary": "A more restrictive Federal Reserve outlook and rising two-year yields are broadening equity weakness from unprofitable technology companies into megacap growth companies. Subdued volatility and limited capitulation characterize a persistent, orderly decline, while absent support during pullbacks and cash raising through sales of liquid winners suggest strained market liquidity. The timing and extent of stabilization remain uncertain."
+  },
+  "interpretation": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "scope-mismatched regime models",
+      "orderly equity deterioration",
+      "unmeasured liquidity behavior",
+      "absent dependence statistics"
+    ],
+    "summary": "The closest bear and trend records apply to international-index or futures settings. The U.S.-equity candidates require measured volatility persistence, serial dependence, convergence, distributional tails, or aggregate illiquidity behavior that the packet does not supply."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T22:32:35Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:e1ad9e3405e75723b64b7e0c3760e0314897f0a4d2a9ad3434d6442892567574"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "state_forbes_heteroscedasticity_bias_001",
+        "text_snippet": "A measurement distortion condition that arises when cross-market correlations are computed during periods of elevated source-country variance without applying…"
+      },
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "retrieval_score": 0.837008,
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "closest_on": {
+        "record_id": "failure_billio_hedge_fund_autocorr_proxy_001",
+        "text_snippet": "Return autocorrelation as a proxy for hedge fund position illiquidity conflates two distinct sources of serial persistence: (1) stale or infrequent pricing of…"
+      },
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "retrieval_score": 0.835864,
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "closest_on": {
+        "record_id": "state_hasbrouck_return_premium_003",
+        "text_snippet": "A persistent cross-sectional market state in which stocks with higher effective trading costs (as measured by the Gibbs estimator) earn systematically higher…"
+      },
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "retrieval_score": 0.831203,
+      "state_id": "state_hasbrouck_return_premium_003",
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "closest_on": {
+        "record_id": "gloss_state_amihud_crosssection_premium_002",
+        "text_snippet": null
+      },
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "retrieval_score": 0.830981,
+      "state_id": "state_amihud_crosssection_premium_002",
+      "title": "Cross-Sectional Illiquidity Premium State"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_cho_engle_underlying_spread_002",
+        "text_snippet": "feature_selection When modeling option bid-ask spreads, include the underlying asset's bid-ask spread as a feature, ideally scaled by option delta to reflect…"
+      },
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "retrieval_score": 0.830955,
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    }
+  ],
+  "no_match_rationale": "The closest represented conditions are sustained bear and trend regimes estimated on international equity indices or diversified futures portfolios, outside the packet's U.S. cash-equity and Treasury-yield scope. The in-scope equity records instead require measured GARCH persistence, return autocorrelation, pair convergence, distributional tails, or aggregate ILLIQ behavior. The packet's orderly decline, broadening growth-stock weakness, and inferred liquidity strain do not supply those behaviors.",
+  "non_matches": [
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "Subdued volatility during an orderly decline does not establish repeated clustering of return magnitudes, significant squared-return autocorrelation, or large GARCH persistence parameters.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "surfaced_by": [
+        {
+          "record_id": "state_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "A market condition characterized by persistent clustering of return volatility— large shocks followed by further large shocks and small shocks followed by…"
+        },
+        {
+          "record_id": "claim_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "GARCH(1,1) captures the empirical stylized fact of volatility clustering— large shocks followed by large shocks and small shocks followed by small…"
+        }
+      ],
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The record concerns time-series-momentum performance across diversified multi-asset futures portfolios, while the packet describes U.S. cash equities and Treasury yields without futures-signal returns or horizon Sharpe behavior.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hurst_mf_regime_conditional_activity_004",
+          "text_snippet": "activity_suppression The smile pattern of TSMOM returns documented by Hurst et al. (2013)—best performance during sustained bull and bear markets, worst during…"
+        },
+        {
+          "record_id": "policy_hurst_tsmom_horizon_selection_001",
+          "text_snippet": "feature_selection Horizon selection for TSMOM signals should be governed by individual-asset Sharpe evidence (12-month dominant at 0.38) rather than by…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "A recent persistent decline and uncertain stabilization do not establish the state's reversal from positive subannual autocorrelation to negative serial correlation over three-to-eight-year horizons.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_poterba_summers_test_power_004",
+          "text_snippet": "confidence_calibration When evaluating evidence for or against the long-horizon mean reversion state, adjust inference for the known 6–19% power of variance…"
+        },
+        {
+          "record_id": "failure_poterba_summers_risk_explanation_005",
+          "text_snippet": "Models that attribute the long-horizon mean reversion state entirely to time-varying rational risk premiums (efficient markets interpretation) require…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The state describes elevated correlations among international equity markets during a filtered bear regime, whereas the packet covers U.S. technology and growth segments without international correlation observations.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "claim_ang_bekaert_bear_correlation_002",
+          "text_snippet": "International equity return correlations are approximately 20 percentage points higher in the bear regime than in the normal regime, demonstrating systematic…"
+        },
+        {
+          "record_id": "failure_ang_bekaert_model_selection_004",
+          "text_snippet": "Constant-parameter international equity allocation models (static mean-variance with unconditional means and covariances) fail to exploit regime-conditional…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "reason": "The state concerns the statistical relationship between option volume and option bid-ask spreads after structural controls. Options and option-spread measurements are outside the packet's scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_volume_insignificant_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_cho_engle_volume_insignificant_001",
+          "text_snippet": "feature_selection Option trading volume should not be used as a primary feature for predicting option bid-ask spread width. Features derived from equity market…"
+        },
+        {
+          "record_id": "failure_cho_engle_volume_insignificant_001",
+          "text_snippet": "Asymmetric information models that assign trading volume a central role in explaining bid-ask spread variation fail when applied to options markets. In the…"
+        }
+      ],
+      "title": "Volume-Insensitive Options Spread Environment"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Broad market selling and uncertain stabilization do not evidence selected equity-pair divergences beyond two standard deviations or subsequent convergence toward historical spreads.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_gatev_pairs_convergence_001",
+          "text_snippet": "Observable convergence of co-integrated equity pair price spreads following a 2-standard-deviation divergence trigger, generating measurable excess returns.…"
+        },
+        {
+          "record_id": "policy_gatev_pairs_capacity_constraint_004",
+          "text_snippet": "regime_switch Include time-period and competitive-intensity features to detect the secular decay of the pairs mean reversion state: (1) sub-period return…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "An orderly decline without extreme volatility supplies no unconditional excess-kurtosis estimate, negative-skewness measurement, or evidence that returns follow a multi-regime Gaussian mixture.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "model_specification When modeling equity return distributions with regime-switching models, within-regime Gaussian innovations are sufficient to produce…"
+        },
+        {
+          "record_id": "signature_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "Unconditional excess kurtosis (kurtosis > 3) and negative skewness in equity return distributions that persist even when within-regime innovations are assumed…"
+        }
+      ],
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "Selling liquid winners to raise cash suggests liquidity pressure, but it does not measure aggregate NYSE ILLIQ, separate expected from unexpected illiquidity, or establish either specified return relationship.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_timeseries_premium_003",
+          "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+        },
+        {
+          "record_id": "state_amihud_timeseries_premium_003",
+          "text_snippet": "A market condition in which aggregate market illiquidity predicts market-level returns in two distinct ways: (1) higher expected illiquidity predicts higher…"
+        }
+      ],
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "A persistent decline does not establish significant positive weekly first-order autocorrelation, a variance ratio above one, or the stated capitalization-conditioned autocorrelation gradient.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_lo_mackinlay_model_weighting_rw_001",
+          "text_snippet": "model_weighting The decisive rejection of the random walk for short-horizon equity returns (z-statistics 7.18–18.46 for equal-weighted portfolios; z=3.84 for…"
+        },
+        {
+          "record_id": "policy_lo_mackinlay_short_horizon_001",
+          "text_snippet": "feature_selection When the short-horizon return predictability state is active (weekly autocorrelation statistically significant and VR(2) > 1.0 for…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The packet is dated in August and supplies no January-conditioned relationship between effective trading costs and subsequent stock returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        },
+        {
+          "record_id": "policy_hasbrouck_january_effect_004",
+          "text_snippet": "activity_suppression Condition the illiquidity return premium feature on calendar month. In January, the illiquidity premium feature may be included at full…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "Broadening weakness does not establish that lower-tail joint-exceedance correlation exceeds upper-tail correlation, and no separate bear-regime correlation parameters are supplied.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "GARCH-DCC models with symmetric correlation specification fail to capture left-tail exceedance correlation asymmetry in multi-asset equity portfolios. When…"
+        },
+        {
+          "record_id": "policy_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "model_selection Include exceedance correlation asymmetry (left-tail minus right-tail exceedance correlation) as a model validation diagnostic when evaluating…"
+        }
+      ],
+      "title": "Regime-Conditional Tail Correlation Asymmetry State"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "A contemporaneous liquidity-pressure observation does not establish monthly persistence in aggregate NYSE ILLIQ, a near-unit-root autoregressive coefficient, or the stated explanatory fit.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_illiq_persistence_004",
+      "surfaced_by": [
+        {
+          "record_id": "state_amihud_illiq_persistence_004",
+          "text_snippet": "A market structural property in which aggregate market illiquidity (NYSE-level ILLIQ) displays near-unit-root persistence with AR(1) coefficient 0.945 and…"
+        },
+        {
+          "record_id": "policy_amihud_illiq_persistence_004",
+          "text_snippet": "feature_selection Lagged market-level ILLIQ (prior-month aggregate) is a valid proxy for expected current-period illiquidity given AR(1) coefficient 0.945 and…"
+        }
+      ],
+      "title": "Aggregate Illiquidity Persistence State"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "The state requires common-factor co-movement among banks, broker-dealers, insurers, and hedge funds, while the packet's equity observations concern technology and megacap growth companies.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_billio_crisis_diversification_collapse_001",
+          "text_snippet": "Cross-sector financial diversification fails as a risk-reduction strategy during systemic co-movement episodes. When PC1 variance share exceeds 80% (as during…"
+        },
+        {
+          "record_id": "signature_billio_crisis_pca_collapse_002",
+          "text_snippet": "The sustained elevation of the first principal component variance share above 80% throughout the 2007-2009 financial crisis, compared to a 1994-2000 baseline…"
+        }
+      ],
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The packet combines persistent equity weakness with subdued volatility, while the candidate's bear regime is characterized by volatility approximately eighty percent above the normal regime; the observed return-volatility direction is inconsistent with that bear specification.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_ang_bekaert_regime_params_001",
+          "text_snippet": "Regime-conditional return distribution shift in international equity returns: normal regime characterized by mean monthly return ~0.90% and volatility ~2.81%;…"
+        },
+        {
+          "record_id": "claim_ang_bekaert_regime_params_001",
+          "text_snippet": "A two-regime Markov-switching model identifies a normal regime (monthly mean μ=0.90%, volatility σ=2.81%) and a bear regime (monthly mean μ=0.13%, volatility…"
+        }
+      ],
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The packet reports negative equity direction with subdued volatility, while the model's bear state requires elevated volatility and its high-volatility state requires extreme variance; the bull state requires positive returns.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_nguyen_pesr_nonstationarity_001",
+          "text_snippet": "The PESR metric relies on a transition matrix A estimated from training data and held fixed for the duration of the OOS period. If true regime transition…"
+        },
+        {
+          "record_id": "failure_nguyen_span_turnover_001",
+          "text_snippet": "Low EWMM span values (e.g., s=15) make the HMM observation features overly responsive to recent returns, causing frequent regime transitions and high portfolio…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "market breadth",
+      "direction": "broadening",
+      "index": 0,
+      "magnitude": "strong",
+      "statement": "Equity weakness spreading beyond speculative technology companies"
+    },
+    {
+      "dimension": "price structure",
+      "direction": "weakening",
+      "index": 1,
+      "magnitude": "significant",
+      "statement": "Megacap growth companies breaking notable technical levels"
+    },
+    {
+      "dimension": "short-term interest rates",
+      "direction": "rising",
+      "index": 2,
+      "magnitude": "persistent",
+      "statement": "Two-year Treasury yields reaching successive highs"
+    },
+    {
+      "dimension": "rate sensitivity",
+      "direction": "deteriorating",
+      "index": 3,
+      "magnitude": "strong",
+      "statement": "Higher yields pressuring duration-sensitive growth companies"
+    },
+    {
+      "dimension": "market participation",
+      "direction": "weakening",
+      "index": 4,
+      "magnitude": "pronounced",
+      "statement": "Limited support appearing during equity pullbacks"
+    },
+    {
+      "dimension": "market stress",
+      "direction": "orderly deterioration",
+      "index": 5,
+      "magnitude": "moderate",
+      "statement": "Persistent decline without capitulation volume or extreme volatility"
+    },
+    {
+      "dimension": "liquidity pressure",
+      "direction": "tightening",
+      "index": 6,
+      "magnitude": "elevated",
+      "statement": "Liquid winners being sold to raise cash amid illiquid losers"
+    },
+    {
+      "dimension": "outlook uncertainty",
+      "direction": "unclear",
+      "index": 7,
+      "magnitude": null,
+      "statement": "Further downside suspected before stabilization"
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_gokwllsv/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_gokwllsv/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_gokwllsv",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

@@ -1,0 +1,150 @@
+caveats:
+- Negative equity returns, violent futures instability, and extreme volatility evidence
+  the bear and high-volatility behaviors, but no EWMM features, fitted HMM state probabilities,
+  or transition estimates are supplied.
+constraints: []
+failure_modes:
+- unestimated HMM state probability
+- unverified EWMM calibration
+market_book_version: stage6_accepted
+matched_states:
+- citations:
+  - kind: policy_implication
+    record_id: policy_nguyen_hmm_regime_switching_001
+  entry_id: entry_nguyen_three_state_hmm_001
+  evidence_caveats: Negative equity returns, violent futures instability, and extreme
+    volatility evidence the bear and high-volatility behaviors, but no EWMM features,
+    fitted HMM state probabilities, or transition estimates are supplied.
+  failure_modes:
+  - unestimated HMM state probability
+  - unverified EWMM calibration
+  match_strength: moderate
+  matched_observations:
+  - 0
+  - 2
+  - 3
+  policy_posture: regime_dependent
+  state_id: state_nguyen_three_state_hmm_001
+missing_evidence: []
+non_matches:
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: No co-moving equity pair, pair-spread divergence, or convergence toward
+    a historical equilibrium spread is observed.
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: The short observation horizon does not evidence the monthly-to-multiyear
+    autocorrelation reversal or transitory-variance behavior described by the state.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: A single drawdown episode does not establish positive weekly autocorrelation,
+    an elevated variance ratio, or the described capitalization gradient.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: Elevated volatility is observed, but no cross-market correlation estimate,
+    source-market variance comparison, or heteroscedasticity correction is supplied.
+  reason_code: insufficient_evidence
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: Violent headline-driven reversals and whipsawing conflict with the sustained-trend
+    environment associated with the state's favorable behavior.
+  reason_code: direction_discordant
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_ang_2011_exceedance_asymmetry_003
+  reason: The equity decline does not establish joint left-tail co-movement exceeding
+    joint right-tail co-movement across assets.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_exceedance_asymmetry_003
+- entry_id: entry_cho_engle_moneyness_003
+  reason: The state concerns ATM-versus-OTM option spreads and execution costs, while
+    the packet contains no option contracts or moneyness observations.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_moneyness_003
+- entry_id: entry_billio_financial_sector_comovement_001
+  reason: The state requires institution-level returns across banks, broker-dealers,
+    insurers, and hedge funds, outside the packet's broad-market asset scope.
+  reason_code: out_of_scope
+  state_id: state_billio_financial_sector_comovement_001
+- entry_id: entry_billio_granger_systemic_buildup_002
+  reason: The state measures Granger-network density among financial institutions,
+    which the packet's index, volatility, commodity, and Treasury observations do
+    not cover.
+  reason_code: out_of_scope
+  state_id: state_billio_granger_systemic_buildup_002
+- entry_id: entry_cho_engle_underlying_spread_002
+  reason: The state concerns option spreads transmitted from an underlying asset through
+    delta hedging, but options are absent from the packet's scope.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_underlying_spread_002
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: The state requires elevated correlation among international equity markets,
+    while the packet supplies only a domestic S&P equity-index episode.
+  reason_code: out_of_scope
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: Rapidly changing quotes do not evidence aggregate ILLIQ behavior, an unexpected
+    illiquidity shock, or the stated relationship with future market returns.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The August observation supplies no January timing, effective-cost premium,
+    small-cap seasonal behavior, or future-return relationship.
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_billio_hedge_fund_illiquidity_003
+  reason: The state is specific to monthly hedge-fund return smoothing and autocorrelation,
+    neither of which belongs to the packet's observed asset scope.
+  reason_code: out_of_scope
+  state_id: state_billio_hedge_fund_illiquidity_003
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: Friday through Monday morning
+    timezone: America/New_York
+  asset_scope:
+  - S&P
+  - equity-index futures
+  - equity volatility
+  - crude oil
+  - US Treasuries
+  - corporate earnings
+  narrative_summary: ''
+  normalized_features:
+  - bond market flow conflict
+  - earnings uncertainty
+  - energy demand outlook
+  - equity index performance
+  - equity volatility
+  - intraday price instability
+  - investor concern
+  - macro risk expectations
+  - market uncertainty
+  - recession risk estimate
+  - trade policy escalation
+  observation_id: obs_ca9b2f609541
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- regime_dependent
+raw_input_hash: sha256:ca9b2f6095414f60e56972f3a763b013581154ecb687a04798edbcaa44a3bb97
+required_validations: []
+risk_posture:
+  confidence: partially_supported
+  dominant_themes:
+  - equity drawdown
+  - extreme volatility
+  - headline-driven instability
+  posture_count: 1
+  postures:
+  - regime_dependent
+run_id: connector_run_2kgwb5cd
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

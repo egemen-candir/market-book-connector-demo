@@ -1,0 +1,205 @@
+{
+  "caveats": [
+    "The packet directly evidences large shocks followed by further large shocks, but it does not estimate GARCH persistence parameters or squared-return autocorrelation.",
+    "Extreme volatility and falling equity futures support the high-volatility or bear behavior, but no HMM state probability, EWMM feature, or transition estimate is supplied."
+  ],
+  "constraints": [
+    "low_confidence_match: entry_nguyen_three_state_hmm_001"
+  ],
+  "failure_modes": [
+    "unmeasured GARCH persistence",
+    "untested squared-return autocorrelation",
+    "unestimated HMM state probability",
+    "unverified EWMM calibration",
+    "weak_match:entry_nguyen_three_state_hmm_001"
+  ],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_hamilton_arch_volatility_clustering_004"
+        },
+        {
+          "kind": "extracted_claim",
+          "record_id": "claim_hamilton_arch_volatility_clustering_004"
+        }
+      ],
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "evidence_caveats": "The packet directly evidences large shocks followed by further large shocks, but it does not estimate GARCH persistence parameters or squared-return autocorrelation.",
+      "failure_modes": [
+        "unmeasured GARCH persistence",
+        "untested squared-return autocorrelation"
+      ],
+      "match_strength": "moderate",
+      "matched_observations": [
+        0,
+        1,
+        4
+      ],
+      "policy_posture": "risk_off_monitoring",
+      "state_id": "state_hamilton_arch_volatility_clustering_004"
+    },
+    {
+      "citations": [
+        {
+          "kind": "extracted_claim",
+          "record_id": "claim_nguyen_three_state_hmm_001"
+        }
+      ],
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "evidence_caveats": "Extreme volatility and falling equity futures support the high-volatility or bear behavior, but no HMM state probability, EWMM feature, or transition estimate is supplied.",
+      "failure_modes": [
+        "unestimated HMM state probability",
+        "unverified EWMM calibration"
+      ],
+      "match_strength": "weak",
+      "matched_observations": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    }
+  ],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The packet reports a two-session volatility shock but no TSMOM signal returns, horizon Sharpe progression, diversified futures portfolio performance, or smile-pattern performance.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "No January timing, effective trading costs, small-cap illiquidity premium, or future stock-return relationship is observed.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The state is specific to serial autocorrelation and smoothing in monthly hedge fund returns, while the packet covers listed volatility products, futures, and broad U.S. equities.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "A loss following the prior rout is one episode and does not establish the significant weekly first-order autocorrelation, variance ratios, or market-capitalization gradient described by the state.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The packet contains no co-moving equity pair, temporary pair-spread divergence, or subsequent convergence to a historical equilibrium spread.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "Elevated volatility is present, but no cross-market correlation estimate, source-country variance comparison, or heteroscedasticity correction is supplied.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The higher-volatility direction is consistent with a bear regime, but the packet does not supply world-equity monthly regime means, regime volatilities, transition probabilities, or a filtered regime probability.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_regime_params_001"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The downturn direction is compatible with a bear regime, but no international-equity correlation increase or filtered bear-regime probability is observed.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The packet has only a prior-session and overnight continuation, not the monthly-to-eight-year autocorrelation flip or transitory-variance behavior described by the state.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "One extreme shock does not establish unconditional excess kurtosis, negative skewness, or a multi-regime Gaussian mixture as the return process.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_fat_tails_mixture_001"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The state concerns option bid-ask spreads and option transaction-rate regimes, neither of which appears in the packet's volatility-product, futures, and equity observations.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_market_conditions_004"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "The state is specific to common-factor variation across banks, broker-dealers, insurers, and hedge funds, while the packet provides no financial-sector return panel or principal-component evidence.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "reason": "The state concerns option volume and option bid-ask spreads after controls, while the packet supplies neither option-market variable.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_volume_insignificant_001"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "prior session through overnight trading",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "VIX",
+      "VIX futures",
+      "XIV",
+      "SVXY",
+      "S&P 500 futures",
+      "U.S. equities"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "equity index pressure",
+      "equity volatility",
+      "market uncertainty",
+      "short-volatility product distress",
+      "volatility futures disruption",
+      "volatility regime transition"
+    ],
+    "observation_id": "obs_0e6cc0ac29db",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "regime_dependent",
+    "risk_off_monitoring"
+  ],
+  "raw_input_hash": "sha256:0e6cc0ac29db43c25afe9fd0c3226c176e3e825c89771a6a99695bd038c3bfde",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "partially_supported",
+    "dominant_themes": [
+      "volatility clustering",
+      "high-volatility regime",
+      "forced unwind stress"
+    ],
+    "posture_count": 2,
+    "postures": [
+      "regime_dependent",
+      "risk_off_monitoring"
+    ]
+  },
+  "run_id": "connector_run_1h494vrs",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

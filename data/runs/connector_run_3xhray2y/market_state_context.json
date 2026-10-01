@@ -1,0 +1,179 @@
+{
+  "caveats": [
+    "The packet directly evidences an exceptional equity decline and extreme sector instability, but it does not estimate monthly world-index regime parameters, transition probabilities, or filtered state probability."
+  ],
+  "constraints": [
+    "low_confidence_match: entry_ang_bekaert_regime_params_001"
+  ],
+  "failure_modes": [
+    "weak_match:entry_ang_bekaert_regime_params_001"
+  ],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_ang_bekaert_regime_params_001"
+        },
+        {
+          "kind": "extracted_claim",
+          "record_id": "claim_ang_bekaert_regime_params_001"
+        }
+      ],
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "evidence_caveats": "The packet directly evidences an exceptional equity decline and extreme sector instability, but it does not estimate monthly world-index regime parameters, transition probabilities, or filtered state probability.",
+      "failure_modes": [],
+      "match_strength": "weak",
+      "matched_observations": [
+        3,
+        7
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_ang_bekaert_regime_params_001"
+    }
+  ],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "The packet reports instability in Argentine bank and energy shares but does not evidence a common financial-sector factor, a high PC1 variance share, or collapsed cross-sector diversification.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "The observed price losses are not accompanied by aggregate illiquidity measurements or evidence distinguishing expected illiquidity from an unexpected illiquidity shock.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The packet supplies neither a measured pair spread divergence nor subsequent convergence toward a historical equilibrium.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The record covers sustained time-series momentum behavior and performance in diversified futures portfolios, while the packet concerns an immediate dislocation in Argentine cash currency, sovereign debt, and equities.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "Concurrent stress within Argentina does not establish that international equity correlations rose by about twenty percentage points or that filtered bear-regime probability was elevated.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The packet contains no computed cross-market correlation, source-country variance comparison, or corrected and uncorrected contagion estimates needed to evidence the described measurement bias.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The record describes a January-concentrated cross-sectional illiquidity premium, whereas the packet describes an event-driven Argentine market shock without seasonal or trading-cost evidence.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "A single immediate equity decline does not evidence the record's autocorrelation reversal across subannual and three-to-eight-year horizons.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The record's high-volatility state is defined through asset-specific daily futures returns and HMM features, while the packet's scope contains Argentine cash-market instruments rather than futures.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "Simultaneous downside stress does not establish that joint left-tail correlation exceeds joint right-tail correlation, and no regime-switching correlation model is supplied.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "The packet evidences an extreme shock but not a sequence of large shocks, significant squared-return autocorrelation, or persistent GARCH parameters.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The record concerns smoothed hedge-fund returns and elevated monthly autocorrelation, neither of which is observed in the Argentine bank, energy, sovereign, currency, or index data.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The packet provides no option bid-ask spreads or intraday transaction-rate classification from which the record's U-shaped spread pattern could be assessed.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_market_conditions_004"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "One extreme negative episode does not establish unconditional excess kurtosis, negative distributional skewness, or a multi-regime Gaussian mixture process.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_fat_tails_mixture_001"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "immediate post-primary market reaction",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "Argentine peso",
+      "Argentine sovereign bonds",
+      "Merval equity index",
+      "Argentine bank equities",
+      "Argentine energy equities"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "borrowing costs",
+      "currency volatility",
+      "debt restructuring expectations",
+      "equity market stress",
+      "intervention effectiveness",
+      "policy uncertainty",
+      "sector volatility",
+      "sovereign debt stress",
+      "sovereign risk"
+    ],
+    "observation_id": "obs_0507e9699037",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "regime_dependent"
+  ],
+  "raw_input_hash": "sha256:0507e96990378395800f2b84912cc94136698692496557da41f32bb9893f7528",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "weakly_supported",
+    "dominant_themes": [
+      "bear-regime equity stress",
+      "cross-asset dislocation",
+      "model confirmation absent"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "regime_dependent"
+    ]
+  },
+  "run_id": "connector_run_3xhray2y",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

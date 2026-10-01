@@ -1,0 +1,135 @@
+caveats: []
+constraints: []
+failure_modes: []
+market_book_version: stage6_accepted
+matched_states: []
+missing_evidence: []
+non_matches:
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: The packet covers approximately two weeks and supplies neither the candidate's
+    subannual-to-multiyear autocorrelation flip nor cross-market confirmation of long-horizon
+    mean reversion.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_cho_engle_moneyness_003
+  reason: The packet contains no option quotes, ATM-versus-OTM spread comparison,
+    or evidence that trades execute at the full quoted spread.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_moneyness_003
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: A large endpoint price increase does not evidence weekly first-order autocorrelation,
+    variance ratios, or the market-capitalization gradient described by the candidate.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_cho_engle_underlying_spread_002
+  reason: Brokerage access restrictions do not evidence option bid-ask spreads being
+    driven by underlying spreads scaled by option delta.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_underlying_spread_002
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: The candidate describes divergent pair spreads subsequently converging,
+    while the packet reports an equity dislocation still surging under accelerating
+    forced covering.
+  reason_code: direction_discordant
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The January date is only calendar overlap and does not evidence a January-concentrated
+    relationship between effective trading costs and future stock returns.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_cho_engle_volume_insignificant_001
+  reason: Retail activity in the underlying equities does not establish that option
+    volume is statistically insignificant after controlling for other option-spread
+    determinants.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_volume_insignificant_001
+- entry_id: entry_hamilton_arch_volatility_clustering_004
+  reason: The packet reports an extreme price move and market stress but does not
+    evidence large shocks followed by large shocks, significant squared-return autocorrelation,
+    or persistent GARCH parameters.
+  reason_code: insufficient_evidence
+  state_id: state_hamilton_arch_volatility_clustering_004
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: The spread of a squeeze across selected equities does not evidence elevated
+    international equity correlations during a filtered bear regime.
+  reason_code: insufficient_evidence
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: The candidate describes persistent risk-adjusted time-series momentum across
+    diversified futures, whereas the packet concerns individual heavily shorted equities.
+  reason_code: out_of_scope
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_billio_granger_systemic_buildup_002
+  reason: Fund losses and unconfirmed distress do not evidence growing Granger-causal
+    link density among hedge funds, banks, broker-dealers, and insurers.
+  reason_code: insufficient_evidence
+  state_id: state_billio_granger_systemic_buildup_002
+- entry_id: entry_nguyen_three_state_hmm_001
+  reason: The candidate's bull, bear, and high-volatility states are fitted independently
+    to futures instruments, outside the packet's individual-equity asset scope.
+  reason_code: out_of_scope
+  state_id: state_nguyen_three_state_hmm_001
+- entry_id: entry_hasbrouck_return_premium_003
+  reason: Brokerage restrictions do not evidence a persistent cross-sectional relationship
+    between Gibbs effective trading costs and subsequent equity returns.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_return_premium_003
+- entry_id: entry_amihud_crosssection_premium_002
+  reason: The packet supplies no expected ILLIQ measurements or cross-sectional evidence
+    that higher expected illiquidity is associated with higher expected returns.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_crosssection_premium_002
+- entry_id: entry_ang_2011_fat_tails_mixture_001
+  reason: One extreme episode does not establish excess kurtosis, negative skewness,
+    or a multi-regime Gaussian mixture as the return-generating process.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_fat_tails_mixture_001
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2021-01-28'
+    observation_horizon: approximately two weeks
+    timezone: America/New_York
+  asset_scope:
+  - GameStop
+  - AMC
+  - Bed Bath
+  - BlackBerry
+  - other heavily shorted equities
+  narrative_summary: ''
+  normalized_features:
+  - institutional stress
+  - market access
+  - market sentiment
+  - participant behavior
+  - price dislocation
+  - pricing uncertainty
+  - speculative breadth
+  - squeeze mechanics
+  - uncertainty
+  observation_id: obs_157b6c1310f1
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- no_actionable_posture
+raw_input_hash: sha256:157b6c1310f1abeb0b945f512a51ea58d17892bc9060ee6da95e63bc74d71eb8
+required_validations: []
+risk_posture:
+  confidence: well_supported
+  dominant_themes:
+  - short-squeeze mechanics
+  - retail concentration
+  - forced covering
+  - access restrictions
+  - price dislocation
+  posture_count: 1
+  postures:
+  - no_actionable_posture
+run_id: connector_run_boj9nrau
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

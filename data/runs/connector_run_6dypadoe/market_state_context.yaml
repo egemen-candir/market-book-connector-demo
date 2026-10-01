@@ -1,0 +1,127 @@
+caveats: []
+constraints: []
+failure_modes: []
+market_book_version: stage6_accepted
+matched_states: []
+missing_evidence: []
+non_matches:
+- entry_id: entry_ang_bekaert_regime_params_001
+  reason: No world-index volatility contrast or filtered bear-regime probability is
+    supplied; flat average-stock participation does not establish the stated Markov
+    regime.
+  reason_code: insufficient_evidence
+  state_id: state_ang_bekaert_regime_params_001
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: The packet supplies no multi-horizon autocorrelation reversal or transitory
+    variance behavior; equal-weight terminology alone is surface resemblance.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: No January-specific relationship between effective trading costs and subsequent
+    stock returns is observed.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: The state concerns diversified time-series-momentum behavior across liquid
+    futures, while the packet covers S&P 500 and technology equities.
+  reason_code: out_of_scope
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_amihud_crosssection_premium_002
+  reason: The packet contains no expected ILLIQ measurements or evidence that higher-ILLIQ
+    stocks earned higher subsequent returns.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_crosssection_premium_002
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: No weekly positive autocorrelation or variance-ratio behavior is supplied;
+    index-weighting divergence does not evidence short-horizon predictability.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_amihud_illiq_persistence_004
+  reason: No aggregate ILLIQ time series or persistent monthly autoregressive behavior
+    is observed.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_illiq_persistence_004
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: Broad index-weight divergence is not a temporary spread between identified
+    co-moving equity pairs followed by convergence.
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_billio_hedge_fund_illiquidity_003
+  reason: The state is specific to autocorrelation and smoothing in hedge-fund returns,
+    outside the packet's equity-index and technology-stock scope.
+  reason_code: out_of_scope
+  state_id: state_billio_hedge_fund_illiquidity_003
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: The packet does not separate expected aggregate illiquidity from unexpected
+    illiquidity shocks or report their return effects.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_nguyen_three_state_hmm_001
+  reason: The state is defined for futures instruments using EWMM moments and HMM
+    probabilities, whereas the packet concerns cash equities and index breadth.
+  reason_code: out_of_scope
+  state_id: state_nguyen_three_state_hmm_001
+- entry_id: entry_ang_2011_fat_tails_mixture_001
+  reason: No return-distribution skewness, excess kurtosis, or Gaussian-mixture regime
+    behavior is supplied.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_fat_tails_mixture_001
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: Narrow leadership does not measure elevated international-equity correlations,
+    and no filtered bear-regime probability is supplied.
+  reason_code: insufficient_evidence
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_cho_engle_underlying_spread_002
+  reason: The candidate concerns option bid-ask spreads and delta-mediated hedging
+    costs, while the packet contains no options-market observations.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_underlying_spread_002
+- entry_id: entry_amihud_size_interaction_005
+  reason: The packet reports capitalization-weighted leadership and equal-weight underperformance,
+    opposite the state's larger return premium for smaller stocks.
+  reason_code: direction_discordant
+  state_id: state_amihud_size_interaction_005
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: year-to-date and recent months
+    timezone: America/New_York
+  asset_scope:
+  - S&P 500
+  - mega-cap technology equities
+  - AI-adjacent equities
+  narrative_summary: ''
+  normalized_features:
+  - flow dynamics
+  - historical-regime uncertainty
+  - index concentration
+  - index weighting divergence
+  - market breadth
+  - single-stock performance
+  - underlying market participation
+  observation_id: obs_b16acf965391
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- no_actionable_posture
+raw_input_hash: sha256:b16acf96539116b9e93467a8ba28eb11d07bfd2c39614c73145ddd76d4798951
+required_validations: []
+risk_posture:
+  confidence: well_supported
+  dominant_themes:
+  - narrow equity leadership
+  - mega-cap index concentration
+  - equal-weight participation gap
+  - passive-flow reinforcement
+  posture_count: 1
+  postures:
+  - no_actionable_posture
+run_id: connector_run_6dypadoe
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

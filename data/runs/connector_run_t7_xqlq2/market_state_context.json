@@ -1,0 +1,157 @@
+{
+  "caveats": [],
+  "constraints": [],
+  "failure_modes": [],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "Concurrent market stress does not establish that joint lower-tail correlations exceed corresponding upper-tail correlations or provide separate bear-regime correlation estimates.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The suggested amplification beyond fundamentals does not evidence an unadjusted cross-market correlation, an elevated source-country variance, or the stated heteroscedasticity-corrected comparison.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "Weak Italian bank shares and broad equity underperformance do not supply principal-component variance shares or common-factor loadings across banks, broker-dealers, insurers, and hedge funds.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The near-term stress episode supplies no positive subannual autocorrelation, negative three-to-eight-year autocorrelation, or measured transitory equity-price component.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The Italy-Germany sovereign yield spread is widening, whereas this record concerns selected co-moving equity pairs whose temporary price divergences subsequently converge toward historical equilibrium spreads.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "Sharp market movements do not establish excess kurtosis, negative skewness, or a multi-regime Gaussian mixture process in equity returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_fat_tails_mixture_001"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "Italian equity weakness agrees with a bearish direction, but the packet provides neither the stated monthly mean and volatility behavior nor a Hamilton-filtered bear-regime probability.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_regime_params_001"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The record is specific to autocorrelated hedge-fund returns and illiquid marked-to-model positions, while hedge funds are outside the packet's government-bond and Italian-equity scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The downturn is compatible with a bear label, but Italian underperformance does not evidence international equity correlations rising by roughly twenty percentage points or an elevated filtered bear-regime probability.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "A near-term equity decline does not establish positive weekly return autocorrelation, a variance ratio above one, or the stated capitalization gradient.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The August observation contains no January concentration, effective trading-cost relationship, tax-loss selling effect, or seasonal future-return premium.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The record describes option bid-ask spreads under fast and slow transaction-rate regimes, while options are absent from the packet's asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_market_conditions_004"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The record models daily commodity, currency, equity, and fixed-income futures, while the packet covers cash government bonds and Italian equities rather than the modeled futures universe.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "Italian bank weakness and foreign withdrawal do not evidence growing Granger-causal link density or increasing return predictability across financial institutions.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_granger_systemic_buildup_002"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The directional market movements resemble a stressed trend environment, but the record covers time-series-momentum behavior and performance across diversified futures portfolios rather than the packet's cash instruments.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "near term",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "Italian government bonds",
+      "German Bunds",
+      "Italian bank equities",
+      "FTSE MIB"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "bank equity performance",
+      "cross-border investor flows",
+      "political risk",
+      "relative equity performance",
+      "safe-haven flows",
+      "short-term funding stress",
+      "sovereign risk spread",
+      "sovereign yields",
+      "uncertainty"
+    ],
+    "observation_id": "obs_cb4a243507c7",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "no_actionable_posture"
+  ],
+  "raw_input_hash": "sha256:cb4a243507c7c8f12d7227fb5da31146eae199b11c3b188af3ed23dc2de95c50",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "sovereign-confidence shock",
+      "redenomination concern",
+      "widening sovereign spread",
+      "Bund haven demand",
+      "Italian financial weakness"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "no_actionable_posture"
+    ]
+  },
+  "run_id": "connector_run_t7_xqlq2",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

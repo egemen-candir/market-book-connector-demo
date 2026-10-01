@@ -1,0 +1,141 @@
+caveats: []
+constraints: []
+failure_modes: []
+market_book_version: stage6_accepted
+matched_states: []
+missing_evidence: []
+non_matches:
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: The record requires significant positive weekly return autocorrelation or
+    a variance ratio above one. A single multi-day small-cap gain and an unresolved
+    persistence test do not supply either measured behavior.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_nguyen_three_state_hmm_001
+  reason: The state requires EWMM return-moment features, HMM state probabilities,
+    or PESR behavior. Calling the rotation a possible regime change does not evidence
+    any of those quantities.
+  reason_code: insufficient_evidence
+  state_id: state_nguyen_three_state_hmm_001
+- entry_id: entry_ang_bekaert_regime_params_001
+  reason: The record requires monthly international-equity mean and volatility parameters
+    plus filtered normal-versus-bear regime probabilities. A domestic style rotation
+    and an unresolved regime label do not evidence those parameters.
+  reason_code: insufficient_evidence
+  state_id: state_ang_bekaert_regime_params_001
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: The state requires persistent risk-adjusted performance of time-series momentum
+    signals or a sustained trending activation environment. The packet says durability
+    is unresolved and supplies no momentum-signal performance.
+  reason_code: insufficient_evidence
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: The record concerns two-standard-deviation divergences and subsequent convergence
+    among historically co-moving equity pairs. The packet compares capitalization
+    groups and reports neither paired spreads nor convergence.
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: The record distinguishes expected aggregate ILLIQ predicting future market
+    returns from unexpected ILLIQ shocks depressing contemporaneous prices. The packet
+    reports neither aggregate ILLIQ component.
+  reason_code: coincidental_neighbor
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: The state requires a horizon-dependent autocorrelation reversal between
+    sub-annual and three-to-eight-year returns. An abrupt leadership reversal over
+    several days does not evidence that behavior.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The state describes a January concentration of the relationship between
+    effective trading costs and future returns. The packet attributes the rotation
+    to an inflation report and supplies no seasonal trading-cost behavior.
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_billio_hedge_fund_illiquidity_003
+  reason: The state concerns serially correlated reported hedge-fund returns caused
+    by smoothing and illiquid positions. The packet contains no hedge-fund returns,
+    smoothing evidence, or latent illiquidity behavior.
+  reason_code: coincidental_neighbor
+  state_id: state_billio_hedge_fund_illiquidity_003
+- entry_id: entry_amihud_size_interaction_005
+  reason: The small-cap versus mega-cap ordering is topically similar, but the state
+    requires greater small-cap price impact, higher ILLIQ, and returns attributable
+    to an illiquidity premium. None of those behaviors is evidenced.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_size_interaction_005
+- entry_id: entry_hamilton_arch_volatility_clustering_004
+  reason: The state requires persistent conditional variance or significant squared-return
+    autocorrelation after shocks. A sharp cumulative rotation over several days does
+    not establish clustering or slow variance mean reversion.
+  reason_code: insufficient_evidence
+  state_id: state_hamilton_arch_volatility_clustering_004
+- entry_id: entry_cho_engle_market_conditions_004
+  reason: The state requires a U-shaped relationship between option bid-ask spreads
+    and intraday transaction rates. The packet contains no option-spread or trading-activity
+    measurements.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_market_conditions_004
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: The state concerns upward bias in cross-market correlations during elevated
+    source-market variance. The packet reports a domestic capitalization rotation
+    and contains no correlation estimate or heteroscedasticity correction.
+  reason_code: coincidental_neighbor
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_amihud_illiq_persistence_004
+  reason: The record concerns near-unit-root monthly persistence in aggregate NYSE
+    ILLIQ. The packet provides no aggregate illiquidity measurement or lagged persistence
+    evidence.
+  reason_code: coincidental_neighbor
+  state_id: state_amihud_illiq_persistence_004
+- entry_id: entry_ang_2011_fat_tails_mixture_001
+  reason: The state requires distributional excess kurtosis and negative skewness
+    generated by a multi-regime Gaussian mixture. One unusually sharp relative move
+    supplies neither distributional behavior nor the mixture activation condition.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_fat_tails_mixture_001
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-09-01'
+    observation_horizon: recent days through the next two weeks
+    timezone: UTC
+  asset_scope:
+  - U.S. small-cap equities
+  - U.S. mega-cap equities
+  narrative_summary: ''
+  normalized_features:
+  - confirmation horizon
+  - equity leadership
+  - flow durability
+  - market breadth
+  - rate-cycle sensitivity
+  - regime uncertainty
+  - selling character
+  - small-cap performance
+  observation_id: obs_da9172e6900c
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- no_actionable_posture
+raw_input_hash: sha256:da9172e6900ceedb57bd75cbf34437cda0e544ed8b31e1a9d400ad530680ba47
+required_validations: []
+risk_posture:
+  confidence: well_supported
+  dominant_themes:
+  - capitalization rotation
+  - leadership broadening
+  - unresolved persistence
+  - surface-only retrieval
+  posture_count: 1
+  postures:
+  - no_actionable_posture
+run_id: connector_run_4n_32iot
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

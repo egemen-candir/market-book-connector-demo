@@ -1,0 +1,505 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "well_supported",
+      "dominant_themes": [
+        "overnight funding dislocation",
+        "reserve scarcity",
+        "central-bank liquidity response",
+        "absent funding-state coverage"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "current week through month-end",
+      "timezone": "America/New_York"
+    },
+    "asset_scope": [
+      "overnight funding",
+      "Treasury bills",
+      "bank reserves",
+      "Treasuries",
+      "agency MBS"
+    ],
+    "raw_text": "Repo went vertical this week: overnight funds printed near ten percent intraday and the effective fed funds rate broke above the target range, something I have not seen since the crisis-era plumbing debates. The Fed responded with overnight and term repo operations, lending reserves against Treasuries and MBS — the first such injections in years. The proximate culprits are corporate tax dates and a large Treasury settlement draining cash, but underneath it feels structural: bill supply has ballooned, reserves look scarcer than the Fed assumed, and quarter-end is bearing down. Funding desks are nervous, bid-ask in bills is wide, and I would not be surprised if the central bank keeps supplying liquidity through month-end while it studies the reserve question.\n",
+    "summary": "Repo funding rates surged to nearly ten percent intraday, and the effective federal funds rate moved above its target range. The Federal Reserve responded with overnight and term repo operations against Treasuries and agency MBS. Corporate tax payments and a large Treasury settlement appear to have drained near-term cash, while expanded bill supply, scarcer-than-expected reserves, and approaching quarter-end pressures suggest a possible structural funding imbalance. Funding desks appear uneasy, Treasury bill bid-ask spreads are wide, and continued central-bank liquidity provision through month-end remains possible but uncertain."
+  },
+  "interpretation": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "overnight funding dislocation",
+      "reserve scarcity",
+      "central-bank liquidity response",
+      "absent funding-state coverage"
+    ],
+    "summary": "The candidate set contains no state covering the observed overnight funding dislocation and reserve-response mechanism. Related liquidity and stress records concern different measured behaviors or asset scopes."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T22:23:58Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:59fdd11d53d1bbab65246bfce2405a415bdc7bfa7206c8069101c35047472515"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "policy_forbes_bias_correction_001",
+        "text_snippet": "confidence_calibration Always compute the relative source-country variance increase (delta = sigma^2_high / sigma^2_low - 1) when measuring cross-market…"
+      },
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "retrieval_score": 0.805851,
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "closest_on": {
+        "record_id": "failure_lo_mackinlay_size_gradient_liquidity_003",
+        "text_snippet": "The size-autocorrelation gradient documented by Lo and MacKinlay (1988)—with the smallest market-cap quintile exhibiting ρ(1) ≈ 0.42 versus ρ(1) ≈ 0.14 for the…"
+      },
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "retrieval_score": 0.805503,
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_cho_engle_market_conditions_004",
+        "text_snippet": "Intraday transaction rate relative to the day's average transaction rate serves as a measurable indicator of options market activity regime (fast/slow/normal).…"
+      },
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "retrieval_score": 0.804326,
+      "state_id": "state_cho_engle_market_conditions_004",
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_billio_crisis_pca_collapse_002",
+        "text_snippet": "The sustained elevation of the first principal component variance share above 80% throughout the 2007-2009 financial crisis, compared to a 1994-2000 baseline…"
+      },
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "retrieval_score": 0.802519,
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "closest_on": {
+        "record_id": "gloss_state_amihud_crosssection_premium_002",
+        "text_snippet": null
+      },
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "retrieval_score": 0.800219,
+      "state_id": "state_amihud_crosssection_premium_002",
+      "title": "Cross-Sectional Illiquidity Premium State"
+    }
+  ],
+  "no_match_rationale": "None of the candidate records describes an overnight repo-rate surge, a federal-funds target-range breach, reserve drains from tax payments and Treasury settlement, or central-bank repo operations. The liquidity candidates instead require NYSE ILLIQ persistence, equity trading-cost premiums, options spread differentials, hedge-fund return smoothing, or derivative-hedging linkages. The remaining candidates require return trends, correlations, mean reversion, volatility persistence, regime mixtures, or institution-return networks rather than the observed funding mechanism.",
+  "non_matches": [
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "Repo-rate stress does not evidence time-series momentum returns, horizon-dependent Sharpe ratios, or the stated multi-asset futures portfolio behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hurst_tsmom_horizon_selection_001",
+          "text_snippet": "feature_selection Horizon selection for TSMOM signals should be governed by individual-asset Sharpe evidence (12-month dominant at 0.38) rather than by…"
+        },
+        {
+          "record_id": "signature_hurst_tsmom_horizon_sharpe_001",
+          "text_snippet": "Observable monotone gradient of individual-asset Sharpe ratios with time-series momentum look-back horizon, combined with a large diversification benefit in a…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "Funding-market strain does not measure elevated bear-regime correlations among international equity returns or filtered bear-regime probability.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_bekaert_model_selection_004",
+          "text_snippet": "Constant-parameter international equity allocation models (static mean-variance with unconditional means and covariances) fail to exploit regime-conditional…"
+        },
+        {
+          "record_id": "policy_ang_bekaert_rs_sharpe_003",
+          "text_snippet": "portfolio_construction Condition international equity portfolio weights on the current filtered regime probability (Hamilton filter output) rather than using…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "The record concerns persistent monthly NYSE ILLIQ, while the packet covers overnight funding, reserves, Treasury bills, Treasuries, and agency MBS.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_amihud_illiq_persistence_004",
+      "surfaced_by": [
+        {
+          "record_id": "gloss_state_amihud_illiq_persistence_004",
+          "text_snippet": null
+        },
+        {
+          "record_id": "policy_amihud_illiq_persistence_004",
+          "text_snippet": "feature_selection Lagged market-level ILLIQ (prior-month aggregate) is a valid proxy for expected current-period illiquidity given AR(1) coefficient 0.945 and…"
+        }
+      ],
+      "title": "Aggregate Illiquidity Persistence State"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The packet supplies no temporary divergence and subsequent convergence of selected equity-pair spreads within the stated trading windows.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_gatev_pairs_mean_reversion_001",
+          "text_snippet": "feature_selection When the cross-sectional pairs mean reversion state is classified as active, emphasize features capturing: (1) normalized price spread…"
+        },
+        {
+          "record_id": "failure_gatev_pairs_transaction_costs_003",
+          "text_snippet": "Pairs trading returns are highly sensitive to transaction cost assumptions; the gross convergence signal fails to generate positive net returns under high-cost…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "Quarter-end funding pressure does not establish the January-concentrated relationship between equity trading costs and subsequent stock returns.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hasbrouck_january_effect_004",
+          "text_snippet": "activity_suppression Condition the illiquidity return premium feature on calendar month. In January, the illiquidity premium feature may be included at full…"
+        },
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "The record requires equity portfolios sorted by Gibbs effective trading costs and higher subsequent returns for higher-cost stocks.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hasbrouck_return_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hasbrouck_return_premium_003",
+          "text_snippet": "A positive return spread across portfolios sorted by annual Gibbs effective cost estimates: stocks in higher-cost deciles earn higher subsequent returns than…"
+        },
+        {
+          "record_id": "claim_hasbrouck_return_premium_003",
+          "text_snippet": "Effective trading cost estimated by the Gibbs sampler is positively related to future stock returns over the period 1926-2006, providing empirical evidence for…"
+        }
+      ],
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "entry_id": "entry_hasbrouck_taq_correlation_002",
+      "reason": "Wide Treasury bill spreads do not supply paired Gibbs and TAQ effective-cost measurements or their stated NYSE-stock rank correlation.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hasbrouck_taq_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "state_hasbrouck_taq_correlation_002",
+          "text_snippet": "A structural property of the Gibbs-based effective cost estimator: when cross-sectionally compared against TAQ-derived intraday effective spread benchmarks…"
+        },
+        {
+          "record_id": "signature_hasbrouck_taq_correlation_002",
+          "text_snippet": "The cross-sectional rank correlation between annual Gibbs effective cost estimates and TAQ-derived intraday effective spread estimates across NYSE-listed…"
+        }
+      ],
+      "title": "Gibbs Estimator Validated as TAQ-Equivalent Effective Cost Proxy"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "An acute funding dislocation does not evidence the stated shift from positive short-horizon to negative three-to-eight-year equity-return serial correlation.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+          "text_snippet": "A market condition in which equity returns exhibit positive serial correlation at horizons shorter than one year and negative serial correlation (mean…"
+        },
+        {
+          "record_id": "policy_poterba_summers_transitory_position_sizing_002",
+          "text_snippet": "position_sizing The transitory component magnitude—standard deviation 15–25% for the NYSE value-weighted index and up to 37% for the equal-weighted index…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "reason": "The packet reports wide Treasury bill spreads, not wider proportional spreads for out-of-the-money options relative to at-the-money options.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_moneyness_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_cho_engle_moneyness_003",
+          "text_snippet": "Proportional bid-ask spread (spread divided by midpoint) as a function of option moneyness category (ATM vs. OTM) serves as a measurable indicator of…"
+        },
+        {
+          "record_id": "policy_cho_engle_moneyness_003",
+          "text_snippet": "confidence_calibration Moneyness category (ATM vs. OTM) must be included as a feature or segmentation variable in option spread models. OTM options should be…"
+        }
+      ],
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The state is specific to hedge-fund return smoothing and monthly first-order autocorrelation, neither of which belongs to the packet's asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_hedge_fund_autocorr_001",
+          "text_snippet": "Elevated first-order serial autocorrelation in hedge fund monthly returns (rho1=0.22), substantially above levels observed in banks (rho1=0.02), broker-dealers…"
+        },
+        {
+          "record_id": "policy_billio_hedge_fund_illiquidity_001",
+          "text_snippet": "confidence_calibration Include hedge fund return autocorrelation (AR(1) coefficient) as a systemic risk feature for financial stability monitoring. Values of…"
+        }
+      ],
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "reason": "The record describes option spreads driven by delta-scaled hedging costs in an underlying asset, not Treasury funding or bill-market spread behavior.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "surfaced_by": [
+        {
+          "record_id": "policy_cho_engle_underlying_spread_002",
+          "text_snippet": "feature_selection When modeling option bid-ask spreads, include the underlying asset's bid-ask spread as a feature, ideally scaled by option delta to reflect…"
+        },
+        {
+          "record_id": "signature_cho_engle_underlying_spread_002",
+          "text_snippet": "The bid-ask spread of the underlying asset (e.g., S&P100 index) serves as a measurable indicator of options spread width via the derivative hedge mechanism.…"
+        }
+      ],
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "A severe repo-rate observation does not evidence fat-tailed and negatively skewed equity returns generated by a multi-regime Gaussian mixture.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "model_specification When modeling equity return distributions with regime-switching models, within-regime Gaussian innovations are sufficient to produce…"
+        },
+        {
+          "record_id": "signature_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "Unconditional excess kurtosis (kurtosis > 3) and negative skewness in equity return distributions that persist even when within-regime innovations are assumed…"
+        }
+      ],
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "One intraday funding-rate surge does not establish repeated return-volatility clustering, large GARCH persistence parameters, or significant squared-return autocorrelation.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+        },
+        {
+          "record_id": "signature_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "Volatility clustering in financial return time series: significant positive autocorrelation in squared returns (|r_t|^2) and absolute returns (|r_t|) at short…"
+        }
+      ],
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The state requires instrument-level daily futures returns, EWMM moments, and HMM regime behavior, while the packet contains funding-rate and reserve observations.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_nguyen_oos_window_length_001",
+          "text_snippet": "The out-of-sample test window used to validate the HMM long-only strategy (January 2016 – October 2019, approximately 4 years) is short and covers a…"
+        },
+        {
+          "record_id": "failure_nguyen_pesr_nonstationarity_001",
+          "text_snippet": "The PESR metric relies on a transition matrix A estimated from training data and held fixed for the duration of the OOS period. If true regime transition…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "Possible structural funding pressure does not measure growing Granger-causal link density among hedge-fund, bank, broker-dealer, and insurer return series.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_granger_network_density_001",
+          "text_snippet": "The density and directionality of Granger-causal links among return series of U.S. financial sector institutions (approximately 100 per sector across hedge…"
+        },
+        {
+          "record_id": "claim_billio_granger_network_005",
+          "text_snippet": "Granger-causality-based network measures of return predictability quantify financial sector interconnectedness and systemic risk. The number and strength of…"
+        }
+      ],
+      "title": "Systemic Risk Network Buildup State"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "secured funding stress",
+      "direction": "surging",
+      "index": 0,
+      "magnitude": "severe",
+      "statement": "Overnight repo funding rates reached nearly ten percent intraday."
+    },
+    {
+      "dimension": "policy-rate control",
+      "direction": "above range",
+      "index": 1,
+      "magnitude": "notable",
+      "statement": "The effective federal funds rate moved above its target range."
+    },
+    {
+      "dimension": "central-bank liquidity response",
+      "direction": "expanding",
+      "index": 2,
+      "magnitude": "significant",
+      "statement": "The Federal Reserve supplied reserves through overnight and term repo operations against Treasuries and agency MBS."
+    },
+    {
+      "dimension": "near-term cash pressure",
+      "direction": "tightening",
+      "index": 3,
+      "magnitude": "substantial",
+      "statement": "Corporate tax payments and a large Treasury settlement drained cash from funding markets."
+    },
+    {
+      "dimension": "reserve and collateral structure",
+      "direction": "tightening",
+      "index": 4,
+      "magnitude": "structural",
+      "statement": "Expanded Treasury bill supply and scarcer-than-expected reserves suggest deeper funding pressure."
+    },
+    {
+      "dimension": "calendar pressure",
+      "direction": "building",
+      "index": 5,
+      "magnitude": "meaningful",
+      "statement": "Approaching quarter-end may intensify existing funding strain."
+    },
+    {
+      "dimension": "market liquidity and sentiment",
+      "direction": "deteriorating",
+      "index": 6,
+      "magnitude": "elevated",
+      "statement": "Treasury bill bid-ask spreads are wide and funding desks appear nervous."
+    },
+    {
+      "dimension": "policy-path uncertainty",
+      "direction": "unclear",
+      "index": 7,
+      "magnitude": "material",
+      "statement": "Continued central-bank liquidity provision through month-end is possible but not certain."
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_0rkzjjmt/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_0rkzjjmt/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_0rkzjjmt",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "caveats": [],
+  "constraints": [],
+  "failure_modes": [],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Utility outperformance does not evidence divergence and subsequent convergence of co-moving equity-pair spreads; the shared sector reference is only surface resemblance.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "Persistent momentum weakness is not evidence of near-unit-root persistence in monthly aggregate NYSE illiquidity.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_illiq_persistence_004"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "Weakening cross-sectional momentum shares do not establish the candidate's horizon-dependent Sharpe behavior for diversified multi-asset time-series momentum.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "A current defensive rotation does not measure the three-to-eight-year negative serial correlation or transitory index component described by this state.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "Continuation of a momentum-factor unwind does not demonstrate significant positive weekly autocorrelation or the stated variance-ratio pattern in equity portfolios.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The packet contains no cross-market correlation estimate, source-country variance increase, or heteroscedasticity correction behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "Uncertainty about broader deterioration does not supply the return moments, volatility behavior, or state probabilities required to activate the three-state HMM regime.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The observations do not describe a January-concentrated relationship between effective trading costs and subsequent stock returns.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "Defensive equity rotation and fund inflows do not evidence serially correlated hedge-fund returns, return smoothing, or marked-to-model position illiquidity.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "Choppy equity trading does not establish the U-shaped option-spread response to fast and slow transaction-rate regimes.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_market_conditions_004"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "The packet provides neither expected aggregate illiquidity nor an unexpected illiquidity shock linked to market-level returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003"
+    },
+    {
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "reason": "Low-volatility fund inflows do not test whether option trading volume is insignificant for option bid-ask spreads.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_volume_insignificant_001"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "Concern about broader deterioration does not evidence elevated bear-regime probability or a twenty-point increase in international equity correlations.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "The packet reports no joint left-tail or right-tail co-movement and no regime-switching correlation estimates.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "Defensive-sector and dividend-equity strength does not evidence a cross-sectional return premium sorted by effective trading costs.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_return_premium_003"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-09-01",
+      "observation_horizon": "current conditions with monthly and since-October comparisons",
+      "timezone": "America/New_York"
+    },
+    "asset_scope": [
+      "U.S. equities",
+      "high-beta technology",
+      "semiconductors",
+      "momentum equities",
+      "low-volatility funds",
+      "utilities",
+      "dividend aristocrats"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "defensive fund flows",
+      "defensive sector performance",
+      "dividend equity demand",
+      "equity factor rotation",
+      "macro risk repricing",
+      "momentum trend",
+      "outlook uncertainty"
+    ],
+    "observation_id": "obs_b47df2ab4634",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "no_actionable_posture"
+  ],
+  "raw_input_hash": "sha256:b47df2ab4634b1e49d1ee0d7424a3fdd32b2f2893b5f3fc95e3cf9bdd90e79a6",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "defensive equity rotation",
+      "surface-only retrieval overlap",
+      "missing state-specific behavior"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "no_actionable_posture"
+    ]
+  },
+  "run_id": "connector_run_9j_sdr_6",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

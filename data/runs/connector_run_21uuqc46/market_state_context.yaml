@@ -1,0 +1,177 @@
+caveats:
+- Concurrent extreme losses across UK and continental banks evidence common movement,
+  but the packet does not quantify a principal-component variance share or cover broker-dealers,
+  insurers, and hedge funds.
+- Severe bank losses and the large FTSE decline followed by partial recovery evidence
+  negative, volatile equity behavior, but monthly regime parameters and filtered state
+  probabilities are unavailable.
+- Same-session losses across UK, Italian, and Spanish bank equities provide limited
+  evidence of downturn co-movement, but no normal-regime baseline, correlation change,
+  or filtered bear probability is supplied.
+constraints:
+- 'low_confidence_match: entry_billio_financial_sector_comovement_001'
+- 'low_confidence_match: entry_ang_bekaert_regime_params_001'
+- 'low_confidence_match: entry_ang_bekaert_bear_correlation_002'
+failure_modes:
+- weak_match:entry_billio_financial_sector_comovement_001
+- weak_match:entry_ang_bekaert_regime_params_001
+- weak_match:entry_ang_bekaert_bear_correlation_002
+market_book_version: stage6_accepted
+matched_states:
+- citations:
+  - kind: observable_signature
+    record_id: signature_billio_pc1_variance_share_001
+  entry_id: entry_billio_financial_sector_comovement_001
+  evidence_caveats: Concurrent extreme losses across UK and continental banks evidence
+    common movement, but the packet does not quantify a principal-component variance
+    share or cover broker-dealers, insurers, and hedge funds.
+  failure_modes: []
+  match_strength: weak
+  matched_observations:
+  - 2
+  - 3
+  - 5
+  policy_posture: risk_off_monitoring
+  state_id: state_billio_financial_sector_comovement_001
+- citations:
+  - kind: extracted_claim
+    record_id: claim_ang_bekaert_regime_params_001
+  entry_id: entry_ang_bekaert_regime_params_001
+  evidence_caveats: Severe bank losses and the large FTSE decline followed by partial
+    recovery evidence negative, volatile equity behavior, but monthly regime parameters
+    and filtered state probabilities are unavailable.
+  failure_modes: []
+  match_strength: weak
+  matched_observations:
+  - 2
+  - 3
+  - 4
+  policy_posture: regime_dependent
+  state_id: state_ang_bekaert_regime_params_001
+- citations:
+  - kind: observable_signature
+    record_id: signature_ang_bekaert_bear_correlation_002
+  entry_id: entry_ang_bekaert_bear_correlation_002
+  evidence_caveats: Same-session losses across UK, Italian, and Spanish bank equities
+    provide limited evidence of downturn co-movement, but no normal-regime baseline,
+    correlation change, or filtered bear probability is supplied.
+  failure_modes: []
+  match_strength: weak
+  matched_observations:
+  - 2
+  - 3
+  policy_posture: risk_off_monitoring
+  state_id: state_ang_bekaert_bear_correlation_002
+missing_evidence: []
+non_matches:
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The record describes a January concentration in the relationship between
+    effective trading costs and subsequent stock returns, whereas the packet contains
+    no seasonal or trading-cost evidence.
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: Repeated sterling weakness within one session does not evidence time-series
+    momentum performance, look-back-horizon behavior, or diversified futures results.
+  reason_code: insufficient_evidence
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: The intraday FTSE recovery does not supply the three-to-eight-year autocorrelation
+    reversal or transitory-variance behavior described by the state.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_nguyen_three_state_hmm_001
+  reason: The state is constructed from daily futures returns and exponentially weighted
+    moment features, while the packet does not identify futures instruments or their
+    model features.
+  reason_code: out_of_scope
+  state_id: state_nguyen_three_state_hmm_001
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: The packet does not measure aggregate illiquidity or separate expected illiquidity
+    from unexpected shocks, so neither return relationship is evidenced.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: An aggregate-index rebound and simultaneous bank losses do not evidence
+    a paired-equity spread divergence followed by convergence.
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: Elevated market stress is reported, but the packet supplies no conditional
+    correlation estimate, variance adjustment, or corrected contagion comparison.
+  reason_code: insufficient_evidence
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: The packet describes an equity index partially reversing its opening decline,
+    whereas the state describes positive short-horizon return persistence.
+  reason_code: direction_discordant
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_hasbrouck_taq_correlation_002
+  reason: The packet contains neither Gibbs effective-cost estimates nor TAQ spread
+    benchmarks whose rank correlation could validate the proxy.
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_taq_correlation_002
+- entry_id: entry_billio_hedge_fund_illiquidity_003
+  reason: The state is specific to smoothed hedge-fund returns and latent hedge-fund
+    position illiquidity, neither of which belongs to the packet asset scope.
+  reason_code: out_of_scope
+  state_id: state_billio_hedge_fund_illiquidity_003
+- entry_id: entry_hasbrouck_return_premium_003
+  reason: The packet supplies no effective trading-cost rankings or subsequent cross-sectional
+    stock returns needed to evidence an illiquidity premium.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_return_premium_003
+- entry_id: entry_billio_granger_systemic_buildup_002
+  reason: A single-session shock does not evidence a growing time-series density of
+    Granger-predictive links among financial institutions.
+  reason_code: insufficient_evidence
+  state_id: state_billio_granger_systemic_buildup_002
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: immediate market session described in raw input
+    timezone: UTC
+  asset_scope:
+  - sterling
+  - UK equities
+  - European banks
+  - gold
+  - UK rates
+  narrative_summary: ''
+  normalized_features:
+  - UK banking stress
+  - continental banking stress
+  - currency dislocation
+  - defensive-asset demand
+  - equity-market recovery
+  - market breadth
+  - monetary backstop response
+  - political and policy uncertainty
+  - political-result sensitivity
+  observation_id: obs_bd25112c1add
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- regime_dependent
+- risk_off_monitoring
+raw_input_hash: sha256:bd25112c1addfd7e2534f8d59152e7316f075c106a0465ed700c987ddd90f959
+required_validations: []
+risk_posture:
+  confidence: weakly_supported
+  dominant_themes:
+  - cross-border bank co-movement
+  - bear-regime equity stress
+  - incomplete model diagnostics
+  posture_count: 2
+  postures:
+  - regime_dependent
+  - risk_off_monitoring
+run_id: connector_run_21uuqc46
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

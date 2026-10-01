@@ -1,0 +1,144 @@
+caveats: []
+constraints: []
+failure_modes: []
+market_book_version: stage6_accepted
+matched_states: []
+missing_evidence: []
+non_matches:
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: The state requires subannual positive equity-return autocorrelation followed
+    by three-to-eight-year negative autocorrelation; the packet supplies freight and
+    capacity conditions but no equity-return serial-correlation behavior.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_nguyen_three_state_hmm_001
+  reason: The state requires futures-return moments and HMM probabilities distinguishing
+    bull, bear, and high-variance regimes; the packet provides no return, variance,
+    or state-probability measurements.
+  reason_code: insufficient_evidence
+  state_id: state_nguyen_three_state_hmm_001
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: The state concerns cross-market correlation inflation caused by elevated
+    source-country variance; the packet contains no cross-market correlations, source-country
+    variance change, or heteroscedasticity correction evidence.
+  reason_code: insufficient_evidence
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: The state requires temporary divergence and subsequent convergence of co-moving
+    equity-pair spreads; the packet reports shipping-system strain without any paired
+    equity spreads or convergence behavior.
+  reason_code: insufficient_evidence
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: The state requires time-series momentum behavior across futures returns
+    and look-back horizons; persistent shipping strain does not evidence futures-return
+    trends or momentum performance.
+  reason_code: insufficient_evidence
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_ang_2011_fat_tails_mixture_001
+  reason: The state requires fat-tailed and negatively skewed equity returns generated
+    by a Gaussian regime mixture; the packet supplies no return distribution or mixture-model
+    evidence.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_fat_tails_mixture_001
+- entry_id: entry_billio_financial_sector_comovement_001
+  reason: The state requires a dominant common factor across banks, brokers, insurers,
+    and hedge funds; the packet contains no financial-sector returns, principal-component
+    share, or institutional loading evidence.
+  reason_code: insufficient_evidence
+  state_id: state_billio_financial_sector_comovement_001
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: The state requires aggregate NYSE illiquidity to predict future returns
+    and unexpected illiquidity to depress contemporaneous prices; physical shipping
+    scarcity does not supply either traded-market behavior.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_ang_bekaert_regime_params_001
+  reason: The state requires international-equity means, volatilities, and filtered
+    normal-versus-bear regime probabilities; none of those observables appears in
+    the shipping packet.
+  reason_code: insufficient_evidence
+  state_id: state_ang_bekaert_regime_params_001
+- entry_id: entry_ang_2011_exceedance_asymmetry_003
+  reason: The state requires joint left-tail asset co-movement to exceed joint right-tail
+    co-movement under a regime-switching model; the packet supplies no multi-asset
+    tail correlations.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_exceedance_asymmetry_003
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: The state requires positive weekly equity-return autocorrelation and elevated
+    variance ratios, especially among small-cap portfolios; the packet includes no
+    weekly return or variance-ratio evidence.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The state requires a stock illiquidity premium concentrated in January;
+    the absence of Golden Week shipping relief neither measures that premium nor verifies
+    the January activation condition.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_amihud_illiq_persistence_004
+  reason: The state requires persistent NYSE-level ILLIQ with a near-unit-root monthly
+    process; persistent logistics congestion is not evidence of the named traded-market
+    illiquidity measure.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_illiq_persistence_004
+- entry_id: entry_hamilton_arch_volatility_clustering_004
+  reason: The state requires clustered return shocks, significant squared-return autocorrelation,
+    or large GARCH persistence parameters; the packet reports operational persistence
+    without financial-return volatility behavior.
+  reason_code: insufficient_evidence
+  state_id: state_hamilton_arch_volatility_clustering_004
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: The state requires elevated international-equity correlation together with
+    a high filtered bear-regime probability; the packet contains neither correlation
+    measurements nor a bear-regime activation signal.
+  reason_code: insufficient_evidence
+  state_id: state_ang_bekaert_bear_correlation_002
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: current conditions through next-year contract talks
+    timezone: UTC
+  asset_scope:
+  - global container shipping
+  - major east-west trade lanes
+  - Southern California ports
+  narrative_summary: ''
+  normalized_features:
+  - available shipping capacity
+  - carrier earnings
+  - contract negotiations
+  - equipment circulation
+  - freight pricing
+  - outlook uncertainty
+  - port congestion
+  - seasonal capacity
+  - shipping cost pressure
+  - supply-chain capacity
+  observation_id: obs_6745456473f6
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- no_actionable_posture
+raw_input_hash: sha256:6745456473f6707abba3ede3f4f25bec92166598df406731478b96abd1b92c98
+required_validations: []
+risk_posture:
+  confidence: well_supported
+  dominant_themes:
+  - container capacity scarcity
+  - port and inland congestion
+  - persistent freight-cost pressure
+  - absent financial observables
+  posture_count: 1
+  postures:
+  - no_actionable_posture
+run_id: connector_run_lkwpqy3l
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

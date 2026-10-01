@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+build/BUILD_REPORT.md
+build/BROWSER_CHECKS.json
+build/browser-preview.jpg

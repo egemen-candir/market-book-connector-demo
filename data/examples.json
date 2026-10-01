@@ -1,0 +1,9 @@
+{
+  "examples": [
+    {
+      "body": "# Market observation\n\nMega-cap equities are still grinding higher, but market breadth is weakening.\nVolatility is picking up, cross-asset correlations are rising, and small-cap\nliquidity feels poor. No direct transaction-cost or credit-spread measurements\nare available for this observation.\n",
+      "name": "risk_on_breadth_weak",
+      "preview": "# Market observation\n\nMega-cap equities are still grinding higher, but market breadth is weakening.\nVolatility is picking up, cross-asset correlations are rising, and small-cap\nliquidity feels poor. N"
+    }
+  ]
+}

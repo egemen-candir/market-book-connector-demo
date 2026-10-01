@@ -1,0 +1,188 @@
+{
+  "caveats": [
+    "The extreme positive futures return behavior supports a bull-like regime observation, but EWMM volatility features and filtered HMM state probabilities are unavailable.",
+    "The sustained cocoa advance supplies the trending-environment activation condition, but the packet does not measure TSMOM signal returns, horizon Sharpe behavior, or diversified futures performance."
+  ],
+  "constraints": [
+    "low_confidence_match: entry_nguyen_three_state_hmm_001",
+    "low_confidence_match: entry_hurst_tsmom_trend_following_001"
+  ],
+  "failure_modes": [
+    "weak_match:entry_nguyen_three_state_hmm_001",
+    "weak_match:entry_hurst_tsmom_trend_following_001"
+  ],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_nguyen_hmm_regime_states_001"
+        }
+      ],
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "evidence_caveats": "The extreme positive futures return behavior supports a bull-like regime observation, but EWMM volatility features and filtered HMM state probabilities are unavailable.",
+      "failure_modes": [],
+      "match_strength": "weak",
+      "matched_observations": [
+        0,
+        1
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "citations": [
+        {
+          "kind": "policy_implication",
+          "record_id": "policy_hurst_mf_regime_conditional_activity_004"
+        }
+      ],
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "evidence_caveats": "The sustained cocoa advance supplies the trending-environment activation condition, but the packet does not measure TSMOM signal returns, horizon Sharpe behavior, or diversified futures performance.",
+      "failure_modes": [],
+      "match_strength": "weak",
+      "matched_observations": [
+        0,
+        1
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    }
+  ],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The record concerns three-to-eight-year autocorrelation reversal in equity indexes, while the packet covers a current cocoa futures supply shock.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The record requires divergence and convergence behavior between selected equity pairs, which a single cocoa price advance and possible reversal do not evidence.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The record describes elevated international equity correlation during a bear downturn, whereas cocoa futures are breaking sharply higher.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "Physical bean scarcity and backwardation do not evidence the expected or unexpected aggregate equity-market illiquidity effects described by the record.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_timeseries_premium_003"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The packet contains no cross-market correlation estimate, source-market variance comparison, or heteroscedasticity correction behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "The record requires principal-component concentration across banks, brokers, insurers, and hedge funds, none of which is measured in the cocoa packet.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The normal and bear parameters are estimated for international equity indexes, outside the cocoa futures scope of this packet.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_regime_params_001"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "The record emphasizes negative-skew regime mixtures, while the packet's observed extreme move is an upside price acceleration.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_ang_2011_fat_tails_mixture_001"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "The record concerns weekly positive autocorrelation in equity portfolios, whereas the packet covers cocoa futures and supplies no weekly variance-ratio evidence.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "A parabolic advance and margin increases do not establish repeated large return shocks, significant squared-return autocorrelation, or persistent GARCH parameters.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "Continued fund participation is topical surface and does not evidence serially smoothed hedge-fund returns or marked-to-model illiquidity.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "The record describes stronger joint left-tail dependence, while the packet reports an extreme upside move without multi-asset lower-tail observations.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003"
+    },
+    {
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "reason": "Futures backwardation and physical scarcity do not evidence wider bid-ask spreads for out-of-the-money options relative to at-the-money options.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_moneyness_003"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "current conditions",
+      "timezone": "America/New_York"
+    },
+    "asset_scope": [
+      "cocoa",
+      "New York cocoa futures",
+      "London cocoa futures"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "crop supply conditions",
+      "futures curve structure",
+      "historical price regime",
+      "market participation",
+      "nearby demand pressure",
+      "physical supply flow",
+      "price acceleration",
+      "supply-demand balance",
+      "uncertainty"
+    ],
+    "observation_id": "obs_038a6bacc60f",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "regime_dependent"
+  ],
+  "raw_input_hash": "sha256:038a6bacc60f1a9aee24c01ca7425e60e593d24bf2d9c97b7f83ec86a94c28ab",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "weakly_supported",
+    "dominant_themes": [
+      "extreme cocoa trend",
+      "physical supply scarcity",
+      "activation evidence only"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "regime_dependent"
+    ]
+  },
+  "run_id": "connector_run_cko99jya",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

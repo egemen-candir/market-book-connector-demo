@@ -1,0 +1,189 @@
+caveats:
+- The severe negative equity return and repeated circuit breakers evidence bear and
+  extreme-variance behavior, but the packet supplies no EWMM feature vector, HMM state
+  probability, transition estimate, or PESR measurement.
+- The roughly thirty-percent monthly equity decline evidences a strong bear-trend
+  activation condition, but the packet does not measure TSMOM signal returns, horizon-dependent
+  Sharpe ratios, diversified futures performance, or CTA factor loadings.
+constraints:
+- 'low_confidence_match: entry_nguyen_three_state_hmm_001'
+- 'low_confidence_match: entry_hurst_tsmom_trend_following_001'
+failure_modes:
+- unestimated state probability
+- unverified EWMM features
+- absent transition estimates
+- weak_match:entry_nguyen_three_state_hmm_001
+- unmeasured signal performance
+- unverified cross-asset persistence
+- absent horizon comparison
+- weak_match:entry_hurst_tsmom_trend_following_001
+market_book_version: stage6_accepted
+matched_states:
+- citations:
+  - kind: observable_signature
+    record_id: signature_nguyen_ewmm_span_calibration_001
+  - kind: observable_signature
+    record_id: signature_nguyen_pesr_oos_sharpe_002
+  entry_id: entry_nguyen_three_state_hmm_001
+  evidence_caveats: The severe negative equity return and repeated circuit breakers
+    evidence bear and extreme-variance behavior, but the packet supplies no EWMM feature
+    vector, HMM state probability, transition estimate, or PESR measurement.
+  failure_modes:
+  - unestimated state probability
+  - unverified EWMM features
+  - absent transition estimates
+  match_strength: weak
+  matched_observations:
+  - 0
+  - 1
+  policy_posture: regime_dependent
+  state_id: state_nguyen_three_state_hmm_001
+- citations:
+  - kind: observable_signature
+    record_id: signature_hurst_tsmom_horizon_sharpe_001
+  - kind: observable_signature
+    record_id: signature_hurst_mf_cta_factor_loading_005
+  entry_id: entry_hurst_tsmom_trend_following_001
+  evidence_caveats: The roughly thirty-percent monthly equity decline evidences a
+    strong bear-trend activation condition, but the packet does not measure TSMOM
+    signal returns, horizon-dependent Sharpe ratios, diversified futures performance,
+    or CTA factor loadings.
+  failure_modes:
+  - unmeasured signal performance
+  - unverified cross-asset persistence
+  - absent horizon comparison
+  match_strength: weak
+  matched_observations:
+  - 1
+  policy_posture: regime_dependent
+  state_id: state_hurst_tsmom_trend_following_001
+missing_evidence: []
+non_matches:
+- entry_id: entry_cho_engle_moneyness_003
+  reason: The state concerns proportional spread differences between out-of-the-money
+    and at-the-money options, while the packet contains no option contracts, moneyness
+    comparison, or option execution data.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_moneyness_003
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: The packet contains no co-moving equity pair, two-standard-deviation spread
+    divergence, or subsequent convergence within a six-month window.
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_amihud_crosssection_premium_002
+  reason: The packet does not measure stock-level ILLIQ, expected returns sorted by
+    illiquidity, or the positive cross-sectional coefficient that defines this state.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_crosssection_premium_002
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: A one-month equity decline does not evidence the state's autocorrelation
+    sign reversal between subannual and three-to-eight-year horizons or its transitory-variance
+    decomposition.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The packet supplies neither January timing nor a measured relationship between
+    effective trading costs and subsequent cross-sectional stock returns.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: The monthly drawdown does not establish positive weekly first-order autocorrelation,
+    a variance ratio above one, or the market-capitalization gradient described by
+    the state.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_cho_engle_market_conditions_004
+  reason: The record describes option spreads conditioned on intraday option transaction
+    rates, whereas the packet reports circuit breakers and Treasury futures liquidity
+    without option-market observations.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_market_conditions_004
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: The packet pairs an equity decline with Treasury and dollar-funding stress
+    but does not measure monthly NYSE ILLIQ or decompose it into expected and unexpected
+    components.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: Cross-asset stress is observed, but no conditional correlation, source-market
+    variance increase, or heteroscedasticity-adjusted correlation is supplied.
+  reason_code: insufficient_evidence
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_billio_financial_sector_comovement_001
+  reason: The state requires a return panel for banks, broker-dealers, insurers, and
+    hedge funds plus principal-component variance shares, which are outside the packet's
+    listed market observations.
+  reason_code: out_of_scope
+  state_id: state_billio_financial_sector_comovement_001
+- entry_id: entry_cho_engle_volume_insignificant_001
+  reason: The state concerns the statistical insignificance of option volume after
+    controlling for option-spread determinants, and the packet contains no option
+    volume or spread data.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_volume_insignificant_001
+- entry_id: entry_amihud_illiq_formula_001
+  reason: The packet provides neither daily stock dollar volume nor the absolute-return-to-volume
+    ratio required to establish that ILLIQ is estimable.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_illiq_formula_001
+- entry_id: entry_amihud_illiq_persistence_004
+  reason: A current liquidity crisis does not evidence near-unit-root persistence
+    because the packet supplies no monthly NYSE ILLIQ series, lag relationship, or
+    AR coefficient.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_illiq_persistence_004
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: one month with current-week detail
+    timezone: America/New_York
+  asset_scope:
+  - S&P 500
+  - U.S. Treasuries
+  - gold
+  - U.S. dollar funding
+  - Treasury bills
+  - repo markets
+  - central bank policy
+  - fiscal policy
+  narrative_summary: ''
+  normalized_features:
+  - Treasury market liquidity
+  - cash preservation preference
+  - dollar funding pressure
+  - equity drawdown
+  - equity market disruption
+  - fiscal response
+  - international dollar liquidity support
+  - monetary intervention
+  - policy transmission
+  - precious-metal demand
+  - sovereign bond yields
+  - stress diagnosis
+  observation_id: obs_a6a2630bada1
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- regime_dependent
+raw_input_hash: sha256:a6a2630bada1b4102b7f3129d9b0e47ddccc1d029fd4b0832dc4275c26a6dac7
+required_validations: []
+risk_posture:
+  confidence: weakly_supported
+  dominant_themes:
+  - bear-regime behavior
+  - extreme market variance
+  - sustained equity decline
+  - cross-asset liquidity stress
+  - missing model estimates
+  posture_count: 1
+  postures:
+  - regime_dependent
+run_id: connector_run_hr9ml9dq
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

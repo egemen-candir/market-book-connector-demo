@@ -1,0 +1,156 @@
+caveats: []
+constraints: []
+failure_modes: []
+market_book_version: stage6_accepted
+matched_states: []
+missing_evidence: []
+non_matches:
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: The state requires positive sub-annual autocorrelation that becomes negative
+    over three-to-eight-year horizons, together with a measured transitory variance
+    component. Current equity declines and persistent selling provide neither the
+    horizon-dependent autocorrelation flip nor the transitory-variance behavior.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: The state concerns risk-adjusted time-series-momentum performance across
+    a diversified portfolio of 58 liquid futures contracts. The packet describes cash-market
+    and sector conditions rather than the futures-portfolio performance the state
+    covers.
+  reason_code: out_of_scope
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_billio_hedge_fund_illiquidity_003
+  reason: The state is explicitly specific to monthly hedge fund returns and position
+    illiquidity inferred from high first-order autocorrelation. Hedge funds are outside
+    the packet's asset scope.
+  reason_code: out_of_scope
+  state_id: state_billio_hedge_fund_illiquidity_003
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: The state describes pair-level equity spread divergences exceeding two standard
+    deviations and subsequent convergence within six-month windows. Broad market selling
+    supplies no paired securities, equilibrium spreads, divergence thresholds, or
+    convergence behavior.
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_cho_engle_volume_insignificant_001
+  reason: The state concerns the statistical insignificance of option volume for option
+    bid-ask spreads after controlling for moneyness, maturity, and activity regime.
+    Options and option-spread measurements are outside the packet's scope.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_volume_insignificant_001
+- entry_id: entry_ang_2011_fat_tails_mixture_001
+  reason: Large negative market moves do not establish unconditional excess kurtosis,
+    negative skewness, or a multi-regime Gaussian mixture data-generating process.
+    The distributional behavior defining the state is unmeasured.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_fat_tails_mixture_001
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: The state requires an unadjusted cross-market correlation measured during
+    elevated source-market variance so that heteroscedasticity bias can be evaluated.
+    The packet describes pressure spreading from energy to credit and banks but supplies
+    no correlation estimate, variance increase, or corrected comparison.
+  reason_code: insufficient_evidence
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: The state is identified by weekly variance ratios above one and significant
+    positive first-order autocorrelation, including a size-based gradient. Persistent
+    selling and a three-week cumulative decline do not supply variance-ratio, autocorrelation,
+    or size-quintile behavior.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_ang_2011_exceedance_asymmetry_003
+  reason: The state requires lower-tail joint-exceedance correlations to exceed corresponding
+    upper-tail correlations under a regime-switching specification. Simultaneous weakness
+    supplies neither the lower-versus-upper-tail comparison nor separate bear-regime
+    correlation estimates.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_exceedance_asymmetry_003
+- entry_id: entry_nguyen_three_state_hmm_001
+  reason: The state is an asset-independent hidden Markov model fitted to daily commodity,
+    currency, equity, and fixed-income futures using normalized first- and second-moment
+    features. The packet does not cover that modeled futures universe or provide its
+    HMM state outputs.
+  reason_code: out_of_scope
+  state_id: state_nguyen_three_state_hmm_001
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: The observed downturn agrees with the bear direction, but the state requires
+    international equity correlations roughly twenty percentage points above the normal
+    regime or an elevated filtered bear-regime probability. Neither behavior is measured
+    in the packet.
+  reason_code: insufficient_evidence
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_hamilton_arch_volatility_clustering_004
+  reason: Sharp losses and persistent selling do not establish the defining sequence
+    of large shocks followed by large shocks. The packet supplies no GARCH persistence
+    parameters or significant squared-return autocorrelations.
+  reason_code: insufficient_evidence
+  state_id: state_hamilton_arch_volatility_clustering_004
+- entry_id: entry_cho_engle_underlying_spread_002
+  reason: The state concerns option bid-ask spreads driven by underlying-asset spreads
+    through delta-scaled hedging costs. The packet contains no options, delta measurements,
+    or quoted-spread evidence.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_underlying_spread_002
+- entry_id: entry_cho_engle_market_conditions_004
+  reason: The state describes a U-shaped relationship between option transaction rates
+    and option bid-ask spreads in fast and slow markets. Quieter dip buying is not
+    option transaction-rate evidence, and options are outside the packet's scope.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_market_conditions_004
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The state requires a January-concentrated cross-sectional relationship between
+    effective trading costs and future stock returns. The packet supplies no effective-cost
+    measurements, return sorts, or evidence of that seasonal premium.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_january_effect_004
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: near-term market conditions
+    timezone: UTC
+  asset_scope:
+  - Chinese equities
+  - crude oil
+  - energy sector
+  - credit markets
+  - banking sector
+  - U.S. equities
+  - gold
+  - U.S. interest-rate expectations
+  narrative_summary: ''
+  normalized_features:
+  - Chinese equity stress
+  - causal uncertainty
+  - cross-market contagion
+  - defensive asset demand
+  - equity momentum
+  - market participation
+  - monetary policy expectations
+  - oil-price weakness
+  - year-to-date equity performance
+  observation_id: obs_a59c0f44b85c
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- no_actionable_posture
+raw_input_hash: sha256:a59c0f44b85c6a44d3feaf97cd0509bf6678285b9512ac2a88de7f36c457f792
+required_validations: []
+risk_posture:
+  confidence: well_supported
+  dominant_themes:
+  - generalized de-risking
+  - absent dependence measurements
+  - unverified regime models
+  - instrument-scope boundaries
+  posture_count: 1
+  postures:
+  - no_actionable_posture
+run_id: connector_run_psohqi7d
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

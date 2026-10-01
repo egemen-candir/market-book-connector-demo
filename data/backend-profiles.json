@@ -1,0 +1,38 @@
+{
+  "default": "mock",
+  "profiles": {
+    "claude_code_opus": {
+      "backend_type": "cli",
+      "timeout_seconds": 1800
+    },
+    "claude_code_sonnet": {
+      "backend_type": "cli",
+      "timeout_seconds": 1800
+    },
+    "codex_exec": {
+      "backend_type": "cli",
+      "timeout_seconds": 1800
+    },
+    "codex_exec_luna": {
+      "backend_type": "cli",
+      "timeout_seconds": 1800
+    },
+    "generic_shell": {
+      "backend_type": "cli",
+      "timeout_seconds": 1800
+    },
+    "mock": {
+      "backend_type": "mock",
+      "timeout_seconds": 30
+    },
+    "opencode_run": {
+      "backend_type": "cli",
+      "timeout_seconds": 1800
+    }
+  },
+  "profiles_version": "0.1",
+  "role_pins": {
+    "builder": "mock",
+    "evaluator": "mock"
+  }
+}

@@ -1,0 +1,208 @@
+caveats:
+- The packet evidences the divergence pattern the state describes -- mega-cap equities
+  grinding higher while small-cap liquidity deteriorates, matching the state's small-cap-versus-large-cap
+  illiquidity divergence. The packet supplies no ILLIQ or price-impact figures and
+  no measured illiquidity premium (subsequent-return data), so the quantitative comparison
+  and the premium component of the state remain unevidenced.
+- 'Three independent observations -- weakening market breadth, rising volatility,
+  and rising cross-asset correlation -- converge on the same named behavior this state
+  describes: correlation elevation consistent with an elevated bear-regime probability.
+  The packet does not supply the 20-percentage-point magnitude, does not confirm the
+  international-equity framing specifically, and mega-cap equities are still rising
+  rather than declining, which is atypical for a fully realized bear regime, so this
+  reads as early-stage regime stress rather than a confirmed bear state.'
+constraints:
+- 'low_confidence_match: entry_amihud_size_interaction_005'
+failure_modes:
+- weak_match:entry_amihud_size_interaction_005
+market_book_version: stage6_accepted
+matched_states:
+- citations:
+  - kind: observable_signature
+    record_id: signature_amihud_size_interaction_005
+  entry_id: entry_amihud_size_interaction_005
+  evidence_caveats: The packet evidences the divergence pattern the state describes
+    -- mega-cap equities grinding higher while small-cap liquidity deteriorates, matching
+    the state's small-cap-versus-large-cap illiquidity divergence. The packet supplies
+    no ILLIQ or price-impact figures and no measured illiquidity premium (subsequent-return
+    data), so the quantitative comparison and the premium component of the state remain
+    unevidenced.
+  failure_modes: []
+  match_strength: weak
+  matched_observations:
+  - 0
+  - 4
+  policy_posture: regime_dependent
+  state_id: state_amihud_size_interaction_005
+- citations:
+  - kind: observable_signature
+    record_id: signature_ang_bekaert_bear_correlation_002
+  - kind: extracted_claim
+    record_id: claim_ang_bekaert_bear_correlation_002
+  entry_id: entry_ang_bekaert_bear_correlation_002
+  evidence_caveats: 'Three independent observations -- weakening market breadth, rising
+    volatility, and rising cross-asset correlation -- converge on the same named behavior
+    this state describes: correlation elevation consistent with an elevated bear-regime
+    probability. The packet does not supply the 20-percentage-point magnitude, does
+    not confirm the international-equity framing specifically, and mega-cap equities
+    are still rising rather than declining, which is atypical for a fully realized
+    bear regime, so this reads as early-stage regime stress rather than a confirmed
+    bear state.'
+  failure_modes: []
+  match_strength: moderate
+  matched_observations:
+  - 1
+  - 2
+  - 3
+  policy_posture: risk_off_monitoring
+  state_id: state_ang_bekaert_bear_correlation_002
+missing_evidence: []
+non_matches:
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: This state's behavior is a specific measurement artifact -- correlation
+    computed during elevated source-country variance without a heteroscedasticity
+    correction, overstating true correlation by a defined factor, with near-zero true
+    contagion after correction across 28 countries. The packet reports rising volatility
+    and rising cross-asset correlation as plain facts, not as evidence about how correlations
+    were computed, whether a correction was applied, or which market is the variance
+    source. Only the vocabulary (variance, correlation) is shared; the bias mechanism
+    and its correction outcome are unevidenced.
+  reason_code: insufficient_evidence
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: This state describes time-series momentum performance in diversified multi-asset
+    futures portfolios -- horizon-dependent Sharpe ratios, a trending-versus-choppy
+    smile pattern, and CTA fee drag. The packet contains no futures trend-signal,
+    Sharpe, or fee data; retrieval appears driven by shared trend and volatility vocabulary
+    rather than a real dimension fit.
+  reason_code: coincidental_neighbor
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_hasbrouck_taq_correlation_002
+  reason: This state validates the Gibbs estimator as a proxy for TAQ effective spreads
+    via a rank correlation statistic -- a measurement-methodology finding, not a market
+    condition. The packet explicitly notes no direct transaction-cost measurements
+    are available, and retrieval here appears driven by the shared word correlation
+    rather than any real dimension fit.
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_taq_correlation_002
+- entry_id: entry_billio_hedge_fund_illiquidity_003
+  reason: This state is about serial autocorrelation in reported hedge fund returns
+    as a marker of return smoothing over illiquid positions, a fund-reporting-behavior
+    finding. The packet has no hedge fund return-series data; the topical overlap
+    is limited to the general word liquidity.
+  reason_code: coincidental_neighbor
+  state_id: state_billio_hedge_fund_illiquidity_003
+- entry_id: entry_hasbrouck_return_premium_003
+  reason: This state's core claim is a cross-sectional return premium -- stocks with
+    higher effective trading costs earn systematically higher subsequent returns.
+    The packet supplies no subsequent-return data tied to trading costs for any stock
+    group; a qualitative liquidity observation cannot stand in for a measured return
+    premium.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_return_premium_003
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: This state's behavior is a measured weekly return autocorrelation and variance-ratio
+    profile that increases as market capitalization decreases. The packet contains
+    no return-autocorrelation or variance-ratio data; only a general size-and-liquidity
+    topical overlap is present via the small-cap liquidity observation.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: This state describes pairs-trading spread convergence economics -- formation-period
+    sector pairs, specific excess-return and Sharpe figures, and a transaction-cost
+    gate. The packet has no pairs-spread or convergence data, and explicitly states
+    no direct transaction-cost measurements are available, so the transaction-cost-gate
+    retrieval reason has no real dimension fit here.
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_amihud_crosssection_premium_002
+  reason: This state's core claim is a Fama-MacBeth cross-sectional return premium
+    on expected ILLIQ. The packet has no expected-return or regression-coefficient
+    evidence for any stock group; a general liquidity observation does not evidence
+    a measured return premium, the same deficit that rejects the other illiquidity-premium
+    candidates in this set.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_crosssection_premium_002
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: This state describes a 3-8 year horizon serial-correlation flip in equity
+    index returns, a multi-year statistical property. A single current-session snapshot
+    cannot evidence a multi-year autocorrelation pattern; the retrieval reflects shared
+    mean-reversion vocabulary, not a real dimension fit.
+  reason_code: coincidental_neighbor
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_ang_2011_exceedance_asymmetry_003
+  reason: This state shares the regime-switching correlation family with the accepted
+    Ang-Bekaert bear-correlation match but makes a more specific claim -- that joint
+    left-tail co-movement exceeds joint right-tail co-movement under quantile-conditional
+    testing. The packet's rising cross-asset correlation evidences general correlation
+    elevation, not the tail-asymmetry comparison this candidate specifically requires,
+    so this sibling does not itself clear the gate.
+  reason_code: family_sibling_rejected
+  state_id: state_ang_2011_exceedance_asymmetry_003
+- entry_id: entry_amihud_illiq_persistence_004
+  reason: This state's claim is a near-unit-root AR(1) persistence coefficient for
+    aggregate market illiquidity over time. The packet is a single-session snapshot
+    with no time-series illiquidity data, so the persistence property cannot be evidenced,
+    the same time-series deficit that rejects the other liquidity-statistic candidates
+    in this set.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_illiq_persistence_004
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: This state's activation condition is seasonal -- the illiquidity return
+    premium is concentrated in January and substantially weaker or absent otherwise.
+    The packet's as-of date is September 2026, outside the state's active window,
+    and no return-premium data is supplied regardless of season.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_billio_granger_systemic_buildup_002
+  reason: This state's behavior is a growing density of Granger-causal predictive
+    links among financial-sector institutions, measured via monthly causality tests
+    on institution-level return series 1994-2008. The packet has no institution-level
+    or network-causality data; the topical overlap with rising correlation and systemic
+    themes does not amount to a real dimension fit.
+  reason_code: coincidental_neighbor
+  state_id: state_billio_granger_systemic_buildup_002
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-09-29'
+    observation_horizon: current_session
+    timezone: UTC
+  asset_scope:
+  - mega-cap equities
+  - small-cap equities
+  - cross-asset correlation
+  narrative_summary: ''
+  normalized_features:
+  - cross-asset correlation
+  - large-cap equity performance
+  - market breadth
+  - market liquidity
+  - uncertainty
+  - volatility
+  observation_id: obs_57e0de2b5e12
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- regime_dependent
+- risk_off_monitoring
+raw_input_hash: sha256:57e0de2b5e1216f8e3fe8d5885ebb5d64d6c64b5981cb99f73ba466cd615f2fa
+required_validations: []
+risk_posture:
+  confidence: partially_supported
+  dominant_themes:
+  - cross-asset correlation elevation
+  - small-cap versus large-cap liquidity divergence
+  - early-stage regime stress signals
+  posture_count: 2
+  postures:
+  - regime_dependent
+  - risk_off_monitoring
+run_id: stdin_live_check
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

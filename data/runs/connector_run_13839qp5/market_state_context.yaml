@@ -1,0 +1,153 @@
+caveats:
+- The extreme nickel return supports the high-volatility behavior, but the packet
+  does not provide EWMM moment estimates, transition probabilities, or an HMM state
+  probability.
+constraints:
+- 'low_confidence_match: entry_nguyen_three_state_hmm_001'
+failure_modes:
+- single-event regime inference
+- absent model-state probability
+- weak_match:entry_nguyen_three_state_hmm_001
+market_book_version: stage6_accepted
+matched_states:
+- citations:
+  - kind: observable_signature
+    record_id: signature_nguyen_hmm_regime_states_001
+  entry_id: entry_nguyen_three_state_hmm_001
+  evidence_caveats: The extreme nickel return supports the high-volatility behavior,
+    but the packet does not provide EWMM moment estimates, transition probabilities,
+    or an HMM state probability.
+  failure_modes:
+  - single-event regime inference
+  - absent model-state probability
+  match_strength: weak
+  matched_observations:
+  - 0
+  policy_posture: caution_flagged
+  state_id: state_nguyen_three_state_hmm_001
+missing_evidence: []
+non_matches:
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: The record requires positive weekly equity-portfolio autocorrelation, variance-ratio
+    evidence, and a market-capitalization gradient, none of which appears in the packet.
+  reason_code: coincidental_neighbor
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: The record concerns six-month convergence of equity-pair spreads, while
+    the packet covers an LME base-metal squeeze and supplies no equity-pair spread
+    behavior.
+  reason_code: out_of_scope
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_cho_engle_market_conditions_004
+  reason: The packet reports an exchange suspension but not the record's U-shaped
+    relationship between option transaction rates and bid-ask spreads.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_market_conditions_004
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The record describes a January concentration of the equity illiquidity premium,
+    whereas the packet supplies neither January seasonality nor future stock-return
+    evidence.
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: The isolated nickel surge and same-day metals strength do not evidence sustained
+    time-series momentum, look-back-horizon behavior, or the record's return pattern
+    across trending environments.
+  reason_code: insufficient_evidence
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_billio_hedge_fund_illiquidity_003
+  reason: The record identifies hedge-fund position illiquidity through monthly return
+    smoothing and serial autocorrelation, while the packet concerns base-metal margin
+    and settlement stress.
+  reason_code: out_of_scope
+  state_id: state_billio_hedge_fund_illiquidity_003
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: The record associates an unexpected illiquidity shock with a negative contemporaneous
+    equity price effect, while nickel prices surged during the reported market stress.
+  reason_code: direction_discordant
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_amihud_illiq_persistence_004
+  reason: The record concerns persistent monthly NYSE aggregate illiquidity, while
+    the packet covers same-day LME base-metal conditions and provides no aggregate
+    equity illiquidity series.
+  reason_code: out_of_scope
+  state_id: state_amihud_illiq_persistence_004
+- entry_id: entry_hamilton_arch_volatility_clustering_004
+  reason: One extreme price shock does not establish the record's required clustering,
+    slow variance mean reversion, large GARCH persistence parameters, or significant
+    squared-return autocorrelation.
+  reason_code: insufficient_evidence
+  state_id: state_hamilton_arch_volatility_clustering_004
+- entry_id: entry_hasbrouck_taq_correlation_002
+  reason: The packet contains no comparison between Gibbs daily effective-cost estimates
+    and TAQ intraday spread benchmarks.
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_taq_correlation_002
+- entry_id: entry_cho_engle_volume_insignificant_001
+  reason: The record requires option-spread modeling in which volume is statistically
+    insignificant after controls, behavior absent from the packet.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_volume_insignificant_001
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: The record requires elevated international equity correlation during a bear
+    regime, while the packet reports broad strengthening across base metals rather
+    than a bear-market return state.
+  reason_code: direction_discordant
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_billio_financial_sector_comovement_001
+  reason: The record measures common-factor dominance across banks, broker-dealers,
+    insurers, and hedge funds, whereas the observed breadth is confined to LME base
+    metals.
+  reason_code: out_of_scope
+  state_id: state_billio_financial_sector_comovement_001
+- entry_id: entry_hasbrouck_return_premium_003
+  reason: The packet does not evidence cross-sectional equity effective costs or systematically
+    higher subsequent stock returns among less-liquid securities.
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_return_premium_003
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: same-day conditions and market reopening
+    timezone: UTC
+  asset_scope:
+  - nickel
+  - copper
+  - aluminum
+  - zinc
+  - LME base metals
+  narrative_summary: ''
+  normalized_features:
+  - base-metals breadth
+  - financing and settlement stress
+  - market imbalance
+  - market operations
+  - positioning stress
+  - price dislocation
+  - reopening uncertainty
+  - supply risk
+  observation_id: obs_bf259695a3fb
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- caution_flagged
+raw_input_hash: sha256:bf259695a3fbf2ef363a690f63d78092515068cfbf18a8f1f5fd20174de70720
+required_validations: []
+risk_posture:
+  confidence: weakly_supported
+  dominant_themes:
+  - extreme commodity volatility
+  - exchange disruption
+  - financing stress
+  posture_count: 1
+  postures:
+  - caution_flagged
+run_id: connector_run_13839qp5
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

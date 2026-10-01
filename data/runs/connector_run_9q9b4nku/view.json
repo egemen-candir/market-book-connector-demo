@@ -1,0 +1,512 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "well_supported",
+      "dominant_themes": [
+        "centralized-exchange solvency stress",
+        "crypto withdrawal-run risk",
+        "broad crypto price dislocation",
+        "stablecoin and funding strain"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "acute multi-day market dislocation",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "crypto markets",
+      "centralized exchanges",
+      "crypto lenders",
+      "exchange tokens",
+      "stablecoins"
+    ],
+    "raw_text": "I have covered crypto through Mt. Gox and this feels worse. FTX, a top-three exchange just days ago, has halted withdrawals and its putative rescuer is gone: Binance walked away from its letter of intent after reviewing the books, citing mishandled customer funds. FTT, the exchange token that anchored Alameda Research's balance sheet, is down roughly eighty percent this week to around three dollars. Bitcoin has broken under seventeen thousand for the first time since 2020; ether is below twelve hundred. Every leveraged lender — Genesis, BlockFi, the rest — is now under a microscope, with withdrawal runs the obvious next domino. Stablecoins are bending, funding is deeply negative, and customers are pulling whatever they can to self-custody. Nobody wants to be the next exchange to discover its assets aren't there. This is an extinction event in real time.",
+    "summary": "The collapse of FTX and the withdrawal of Binance's proposed rescue have triggered severe crypto-market stress, including an approximately eighty-percent weekly decline in FTT, Bitcoin below seventeen thousand dollars, ether below twelve hundred dollars, deeply negative funding, stablecoin strain, accelerated customer withdrawals, and heightened concern about contagion across exchanges and crypto lenders."
+  },
+  "interpretation": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "centralized-exchange solvency stress",
+      "crypto withdrawal-run risk",
+      "broad crypto price dislocation",
+      "stablecoin and funding strain"
+    ],
+    "summary": "The retrieved Market Book candidates do not cover the observed crypto-exchange solvency and withdrawal-run mechanism. Apparent overlaps with bear regimes, systemic risk, contagion, liquidity, or falling prices lack the measured behaviors specified by those records."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T23:15:22Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:20078fcc919567b19fbc6f89a96cc375a515f7ea616f27f3b1c4992c7fa517ab"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "policy_ang_bekaert_regime_params_001",
+        "text_snippet": "model_calibration Use Ang-Bekaert (2004) regime parameter estimates as calibration anchors when initializing two-state RS models for international equity…"
+      },
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "retrieval_score": 0.822651,
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_hamilton_arch_volatility_clustering_004",
+        "text_snippet": "GARCH(1,1) captures the empirical stylized fact of volatility clustering— large shocks followed by large shocks and small shocks followed by small…"
+      },
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "retrieval_score": 0.821983,
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "closest_on": {
+        "record_id": "gloss_state_amihud_crosssection_premium_002",
+        "text_snippet": null
+      },
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "retrieval_score": 0.818967,
+      "state_id": "state_amihud_crosssection_premium_002",
+      "title": "Cross-Sectional Illiquidity Premium State"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_amihud_size_interaction_005",
+        "text_snippet": "The illiquidity premium in Fama-MacBeth regressions is larger for small-cap stocks than for large-cap stocks. Observables include size-sorted ILLIQ levels and…"
+      },
+      "entry_id": "entry_amihud_size_interaction_005",
+      "retrieval_score": 0.816598,
+      "state_id": "state_amihud_size_interaction_005",
+      "title": "Size-Stratified Illiquidity Premium State"
+    },
+    {
+      "closest_on": {
+        "record_id": "failure_hasbrouck_january_effect_004",
+        "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+      },
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "retrieval_score": 0.816293,
+      "state_id": "state_hasbrouck_january_effect_004",
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    }
+  ],
+  "no_match_rationale": "The packet describes a centralized crypto-exchange solvency failure, withdrawal disruption, stablecoin strain, deeply negative funding, self-custody migration, and possible contagion among crypto exchanges and lenders. The candidates instead require measured behaviors such as corrected cross-market correlations, HMM moment regimes, principal-component or Granger-network relationships, return autocorrelation, illiquidity statistics, pair-spread convergence, or option-spread dynamics. None represents the packet's exchange-run and crypto-institution solvency mechanism.",
+  "non_matches": [
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "Possible withdrawal contagion does not evidence unadjusted cross-market correlation bias, a source-market variance increase, or the disappearance of contagion after heteroscedasticity correction.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "state_forbes_heteroscedasticity_bias_001",
+          "text_snippet": "A measurement distortion condition that arises when cross-market correlations are computed during periods of elevated source-country variance without applying…"
+        },
+        {
+          "record_id": "policy_forbes_interdependence_regime_001",
+          "text_snippet": "regime_switch Distinguish between pre-existing interdependence (stable high cross-market correlation amplified by heteroscedasticity during crises) and true…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The packet contains no historically paired equity spread crossing a threshold and subsequently converging toward equilibrium.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_gatev_pairs_convergence_001",
+          "text_snippet": "Observable convergence of co-integrated equity pair price spreads following a 2-standard-deviation divergence trigger, generating measurable excess returns.…"
+        },
+        {
+          "record_id": "policy_gatev_pairs_transaction_cost_gate_003",
+          "text_snippet": "risk_control Transaction cost gatekeeping features must be evaluated before classifying the pairs mean reversion state as actionable. Key features: (1)…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "Falling crypto prices and severe stress do not establish the EWMM return moments, HMM state probabilities, or transition behavior defined for the futures regime.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_nguyen_hmm_regime_switching_001",
+          "text_snippet": "regime_switch Use EWMM features (first and second moments of daily returns with span=30) as inputs to a three-state HMM for real-time regime identification…"
+        },
+        {
+          "record_id": "failure_nguyen_span_turnover_001",
+          "text_snippet": "Low EWMM span values (e.g., s=15) make the HMM observation features overly responsive to recent returns, causing frequent regime transitions and high portfolio…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "The packet supplies no aggregate ILLIQ measurement or decomposition into expected and unexpected components linked to the two specified return effects.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_timeseries_premium_003",
+          "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+        },
+        {
+          "record_id": "signature_amihud_timeseries_premium_003",
+          "text_snippet": "Time-series regression of NYSE market returns on decomposed illiquidity yields two observable signals: expected illiquidity coefficient g1=10.226 (t=2.68)…"
+        }
+      ],
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "An acute weekly decline does not evidence sustained look-back trends, trend-following returns, or the stated performance pattern across market regimes.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hurst_mf_regime_conditional_activity_004",
+          "text_snippet": "activity_suppression The smile pattern of TSMOM returns documented by Hurst et al. (2013)—best performance during sustained bull and bear markets, worst during…"
+        },
+        {
+          "record_id": "policy_hurst_tsmom_diversified_001",
+          "text_snippet": "model_weighting When the multi-asset trend following state is classified as active, emphasize: (1) diversified TSMOM signals across all available asset classes…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "Stablecoin strain and withdrawals do not supply a monthly aggregate ILLIQ history demonstrating near-unit-root persistence.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_illiq_persistence_004",
+      "surfaced_by": [
+        {
+          "record_id": "gloss_state_amihud_illiq_persistence_004",
+          "text_snippet": null
+        },
+        {
+          "record_id": "claim_amihud_illiq_persistence_004",
+          "text_snippet": "Monthly market illiquidity displays strong time-series persistence: the AR(1) coefficient is 0.945 with R²=0.89. Lagged illiquidity explains 89% of the…"
+        }
+      ],
+      "title": "Aggregate Illiquidity Persistence State"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "Concern about crypto-institution contagion does not evidence a dominant return principal component or collapsed diversification across the specified financial sectors.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_billio_broker_dealer_exposure_001",
+          "text_snippet": "feature_selection Prioritize broker-dealer sector return data (PC1 loading=0.79) as a high-weight input to systemic risk features; broker-dealer returns are…"
+        },
+        {
+          "record_id": "failure_billio_broker_loading_concentration_001",
+          "text_snippet": "Risk models that treat all financial sub-sectors as equivalent contributors to the systemic co-movement state fail by not differentiating the structural…"
+        }
+      ],
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The packet reports neither option bid-ask spreads nor the U-shaped spread behavior associated with fast and slow transaction-rate regimes.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_market_conditions_004",
+      "surfaced_by": [
+        {
+          "record_id": "signature_cho_engle_market_conditions_004",
+          "text_snippet": "Intraday transaction rate relative to the day's average transaction rate serves as a measurable indicator of options market activity regime (fast/slow/normal).…"
+        },
+        {
+          "record_id": "policy_cho_engle_market_conditions_004",
+          "text_snippet": "regime_switch Intraday transaction rate relative to the daily average should be monitored and used to classify market activity regime (fast/slow/normal). This…"
+        }
+      ],
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "Concurrent crypto price declines do not establish elevated international-equity correlations or an elevated filtered bear-regime probability.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_bekaert_model_selection_004",
+          "text_snippet": "Constant-parameter international equity allocation models (static mean-variance with unconditional means and covariances) fail to exploit regime-conditional…"
+        },
+        {
+          "record_id": "signature_ang_bekaert_bear_correlation_002",
+          "text_snippet": "International equity return correlations approximately 20 percentage points higher during identified bear regime periods versus normal regime periods. Measured…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "reason": "No ATM-versus-OTM option spread differential, execution-at-quote frequency, or moneyness behavior appears in the packet.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_moneyness_003",
+      "surfaced_by": [
+        {
+          "record_id": "claim_cho_engle_moneyness_003",
+          "text_snippet": "Out-of-the-money (OTM) options have wider proportional bid-ask spreads than at-the-money (ATM) options. Furthermore, 75% of ATM transactions and 81% of OTM…"
+        },
+        {
+          "record_id": "state_cho_engle_moneyness_003",
+          "text_snippet": "A structural market condition in which out-of-the-money (OTM) options carry wider proportional bid-ask spreads than at-the-money (ATM) options, reflecting…"
+        }
+      ],
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The acute decline supplies no three-to-eight-year autocorrelation reversal, transitory variance estimate, or subsequent mean-reverting behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_poterba_summers_horizon_autocorr_flip_001",
+          "text_snippet": "Observable sign reversal in equity return serial correlation as the measurement horizon extends from sub-annual to multi-year, providing the primary empirical…"
+        },
+        {
+          "record_id": "policy_poterba_summers_long_horizon_001",
+          "text_snippet": "confidence_calibration When the long-horizon mean reversion state is classified as active, emphasize: (1) long-horizon variance ratio features at 3–8 year…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "A list of simultaneously falling crypto assets does not evidence left-tail correlation exceeding right-tail correlation or activation through a regime-switching correlation model.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "GARCH-DCC models with symmetric correlation specification fail to capture left-tail exceedance correlation asymmetry in multi-asset equity portfolios. When…"
+        },
+        {
+          "record_id": "state_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "A market condition in which joint left-tail co-movement (correlations conditional on both assets simultaneously exceeding a lower quantile threshold)…"
+        }
+      ],
+      "title": "Regime-Conditional Tail Correlation Asymmetry State"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "Prospective withdrawal contagion does not demonstrate a growing density or strength of Granger-predictive links among institutional return series.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "surfaced_by": [
+        {
+          "record_id": "failure_billio_granger_structural_causation_001",
+          "text_snippet": "Granger-causality-based systemic risk measures reflect predictive relationships among return series but do not establish structural causation or transmission…"
+        },
+        {
+          "record_id": "signature_billio_granger_network_density_001",
+          "text_snippet": "The density and directionality of Granger-causal links among return series of U.S. financial sector institutions (approximately 100 per sector across hedge…"
+        }
+      ],
+      "title": "Systemic Risk Network Buildup State"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "One week of crypto losses does not establish positive weekly return autocorrelation, a variance-ratio departure, or the stated size gradient.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_lo_mackinlay_fads_vr_profile_004",
+          "text_snippet": "Observable returns-fads structure in weekly equity returns identified by the shape of the variance ratio profile VR(q) across aggregation horizons q = 2, 4, 8,…"
+        },
+        {
+          "record_id": "policy_lo_mackinlay_model_weighting_rw_001",
+          "text_snippet": "model_weighting The decisive rejection of the random walk for short-horizon equity returns (z-statistics 7.18–18.46 for equal-weighted portfolios; z=3.84 for…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "reason": "Negative funding is not evidence of option-spread transmission from an underlying asset through delta-scaled hedging costs.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "surfaced_by": [
+        {
+          "record_id": "policy_cho_engle_underlying_spread_002",
+          "text_snippet": "feature_selection When modeling option bid-ask spreads, include the underlying asset's bid-ask spread as a feature, ideally scaled by option delta to reflect…"
+        },
+        {
+          "record_id": "signature_cho_engle_underlying_spread_002",
+          "text_snippet": "The bid-ask spread of the underlying asset (e.g., S&P100 index) serves as a measurable indicator of options spread width via the derivative hedge mechanism.…"
+        }
+      ],
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "exchange solvency",
+      "direction": "deteriorating",
+      "index": 0,
+      "magnitude": "severe",
+      "statement": "FTX withdrawals halted amid reported customer-fund concerns"
+    },
+    {
+      "dimension": "institutional support",
+      "direction": "weakening",
+      "index": 1,
+      "magnitude": "substantial",
+      "statement": "Binance rescue proposal withdrawn after financial review"
+    },
+    {
+      "dimension": "exchange-token valuation",
+      "direction": "falling",
+      "index": 2,
+      "magnitude": "extreme",
+      "statement": "FTT down roughly eighty percent during the week"
+    },
+    {
+      "dimension": "major-asset price",
+      "direction": "falling",
+      "index": 3,
+      "magnitude": "pronounced",
+      "statement": "Bitcoin below seventeen thousand dollars for the first time since 2020"
+    },
+    {
+      "dimension": "major-asset price",
+      "direction": "falling",
+      "index": 4,
+      "magnitude": "pronounced",
+      "statement": "Ether below twelve hundred dollars"
+    },
+    {
+      "dimension": "stablecoin stability",
+      "direction": "weakening",
+      "index": 5,
+      "magnitude": "meaningful",
+      "statement": "Stablecoin conditions showing strain"
+    },
+    {
+      "dimension": "derivatives funding",
+      "direction": "negative",
+      "index": 6,
+      "magnitude": "deep",
+      "statement": "Funding rates deeply negative"
+    },
+    {
+      "dimension": "custody preference",
+      "direction": "shifting away from exchanges",
+      "index": 7,
+      "magnitude": "strong",
+      "statement": "Customers accelerating withdrawals into self-custody"
+    },
+    {
+      "dimension": "contagion uncertainty",
+      "direction": "escalating",
+      "index": 8,
+      "magnitude": "potentially severe",
+      "statement": "Possible withdrawal contagion across crypto lenders and exchanges"
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_9q9b4nku/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_9q9b4nku/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_9q9b4nku",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

@@ -1,0 +1,532 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "well_supported",
+      "dominant_themes": [
+        "sovereign-yield compression",
+        "defensive-equity income demand",
+        "bond-proxy valuation crowding"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "current market snapshot",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "ten-year US Treasuries",
+      "German government bonds",
+      "US equities",
+      "utilities",
+      "telecommunications",
+      "consumer staples"
+    ],
+    "raw_text": "The bond market keeps making new lows in yield and equity investors keep running up the wall of negative carry. Ten-year Treasuries sit near 1.40% and much of the German curve is underwater, so the hunt for income has turned ferocious. Utilities are at all-time highs, telecoms and staples aren't far behind, and I watch clients pay twenty times earnings for Procter & Gamble and Coca-Cola simply because the dividend out-yields the bond. McDonald's now yields more than the ten-year. That this passes for a valuation argument tells you where we are. Everyone knows bond proxies are stretched — everyone says they can't afford to fight the flows. Crowded trades feel comfortable right up until they don't, and this one feels very crowded.\n",
+    "summary": "Very low sovereign bond yields and negative yields across much of the German curve are intensifying demand for equity income. Utilities, telecommunications, and consumer staples have risen to elevated valuations as investors favor dividends over bond yields, leaving bond-proxy equities widely viewed as stretched and crowded despite persistent flow support."
+  },
+  "interpretation": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "sovereign-yield compression",
+      "defensive-equity income demand",
+      "bond-proxy valuation crowding"
+    ],
+    "summary": "The candidate set does not represent the observed sovereign-yield compression, equity-income substitution, defensive-sector valuation expansion, and associated crowding behavior."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T23:08:00Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:d4360a47728fb0679a0a6d00c0eb50c080afa96b981df534e54238ab80999a75"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "policy_forbes_interdependence_regime_001",
+        "text_snippet": "regime_switch Distinguish between pre-existing interdependence (stable high cross-market correlation amplified by heteroscedasticity during crises) and true…"
+      },
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "retrieval_score": 0.826996,
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_billio_granger_network_density_001",
+        "text_snippet": "The density and directionality of Granger-causal links among return series of U.S. financial sector institutions (approximately 100 per sector across hedge…"
+      },
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "retrieval_score": 0.826377,
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "title": "Systemic Risk Network Buildup State"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_amihud_timeseries_premium_003",
+        "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+      },
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "retrieval_score": 0.826154,
+      "state_id": "state_amihud_timeseries_premium_003",
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "closest_on": {
+        "record_id": "state_hasbrouck_taq_correlation_002",
+        "text_snippet": "A structural property of the Gibbs-based effective cost estimator: when cross-sectionally compared against TAQ-derived intraday effective spread benchmarks…"
+      },
+      "entry_id": "entry_hasbrouck_taq_correlation_002",
+      "retrieval_score": 0.825893,
+      "state_id": "state_hasbrouck_taq_correlation_002",
+      "title": "Gibbs Estimator Validated as TAQ-Equivalent Effective Cost Proxy"
+    },
+    {
+      "closest_on": {
+        "record_id": "state_cho_engle_market_conditions_004",
+        "text_snippet": "A market condition regime in which option bid-ask spreads exhibit a non-monotonic (U-shaped) relationship with trading activity: both fast markets (high…"
+      },
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "retrieval_score": 0.825297,
+      "state_id": "state_cho_engle_market_conditions_004",
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    }
+  ],
+  "no_match_rationale": "No candidate covers the observed chain from compressed sovereign yields to income-seeking demand, defensive-sector valuation expansion, and crowding in dividend-oriented equities. The nearest records instead require pair-spread convergence, liquidity-return relationships, financial-sector principal-component comovement, return autocorrelation, volatility clustering, regime probabilities, or options-spread behavior, none of which the packet evidences.",
+  "non_matches": [
+    {
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "reason": "The record describes option spreads driven by underlying-asset spreads and delta-mediated hedging costs; the packet contains no options-liquidity behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_cho_engle_underlying_spread_002",
+          "text_snippet": "The bid-ask spread of the underlying asset (e.g., S&P100 index) serves as a measurable indicator of options spread width via the derivative hedge mechanism.…"
+        },
+        {
+          "record_id": "policy_cho_engle_underlying_spread_002",
+          "text_snippet": "feature_selection When modeling option bid-ask spreads, include the underlying asset's bid-ask spread as a feature, ideally scaled by option delta to reflect…"
+        }
+      ],
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Utilities are only a category overlap; the packet does not evidence temporary pair divergence followed by convergence toward historical spreads.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_gatev_pairs_convergence_001",
+          "text_snippet": "Observable convergence of co-integrated equity pair price spreads following a 2-standard-deviation divergence trigger, generating measurable excess returns.…"
+        },
+        {
+          "record_id": "policy_gatev_pairs_market_neutral_sizing_002",
+          "text_snippet": "position_sizing The annualized Sharpe ratio range of 1.5–2.1 and portfolio volatility of 4–6% annualized for top-5 pairs portfolios (gross, pre-cost) establish…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "Premium equity valuations do not evidence the record's relationship between higher effective trading costs and higher subsequent stock returns.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_return_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hasbrouck_return_premium_003",
+          "text_snippet": "A positive return spread across portfolios sorted by annual Gibbs effective cost estimates: stocks in higher-cost deciles earn higher subsequent returns than…"
+        },
+        {
+          "record_id": "state_hasbrouck_return_premium_003",
+          "text_snippet": "A persistent cross-sectional market state in which stocks with higher effective trading costs (as measured by the Gibbs estimator) earn systematically higher…"
+        }
+      ],
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The record concerns hedge-fund return autocorrelation, smoothing, and latent illiquidity; none of those behaviors appears in the packet.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "surfaced_by": [
+        {
+          "record_id": "state_billio_hedge_fund_illiquidity_003",
+          "text_snippet": "A market condition specific to hedge fund returns in which high first-order serial autocorrelation (rho1=0.22) indicates return smoothing consistent with…"
+        },
+        {
+          "record_id": "claim_billio_hedge_fund_autocorr_001",
+          "text_snippet": "Hedge fund returns exhibit the highest first-order serial autocorrelation (rho1=0.22) among the four major financial sectors studied. Bank returns show…"
+        }
+      ],
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "Rising defensive equities and persistent flows do not evidence TSMOM lookback-horizon Sharpe behavior or diversified futures performance.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hurst_tsmom_horizon_selection_001",
+          "text_snippet": "feature_selection Horizon selection for TSMOM signals should be governed by individual-asset Sharpe evidence (12-month dominant at 0.38) rather than by…"
+        },
+        {
+          "record_id": "signature_hurst_tsmom_horizon_sharpe_001",
+          "text_snippet": "Observable monotone gradient of individual-asset Sharpe ratios with time-series momentum look-back horizon, combined with a large diversification benefit in a…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "Persistent investor flows are not the record's near-unit-root persistence in monthly aggregate NYSE illiquidity.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_illiq_persistence_004",
+      "surfaced_by": [
+        {
+          "record_id": "state_amihud_illiq_persistence_004",
+          "text_snippet": "A market structural property in which aggregate market illiquidity (NYSE-level ILLIQ) displays near-unit-root persistence with AR(1) coefficient 0.945 and…"
+        },
+        {
+          "record_id": "policy_amihud_illiq_persistence_004",
+          "text_snippet": "feature_selection Lagged market-level ILLIQ (prior-month aggregate) is a valid proxy for expected current-period illiquidity given AR(1) coefficient 0.945 and…"
+        }
+      ],
+      "title": "Aggregate Illiquidity Persistence State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "Crowding fragility does not evidence an elevated bear-regime probability or higher international equity correlations.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_bekaert_model_selection_004",
+          "text_snippet": "Constant-parameter international equity allocation models (static mean-variance with unconditional means and covariances) fail to exploit regime-conditional…"
+        },
+        {
+          "record_id": "claim_ang_bekaert_model_selection_004",
+          "text_snippet": "Regime-switching models with time-varying means and correlations outperform constant-parameter models in international equity allocation as measured by…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The packet provides no three-to-eight-year negative return autocorrelation, horizon-dependent sign reversal, or transitory variance estimate.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+          "text_snippet": "A market condition in which equity returns exhibit positive serial correlation at horizons shorter than one year and negative serial correlation (mean…"
+        },
+        {
+          "record_id": "policy_poterba_summers_risk_model_selection_005",
+          "text_snippet": "model_weighting The Poterba-Summers calibration showing that a pure time-varying risk premium explanation requires 5–15%+ annual required return…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The packet does not supply return-moment features, HMM state probabilities, or bull, bear, and high-volatility regime behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_nguyen_span_turnover_001",
+          "text_snippet": "Low EWMM span values (e.g., s=15) make the HMM observation features overly responsive to recent returns, causing frequent regime transitions and high portfolio…"
+        },
+        {
+          "record_id": "failure_nguyen_oos_window_length_001",
+          "text_snippet": "The out-of-sample test window used to validate the HMM long-only strategy (January 2016 – October 2019, approximately 4 years) is short and covers a…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "Sector record highs do not evidence positive weekly return autocorrelation, elevated variance ratios, or the stated size gradient.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "claim_lo_mackinlay_nontrading_bound_005",
+          "text_snippet": "Non-synchronous trading can induce spurious positive autocorrelation in portfolio returns, but at empirically realistic non-trading probabilities it accounts…"
+        },
+        {
+          "record_id": "policy_lo_mackinlay_short_horizon_001",
+          "text_snippet": "feature_selection When the short-horizon return predictability state is active (weekly autocorrelation statistically significant and VR(2) > 1.0 for…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "reason": "Dividend-related valuation premiums do not evidence the record's positive cross-sectional relationship between expected ILLIQ and expected returns.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_crosssection_premium_002",
+      "surfaced_by": [
+        {
+          "record_id": "state_amihud_crosssection_premium_002",
+          "text_snippet": "A persistent market condition in which stocks with higher expected ILLIQ earn systematically higher expected returns in cross-sectional regressions. Documented…"
+        },
+        {
+          "record_id": "policy_amihud_crosssection_premium_002",
+          "text_snippet": "model_weighting Include expected ILLIQ as a cross-sectional return predictor alongside standard controls (log market cap, past returns, dividend yield). The…"
+        }
+      ],
+      "title": "Cross-Sectional Illiquidity Premium State"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "The record requires principal-component comovement among financial institutions, while the packet describes nonfinancial defensive sectors without common-factor measurements.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_billio_broker_dealer_exposure_001",
+          "text_snippet": "feature_selection Prioritize broker-dealer sector return data (PC1 loading=0.79) as a high-weight input to systemic risk features; broker-dealer returns are…"
+        },
+        {
+          "record_id": "signature_billio_pc1_variance_share_001",
+          "text_snippet": "The share of total return variance explained by the first principal component (PC1) across U.S. financial sector monthly returns (banks, broker-dealers,…"
+        }
+      ],
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "Crowding risk and uncertain durability do not evidence clustered return shocks, significant squared-return autocorrelation, or persistent GARCH parameters.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "surfaced_by": [
+        {
+          "record_id": "state_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "A market condition characterized by persistent clustering of return volatility— large shocks followed by further large shocks and small shocks followed by…"
+        },
+        {
+          "record_id": "policy_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+        }
+      ],
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The packet contains no January seasonality, year-end effects, or seasonal concentration of an illiquidity premium.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        },
+        {
+          "record_id": "policy_hasbrouck_january_effect_004",
+          "text_snippet": "activity_suppression Condition the illiquidity return premium feature on calendar month. In January, the illiquidity premium feature may be included at full…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "reason": "The record describes wider proportional spreads and execution behavior in out-of-the-money options; the packet contains neither moneyness nor options-spread evidence.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_moneyness_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_cho_engle_moneyness_003",
+          "text_snippet": "Proportional bid-ask spread (spread divided by midpoint) as a function of option moneyness category (ATM vs. OTM) serves as a measurable indicator of…"
+        },
+        {
+          "record_id": "claim_cho_engle_moneyness_003",
+          "text_snippet": "Out-of-the-money (OTM) options have wider proportional bid-ask spreads than at-the-money (ATM) options. Furthermore, 75% of ATM transactions and 81% of OTM…"
+        }
+      ],
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "interest-rate environment",
+      "direction": "falling",
+      "index": 0,
+      "magnitude": "pronounced",
+      "statement": "New lows in sovereign bond yields"
+    },
+    {
+      "dimension": "government bond yield",
+      "direction": "low",
+      "index": 1,
+      "magnitude": "historically compressed",
+      "statement": "Ten-year Treasury yield near 1.40%"
+    },
+    {
+      "dimension": "European sovereign yields",
+      "direction": "below zero",
+      "index": 2,
+      "magnitude": "broad",
+      "statement": "Negative yields across much of the German curve"
+    },
+    {
+      "dimension": "income-seeking flows",
+      "direction": "intensifying",
+      "index": 3,
+      "magnitude": "strong",
+      "statement": "Ferocious demand for income-producing equities"
+    },
+    {
+      "dimension": "defensive-sector performance",
+      "direction": "rising",
+      "index": 4,
+      "magnitude": "extreme",
+      "statement": "Utilities at record highs"
+    },
+    {
+      "dimension": "defensive-sector performance",
+      "direction": "rising",
+      "index": 5,
+      "magnitude": "strong",
+      "statement": "Telecommunications and staples near record highs"
+    },
+    {
+      "dimension": "equity valuation",
+      "direction": "expanding",
+      "index": 6,
+      "magnitude": "elevated",
+      "statement": "Premium valuations for dividend-paying consumer companies"
+    },
+    {
+      "dimension": "equity-bond yield comparison",
+      "direction": "equity yield higher",
+      "index": 7,
+      "magnitude": null,
+      "statement": "McDonald's dividend yield above the ten-year Treasury yield"
+    },
+    {
+      "dimension": "valuation pressure",
+      "direction": "stretched",
+      "index": 8,
+      "magnitude": "broadly acknowledged",
+      "statement": "Widely recognized stretching in bond-proxy equities"
+    },
+    {
+      "dimension": "investor behavior",
+      "direction": "continuing",
+      "index": 9,
+      "magnitude": "strong",
+      "statement": "Persistent flows despite valuation concerns"
+    },
+    {
+      "dimension": "crowding risk",
+      "direction": "increasing",
+      "index": 10,
+      "magnitude": "high",
+      "statement": "Comfort masking fragility in a crowded theme"
+    },
+    {
+      "dimension": "uncertainty",
+      "direction": "unclear",
+      "index": 11,
+      "magnitude": "meaningful",
+      "statement": "Uncertain durability of the crowded income theme"
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_xud7i88g/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_xud7i88g/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_xud7i88g",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

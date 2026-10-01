@@ -1,0 +1,154 @@
+{
+  "caveats": [],
+  "constraints": [],
+  "failure_modes": [],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The packet reports a single-session rotation and does not evidence the state's subannual-to-multiyear autocorrelation reversal or transitory variance behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "Small-cap outperformance is only a topical rank ordering here; the packet does not evidence positive weekly autocorrelation, a variance-ratio departure, or persistence across weeks.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "Exceptional one-session moves do not establish the EWMM moment behavior, HMM state probabilities, or transition dynamics described by this regime model.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The packet explicitly leaves durability unresolved and supplies no look-back return persistence or sustained multi-asset trend behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Cross-group divergence does not evidence a historically paired spread crossing its threshold and subsequently converging within the stated window.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The packet contains no cross-country correlation estimates, source-market variance comparison, or heteroscedasticity adjustment demonstrating the stated bias.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "A single session with extreme winners and losers does not establish unconditional excess kurtosis, negative skewness, or a Gaussian-mixture data-generating process.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_fat_tails_mixture_001"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "The packet provides neither aggregate ILLIQ measurements nor the distinct future-return and contemporaneous-price responses to expected and unexpected illiquidity.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "Broad financial-share gains do not establish that a single principal component dominates returns across banks, broker-dealers, insurers, and hedge funds.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The observed equity-sector rotation contains no hedge-fund return series, serial autocorrelation, return smoothing, or marked-to-model illiquidity behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    },
+    {
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "reason": "This state concerns option bid-ask spreads and option trading volume, while the packet's asset scope is US equity indexes and growth-value sectors.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_volume_insignificant_001"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The candidate describes option-spread widening under fast and slow option-market activity, outside the packet's US equity index and sector scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_market_conditions_004"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The small-cap surge is a surface resemblance and does not evidence a January-concentrated relationship between effective trading costs and subsequent returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "The packet supplies no monthly aggregate ILLIQ history from which near-unit-root persistence or lagged predictability could be observed.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_illiq_persistence_004"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "The observed style rotation does not evidence effective-cost portfolio sorting or systematically higher subsequent returns among more illiquid stocks.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_return_premium_003"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "single session",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "US equities",
+      "Russell 2000",
+      "Dow",
+      "Nasdaq",
+      "growth and value sectors"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "cyclical sector strength",
+      "growth-sector reversal",
+      "index divergence",
+      "regime uncertainty",
+      "small-cap performance",
+      "style rotation"
+    ],
+    "observation_id": "obs_0292841be719",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "no_actionable_posture"
+  ],
+  "raw_input_hash": "sha256:0292841be71967f9f5a2aa365f5f117cbe56c387ff30554dfec2d8d04306a0ed",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "event-driven style rotation",
+      "small-cap and cyclical strength",
+      "growth-sector reversal",
+      "unresolved persistence"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "no_actionable_posture"
+    ]
+  },
+  "run_id": "connector_run_uol8ia52",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "caveats": [],
+  "constraints": [],
+  "failure_modes": [],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The immediate equity decline does not evidence the state's monthly near-zero mean, elevated volatility, or filtered bear-regime probability.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_regime_params_001"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The packet supplies no multi-year return autocorrelation, horizon reversal, or transitory-variance behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Broad market weakness does not evidence temporary pair divergence followed by convergence toward historical spreads.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "A single immediate selloff does not establish positive weekly autocorrelation, a variance-ratio pattern, or a capitalization gradient.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The packet does not measure time-series momentum signals, sustained trends, horizon-dependent Sharpe behavior, or trend-following performance.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The record concerns January seasonality in the equity illiquidity premium, while the packet concerns inflation-driven cross-asset repricing.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "Concurrent asset declines do not supply PC1 variance shares or common-factor loadings across banks, brokers, insurers, and hedge funds.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "The packet reports falling prices but no expected or unexpected aggregate illiquidity behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The record requires elevated correlation across international equity markets, whereas the packet's equity scope is limited to US equities and Nasdaq.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The record concerns option bid-ask spreads under fast and slow transaction regimes, while options are outside the packet's asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_market_conditions_004"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "Concurrent declines do not evidence a variance-induced correlation bias or provide corrected and uncorrected cross-market correlations.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "reason": "The record describes option spreads transmitted from underlying-asset spreads through delta, while options are outside the packet's asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_underlying_spread_002"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "Negative equity performance alone does not supply the return moments, volatility state, transition probabilities, or HMM classification required by the record.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "The record concerns future cross-sectional returns sorted by effective trading costs, not macroeconomic repricing or immediate broad equity weakness.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_return_premium_003"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "Large immediate movements do not establish repeated volatility clustering, significant squared-return autocorrelation, or persistent GARCH parameters.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "immediate post-CPI reaction",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "US Treasury yields",
+      "US equities",
+      "Nasdaq",
+      "gold"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "cross-asset performance",
+      "equity market breadth",
+      "equity rate constraint",
+      "inflation surprise",
+      "long-term interest rates",
+      "market narrative",
+      "monetary policy expectations",
+      "policy uncertainty",
+      "rate sensitivity"
+    ],
+    "observation_id": "obs_830d3e38a49d",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "no_actionable_posture"
+  ],
+  "raw_input_hash": "sha256:830d3e38a49da195538552560bdcbd3025c7aa3f8a17507661b9807afaca3082",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "inflation surprise",
+      "hawkish repricing",
+      "rising Treasury yields",
+      "cross-asset weakness",
+      "duration sensitivity"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "no_actionable_posture"
+    ]
+  },
+  "run_id": "connector_run_5n2fgum4",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

@@ -1,0 +1,130 @@
+caveats: []
+constraints: []
+failure_modes: []
+market_book_version: stage6_accepted
+matched_states: []
+missing_evidence: []
+non_matches:
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: Broad S&P and Nasdaq recovery without co-moving equity-pair divergence or
+    reversion to historical spreads
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_billio_financial_sector_comovement_001
+  reason: Limited equity reaction without bank, broker-dealer, insurer, or hedge-fund
+    returns, PC1 variance share, or common-factor loadings
+  reason_code: insufficient_evidence
+  state_id: state_billio_financial_sector_comovement_001
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: Limited cross-market reaction without source-country variance changes, conditional
+    correlations, or Forbes-Rigobon correction results
+  reason_code: insufficient_evidence
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: Rising equity indexes without TSMOM signal returns, horizon Sharpe behavior,
+    multi-asset portfolio performance, or CTA factor loading
+  reason_code: insufficient_evidence
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_billio_hedge_fund_illiquidity_003
+  reason: Cushing storage scarcity rather than hedge-fund return autocorrelation or
+    marked-to-model smoothing
+  reason_code: coincidental_neighbor
+  state_id: state_billio_hedge_fund_illiquidity_003
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: Short-horizon equity recovery without a three-to-eight-year autocorrelation
+    reversal, variance ratios, or a measured transitory component
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: Negative crude settlement and physical storage pressure without NYSE aggregate
+    ILLIQ, its expected component, or an unexpected illiquidity shock
+  reason_code: coincidental_neighbor
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_hamilton_arch_volatility_clustering_004
+  reason: A single historic crude-price event without repeated squared-return dependence
+    or persistent GARCH conditional variance
+  reason_code: insufficient_evidence
+  state_id: state_hamilton_arch_volatility_clustering_004
+- entry_id: entry_cho_engle_underlying_spread_002
+  reason: WTI calendar-price separation without option bid-ask spreads, underlying
+    bid-ask costs, delta scaling, or derivative hedging
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_underlying_spread_002
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: April 2020 observations without January stock returns, effective trading
+    costs, tax-loss selling, or small-cap seasonality
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_nguyen_three_state_hmm_001
+  reason: Cross-asset directional moves without EWMM moment vectors, HMM state probabilities,
+    transition dynamics, or PESR behavior
+  reason_code: insufficient_evidence
+  state_id: state_nguyen_three_state_hmm_001
+- entry_id: entry_hasbrouck_return_premium_003
+  reason: Equity-index recovery without cross-sectional stock effective costs or subsequent-return
+    sorts
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_return_premium_003
+- entry_id: entry_cho_engle_volume_insignificant_001
+  reason: Oil contract mechanics and index-fund references without option volume,
+    option bid-ask spreads, moneyness, or maturity controls
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_volume_insignificant_001
+- entry_id: entry_ang_bekaert_regime_params_001
+  reason: Strong equity recovery without monthly world-equity mean and volatility
+    estimates or Hamilton-filter regime probabilities
+  reason_code: insufficient_evidence
+  state_id: state_ang_bekaert_regime_params_001
+- entry_id: entry_amihud_illiq_persistence_004
+  reason: Physical oil-storage tightness without a monthly NYSE ILLIQ series, AR(1)
+    persistence, or lagged illiquidity predictability
+  reason_code: coincidental_neighbor
+  state_id: state_amihud_illiq_persistence_004
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2020-04-21'
+    observation_horizon: immediate
+    timezone: America/New_York
+  asset_scope:
+  - May WTI crude
+  - June WTI crude
+  - S&P 500
+  - Nasdaq
+  narrative_summary: ''
+  normalized_features:
+  - contract mechanics
+  - cross-market response
+  - crude oil pricing
+  - equity momentum
+  - market expectations
+  - oil term structure
+  - physical storage
+  - technology equity performance
+  - uncertainty
+  observation_id: obs_2a9d0d9c9d2e
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- no_actionable_posture
+raw_input_hash: sha256:2a9d0d9c9d2e68601a7d407310363d01774454f5be055bba99c72748050617e2
+required_validations: []
+risk_posture:
+  confidence: well_supported
+  dominant_themes:
+  - WTI expiry dislocation
+  - physical storage scarcity
+  - contango mechanics
+  - equity resilience
+  - absent state coverage
+  posture_count: 1
+  postures:
+  - no_actionable_posture
+run_id: connector_run_3llr2795
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

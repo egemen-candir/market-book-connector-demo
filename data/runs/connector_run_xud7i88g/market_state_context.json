@@ -1,0 +1,159 @@
+{
+  "caveats": [],
+  "constraints": [],
+  "failure_modes": [],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "reason": "The record describes option spreads driven by underlying-asset spreads and delta-mediated hedging costs; the packet contains no options-liquidity behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_underlying_spread_002"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Utilities are only a category overlap; the packet does not evidence temporary pair divergence followed by convergence toward historical spreads.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "Premium equity valuations do not evidence the record's relationship between higher effective trading costs and higher subsequent stock returns.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_return_premium_003"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The record concerns hedge-fund return autocorrelation, smoothing, and latent illiquidity; none of those behaviors appears in the packet.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "Rising defensive equities and persistent flows do not evidence TSMOM lookback-horizon Sharpe behavior or diversified futures performance.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "Persistent investor flows are not the record's near-unit-root persistence in monthly aggregate NYSE illiquidity.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_illiq_persistence_004"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "Crowding fragility does not evidence an elevated bear-regime probability or higher international equity correlations.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The packet provides no three-to-eight-year negative return autocorrelation, horizon-dependent sign reversal, or transitory variance estimate.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The packet does not supply return-moment features, HMM state probabilities, or bull, bear, and high-volatility regime behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "Sector record highs do not evidence positive weekly return autocorrelation, elevated variance ratios, or the stated size gradient.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "reason": "Dividend-related valuation premiums do not evidence the record's positive cross-sectional relationship between expected ILLIQ and expected returns.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_crosssection_premium_002"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "The record requires principal-component comovement among financial institutions, while the packet describes nonfinancial defensive sectors without common-factor measurements.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "Crowding risk and uncertain durability do not evidence clustered return shocks, significant squared-return autocorrelation, or persistent GARCH parameters.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The packet contains no January seasonality, year-end effects, or seasonal concentration of an illiquidity premium.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "reason": "The record describes wider proportional spreads and execution behavior in out-of-the-money options; the packet contains neither moneyness nor options-spread evidence.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_moneyness_003"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "current market snapshot",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "ten-year US Treasuries",
+      "German government bonds",
+      "US equities",
+      "utilities",
+      "telecommunications",
+      "consumer staples"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "European sovereign yields",
+      "crowding risk",
+      "defensive-sector performance",
+      "equity valuation",
+      "equity-bond yield comparison",
+      "government bond yield",
+      "income-seeking flows",
+      "interest-rate environment",
+      "investor behavior",
+      "uncertainty",
+      "valuation pressure"
+    ],
+    "observation_id": "obs_d4360a47728f",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "no_actionable_posture"
+  ],
+  "raw_input_hash": "sha256:d4360a47728fb0679a0a6d00c0eb50c080afa96b981df534e54238ab80999a75",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "sovereign-yield compression",
+      "defensive-equity income demand",
+      "bond-proxy valuation crowding"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "no_actionable_posture"
+    ]
+  },
+  "run_id": "connector_run_xud7i88g",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

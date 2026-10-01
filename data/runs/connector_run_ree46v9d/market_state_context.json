@@ -1,0 +1,158 @@
+{
+  "caveats": [],
+  "constraints": [],
+  "failure_modes": [],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The rising S&P 500 is directionally compatible with a sustained trend, but this state requires TSMOM behavior across diversified multi-asset futures portfolios, which the packet's asset scope does not cover.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The record concerns temporary divergences and subsequent convergence within selected co-moving equity pairs, whereas the packet describes index momentum and weak market breadth without pair-spread behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "Equal-weight equities lagging the capitalization-weighted index does not evidence the state's positive weekly first-order autocorrelation or variance-ratio behavior; the weighting contrast is only surface resemblance.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The packet contains positive large-cap equity performance but no daily futures return moments, volatility classification, or HMM state probabilities for the commodity, currency, equity, and fixed-income futures scope described by the record.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "Strong first-half equity performance does not establish the state's positive sub-annual autocorrelation followed by negative autocorrelation over three-to-eight-year horizons.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The packet is dated July and reports no relationship between effective trading costs and subsequent returns; the record specifically describes an illiquidity premium concentrated in January.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "The record requires stocks with higher Gibbs effective trading costs to earn higher subsequent returns, while the packet contains neither effective-cost measurements nor illiquidity-sorted returns.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_return_premium_003"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The state is activated by elevated bear-regime probability and higher international equity correlation during downturns, while the packet reports rising equities, improving resilience, and receding recession expectations.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "reason": "The state describes wider proportional bid-ask spreads and full-spread execution in out-of-the-money options, but options are outside the packet's asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_moneyness_003"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The state concerns a U-shaped relationship between option bid-ask spreads and intraday option transaction rates, neither of which belongs to the packet's stated asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_market_conditions_004"
+    },
+    {
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "reason": "The record describes option-spread transmission from an underlying asset through delta hedging; the packet's narrowing credit spreads do not measure that options-market linkage.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_underlying_spread_002"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "Resilient banks and concentrated technology leadership do not evidence the state's required financial-sector return co-movement or a high variance share explained by the first principal component.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "The packet reports no monthly aggregate ILLIQ series, persistence coefficient, or slowly evolving market-illiquidity behavior required by the state.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_illiq_persistence_004"
+    },
+    {
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "reason": "Narrow mega-cap leadership does not evidence the record's cross-sectional relationship between expected ILLIQ and expected stock returns.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_crosssection_premium_002"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The state is specific to serial autocorrelation and return smoothing in hedge funds, an asset category absent from the packet's scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2023-07-31",
+      "observation_horizon": "mid-2023 through July 2023",
+      "timezone": "America/New_York"
+    },
+    "asset_scope": [
+      "U.S. large-cap equities",
+      "U.S. equal-weight equities",
+      "U.S. Treasury yields",
+      "U.S. credit spreads",
+      "U.S. macroeconomy"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "consumer inflation",
+      "credit conditions",
+      "economic resilience",
+      "equity leadership concentration",
+      "large-cap equity momentum",
+      "long-term interest rates",
+      "macroeconomic narrative",
+      "market breadth",
+      "market uncertainty",
+      "monetary policy"
+    ],
+    "observation_id": "obs_90676c942ce2",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "no_actionable_posture"
+  ],
+  "raw_input_hash": "sha256:90676c942ce2564cb079cc3aad9bf46c4aa6a31f236160b09a69974303f68d69",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "narrow equity leadership",
+      "weak market breadth",
+      "strong large-cap momentum",
+      "candidate mechanism mismatch"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "no_actionable_posture"
+    ]
+  },
+  "run_id": "connector_run_ree46v9d",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

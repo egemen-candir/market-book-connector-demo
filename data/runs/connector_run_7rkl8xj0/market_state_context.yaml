@@ -1,0 +1,188 @@
+caveats:
+- The packet evidences a sustained directional environment, but does not report TSMOM
+  signal returns, horizon Sharpe ratios, or futures-level performance.
+- Positive equity movement aligns with normal-regime return direction, but no filtered
+  regime probability or monthly realized-volatility estimate is supplied; VIX provides
+  only supporting context.
+- Persistently subdued volatility supports the depressed-volatility branch, but GARCH
+  parameters and squared-return autocorrelations are not supplied.
+- Positive equity behavior and subdued volatility align with the bull-state return
+  and volatility combination, but HMM probabilities, EWMM features, and instrument-level
+  futures results are absent.
+constraints:
+- 'low_confidence_match: entry_hurst_tsmom_trend_following_001'
+- 'low_confidence_match: entry_ang_bekaert_regime_params_001'
+- 'low_confidence_match: entry_hamilton_arch_volatility_clustering_004'
+- 'low_confidence_match: entry_nguyen_three_state_hmm_001'
+failure_modes:
+- weak_match:entry_hurst_tsmom_trend_following_001
+- weak_match:entry_ang_bekaert_regime_params_001
+- weak_match:entry_hamilton_arch_volatility_clustering_004
+- weak_match:entry_nguyen_three_state_hmm_001
+market_book_version: stage6_accepted
+matched_states:
+- citations:
+  - kind: policy_implication
+    record_id: policy_hurst_mf_regime_conditional_activity_004
+  entry_id: entry_hurst_tsmom_trend_following_001
+  evidence_caveats: The packet evidences a sustained directional environment, but
+    does not report TSMOM signal returns, horizon Sharpe ratios, or futures-level
+    performance.
+  failure_modes: []
+  match_strength: weak
+  matched_observations:
+  - 0
+  - 1
+  policy_posture: regime_dependent
+  state_id: state_hurst_tsmom_trend_following_001
+- citations:
+  - kind: observable_signature
+    record_id: signature_ang_bekaert_regime_params_001
+  entry_id: entry_ang_bekaert_regime_params_001
+  evidence_caveats: Positive equity movement aligns with normal-regime return direction,
+    but no filtered regime probability or monthly realized-volatility estimate is
+    supplied; VIX provides only supporting context.
+  failure_modes: []
+  match_strength: weak
+  matched_observations:
+  - 0
+  - 8
+  policy_posture: regime_dependent
+  state_id: state_ang_bekaert_regime_params_001
+- citations:
+  - kind: extracted_claim
+    record_id: claim_hamilton_arch_volatility_clustering_004
+  entry_id: entry_hamilton_arch_volatility_clustering_004
+  evidence_caveats: Persistently subdued volatility supports the depressed-volatility
+    branch, but GARCH parameters and squared-return autocorrelations are not supplied.
+  failure_modes: []
+  match_strength: weak
+  matched_observations:
+  - 8
+  policy_posture: regime_dependent
+  state_id: state_hamilton_arch_volatility_clustering_004
+- citations:
+  - kind: observable_signature
+    record_id: signature_nguyen_hmm_regime_states_001
+  entry_id: entry_nguyen_three_state_hmm_001
+  evidence_caveats: Positive equity behavior and subdued volatility align with the
+    bull-state return and volatility combination, but HMM probabilities, EWMM features,
+    and instrument-level futures results are absent.
+  failure_modes: []
+  match_strength: weak
+  matched_observations:
+  - 0
+  - 8
+  policy_posture: regime_dependent
+  state_id: state_nguyen_three_state_hmm_001
+missing_evidence: []
+non_matches:
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: The state describes an elevated-probability bear regime with higher volatility
+    and correlation, while the packet describes recovery, subdued volatility, and
+    unwinding bearish exposure.
+  reason_code: direction_discordant
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: Broad-index retracement does not evidence divergence and convergence of
+    identified equity-pair spreads within six-month windows.
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: The packet provides neither cross-market correlations nor a source-country
+    variance increase from which heteroscedasticity-induced correlation bias could
+    be identified.
+  reason_code: coincidental_neighbor
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_ang_2011_fat_tails_mixture_001
+  reason: No return-distribution evidence establishes excess kurtosis, negative skewness,
+    or a multi-regime Gaussian mixture process.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_fat_tails_mixture_001
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: A recent retracement does not establish the state's positive short-horizon
+    autocorrelation followed by negative autocorrelation over three-to-eight-year
+    horizons.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: Improving credit access and spread compression do not measure NYSE aggregate
+    ILLIQ or its expected and unexpected components.
+  reason_code: coincidental_neighbor
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_billio_hedge_fund_illiquidity_003
+  reason: The state concerns serially smoothed hedge-fund returns and marked-to-model
+    positions, whereas hedge funds are absent from the packet's asset scope.
+  reason_code: out_of_scope
+  state_id: state_billio_hedge_fund_illiquidity_003
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The packet is dated outside January and contains no cross-sectional relationship
+    between effective trading costs and subsequent stock returns.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_billio_financial_sector_comovement_001
+  reason: The packet supplies no principal-component variance share or common-factor
+    loadings across banks, broker-dealers, insurers, and hedge funds.
+  reason_code: insufficient_evidence
+  state_id: state_billio_financial_sector_comovement_001
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: Recurring demand after equity pullbacks describes short-horizon reversal
+    behavior, inconsistent with the state's positive weekly return autocorrelation.
+  reason_code: direction_discordant
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_amihud_illiq_persistence_004
+  reason: Rapid changes in credit issuance and spreads do not evidence slow, near-unit-root
+    persistence in monthly NYSE aggregate ILLIQ.
+  reason_code: coincidental_neighbor
+  state_id: state_amihud_illiq_persistence_004
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: recent weeks
+    timezone: UTC
+  asset_scope:
+  - S&P 500
+  - duration-sensitive assets
+  - investment-grade credit
+  - high-yield credit
+  - syndicated loans
+  - equity volatility
+  narrative_summary: ''
+  normalized_features:
+  - corporate earnings
+  - credit demand
+  - credit market access
+  - credit risk pricing
+  - equity recovery
+  - equity volatility
+  - investor positioning
+  - market participation
+  - market sentiment
+  - monetary policy backdrop
+  - risk rotation
+  observation_id: obs_8748faef9e66
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- regime_dependent
+raw_input_hash: sha256:8748faef9e6615a3f7e5e112c7171d8f2adc6a61d2f336ebb78b6a86aa6fe5d9
+required_validations: []
+risk_posture:
+  confidence: weakly_supported
+  dominant_themes:
+  - directional recovery
+  - subdued volatility
+  - regime classification
+  - improving credit conditions
+  posture_count: 1
+  postures:
+  - regime_dependent
+run_id: connector_run_7rkl8xj0
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

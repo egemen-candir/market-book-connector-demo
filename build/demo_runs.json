@@ -1,0 +1,259 @@
+{
+  "runs": [
+    {
+      "expect": null,
+      "id": "connector_run_psohqi7d",
+      "label": "01 · blob_01_china_deval_oil_crash"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_21uuqc46",
+      "label": "02 · blob_02_brexit_shock"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_04pqztmc",
+      "label": "03 · blob_03_us_election_whipsaw"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_1h494vrs",
+      "label": "04 · blob_04_volmageddon"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_qoy2loiz",
+      "label": "05 · blob_05_q4_2018_selloff"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_c_unf44c",
+      "label": "06 · blob_06_curve_inversion_scare"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_0rkzjjmt",
+      "label": "07 · blob_07_repo_spike"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_hr9ml9dq",
+      "label": "08 · blob_08_covid_crash"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_3llr2795",
+      "label": "09 · blob_09_negative_oil_equities"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_phqs_88c",
+      "label": "10 · blob_10_real_yield_tantrum"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_xtdoi30n",
+      "label": "11 · blob_11_evergrande_fear"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_gokwllsv",
+      "label": "12 · blob_12_growth_drawdown"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_5n2fgum4",
+      "label": "13 · blob_13_cpi_shock"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_oe9vfwyd",
+      "label": "14 · blob_14_gilt_ldi_crisis"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_zsangev1",
+      "label": "15 · blob_15_svb_bank_runs"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_6wnvr3xc",
+      "label": "16 · blob_16_tenyear_five_percent"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_vz22lb5b",
+      "label": "17 · blob_17_yen_carry_unwind"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_2kgwb5cd",
+      "label": "18 · blob_18_tariff_shock"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_in1z7dt5",
+      "label": "19 · blob_19_low_vol_grind"
+    },
+    {
+      "expect": null,
+      "id": "connector_run__twi2p9y",
+      "label": "20 · blob_20_january_melt_up"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_7rkl8xj0",
+      "label": "21 · blob_21_powell_pivot_recovery"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_fk9m9mb5",
+      "label": "22 · blob_22_summer_tech_rally"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_sltpsnc7",
+      "label": "23 · blob_23_spac_froth"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_ree46v9d",
+      "label": "24 · blob_24_soft_landing_rally"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_k9438_ak",
+      "label": "25 · blob_25_dovish_pivot_rally"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_6dypadoe",
+      "label": "26 · blob_26_ai_megacap_concentration"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_886fo95z",
+      "label": "27 · blob_27_record_high_low_vol"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_tdl_p48v",
+      "label": "28 · blob_28_post_brexit_lull"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_uol8ia52",
+      "label": "29 · blob_29_vaccine_value_rotation"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_boj9nrau",
+      "label": "30 · blob_30_meme_squeeze"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_qfbjuqjr",
+      "label": "31 · blob_31_reopening_rotation_churn"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_4ncxy_td",
+      "label": "32 · blob_32_tech_pullback_momentum"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_u0qyee8_",
+      "label": "33 · blob_33_energy_outperformance"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_f4jz2gr0",
+      "label": "34 · blob_34_zero_dte_intraday"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_4n_32iot",
+      "label": "35 · blob_35_small_cap_rotation"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_xud7i88g",
+      "label": "36 · blob_36_bond_proxy_rotation"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_13ot5m3c",
+      "label": "37 · blob_37_dollar_weakness_international"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_9j_sdr_6",
+      "label": "38 · blob_38_defensive_rotation"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_fvux4wyu",
+      "label": "39 · blob_39_bitcoin_mania"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_n88p3bly",
+      "label": "40 · blob_40_crypto_winter"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_9q9b4nku",
+      "label": "41 · blob_41_ftx_collapse"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_an_n2tdn",
+      "label": "42 · blob_42_lumber_squeeze"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_6_g4i8e0",
+      "label": "43 · blob_43_eu_natgas_crisis"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_13839qp5",
+      "label": "44 · blob_44_nickel_squeeze"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_3xhray2y",
+      "label": "45 · blob_45_argentina_peso_crisis"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_95kssngm",
+      "label": "46 · blob_46_turkish_lira_crisis"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_lkwpqy3l",
+      "label": "47 · blob_47_container_freight_boom"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_emsorq96",
+      "label": "48 · blob_48_panama_canal_shipping"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_cko99jya",
+      "label": "49 · blob_49_cocoa_explosion"
+    },
+    {
+      "expect": null,
+      "id": "connector_run_t7_xqlq2",
+      "label": "50 · blob_50_btp_spread_blowout"
+    },
+    {
+      "expect": null,
+      "id": "stdin_live_check",
+      "label": "Golden · risk_on_breadth_weak"
+    }
+  ]
+}

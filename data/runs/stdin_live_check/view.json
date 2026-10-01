@@ -1,0 +1,536 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [
+      "The packet evidences the divergence pattern the state describes -- mega-cap equities grinding higher while small-cap liquidity deteriorates, matching the state's small-cap-versus-large-cap illiquidity divergence. The packet supplies no ILLIQ or price-impact figures and no measured illiquidity premium (subsequent-return data), so the quantitative comparison and the premium component of the state remain unevidenced.",
+      "Three independent observations -- weakening market breadth, rising volatility, and rising cross-asset correlation -- converge on the same named behavior this state describes: correlation elevation consistent with an elevated bear-regime probability. The packet does not supply the 20-percentage-point magnitude, does not confirm the international-equity framing specifically, and mega-cap equities are still rising rather than declining, which is atypical for a fully realized bear regime, so this reads as early-stage regime stress rather than a confirmed bear state."
+    ],
+    "constraints": [
+      "low_confidence_match: entry_amihud_size_interaction_005"
+    ],
+    "failure_modes": [
+      "weak_match:entry_amihud_size_interaction_005"
+    ],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "regime_dependent",
+      "risk_off_monitoring"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "partially_supported",
+      "dominant_themes": [
+        "cross-asset correlation elevation",
+        "small-cap versus large-cap liquidity divergence",
+        "early-stage regime stress signals"
+      ],
+      "posture_count": 2,
+      "postures": [
+        "regime_dependent",
+        "risk_off_monitoring"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-09-29",
+      "observation_horizon": "current_session",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "mega-cap equities",
+      "small-cap equities",
+      "cross-asset correlation"
+    ],
+    "raw_text": "# Market observation\n\nMega-cap equities are still grinding higher, but market breadth is weakening.\nVolatility is picking up, cross-asset correlations are rising, and small-cap\nliquidity feels poor. No direct transaction-cost or credit-spread measurements\nare available for this observation.\n",
+    "summary": "Mega-cap equities continue to grind higher even as market breadth weakens, volatility picks up, cross-asset correlations rise, and small-cap liquidity feels poor. No direct transaction-cost or credit-spread measurements are available for this observation."
+  },
+  "interpretation": {
+    "confidence": "partially_supported",
+    "dominant_themes": [
+      "cross-asset correlation elevation",
+      "small-cap versus large-cap liquidity divergence",
+      "early-stage regime stress signals"
+    ],
+    "summary": "Two candidate states are weakly to moderately supported. Mega-cap strength alongside deteriorating small-cap liquidity partially instantiates the Amihud size-stratified illiquidity divergence, though its premium component is unevidenced. Rising cross-asset correlation together with weakening breadth and rising volatility partially instantiates the Ang-Bekaert bear-regime correlation pattern, though mega-cap equities are still rising rather than declining, which tempers that reading. The remaining thirteen candidates either require evidence types this packet does not supply, such as return-series, network-causality, or transaction-cost data, or were retrieved on shared vocabulary without a genuine dimension fit."
+  },
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_amihud_size_interaction_005",
+          "text": "The illiquidity premium in Fama-MacBeth regressions is larger for small-cap stocks than for large-cap stocks. Observables include size-sorted ILLIQ levels and the differential in illiquidity premium coefficients across size deciles, confirming that small firms are disproportionately exposed to the size-stratified illiquidity premium state. size_sorted_illiq_levels; illiq_premium_by_size_decile; fama_macbeth_illiq_coefficient The size-ILLIQ interaction is observable through the cross-section of ILLIQ levels by market cap decile and the differential premium coefficients across size groups."
+        }
+      ],
+      "entry_id": "entry_amihud_size_interaction_005",
+      "evidence_caveats": "The packet evidences the divergence pattern the state describes -- mega-cap equities grinding higher while small-cap liquidity deteriorates, matching the state's small-cap-versus-large-cap illiquidity divergence. The packet supplies no ILLIQ or price-impact figures and no measured illiquidity premium (subsequent-return data), so the quantitative comparison and the premium component of the state remain unevidenced.",
+      "failure_modes": [],
+      "match_strength": "weak",
+      "matched_observations": [
+        {
+          "dimension": "large-cap equity performance",
+          "direction": "rising",
+          "index": 0,
+          "statement": "Mega-cap equities are still grinding higher"
+        },
+        {
+          "dimension": "market liquidity",
+          "direction": "deteriorating",
+          "index": 4,
+          "statement": "Small-cap liquidity feels poor"
+        }
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_amihud_size_interaction_005",
+      "state_summary": "A market condition in which the cross-sectional illiquidity premium is heterogeneous by firm size: small-cap stocks exhibit greater price impact, higher ILLIQ, and earn disproportionately larger illiquidity premia relative to large-cap stocks. Documented in Fama-MacBeth regressions on NYSE stocks sorted by market capitalization. The state captures the interaction between illiquidity risk and the size dimension of the equity cross-section.\n",
+      "title": "Size-Stratified Illiquidity Premium State"
+    },
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_ang_bekaert_bear_correlation_002",
+          "text": "International equity return correlations approximately 20 percentage points higher during identified bear regime periods versus normal regime periods. Measured as the difference in regime-conditional correlation estimates from a two-state Markov-switching model: corr_bear - corr_normal ≈ +0.20. Observable in rolling correlation estimates that co-move with the Hamilton filter's bear-regime probability: when bear probability is high, realized rolling correlations across international equity pairs are systematically elevated. This pattern confirms diversification benefit collapse during downturns. regime_conditional_correlation_bear; regime_conditional_correlation_normal; bear_minus_normal_correlation_diff; rolling_correlation_vs_regime_probability Empirically documented in Ang-Bekaert (2004) Tables 2-3. The ~20pp correlation differential is the key observable linking regime identification to portfolio diversification failure. Rolling 12-month international equity correlations serve as a real-time proxy observable for this signature."
+        },
+        {
+          "kind": "extracted_claim",
+          "record_id": "claim_ang_bekaert_bear_correlation_002",
+          "text": "International equity return correlations are approximately 20 percentage points higher in the bear regime than in the normal regime, demonstrating systematic correlation asymmetry. Diversification benefits are reduced precisely when they are most needed—during bear markets. Tables 2 and 3, p.5-6. Regime-conditional correlation estimates from the two-state Markov-switching model. The pattern is documented across multiple international equity market pairs."
+        }
+      ],
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "evidence_caveats": "Three independent observations -- weakening market breadth, rising volatility, and rising cross-asset correlation -- converge on the same named behavior this state describes: correlation elevation consistent with an elevated bear-regime probability. The packet does not supply the 20-percentage-point magnitude, does not confirm the international-equity framing specifically, and mega-cap equities are still rising rather than declining, which is atypical for a fully realized bear regime, so this reads as early-stage regime stress rather than a confirmed bear state.",
+      "failure_modes": [],
+      "match_strength": "moderate",
+      "matched_observations": [
+        {
+          "dimension": "market breadth",
+          "direction": "weakening",
+          "index": 1,
+          "statement": "Market breadth is weakening"
+        },
+        {
+          "dimension": "volatility",
+          "direction": "rising",
+          "index": 2,
+          "statement": "Volatility is picking up"
+        },
+        {
+          "dimension": "cross-asset correlation",
+          "direction": "rising",
+          "index": 3,
+          "statement": "Cross-asset correlations are rising"
+        }
+      ],
+      "policy_posture": "risk_off_monitoring",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "state_summary": "A market condition in which international equity return correlations are approximately 20 percentage points higher during the bear regime than during the normal regime. The elevated correlation reduces diversification benefits precisely when they are most needed—during market downturns. This regime-conditional correlation asymmetry is identified by a two-state Markov-switching model on world equity index data (Ang and Bekaert 2004, Tables 2-3). The state is active whenever the filtered bear-regime probability is elevated.\n",
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    }
+  ],
+  "meta": {
+    "backend": "claude_code_sonnet",
+    "backend_profiles": {
+      "market_book_evaluator": "claude_code_sonnet",
+      "observation_packet_builder": "claude_code_sonnet"
+    },
+    "created_at_utc": "2026-09-29T00:29:25Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:57e0de2b5e1216f8e3fe8d5885ebb5d64d6c64b5981cb99f73ba466cd615f2fa"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "policy_cho_engle_underlying_spread_002",
+        "text_snippet": "feature_selection When modeling option bid-ask spreads, include the underlying asset's bid-ask spread as a feature, ideally scaled by option delta to reflect…"
+      },
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "retrieval_score": 0.829358,
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_billio_pc1_variance_share_001",
+        "text_snippet": "The share of total return variance explained by the first principal component (PC1) across U.S. financial sector monthly returns (banks, broker-dealers,…"
+      },
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "retrieval_score": 0.827016,
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "closest_on": {
+        "record_id": "state_cho_engle_moneyness_003",
+        "text_snippet": "A structural market condition in which out-of-the-money (OTM) options carry wider proportional bid-ask spreads than at-the-money (ATM) options, reflecting…"
+      },
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "retrieval_score": 0.826336,
+      "state_id": "state_cho_engle_moneyness_003",
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    },
+    {
+      "closest_on": {
+        "record_id": "failure_cho_engle_market_conditions_004",
+        "text_snippet": "Models that assume a monotonic relationship between trading activity and option bid-ask spreads fail to capture the non-monotonic (U-shaped) pattern observed…"
+      },
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "retrieval_score": 0.824924,
+      "state_id": "state_cho_engle_market_conditions_004",
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_nguyen_hmm_regime_switching_001",
+        "text_snippet": "regime_switch Use EWMM features (first and second moments of daily returns with span=30) as inputs to a three-state HMM for real-time regime identification…"
+      },
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "retrieval_score": 0.820265,
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    }
+  ],
+  "no_match_rationale": null,
+  "non_matches": [
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "This state's behavior is a specific measurement artifact -- correlation computed during elevated source-country variance without a heteroscedasticity correction, overstating true correlation by a defined factor, with near-zero true contagion after correction across 28 countries. The packet reports rising volatility and rising cross-asset correlation as plain facts, not as evidence about how correlations were computed, whether a correction was applied, or which market is the variance source. Only the vocabulary (variance, correlation) is shared; the bias mechanism and its correction outcome are unevidenced.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_forbes_bias_correction_001",
+          "text_snippet": "confidence_calibration Always compute the relative source-country variance increase (delta = sigma^2_high / sigma^2_low - 1) when measuring cross-market…"
+        },
+        {
+          "record_id": "signature_forbes_unadjusted_correlation_bias_001",
+          "text_snippet": "The positive upward bias in unadjusted conditional cross-market correlations computed during high-volatility crisis periods relative to the true unconditional…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "This state describes time-series momentum performance in diversified multi-asset futures portfolios -- horizon-dependent Sharpe ratios, a trending-versus-choppy smile pattern, and CTA fee drag. The packet contains no futures trend-signal, Sharpe, or fee data; retrieval appears driven by shared trend and volatility vocabulary rather than a real dimension fit.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hurst_tsmom_diversified_001",
+          "text_snippet": "model_weighting When the multi-asset trend following state is classified as active, emphasize: (1) diversified TSMOM signals across all available asset classes…"
+        },
+        {
+          "record_id": "signature_hurst_tsmom_horizon_sharpe_001",
+          "text_snippet": "Observable monotone gradient of individual-asset Sharpe ratios with time-series momentum look-back horizon, combined with a large diversification benefit in a…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_taq_correlation_002",
+      "reason": "This state validates the Gibbs estimator as a proxy for TAQ effective spreads via a rank correlation statistic -- a measurement-methodology finding, not a market condition. The packet explicitly notes no direct transaction-cost measurements are available, and retrieval here appears driven by the shared word correlation rather than any real dimension fit.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_taq_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hasbrouck_taq_correlation_002",
+          "text_snippet": "The cross-sectional rank correlation between annual Gibbs effective cost estimates and TAQ-derived intraday effective spread estimates across NYSE-listed…"
+        },
+        {
+          "record_id": "state_hasbrouck_taq_correlation_002",
+          "text_snippet": "A structural property of the Gibbs-based effective cost estimator: when cross-sectionally compared against TAQ-derived intraday effective spread benchmarks…"
+        }
+      ],
+      "title": "Gibbs Estimator Validated as TAQ-Equivalent Effective Cost Proxy"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "This state is about serial autocorrelation in reported hedge fund returns as a marker of return smoothing over illiquid positions, a fund-reporting-behavior finding. The packet has no hedge fund return-series data; the topical overlap is limited to the general word liquidity.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_hedge_fund_autocorr_001",
+          "text_snippet": "Elevated first-order serial autocorrelation in hedge fund monthly returns (rho1=0.22), substantially above levels observed in banks (rho1=0.02), broker-dealers…"
+        },
+        {
+          "record_id": "failure_billio_hedge_fund_autocorr_proxy_001",
+          "text_snippet": "Return autocorrelation as a proxy for hedge fund position illiquidity conflates two distinct sources of serial persistence: (1) stale or infrequent pricing of…"
+        }
+      ],
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "This state's core claim is a cross-sectional return premium -- stocks with higher effective trading costs earn systematically higher subsequent returns. The packet supplies no subsequent-return data tied to trading costs for any stock group; a qualitative liquidity observation cannot stand in for a measured return premium.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_return_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hasbrouck_return_premium_003",
+          "text_snippet": "A positive return spread across portfolios sorted by annual Gibbs effective cost estimates: stocks in higher-cost deciles earn higher subsequent returns than…"
+        },
+        {
+          "record_id": "policy_hasbrouck_return_premium_003",
+          "text_snippet": "model_weighting Gibbs effective cost decile rank should be included as a positive return predictor in the cross-section. Stocks in higher effective cost…"
+        }
+      ],
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "This state's behavior is a measured weekly return autocorrelation and variance-ratio profile that increases as market capitalization decreases. The packet contains no return-autocorrelation or variance-ratio data; only a general size-and-liquidity topical overlap is present via the small-cap liquidity observation.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_lo_mackinlay_size_tilting_003",
+          "text_snippet": "position_sizing Size-based position sizing should reflect the empirically documented autocorrelation gradient: short-horizon return predictability is strongest…"
+        },
+        {
+          "record_id": "failure_lo_mackinlay_size_gradient_liquidity_003",
+          "text_snippet": "The size-autocorrelation gradient documented by Lo and MacKinlay (1988)—with the smallest market-cap quintile exhibiting ρ(1) ≈ 0.42 versus ρ(1) ≈ 0.14 for the…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "This state describes pairs-trading spread convergence economics -- formation-period sector pairs, specific excess-return and Sharpe figures, and a transaction-cost gate. The packet has no pairs-spread or convergence data, and explicitly states no direct transaction-cost measurements are available, so the transaction-cost-gate retrieval reason has no real dimension fit here.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_gatev_pairs_transaction_cost_gate_003",
+          "text_snippet": "risk_control Transaction cost gatekeeping features must be evaluated before classifying the pairs mean reversion state as actionable. Key features: (1)…"
+        },
+        {
+          "record_id": "policy_gatev_pairs_mean_reversion_001",
+          "text_snippet": "feature_selection When the cross-sectional pairs mean reversion state is classified as active, emphasize features capturing: (1) normalized price spread…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "reason": "This state's core claim is a Fama-MacBeth cross-sectional return premium on expected ILLIQ. The packet has no expected-return or regression-coefficient evidence for any stock group; a general liquidity observation does not evidence a measured return premium, the same deficit that rejects the other illiquidity-premium candidates in this set.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_crosssection_premium_002",
+      "surfaced_by": [
+        {
+          "record_id": "claim_amihud_crosssection_premium_002",
+          "text_snippet": "In monthly Fama-MacBeth cross-sectional regressions, expected stock returns are positively related to expected illiquidity: the ILLIQ coefficient is 0.162…"
+        },
+        {
+          "record_id": "signature_amihud_crosssection_premium_002",
+          "text_snippet": "In monthly Fama-MacBeth regressions, the ILLIQ coefficient on expected stock returns is 0.162 (t=6.55) after controlling for size, past returns, and dividend…"
+        }
+      ],
+      "title": "Cross-Sectional Illiquidity Premium State"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "This state describes a 3-8 year horizon serial-correlation flip in equity index returns, a multi-year statistical property. A single current-session snapshot cannot evidence a multi-year autocorrelation pattern; the retrieval reflects shared mean-reversion vocabulary, not a real dimension fit.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_poterba_summers_cross_market_confirmation_003",
+          "text_snippet": "Observable cross-market corroboration of the long-horizon mean reversion state across 17 international equity markets, providing a breadth-based signature that…"
+        },
+        {
+          "record_id": "signature_poterba_summers_horizon_autocorr_flip_001",
+          "text_snippet": "Observable sign reversal in equity return serial correlation as the measurement horizon extends from sub-annual to multi-year, providing the primary empirical…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "This state shares the regime-switching correlation family with the accepted Ang-Bekaert bear-correlation match but makes a more specific claim -- that joint left-tail co-movement exceeds joint right-tail co-movement under quantile-conditional testing. The packet's rising cross-asset correlation evidences general correlation elevation, not the tail-asymmetry comparison this candidate specifically requires, so this sibling does not itself clear the gate.",
+      "reason_code": "family_sibling_rejected",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "model_selection Include exceedance correlation asymmetry (left-tail minus right-tail exceedance correlation) as a model validation diagnostic when evaluating…"
+        },
+        {
+          "record_id": "signature_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "Exceedance correlation asymmetry: the conditional correlation between two assets given both returns simultaneously fall below the q-th quantile (left-tail…"
+        }
+      ],
+      "title": "Regime-Conditional Tail Correlation Asymmetry State"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "This state's claim is a near-unit-root AR(1) persistence coefficient for aggregate market illiquidity over time. The packet is a single-session snapshot with no time-series illiquidity data, so the persistence property cannot be evidenced, the same time-series deficit that rejects the other liquidity-statistic candidates in this set.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_illiq_persistence_004",
+      "surfaced_by": [
+        {
+          "record_id": "gloss_state_amihud_illiq_persistence_004",
+          "text_snippet": null
+        },
+        {
+          "record_id": "signature_amihud_illiq_persistence_004",
+          "text_snippet": "Monthly NYSE aggregate ILLIQ fitted by AR(1) yields coefficient 0.945 with R²=0.89. These statistics signal that aggregate market illiquidity is in a…"
+        }
+      ],
+      "title": "Aggregate Illiquidity Persistence State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "This state's activation condition is seasonal -- the illiquidity return premium is concentrated in January and substantially weaker or absent otherwise. The packet's as-of date is September 2026, outside the state's active window, and no return-premium data is supplied regardless of season.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hasbrouck_january_effect_004",
+          "text_snippet": "activity_suppression Condition the illiquidity return premium feature on calendar month. In January, the illiquidity premium feature may be included at full…"
+        },
+        {
+          "record_id": "claim_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional relationship between effective trading costs and stock returns is concentrated in January. Outside of January, the illiquidity premium in…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "This state's behavior is a growing density of Granger-causal predictive links among financial-sector institutions, measured via monthly causality tests on institution-level return series 1994-2008. The packet has no institution-level or network-causality data; the topical overlap with rising correlation and systemic themes does not amount to a real dimension fit.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_granger_network_density_001",
+          "text_snippet": "The density and directionality of Granger-causal links among return series of U.S. financial sector institutions (approximately 100 per sector across hedge…"
+        },
+        {
+          "record_id": "state_billio_granger_systemic_buildup_002",
+          "text_snippet": "A market condition characterized by a growing density of Granger-causal predictive relationships among return series of financial sector institutions (hedge…"
+        }
+      ],
+      "title": "Systemic Risk Network Buildup State"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "large-cap equity performance",
+      "direction": "rising",
+      "index": 0,
+      "magnitude": "mild",
+      "statement": "Mega-cap equities are still grinding higher"
+    },
+    {
+      "dimension": "market breadth",
+      "direction": "weakening",
+      "index": 1,
+      "magnitude": null,
+      "statement": "Market breadth is weakening"
+    },
+    {
+      "dimension": "volatility",
+      "direction": "rising",
+      "index": 2,
+      "magnitude": null,
+      "statement": "Volatility is picking up"
+    },
+    {
+      "dimension": "cross-asset correlation",
+      "direction": "rising",
+      "index": 3,
+      "magnitude": null,
+      "statement": "Cross-asset correlations are rising"
+    },
+    {
+      "dimension": "market liquidity",
+      "direction": "deteriorating",
+      "index": 4,
+      "magnitude": null,
+      "statement": "Small-cap liquidity feels poor"
+    },
+    {
+      "dimension": "uncertainty",
+      "direction": "unclear",
+      "index": 5,
+      "magnitude": null,
+      "statement": "No direct transaction-cost or credit-spread measurements are available for this observation"
+    }
+  ],
+  "outcome": "matched",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/stdin_live_check/market_state_context.json",
+      "context_yaml": "data/runs/stdin_live_check/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "stdin_live_check",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

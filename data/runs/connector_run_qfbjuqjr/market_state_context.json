@@ -1,0 +1,184 @@
+{
+  "caveats": [
+    "The packet evidences the trendless, rapidly reversing activation environment and weakening factor response described by the state. It does not measure multi-asset futures returns, horizon-specific Sharpe ratios, or volatility-targeted performance, so support is limited to the regime-conditional impairment channel."
+  ],
+  "constraints": [
+    "low_confidence_match: entry_hurst_tsmom_trend_following_001"
+  ],
+  "failure_modes": [
+    "short-horizon underperformance",
+    "signal-horizon lag",
+    "weak_match:entry_hurst_tsmom_trend_following_001"
+  ],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "policy_implication",
+          "record_id": "policy_hurst_mf_regime_conditional_activity_004"
+        },
+        {
+          "kind": "failure_pattern",
+          "record_id": "failure_hurst_mf_short_horizon_underperformance_001"
+        }
+      ],
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "evidence_caveats": "The packet evidences the trendless, rapidly reversing activation environment and weakening factor response described by the state. It does not measure multi-asset futures returns, horizon-specific Sharpe ratios, or volatility-targeted performance, so support is limited to the regime-conditional impairment channel.",
+      "failure_modes": [
+        "short-horizon underperformance",
+        "signal-horizon lag"
+      ],
+      "match_strength": "weak",
+      "matched_observations": [
+        0,
+        2,
+        3,
+        4,
+        7
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    }
+  ],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The packet does not evidence the state's return and variance moments, classified bull, bear, or high-volatility behavior, or HMM state probabilities.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "At the packet's week-to-week horizon, rapid reversals and weak persistence conflict with the state's positive subannual serial correlation.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The state concerns corrected cross-country crisis correlations, while the packet is confined to domestic U.S. equities and the U.S. Treasury yield.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Leadership rotation between broad equity groups does not evidence temporary spread divergence and subsequent convergence among identified co-moving stock pairs.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "Heavy activity with stagnant breadth does not evidence aggregate ILLIQ, its expected component, or the price effect of an unexpected illiquidity shock.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The state requires bear-regime correlation among international equity markets, while the packet covers domestic U.S. leadership and supplies no international-market observations.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The state concerns option bid-ask spreads under intraday option-transaction regimes, while the packet contains no options-market scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_market_conditions_004"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "Frequent leadership reversals and elevated activity do not evidence clustered return shocks, persistent conditional variance, or significant squared-return autocorrelation.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "The state describes significant positive weekly return autocorrelation, whereas the packet describes alternating leadership, weak persistence, and rapidly reversing signals.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The September packet supplies neither January seasonality nor a measured relationship between effective trading costs and future stock returns.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "reason": "The packet does not measure expected stock-level ILLIQ or a positive cross-sectional relationship between illiquidity and future returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_crosssection_premium_002"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "Alternating broad-group leadership does not evidence a dominant common factor across financial institutions or a high first-principal-component variance share.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "The packet provides no return-distribution measurements, Gaussian regime components, excess kurtosis, or negative skewness.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_fat_tails_mixture_001"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "The packet does not measure joint left-tail and right-tail co-movement or supply regime-switching correlation estimates.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-09-01",
+      "observation_horizon": "week-to-week",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "U.S. equities",
+      "U.S. ten-year Treasury yield"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "behavioral risk",
+      "growth uncertainty",
+      "interest-rate backdrop",
+      "market breadth",
+      "market churn",
+      "momentum reliability",
+      "risk management sentiment",
+      "sector leadership"
+    ],
+    "observation_id": "obs_da052cde2542",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "regime_dependent"
+  ],
+  "raw_input_hash": "sha256:da052cde2542ebc37b064abd642438b9ffac2271b266060fefd6ecf2513abd0f",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "weakly_supported",
+    "dominant_themes": [
+      "choppy leadership rotation",
+      "weakening momentum persistence",
+      "directionless broad equities",
+      "unverified model diagnostics"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "regime_dependent"
+    ]
+  },
+  "run_id": "connector_run_qfbjuqjr",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

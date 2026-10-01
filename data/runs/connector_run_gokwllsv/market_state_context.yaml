@@ -1,0 +1,144 @@
+caveats: []
+constraints: []
+failure_modes: []
+market_book_version: stage6_accepted
+matched_states: []
+missing_evidence: []
+non_matches:
+- entry_id: entry_hamilton_arch_volatility_clustering_004
+  reason: Subdued volatility during an orderly decline does not establish repeated
+    clustering of return magnitudes, significant squared-return autocorrelation, or
+    large GARCH persistence parameters.
+  reason_code: insufficient_evidence
+  state_id: state_hamilton_arch_volatility_clustering_004
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: The record concerns time-series-momentum performance across diversified
+    multi-asset futures portfolios, while the packet describes U.S. cash equities
+    and Treasury yields without futures-signal returns or horizon Sharpe behavior.
+  reason_code: out_of_scope
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: A recent persistent decline and uncertain stabilization do not establish
+    the state's reversal from positive subannual autocorrelation to negative serial
+    correlation over three-to-eight-year horizons.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: The state describes elevated correlations among international equity markets
+    during a filtered bear regime, whereas the packet covers U.S. technology and growth
+    segments without international correlation observations.
+  reason_code: out_of_scope
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_cho_engle_volume_insignificant_001
+  reason: The state concerns the statistical relationship between option volume and
+    option bid-ask spreads after structural controls. Options and option-spread measurements
+    are outside the packet's scope.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_volume_insignificant_001
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: Broad market selling and uncertain stabilization do not evidence selected
+    equity-pair divergences beyond two standard deviations or subsequent convergence
+    toward historical spreads.
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_ang_2011_fat_tails_mixture_001
+  reason: An orderly decline without extreme volatility supplies no unconditional
+    excess-kurtosis estimate, negative-skewness measurement, or evidence that returns
+    follow a multi-regime Gaussian mixture.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_fat_tails_mixture_001
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: Selling liquid winners to raise cash suggests liquidity pressure, but it
+    does not measure aggregate NYSE ILLIQ, separate expected from unexpected illiquidity,
+    or establish either specified return relationship.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: A persistent decline does not establish significant positive weekly first-order
+    autocorrelation, a variance ratio above one, or the stated capitalization-conditioned
+    autocorrelation gradient.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The packet is dated in August and supplies no January-conditioned relationship
+    between effective trading costs and subsequent stock returns.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_ang_2011_exceedance_asymmetry_003
+  reason: Broadening weakness does not establish that lower-tail joint-exceedance
+    correlation exceeds upper-tail correlation, and no separate bear-regime correlation
+    parameters are supplied.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_exceedance_asymmetry_003
+- entry_id: entry_amihud_illiq_persistence_004
+  reason: A contemporaneous liquidity-pressure observation does not establish monthly
+    persistence in aggregate NYSE ILLIQ, a near-unit-root autoregressive coefficient,
+    or the stated explanatory fit.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_illiq_persistence_004
+- entry_id: entry_billio_financial_sector_comovement_001
+  reason: The state requires common-factor co-movement among banks, broker-dealers,
+    insurers, and hedge funds, while the packet's equity observations concern technology
+    and megacap growth companies.
+  reason_code: out_of_scope
+  state_id: state_billio_financial_sector_comovement_001
+- entry_id: entry_ang_bekaert_regime_params_001
+  reason: The packet combines persistent equity weakness with subdued volatility,
+    while the candidate's bear regime is characterized by volatility approximately
+    eighty percent above the normal regime; the observed return-volatility direction
+    is inconsistent with that bear specification.
+  reason_code: direction_discordant
+  state_id: state_ang_bekaert_regime_params_001
+- entry_id: entry_nguyen_three_state_hmm_001
+  reason: The packet reports negative equity direction with subdued volatility, while
+    the model's bear state requires elevated volatility and its high-volatility state
+    requires extreme variance; the bull state requires positive returns.
+  reason_code: direction_discordant
+  state_id: state_nguyen_three_state_hmm_001
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: recent months through the current week
+    timezone: America/New_York
+  asset_scope:
+  - U.S. equities
+  - unprofitable technology companies
+  - megacap growth companies
+  - two-year U.S. Treasury yields
+  - equity volatility
+  narrative_summary: ''
+  normalized_features:
+  - liquidity pressure
+  - market breadth
+  - market participation
+  - market stress
+  - outlook uncertainty
+  - price structure
+  - rate sensitivity
+  - short-term interest rates
+  observation_id: obs_e1ad9e3405e7
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- no_actionable_posture
+raw_input_hash: sha256:e1ad9e3405e75723b64b7e0c3760e0314897f0a4d2a9ad3434d6442892567574
+required_validations: []
+risk_posture:
+  confidence: well_supported
+  dominant_themes:
+  - scope-mismatched regime models
+  - orderly equity deterioration
+  - unmeasured liquidity behavior
+  - absent dependence statistics
+  posture_count: 1
+  postures:
+  - no_actionable_posture
+run_id: connector_run_gokwllsv
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

@@ -1,0 +1,150 @@
+caveats: []
+constraints: []
+failure_modes: []
+market_book_version: stage6_accepted
+matched_states: []
+missing_evidence: []
+non_matches:
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: The state describes elevated international equity correlation during a bear
+    regime and market downturns. The packet instead reports pronounced international,
+    European, and Japanese equity strength relative to the S&P 500, which is inconsistent
+    with the downturn direction that activates this state.
+  reason_code: direction_discordant
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_cho_engle_volume_insignificant_001
+  reason: The state concerns the statistical insignificance of option volume for option
+    bid-ask spreads after liquidity controls. The packet contains no option-volume
+    or option-spread observations and describes a different market mechanism.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_volume_insignificant_001
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: The state is defined by risk-adjusted performance of time-series momentum
+    signals in diversified futures portfolios. The packet reports movements in a dollar
+    index and regional equity markets rather than futures-portfolio signal returns.
+  reason_code: out_of_scope
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_cho_engle_underlying_spread_002
+  reason: The state describes option spreads being driven by delta-scaled hedging
+    costs in the underlying asset. Dollar weakness and international equity leadership
+    do not evidence this derivative-liquidity linkage.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_underlying_spread_002
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: The state requires measured cross-market correlations during elevated source-country
+    variance and a heteroscedasticity correction. The packet supplies neither correlation
+    behavior nor variance changes from which the stated bias could be assessed.
+  reason_code: insufficient_evidence
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: The state requires a change from positive short-horizon serial correlation
+    to negative serial correlation over three-to-eight-year horizons. Current year-to-date
+    regional performance supplies no multi-horizon autocorrelation or transitory-variance
+    evidence.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: The state requires pair-level price spreads that diverge and subsequently
+    converge within six-month windows. The sector and market ranking in the packet
+    is only categorical resemblance and does not evidence pair-spread behavior.
+  reason_code: insufficient_evidence
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_billio_granger_systemic_buildup_002
+  reason: The state is identified by increasing density and strength of Granger-causal
+    links among financial institutions. Strength in European banks does not evidence
+    predictive network-link buildup across banks, insurers, brokers, and hedge funds.
+  reason_code: insufficient_evidence
+  state_id: state_billio_granger_systemic_buildup_002
+- entry_id: entry_ang_bekaert_regime_params_001
+  reason: The state requires estimated world-equity mean, volatility, transition probabilities,
+    and filtered regime probabilities. The packet reports relative market performance
+    but none of those regime measurements.
+  reason_code: insufficient_evidence
+  state_id: state_ang_bekaert_regime_params_001
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: The state requires weekly variance ratios and positive first-order autocorrelation,
+    including a market-capitalization gradient. The packet supplies directional performance
+    only and no weekly predictability statistics.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_cho_engle_moneyness_003
+  reason: The state concerns wider proportional spreads and reduced price improvement
+    in out-of-the-money options. The packet contains no option moneyness, quoted-spread,
+    or execution-cost evidence.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_moneyness_003
+- entry_id: entry_hasbrouck_taq_correlation_002
+  reason: The state describes rank correlation between Gibbs effective-cost estimates
+    and TAQ spread benchmarks. It is an estimator-validation property unrelated to
+    regional equity leadership or cross-border fund flows.
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_taq_correlation_002
+- entry_id: entry_hasbrouck_return_premium_003
+  reason: The state requires stocks sorted by measured effective trading costs to
+    show higher subsequent returns for less-liquid names. Regional outperformance
+    and valuation relief supply neither cost measurements nor the required liquidity-sorted
+    return behavior.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_return_premium_003
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The state requires an illiquidity return premium concentrated specifically
+    in January. A year-to-date comparison beginning in January does not evidence seasonal
+    concentration, effective trading costs, or liquidity-sorted future returns.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_cho_engle_market_conditions_004
+  reason: The state describes a U-shaped relationship between option transaction rates
+    and option bid-ask spreads. The packet reports neither option-market activity
+    nor spread widening in fast and slow trading regimes.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_market_conditions_004
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: year-to-date with emphasis on the first half
+    timezone: UTC
+  asset_scope:
+  - US dollar index
+  - S&P 500
+  - US mega-cap equities
+  - international equities
+  - European banks
+  - European defense equities
+  - DAX
+  - Japanese equities
+  narrative_summary: ''
+  normalized_features:
+  - European sector performance
+  - cross-border fund flows
+  - currency trend
+  - currency-adjusted equity performance
+  - equity index leadership
+  - investor consensus
+  - performance drivers
+  - regional equity leadership
+  observation_id: obs_af4e7bc9caa1
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- no_actionable_posture
+raw_input_hash: sha256:af4e7bc9caa1df5da322726c1362c76c63bed751bdb81b45c8df96ba9a00abf9
+required_validations: []
+risk_posture:
+  confidence: unsupported
+  dominant_themes:
+  - dollar weakness
+  - non-US equity leadership
+  - cross-border fund flows
+  - surface-only retrieval overlap
+  posture_count: 1
+  postures:
+  - no_actionable_posture
+run_id: connector_run_13ot5m3c
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

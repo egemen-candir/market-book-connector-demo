@@ -1,0 +1,511 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "well_supported",
+      "dominant_themes": [
+        "maritime capacity constraints",
+        "route disruption",
+        "transit delays",
+        "freight cost escalation"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "well into the following year",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "container shipping",
+      "Panama Canal transits",
+      "Red Sea and Suez routes",
+      "Asia-Europe freight"
+    ],
+    "raw_text": "The canal is the bottleneck that keeps getting worse. Drought has pulled Gatun Lake down so far that daily transits are being cut toward the low twenties, drafts are restricted, and waiting times run for days; shipowners are paying record auction fees, into the millions of dollars, just to jump the queue. Now the Red Sea is compounding it: carriers are suspending Suez sailings after attacks on boxships and rerouting around the Cape of Good Hope, adding ten days or more each way and absorbing effective capacity nobody budgeted for. Spot rates are repricing violently, with Asia to Europe up by half or more in a matter of days, and alliances are redrawing schedules monthly. My working assumption is expensive freight and stretching delivery times well into next year, because there is no spare tonnage to fix any of this quickly.",
+    "summary": "Drought-related Panama Canal restrictions and Red Sea diversions are jointly constraining container-shipping capacity, extending transit and delivery times, sharply lifting spot freight rates, and forcing frequent schedule revisions. The commentary expects expensive freight and prolonged delays well into the following year because spare tonnage is limited."
+  },
+  "interpretation": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "maritime capacity constraints",
+      "route disruption",
+      "transit delays",
+      "freight cost escalation"
+    ],
+    "summary": "No candidate covers the packet's physical shipping-capacity shock. Similar words involving costs, trends, persistence, or illiquidity refer to distinct financial-market measurements and do not supply evidence of the candidates' stated behaviors."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T23:23:44Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:15e3f43a5f963692b7f78f13af48eb78392e1fc7cc869d8a654d883d90f5e702"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "signature_cho_engle_market_conditions_004",
+        "text_snippet": "Intraday transaction rate relative to the day's average transaction rate serves as a measurable indicator of options market activity regime (fast/slow/normal).…"
+      },
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "retrieval_score": 0.796109,
+      "state_id": "state_cho_engle_market_conditions_004",
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    },
+    {
+      "closest_on": {
+        "record_id": "failure_billio_broker_loading_concentration_001",
+        "text_snippet": "Risk models that treat all financial sub-sectors as equivalent contributors to the systemic co-movement state fail by not differentiating the structural…"
+      },
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "retrieval_score": 0.795179,
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_hasbrouck_return_premium_003",
+        "text_snippet": "Effective trading cost estimated by the Gibbs sampler is positively related to future stock returns over the period 1926-2006, providing empirical evidence for…"
+      },
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "retrieval_score": 0.792236,
+      "state_id": "state_hasbrouck_return_premium_003",
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_ang_2011_exceedance_asymmetry_003",
+        "text_snippet": "model_selection Include exceedance correlation asymmetry (left-tail minus right-tail exceedance correlation) as a model validation diagnostic when evaluating…"
+      },
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "retrieval_score": 0.790906,
+      "state_id": "state_ang_2011_exceedance_asymmetry_003",
+      "title": "Regime-Conditional Tail Correlation Asymmetry State"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_hamilton_arch_volatility_clustering_004",
+        "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+      },
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "retrieval_score": 0.790352,
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "title": "GARCH Volatility Clustering Persistence State"
+    }
+  ],
+  "no_match_rationale": "The packet evidences physical container-shipping constraints, canal queues, route diversions, longer voyages, reduced vessel availability, higher freight rates, and schedule instability. The candidates instead describe financial-return predictability, equity mean reversion and correlation, market or fund illiquidity, options spreads, regime models, and financial-network behavior. None names or evidences the observed maritime capacity and routing mechanism.",
+  "non_matches": [
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The state concerns temporary divergences and convergence among co-moving equity pairs; the packet contains no equity-pair spreads or subsequent spread reversion.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_gatev_pairs_mean_reversion_001",
+          "text_snippet": "feature_selection When the cross-sectional pairs mean reversion state is classified as active, emphasize features capturing: (1) normalized price spread…"
+        },
+        {
+          "record_id": "policy_gatev_pairs_transaction_cost_gate_003",
+          "text_snippet": "risk_control Transaction cost gatekeeping features must be evaluated before classifying the pairs mean reversion state as actionable. Key features: (1)…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "Rising freight rates do not evidence the state's persistent risk-adjusted TSMOM returns, horizon-dependent Sharpe pattern, diversified futures behavior, or sustained return-trend activation condition.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "claim_hurst_mf_horizon_sharpe_001",
+          "text_snippet": "For individual assets, the Sharpe ratio of a time-series momentum strategy increases monotonically with the signal look-back horizon across the 1-month,…"
+        },
+        {
+          "record_id": "failure_hurst_mf_fee_erosion_003",
+          "text_snippet": "The trend-following momentum state delivers robust gross returns but fails to generate positive net-of-fee alpha for investors in managed futures funds under…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The state requires return moments and inferred bull, bear, or high-volatility futures regimes; the packet reports shipping operations and freight conditions without those measurements.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_nguyen_hmm_regime_switching_001",
+          "text_snippet": "regime_switch Use EWMM features (first and second moments of daily returns with span=30) as inputs to a three-state HMM for real-time regime identification…"
+        },
+        {
+          "record_id": "claim_nguyen_oos_sharpe_003",
+          "text_snippet": "In out-of-sample testing (January 2016 – October 2019), the HMM long-only strategy with EWMM span=30 achieves Sharpe ratios substantially above buy-and-hold…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The state describes variance-driven bias in cross-market correlations and corrected contagion tests, neither of which appears in the shipping observations.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_forbes_constant_transmission_001",
+          "text_snippet": "The Forbes-Rigobon (2002) result that apparent crisis-period contagion is attributable to pre-existing interdependence rather than new transmission rests…"
+        },
+        {
+          "record_id": "failure_forbes_unadjusted_contagion_test_001",
+          "text_snippet": "Standard unadjusted cross-market correlation tests systematically overstate crisis-period correlations and produce false contagion findings whenever…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "The state concerns positive weekly equity-return autocorrelation and variance ratios; the packet supplies no equity-return sequence or autocorrelation evidence.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_lo_mackinlay_size_gradient_liquidity_003",
+          "text_snippet": "The size-autocorrelation gradient documented by Lo and MacKinlay (1988)—with the smallest market-cap quintile exhibiting ρ(1) ≈ 0.42 versus ρ(1) ≈ 0.14 for the…"
+        },
+        {
+          "record_id": "policy_lo_mackinlay_size_tilting_003",
+          "text_snippet": "position_sizing Size-based position sizing should reflect the empirically documented autocorrelation gradient: short-horizon return predictability is strongest…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The state requires elevated international-equity correlation during a filtered bear regime; neither equity correlations nor bear-regime probabilities are observed.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_bekaert_model_selection_004",
+          "text_snippet": "Constant-parameter international equity allocation models (static mean-variance with unconditional means and covariances) fail to exploit regime-conditional…"
+        },
+        {
+          "record_id": "policy_ang_bekaert_model_selection_004",
+          "text_snippet": "model_selection Select RS models with time-varying means and correlations (not constant-parameter models) as the primary model class for international equity…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "Limited vessel availability is not evidence of hedge-fund return smoothing, serial autocorrelation, marked-to-model assets, or delayed loss recognition.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "surfaced_by": [
+        {
+          "record_id": "failure_billio_hedge_fund_autocorr_proxy_001",
+          "text_snippet": "Return autocorrelation as a proxy for hedge fund position illiquidity conflates two distinct sources of serial persistence: (1) stale or infrequent pricing of…"
+        },
+        {
+          "record_id": "signature_billio_hedge_fund_autocorr_001",
+          "text_snippet": "Elevated first-order serial autocorrelation in hedge fund monthly returns (rho1=0.22), substantially above levels observed in banks (rho1=0.02), broker-dealers…"
+        }
+      ],
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The state describes equity-return autocorrelation changing from positive to negative over multi-year horizons; the packet contains no corresponding return history or reversal.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_poterba_summers_power_calibration_004",
+          "text_snippet": "Observable power-calibration signal for long-horizon variance ratio tests, quantifying the likelihood that a non-rejection of the random walk reflects true…"
+        },
+        {
+          "record_id": "policy_poterba_summers_transitory_position_sizing_002",
+          "text_snippet": "position_sizing The transitory component magnitude—standard deviation 15–25% for the NYSE value-weighted index and up to 37% for the equal-weighted index…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_taq_correlation_002",
+      "reason": "The state validates a Gibbs effective-cost estimator against TAQ spreads; canal auction fees and freight rates do not evidence estimator-to-benchmark correlation.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_taq_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "claim_hasbrouck_taq_correlation_002",
+          "text_snippet": "Gibbs-sampler daily effective cost estimates correlate 0.965 with TAQ-based intraday effective spread estimates across NYSE stocks, validating the Gibbs…"
+        },
+        {
+          "record_id": "state_hasbrouck_taq_correlation_002",
+          "text_snippet": "A structural property of the Gibbs-based effective cost estimator: when cross-sectionally compared against TAQ-derived intraday effective spread benchmarks…"
+        }
+      ],
+      "title": "Gibbs Estimator Validated as TAQ-Equivalent Effective Cost Proxy"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The packet does not show a January concentration in the relationship between stock trading costs and future equity returns.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hasbrouck_january_effect_004",
+          "text_snippet": "Calendar month = January as the conditioning signal for the illiquidity return premium. The return-cost relationship is substantially stronger in January than…"
+        },
+        {
+          "record_id": "policy_hasbrouck_january_effect_004",
+          "text_snippet": "activity_suppression Condition the illiquidity return premium feature on calendar month. In January, the illiquidity premium feature may be included at full…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "Expected persistence in shipping delays does not supply the state's measured monthly NYSE ILLIQ persistence, AR coefficient, or lagged market-illiquidity behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_illiq_persistence_004",
+      "surfaced_by": [
+        {
+          "record_id": "gloss_state_amihud_illiq_persistence_004",
+          "text_snippet": null
+        },
+        {
+          "record_id": "policy_amihud_illiq_persistence_004",
+          "text_snippet": "feature_selection Lagged market-level ILLIQ (prior-month aggregate) is a valid proxy for expected current-period illiquidity given AR(1) coefficient 0.945 and…"
+        }
+      ],
+      "title": "Aggregate Illiquidity Persistence State"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "The state requires fat tails and negative skewness generated by a Gaussian mixture of equity-return regimes; no return-distribution evidence is present.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "model_specification When modeling equity return distributions with regime-switching models, within-regime Gaussian innovations are sufficient to produce…"
+        },
+        {
+          "record_id": "signature_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "Unconditional excess kurtosis (kurtosis > 3) and negative skewness in equity return distributions that persist even when within-regime innovations are assumed…"
+        }
+      ],
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "Joint shipping disruptions do not evidence growing Granger-causal link density among financial-institution return series.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "surfaced_by": [
+        {
+          "record_id": "failure_billio_granger_structural_causation_001",
+          "text_snippet": "Granger-causality-based systemic risk measures reflect predictive relationships among return series but do not establish structural causation or transmission…"
+        },
+        {
+          "record_id": "signature_billio_granger_network_density_001",
+          "text_snippet": "The density and directionality of Granger-causal links among return series of U.S. financial sector institutions (approximately 100 per sector across hedge…"
+        }
+      ],
+      "title": "Systemic Risk Network Buildup State"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "The packet does not measure expected and unexpected NYSE illiquidity components or their distinct future-return and contemporaneous-price effects.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_timeseries_premium_003",
+          "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+        },
+        {
+          "record_id": "state_amihud_timeseries_premium_003",
+          "text_snippet": "A market condition in which aggregate market illiquidity predicts market-level returns in two distinct ways: (1) higher expected illiquidity predicts higher…"
+        }
+      ],
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "reason": "The state concerns wider proportional spreads and full-spread executions in out-of-the-money options; the observed transit and freight costs do not evidence options-liquidity behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_moneyness_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_cho_engle_moneyness_003",
+          "text_snippet": "confidence_calibration Moneyness category (ATM vs. OTM) must be included as a feature or segmentation variable in option spread models. OTM options should be…"
+        },
+        {
+          "record_id": "claim_cho_engle_moneyness_003",
+          "text_snippet": "Out-of-the-money (OTM) options have wider proportional bid-ask spreads than at-the-money (ATM) options. Furthermore, 75% of ATM transactions and 81% of OTM…"
+        }
+      ],
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "canal capacity",
+      "direction": "declining",
+      "index": 0,
+      "magnitude": "severe",
+      "statement": "Panama Canal transit availability is falling toward the low twenties per day"
+    },
+    {
+      "dimension": "shipping congestion",
+      "direction": "worsening",
+      "index": 1,
+      "magnitude": "strong",
+      "statement": "Draft restrictions and multi-day queues are disrupting canal passage"
+    },
+    {
+      "dimension": "priority transit costs",
+      "direction": "rising",
+      "index": 2,
+      "magnitude": "record",
+      "statement": "Auction fees for priority canal passage have reached record multimillion-dollar levels"
+    },
+    {
+      "dimension": "route disruption",
+      "direction": "intensifying",
+      "index": 3,
+      "magnitude": "broad",
+      "statement": "Red Sea security incidents are prompting suspended Suez sailings and Cape rerouting"
+    },
+    {
+      "dimension": "transit duration",
+      "direction": "lengthening",
+      "index": 4,
+      "magnitude": "substantial",
+      "statement": "Cape diversions are adding at least ten days to each voyage direction"
+    },
+    {
+      "dimension": "fleet availability",
+      "direction": "tightening",
+      "index": 5,
+      "magnitude": "acute",
+      "statement": "Longer routes are absorbing effective vessel capacity amid limited spare tonnage"
+    },
+    {
+      "dimension": "freight pricing",
+      "direction": "rising",
+      "index": 6,
+      "magnitude": "violent",
+      "statement": "Asia-Europe spot freight rates have risen by half or more within days"
+    },
+    {
+      "dimension": "schedule stability",
+      "direction": "unstable",
+      "index": 7,
+      "magnitude": "persistent",
+      "statement": "Shipping alliances are revising schedules monthly"
+    },
+    {
+      "dimension": "outlook uncertainty",
+      "direction": "unclear",
+      "index": 8,
+      "magnitude": null,
+      "statement": "The duration of elevated freight costs and delivery delays remains an assumption"
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_emsorq96/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_emsorq96/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_emsorq96",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

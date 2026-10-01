@@ -1,0 +1,514 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "well_supported",
+      "dominant_themes": [
+        "short-squeeze mechanics",
+        "retail concentration",
+        "forced covering",
+        "access restrictions",
+        "price dislocation"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2021-01-28",
+      "observation_horizon": "approximately two weeks",
+      "timezone": "America/New_York"
+    },
+    "asset_scope": [
+      "GameStop",
+      "AMC",
+      "Bed Bath",
+      "BlackBerry",
+      "other heavily shorted equities"
+    ],
+    "raw_text": "What a fortnight. GameStop — a struggling mall retailer — traded above $450 today, up from under twenty dollars at the start of January, and the frenzy has spread to AMC, Bed Bath, BlackBerry, and whatever else the online boards decide to target. These are not fundamental buyers; they are a loosely coordinated army of retail accounts hunting the year's most crowded shorts, and the mechanics are brutal: short interest far above the float means covering begets covering. Melvin Capital has reportedly thrown in the towel at a devastating loss after an emergency infusion, and there are whispers of other funds in genuine distress. Brokerage platforms are now restricting trades in the hottest names, which has the crowd crying foul. Nobody I speak to can price this, and anyone short is terrified. This is not investing; it is a short squeeze elevated to a spectator sport.\n",
+    "summary": "Retail-driven activity in GameStop and other heavily shorted equities has produced an extreme, self-reinforcing squeeze, with prices detached from conventional valuation anchors. Exceptionally high short interest, forced covering, reported fund losses, brokerage restrictions, and pervasive pricing uncertainty are amplifying volatility and market stress."
+  },
+  "interpretation": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "short-squeeze mechanics",
+      "retail concentration",
+      "forced covering",
+      "access restrictions",
+      "price dislocation"
+    ],
+    "summary": "No candidate represents the observed short-squeeze mechanism, and the retrieved neighboring states lack their required behavioral evidence."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T22:58:32Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:157b6c1310f1abeb0b945f512a51ea58d17892bc9060ee6da95e63bc74d71eb8"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "policy_billio_comovement_risk_control_001",
+        "text_snippet": "risk_control Include rolling PC1 variance share across financial sector return indices as a systemic co-movement feature. Threshold PC1 at approximately 80% to…"
+      },
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "retrieval_score": 0.827378,
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_amihud_timeseries_premium_003",
+        "text_snippet": "In time-series regressions of NYSE market returns on illiquidity, the expected illiquidity coefficient is g1=10.226 (t=2.68), confirming a positive illiquidity…"
+      },
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "retrieval_score": 0.826555,
+      "state_id": "state_amihud_timeseries_premium_003",
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "closest_on": {
+        "record_id": "state_billio_hedge_fund_illiquidity_003",
+        "text_snippet": "A market condition specific to hedge fund returns in which high first-order serial autocorrelation (rho1=0.22) indicates return smoothing consistent with…"
+      },
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "retrieval_score": 0.826332,
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_forbes_bias_correction_001",
+        "text_snippet": "confidence_calibration Always compute the relative source-country variance increase (delta = sigma^2_high / sigma^2_low - 1) when measuring cross-market…"
+      },
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "retrieval_score": 0.823887,
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "closest_on": {
+        "record_id": "failure_ang_2011_exceedance_asymmetry_003",
+        "text_snippet": "GARCH-DCC models with symmetric correlation specification fail to capture left-tail exceedance correlation asymmetry in multi-asset equity portfolios. When…"
+      },
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "retrieval_score": 0.822772,
+      "state_id": "state_ang_2011_exceedance_asymmetry_003",
+      "title": "Regime-Conditional Tail Correlation Asymmetry State"
+    }
+  ],
+  "no_match_rationale": "The candidates cover return autocorrelation, pairs convergence, options-spread determinants, illiquidity premia, volatility clustering, correlation regimes, futures trend and HMM regimes, systemic Granger networks, and mixture-distribution tails. None describes retail concentration in crowded shorts, short interest exceeding available float, recursive forced covering, brokerage restrictions, and the resulting equity-price dislocation as a Market Book state. The packet also lacks the record-specific measurements needed to activate the neighboring candidates.",
+  "non_matches": [
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The packet covers approximately two weeks and supplies neither the candidate's subannual-to-multiyear autocorrelation flip nor cross-market confirmation of long-horizon mean reversion.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_poterba_summers_test_power_004",
+          "text_snippet": "Long-horizon variance ratio tests and related statistical procedures have severely limited power to detect the long-horizon mean reversion state even when it…"
+        },
+        {
+          "record_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+          "text_snippet": "A market condition in which equity returns exhibit positive serial correlation at horizons shorter than one year and negative serial correlation (mean…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "reason": "The packet contains no option quotes, ATM-versus-OTM spread comparison, or evidence that trades execute at the full quoted spread.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_moneyness_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_cho_engle_moneyness_003",
+          "text_snippet": "Proportional bid-ask spread (spread divided by midpoint) as a function of option moneyness category (ATM vs. OTM) serves as a measurable indicator of…"
+        },
+        {
+          "record_id": "policy_cho_engle_moneyness_003",
+          "text_snippet": "confidence_calibration Moneyness category (ATM vs. OTM) must be included as a feature or segmentation variable in option spread models. OTM options should be…"
+        }
+      ],
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "A large endpoint price increase does not evidence weekly first-order autocorrelation, variance ratios, or the market-capitalization gradient described by the candidate.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_lo_mackinlay_size_gradient_liquidity_003",
+          "text_snippet": "The size-autocorrelation gradient documented by Lo and MacKinlay (1988)—with the smallest market-cap quintile exhibiting ρ(1) ≈ 0.42 versus ρ(1) ≈ 0.14 for the…"
+        },
+        {
+          "record_id": "failure_lo_mackinlay_nontrading_overattribution_005",
+          "text_snippet": "Models that attribute the observed short-horizon weekly return autocorrelation primarily or entirely to non-synchronous trading (non-trading days inducing…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "reason": "Brokerage access restrictions do not evidence option bid-ask spreads being driven by underlying spreads scaled by option delta.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "surfaced_by": [
+        {
+          "record_id": "state_cho_engle_underlying_spread_002",
+          "text_snippet": "A market condition in which option bid-ask spreads are systematically driven by the bid-ask spread of the underlying asset, mediated by the option's delta.…"
+        },
+        {
+          "record_id": "policy_cho_engle_underlying_spread_002",
+          "text_snippet": "feature_selection When modeling option bid-ask spreads, include the underlying asset's bid-ask spread as a feature, ideally scaled by option delta to reflect…"
+        }
+      ],
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The candidate describes divergent pair spreads subsequently converging, while the packet reports an equity dislocation still surging under accelerating forced covering.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_gatev_pairs_mean_reversion_001",
+          "text_snippet": "feature_selection When the cross-sectional pairs mean reversion state is classified as active, emphasize features capturing: (1) normalized price spread…"
+        },
+        {
+          "record_id": "policy_gatev_pairs_transaction_cost_gate_003",
+          "text_snippet": "risk_control Transaction cost gatekeeping features must be evaluated before classifying the pairs mean reversion state as actionable. Key features: (1)…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The January date is only calendar overlap and does not evidence a January-concentrated relationship between effective trading costs and future stock returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        },
+        {
+          "record_id": "claim_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional relationship between effective trading costs and stock returns is concentrated in January. Outside of January, the illiquidity premium in…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "reason": "Retail activity in the underlying equities does not establish that option volume is statistically insignificant after controlling for other option-spread determinants.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_volume_insignificant_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_cho_engle_volume_insignificant_001",
+          "text_snippet": "feature_selection Option trading volume should not be used as a primary feature for predicting option bid-ask spread width. Features derived from equity market…"
+        },
+        {
+          "record_id": "claim_cho_engle_volume_insignificant_001",
+          "text_snippet": "Option trading volume is not a statistically significant determinant of option bid-ask spreads in the CBOE S&P100 market. After controlling for other spread…"
+        }
+      ],
+      "title": "Volume-Insensitive Options Spread Environment"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "The packet reports an extreme price move and market stress but does not evidence large shocks followed by large shocks, significant squared-return autocorrelation, or persistent GARCH parameters.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "surfaced_by": [
+        {
+          "record_id": "claim_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "GARCH(1,1) captures the empirical stylized fact of volatility clustering— large shocks followed by large shocks and small shocks followed by small…"
+        },
+        {
+          "record_id": "policy_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+        }
+      ],
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The spread of a squeeze across selected equities does not evidence elevated international equity correlations during a filtered bear regime.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_bekaert_model_selection_004",
+          "text_snippet": "Constant-parameter international equity allocation models (static mean-variance with unconditional means and covariances) fail to exploit regime-conditional…"
+        },
+        {
+          "record_id": "policy_ang_bekaert_bear_correlation_002",
+          "text_snippet": "portfolio_construction Include regime-conditional correlation estimates (bear and normal regime separately) as features in portfolio risk models for…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The candidate describes persistent risk-adjusted time-series momentum across diversified futures, whereas the packet concerns individual heavily shorted equities.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hurst_mf_fee_structure_calibration_003",
+          "text_snippet": "confidence_calibration Confidence calibration for managed futures fund returns must account for the ~6% average annual fee drag under 2-and-20 structures, as…"
+        },
+        {
+          "record_id": "state_hurst_tsmom_trend_following_001",
+          "text_snippet": "A market condition in which time-series momentum (TSMOM) signals deliver persistent risk-adjusted excess returns across diversified multi-asset futures…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "Fund losses and unconfirmed distress do not evidence growing Granger-causal link density among hedge funds, banks, broker-dealers, and insurers.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_granger_network_density_001",
+          "text_snippet": "The density and directionality of Granger-causal links among return series of U.S. financial sector institutions (approximately 100 per sector across hedge…"
+        },
+        {
+          "record_id": "state_billio_granger_systemic_buildup_002",
+          "text_snippet": "A market condition characterized by a growing density of Granger-causal predictive relationships among return series of financial sector institutions (hedge…"
+        }
+      ],
+      "title": "Systemic Risk Network Buildup State"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The candidate's bull, bear, and high-volatility states are fitted independently to futures instruments, outside the packet's individual-equity asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "claim_nguyen_three_state_hmm_001",
+          "text_snippet": "A three-state hidden Markov model applied asset-independently to daily futures returns on 15 instruments across commodity, currency, equity, and fixed income…"
+        },
+        {
+          "record_id": "state_nguyen_three_state_hmm_001",
+          "text_snippet": "A three-state hidden Markov model (HMM) regime structure applied asset- independently to daily futures returns across commodity, currency, equity, and fixed…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "Brokerage restrictions do not evidence a persistent cross-sectional relationship between Gibbs effective trading costs and subsequent equity returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_return_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hasbrouck_return_premium_003",
+          "text_snippet": "A positive return spread across portfolios sorted by annual Gibbs effective cost estimates: stocks in higher-cost deciles earn higher subsequent returns than…"
+        },
+        {
+          "record_id": "state_hasbrouck_return_premium_003",
+          "text_snippet": "A persistent cross-sectional market state in which stocks with higher effective trading costs (as measured by the Gibbs estimator) earn systematically higher…"
+        }
+      ],
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "reason": "The packet supplies no expected ILLIQ measurements or cross-sectional evidence that higher expected illiquidity is associated with higher expected returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_crosssection_premium_002",
+      "surfaced_by": [
+        {
+          "record_id": "state_amihud_crosssection_premium_002",
+          "text_snippet": "A persistent market condition in which stocks with higher expected ILLIQ earn systematically higher expected returns in cross-sectional regressions. Documented…"
+        },
+        {
+          "record_id": "claim_amihud_crosssection_premium_002",
+          "text_snippet": "In monthly Fama-MacBeth cross-sectional regressions, expected stock returns are positively related to expected illiquidity: the ILLIQ coefficient is 0.162…"
+        }
+      ],
+      "title": "Cross-Sectional Illiquidity Premium State"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "One extreme episode does not establish excess kurtosis, negative skewness, or a multi-regime Gaussian mixture as the return-generating process.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "Unconditional excess kurtosis (kurtosis > 3) and negative skewness in equity return distributions that persist even when within-regime innovations are assumed…"
+        },
+        {
+          "record_id": "state_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "A market condition characterized by unconditional fat tails (excess kurtosis) and negative skewness in equity return distributions that arise as a natural…"
+        }
+      ],
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "price dislocation",
+      "direction": "surging",
+      "index": 0,
+      "magnitude": "extreme",
+      "statement": "GameStop rising from below twenty dollars to above four hundred fifty dollars during January"
+    },
+    {
+      "dimension": "speculative breadth",
+      "direction": "expanding",
+      "index": 1,
+      "magnitude": "strong",
+      "statement": "Frenzy spreading across multiple heavily shorted equities"
+    },
+    {
+      "dimension": "participant behavior",
+      "direction": "intensifying",
+      "index": 2,
+      "magnitude": "strong",
+      "statement": "Retail accounts concentrating activity in crowded shorts"
+    },
+    {
+      "dimension": "squeeze mechanics",
+      "direction": "accelerating",
+      "index": 3,
+      "magnitude": "extreme",
+      "statement": "Short interest above available float creating recursive forced covering"
+    },
+    {
+      "dimension": "institutional stress",
+      "direction": "worsening",
+      "index": 4,
+      "magnitude": "severe",
+      "statement": "Reported severe losses at Melvin Capital following an emergency infusion"
+    },
+    {
+      "dimension": "uncertainty",
+      "direction": "unclear",
+      "index": 5,
+      "magnitude": "potentially significant",
+      "statement": "Unconfirmed distress among additional funds"
+    },
+    {
+      "dimension": "market access",
+      "direction": "tightening",
+      "index": 6,
+      "magnitude": "significant",
+      "statement": "Brokerage platforms restricting activity in the hottest names"
+    },
+    {
+      "dimension": "pricing uncertainty",
+      "direction": "elevated",
+      "index": 7,
+      "magnitude": "extreme",
+      "statement": "Market participants lacking reliable valuation anchors"
+    },
+    {
+      "dimension": "market sentiment",
+      "direction": "deteriorating",
+      "index": 8,
+      "magnitude": "severe",
+      "statement": "Intense fear among short-exposed participants"
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_boj9nrau/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_boj9nrau/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_boj9nrau",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

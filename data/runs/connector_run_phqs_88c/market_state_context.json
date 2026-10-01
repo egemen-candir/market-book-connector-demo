@@ -1,0 +1,182 @@
+{
+  "caveats": [
+    "The rapid rate moves and persistent equity-sector rotation evidence a sustained directional environment, but the packet does not report TSMOM signals, futures returns, Sharpe ratios, or diversified portfolio performance."
+  ],
+  "constraints": [
+    "low_confidence_match: entry_hurst_tsmom_trend_following_001"
+  ],
+  "failure_modes": [
+    "Unverified TSMOM performance",
+    "Unmeasured signal horizons",
+    "Cash-versus-futures basis",
+    "weak_match:entry_hurst_tsmom_trend_following_001"
+  ],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "policy_implication",
+          "record_id": "policy_hurst_tsmom_diversified_001"
+        }
+      ],
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "evidence_caveats": "The rapid rate moves and persistent equity-sector rotation evidence a sustained directional environment, but the packet does not report TSMOM signals, futures returns, Sharpe ratios, or diversified portfolio performance.",
+      "failure_modes": [
+        "Unverified TSMOM performance",
+        "Unmeasured signal horizons",
+        "Cash-versus-futures basis"
+      ],
+      "match_strength": "weak",
+      "matched_observations": [
+        0,
+        1,
+        4
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    }
+  ],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The packet reports directional asset moves but supplies no EWMM return moments, estimated HMM state probabilities, transition behavior, or PESR forecasts.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The observations cover a rapid current rotation rather than the state's positive short-horizon autocorrelation and negative three-to-eight-year autocorrelation.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "No weekly return autocorrelation, variance ratio, or market-cap autocorrelation gradient is measured in the packet.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Relative strength among broad sectors does not evidence temporary matched-pair spread divergence followed by convergence toward historical equilibrium.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "A severe Nasdaq decline and rapid yield move do not establish repeated volatility clustering, significant squared-return autocorrelation, or persistent GARCH parameters.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "The packet does not measure growing Granger-causal link density or predictive relationships among financial institutions.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_granger_systemic_buildup_002"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "No aggregate illiquidity series, expected illiquidity premium, or unexpected illiquidity shock is observed.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003"
+    },
+    {
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "reason": "The state concerns option spreads transmitted from underlying bid-ask spreads through delta hedging, while the packet reports yields and equity performance.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_underlying_spread_002"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "Concurrent rate and equity moves do not evidence an unadjusted cross-market correlation estimate, a source-market variance increase, or heteroscedasticity correction.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The packet contains no option transaction-rate classification or U-shaped relationship between option activity and bid-ask spreads.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_market_conditions_004"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "Bank relative strength alongside energy and value equities does not establish a dominant principal component across banks, brokers, insurers, and hedge funds.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The state is specific to hedge-fund return smoothing and illiquid positions, whereas the packet's asset scope contains Treasury yields and listed equity segments.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The state requires elevated correlation across international equity markets during a filtered bear regime, while the packet covers domestic equity segments and supplies no international correlation observations.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "reason": "The state concerns the statistical insignificance of option volume for option spreads, neither of which appears in the packet.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_volume_insignificant_001"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "source date unspecified",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "U.S. Treasury yields",
+      "Nasdaq equities",
+      "high-multiple growth equities",
+      "bank, energy, and value equities"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "equity sector rotation",
+      "growth equity leadership",
+      "macroeconomic expectations",
+      "market stress uncertainty",
+      "monetary policy communication",
+      "nominal bond yields",
+      "real bond yields",
+      "technology equity performance"
+    ],
+    "observation_id": "obs_66c64a0219ba",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "regime_dependent"
+  ],
+  "raw_input_hash": "sha256:66c64a0219bafd64136541cfc4c938b45748ae07d5bc0013a6fa8cd3a420f09c",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "weakly_supported",
+    "dominant_themes": [
+      "Rapid yield repricing",
+      "Growth equity weakness",
+      "Cyclical sector rotation",
+      "Incomplete model evidence"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "regime_dependent"
+    ]
+  },
+  "run_id": "connector_run_phqs_88c",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

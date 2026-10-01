@@ -1,0 +1,531 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [
+      "The roughly fourfold year-over-year increase and record futures level evidence the sustained upward-trending environment named by the state. The packet does not report TSMOM signal returns, look-back comparisons, risk-adjusted performance, or diversification across futures contracts, so support is limited to the activation environment of one commodity future."
+    ],
+    "constraints": [
+      "low_confidence_match: entry_hurst_tsmom_trend_following_001"
+    ],
+    "failure_modes": [
+      "weak_match:entry_hurst_tsmom_trend_following_001"
+    ],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "regime_dependent"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "weakly_supported",
+      "dominant_themes": [
+        "sustained commodity trend",
+        "physical supply scarcity",
+        "delayed normalization",
+        "limited signal evidence"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "regime_dependent"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "current week through the coming summer",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "lumber futures",
+      "North American lumber",
+      "new-home construction"
+    ],
+    "raw_text": "Lumber is the wildest trade in commodities right now. Futures printed a record above $1,700 per thousand board feet this week, roughly four times where they sat a year ago, and sawmills cannot ship fast enough. North American production is running full tilt after last year's curtailments, but it isn't close to enough: the pandemic DIY renovation boom, near-record housing starts, and dealers restocking like mad have emptied the pipeline. Freight and labor shortages at the mills add friction, and Canada's beetle-killed timber hangs over longer-term supply. Homebuilders are swallowing margin as framing packages add thirty thousand dollars or more to a typical new home, and NAHB keeps screaming about it. The scary part is that nobody I talk to sees inventories rebuilding before summer, and anyone short this market has been steamrolled. Mean reversion keeps getting predicted and keeps not showing up.",
+    "summary": "Lumber futures reached a record above $1,700 per thousand board feet, roughly four times their year-earlier level, as renovation activity, near-record housing starts, and dealer restocking outpaced full-capacity North American production. Freight and labor shortages further constrained near-term availability, while beetle-damaged Canadian timber presented a longer-term supply concern. Elevated framing costs pressured homebuilder margins, inventories were not expected to rebuild before summer, and anticipated price normalization had yet to emerge."
+  },
+  "interpretation": {
+    "confidence": "weakly_supported",
+    "dominant_themes": [
+      "sustained commodity trend",
+      "physical supply scarcity",
+      "delayed normalization",
+      "limited signal evidence"
+    ],
+    "summary": "One candidate matches weakly because the record and roughly fourfold rise in lumber futures evidence a sustained upward-trending environment. Support does not extend to the state's signal-performance, horizon-comparison, or diversified-portfolio observables. The remaining candidates describe unevidenced statistical behaviors, unrelated trading-liquidity and correlation mechanisms, opposite convergence behavior, or equity and financial-sector scopes outside this packet."
+  },
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "policy_implication",
+          "record_id": "policy_hurst_tsmom_diversified_001",
+          "text": "model_weighting When the multi-asset trend following state is classified as active, emphasize: (1) diversified TSMOM signals across all available asset classes (commodities, equities, fixed income, currencies) to capture the ~4.7x diversification benefit relative to individual-asset Sharpe; (2) volatility-scaled position sizing per instrument (target 10% annualized vol per instrument before combination, consistent with the Hurst et al. benchmark methodology); (3) smile-pattern conditioning: weight TSMOM signals more heavily when trailing equity market returns indicate a sustained directional regime (both bull and bear tails), and reduce weight in trendless high-volatility environments. De-emphasize TSMOM signals when the market is in a mean- reverting choppy regime incompatible with sustained directional moves. The gross diversified TSMOM Sharpe of ~1.8 (January 1985–June 2012) is the benchmark for a fully diversified implementation with proper volatility scaling. Models should not use individual-asset Sharpe ratios (0.29–0.38) as the expected portfolio Sharpe; the diversification benefit is essential. After applying 2-and-20 fee structures, the net-of-fee alpha becomes negative (see failure_hurst_mf_fee_erosion_003); a low-cost systematic implementation (e.g., factor-based) is required to capture meaningful net investor return. Highest confidence in the TSMOM state when: the equity market is in a sustained directional regime (consistent with the smile pattern); the portfolio is diversified across all four asset classes with proper vol-scaling; and implementation costs are below the 6% annual fee-load threshold that eliminates net alpha. The ~1.8 gross Sharpe is computed over January 1985–June 2012 (a 27-year sample dominated by a secular bond bull market and multiple sustained equity bear and bull markets). The volatility target normalization (10% per instrument) is central to achieving the diversification benefit; without it, single-asset concentration dominates. Near-zero S&P 500 correlation (~-0.02) is the key portfolio construction argument for institutional allocation."
+        }
+      ],
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "evidence_caveats": "The roughly fourfold year-over-year increase and record futures level evidence the sustained upward-trending environment named by the state. The packet does not report TSMOM signal returns, look-back comparisons, risk-adjusted performance, or diversification across futures contracts, so support is limited to the activation environment of one commodity future.",
+      "failure_modes": [],
+      "match_strength": "weak",
+      "matched_observations": [
+        {
+          "dimension": "price level",
+          "direction": "rising",
+          "index": 0,
+          "statement": "Record futures above $1,700 per thousand board feet"
+        },
+        {
+          "dimension": "year-over-year price change",
+          "direction": "higher",
+          "index": 1,
+          "statement": "Prices near four times their year-earlier level"
+        }
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "state_summary": "A market condition in which time-series momentum (TSMOM) signals deliver persistent risk-adjusted excess returns across diversified multi-asset futures portfolios. Characterized by: (1) individual-asset Sharpe ratios that increase monotonically with signal look-back horizon—0.29 (1-month), 0.36 (3-month), 0.38 (12-month)—averaged across 58 liquid futures contracts; (2) a diversified 58-instrument TSMOM portfolio achieving ~1.8 gross annualized Sharpe at 10% vol target (January 1985–June 2012); (3) a \"smile\" return pattern—best performance in sustained trending environments (strong bull or bear markets), worst in trendless choppy markets—with near-zero S&P 500 correlation (~-0.02); (4) after controlling for a simple diversified TSMOM factor, all managed futures fund net-of-fee alphas become negative under 2-and-20 fee structures (~6% average annual fee drag). Most CTAs exhibit dominant exposure to the 3-month TSMOM signal rather than the individually optimal 12-month horizon, and systematically overweight fixed income. Evidence from Hurst, Ooi, and Pedersen (2013/2010), evidence_tier 2 (practitioner paper with direct empirical content).\n",
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    }
+  ],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T23:16:22Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:a44bf3c88e37e2d93c8905b5154bedef523419034b576b3ba377e4596a2a980e"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "failure_billio_hedge_fund_autocorr_proxy_001",
+        "text_snippet": "Return autocorrelation as a proxy for hedge fund position illiquidity conflates two distinct sources of serial persistence: (1) stale or infrequent pricing of…"
+      },
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "retrieval_score": 0.81604,
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_hasbrouck_taq_correlation_002",
+        "text_snippet": "Gibbs-sampler daily effective cost estimates correlate 0.965 with TAQ-based intraday effective spread estimates across NYSE stocks, validating the Gibbs…"
+      },
+      "entry_id": "entry_hasbrouck_taq_correlation_002",
+      "retrieval_score": 0.815961,
+      "state_id": "state_hasbrouck_taq_correlation_002",
+      "title": "Gibbs Estimator Validated as TAQ-Equivalent Effective Cost Proxy"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_cho_engle_moneyness_003",
+        "text_snippet": "confidence_calibration Moneyness category (ATM vs. OTM) must be included as a feature or segmentation variable in option spread models. OTM options should be…"
+      },
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "retrieval_score": 0.814253,
+      "state_id": "state_cho_engle_moneyness_003",
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    },
+    {
+      "closest_on": {
+        "record_id": "failure_ang_2011_exceedance_asymmetry_003",
+        "text_snippet": "GARCH-DCC models with symmetric correlation specification fail to capture left-tail exceedance correlation asymmetry in multi-asset equity portfolios. When…"
+      },
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "retrieval_score": 0.813785,
+      "state_id": "state_ang_2011_exceedance_asymmetry_003",
+      "title": "Regime-Conditional Tail Correlation Asymmetry State"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_cho_engle_market_conditions_004",
+        "text_snippet": "regime_switch Intraday transaction rate relative to the daily average should be monitored and used to classify market activity regime (fast/slow/normal). This…"
+      },
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "retrieval_score": 0.81255,
+      "state_id": "state_cho_engle_market_conditions_004",
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    }
+  ],
+  "no_match_rationale": null,
+  "non_matches": [
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The state requires temporary equity-pair spread divergences that subsequently converge within six-month windows. The packet instead reports record and roughly fourfold lumber prices with anticipated normalization still absent, which is discordant with the described reversion direction.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_gatev_pairs_convergence_001",
+          "text_snippet": "Observable convergence of co-integrated equity pair price spreads following a 2-standard-deviation divergence trigger, generating measurable excess returns.…"
+        },
+        {
+          "record_id": "policy_gatev_pairs_transaction_cost_gate_003",
+          "text_snippet": "risk_control Transaction cost gatekeeping features must be evaluated before classifying the pairs mean reversion state as actionable. Key features: (1)…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The state is identified from daily EWMM return moments and filtered probabilities across bull, bear, and high-volatility states. A year-over-year price increase supplies neither those daily moment behaviors nor a filtered state probability, and the bull state's moderate-volatility component is unobserved.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_nguyen_oos_window_length_001",
+          "text_snippet": "The out-of-sample test window used to validate the HMM long-only strategy (January 2016 – October 2019, approximately 4 years) is short and covers a…"
+        },
+        {
+          "record_id": "failure_nguyen_span_turnover_001",
+          "text_snippet": "Low EWMM span values (e.g., s=15) make the HMM observation features overly responsive to recent returns, causing frequent regime transitions and high portfolio…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "This state concerns a January-concentrated relationship between effective stock-trading costs and subsequent equity returns. The packet describes a lumber supply-demand imbalance in August and contains neither effective-cost measurements nor a seasonal equity-return relationship.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        },
+        {
+          "record_id": "policy_hasbrouck_january_effect_004",
+          "text_snippet": "activity_suppression Condition the illiquidity return premium feature on calendar month. In January, the illiquidity premium feature may be included at full…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The state covers equity-return autocorrelation and mean reversion over three-to-eight-year horizons. The packet's scope is lumber futures, North American lumber, and new-home construction, outside the equity indexes for which the state is defined.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_poterba_summers_transitory_position_sizing_002",
+          "text_snippet": "position_sizing The transitory component magnitude—standard deviation 15–25% for the NYSE value-weighted index and up to 37% for the equal-weighted index…"
+        },
+        {
+          "record_id": "failure_poterba_summers_test_power_004",
+          "text_snippet": "Long-horizon variance ratio tests and related statistical procedures have severely limited power to detect the long-horizon mean reversion state even when it…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "The record describes expected and unexpected NYSE trading-illiquidity components predicting equity returns. Physical lumber shortages, freight constraints, and delayed inventory rebuilding do not measure aggregate ILLIQ or its return effects.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_timeseries_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_timeseries_premium_003",
+          "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+        },
+        {
+          "record_id": "signature_amihud_timeseries_premium_003",
+          "text_snippet": "Time-series regression of NYSE market returns on decomposed illiquidity yields two observable signals: expected illiquidity coefficient g1=10.226 (t=2.68)…"
+        }
+      ],
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The state requires elevated international-equity correlation during a filtered bear regime. The packet reports a single commodity's rising price and physical supply constraints, with no cross-market correlation or bear-regime probability.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_bekaert_model_selection_004",
+          "text_snippet": "Constant-parameter international equity allocation models (static mean-variance with unconditional means and covariances) fail to exploit regime-conditional…"
+        },
+        {
+          "record_id": "claim_ang_bekaert_model_selection_004",
+          "text_snippet": "Regime-switching models with time-varying means and correlations outperform constant-parameter models in international equity allocation as measured by…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "The state is defined by weekly autocorrelation and variance ratios for size-sorted equity portfolios. The packet covers lumber futures and physical lumber conditions rather than the equity portfolios within the state's scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_lo_mackinlay_nontrading_overattribution_005",
+          "text_snippet": "Models that attribute the observed short-horizon weekly return autocorrelation primarily or entirely to non-synchronous trading (non-trading days inducing…"
+        },
+        {
+          "record_id": "failure_lo_mackinlay_size_gradient_liquidity_003",
+          "text_snippet": "The size-autocorrelation gradient documented by Lo and MacKinlay (1988)—with the smallest market-cap quintile exhibiting ρ(1) ≈ 0.42 versus ρ(1) ≈ 0.14 for the…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "The state describes near-unit-root persistence in monthly NYSE aggregate ILLIQ. Persistent physical inventory scarcity is a different mechanism and supplies no trading-illiquidity series, AR coefficient, or persistence estimate.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_illiq_persistence_004",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_illiq_persistence_004",
+          "text_snippet": "feature_selection Lagged market-level ILLIQ (prior-month aggregate) is a valid proxy for expected current-period illiquidity given AR(1) coefficient 0.945 and…"
+        },
+        {
+          "record_id": "signature_amihud_illiq_persistence_004",
+          "text_snippet": "Monthly NYSE aggregate ILLIQ fitted by AR(1) yields coefficient 0.945 with R²=0.89. These statistics signal that aggregate market illiquidity is in a…"
+        }
+      ],
+      "title": "Aggregate Illiquidity Persistence State"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "A record price increase does not establish repeated clustering of large return shocks. The packet supplies no conditional-variance sequence, GARCH persistence parameters, or significant squared-return autocorrelations.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+        },
+        {
+          "record_id": "claim_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "GARCH(1,1) captures the empirical stylized fact of volatility clustering— large shocks followed by large shocks and small shocks followed by small…"
+        }
+      ],
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_formula_001",
+      "reason": "The state concerns equity price impact measured as absolute stock return divided by dollar trading volume. The packet's supply-chain availability and production constraints do not provide that ratio or any stock-level trading data.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_illiq_formula_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_illiq_formula_001",
+          "text_snippet": "feature_selection When modeling equity price impact, include ILLIQ (annual average of daily |R|/VOLD) as the primary illiquidity feature. Computable from…"
+        },
+        {
+          "record_id": "state_amihud_illiq_formula_001",
+          "text_snippet": "A market condition in which the price impact of a trade is measurable as the average daily ratio of absolute return to dollar volume (ILLIQ), defined as…"
+        }
+      ],
+      "title": "Equity Price Impact State (ILLIQ)"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The state estimates normal and bear parameters for international equity returns. The packet concerns lumber futures and physical-market fundamentals, outside the world-equity-index scope of those parameters.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_bekaert_regime_params_001",
+          "text_snippet": "model_calibration Use Ang-Bekaert (2004) regime parameter estimates as calibration anchors when initializing two-state RS models for international equity…"
+        },
+        {
+          "record_id": "state_ang_bekaert_regime_params_001",
+          "text_snippet": "A two-state Markov-switching market condition for international equity returns characterized by empirically estimated regime-level parameters: normal regime…"
+        }
+      ],
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "The record requires common-factor variance and loadings across banks, broker-dealers, insurers, and hedge funds. Lumber demand, production, freight, and inventory observations contain no financial-sector return co-movement evidence.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_billio_crisis_diversification_collapse_001",
+          "text_snippet": "Cross-sector financial diversification fails as a risk-reduction strategy during systemic co-movement episodes. When PC1 variance share exceeds 80% (as during…"
+        },
+        {
+          "record_id": "policy_billio_broker_dealer_exposure_001",
+          "text_snippet": "feature_selection Prioritize broker-dealer sector return data (PC1 loading=0.79) as a high-weight input to systemic risk features; broker-dealer returns are…"
+        }
+      ],
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "The state is a cross-sectional equity premium measured through Gibbs effective trading costs and subsequent stock returns. Lumber production scarcity and higher framing costs do not evidence that trading-cost relationship.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_return_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hasbrouck_return_premium_003",
+          "text_snippet": "model_weighting Gibbs effective cost decile rank should be included as a positive return predictor in the cross-section. Stocks in higher effective cost…"
+        },
+        {
+          "record_id": "signature_hasbrouck_return_premium_003",
+          "text_snippet": "A positive return spread across portfolios sorted by annual Gibbs effective cost estimates: stocks in higher-cost deciles earn higher subsequent returns than…"
+        }
+      ],
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The state concerns upward bias in cross-market correlations computed during a source-country variance increase. The packet supplies neither cross-market correlation estimates nor the variance inputs needed to identify that measurement distortion.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_forbes_bias_correction_001",
+          "text_snippet": "confidence_calibration Always compute the relative source-country variance increase (delta = sigma^2_high / sigma^2_low - 1) when measuring cross-market…"
+        },
+        {
+          "record_id": "failure_forbes_unadjusted_contagion_test_001",
+          "text_snippet": "Standard unadjusted cross-market correlation tests systematically overstate crisis-period correlations and produce false contagion findings whenever…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "price level",
+      "direction": "rising",
+      "index": 0,
+      "magnitude": "record",
+      "statement": "Record futures above $1,700 per thousand board feet"
+    },
+    {
+      "dimension": "year-over-year price change",
+      "direction": "higher",
+      "index": 1,
+      "magnitude": "roughly fourfold",
+      "statement": "Prices near four times their year-earlier level"
+    },
+    {
+      "dimension": "supply-demand balance",
+      "direction": "tightening",
+      "index": 2,
+      "magnitude": "severe",
+      "statement": "Full-capacity production still trailing demand"
+    },
+    {
+      "dimension": "demand pressure",
+      "direction": "strengthening",
+      "index": 3,
+      "magnitude": "strong",
+      "statement": "Renovation, housing starts, and dealer restocking driving demand"
+    },
+    {
+      "dimension": "supply-chain friction",
+      "direction": "constraining",
+      "index": 4,
+      "magnitude": "material",
+      "statement": "Freight and mill labor shortages restricting availability"
+    },
+    {
+      "dimension": "structural supply risk",
+      "direction": "restrictive",
+      "index": 5,
+      "magnitude": null,
+      "statement": "Beetle-damaged Canadian timber threatening longer-term supply"
+    },
+    {
+      "dimension": "construction cost pressure",
+      "direction": "worsening",
+      "index": 6,
+      "magnitude": "at least $30,000 per typical new home",
+      "statement": "Higher framing-package costs compressing homebuilder margins"
+    },
+    {
+      "dimension": "inventory outlook",
+      "direction": "delayed",
+      "index": 7,
+      "magnitude": "persistent",
+      "statement": "Inventory rebuilding not expected before summer"
+    },
+    {
+      "dimension": "normalization uncertainty",
+      "direction": "unclear",
+      "index": 8,
+      "magnitude": "persistent",
+      "statement": "Frequently anticipated price normalization still absent"
+    }
+  ],
+  "outcome": "matched",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_an_n2tdn/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_an_n2tdn/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_an_n2tdn",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

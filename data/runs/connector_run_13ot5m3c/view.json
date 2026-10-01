@@ -1,0 +1,508 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "unsupported",
+      "dominant_themes": [
+        "dollar weakness",
+        "non-US equity leadership",
+        "cross-border fund flows",
+        "surface-only retrieval overlap"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "year-to-date with emphasis on the first half",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "US dollar index",
+      "S&P 500",
+      "US mega-cap equities",
+      "international equities",
+      "European banks",
+      "European defense equities",
+      "DAX",
+      "Japanese equities"
+    ],
+    "raw_text": "The dollar is having its worst stretch in years — the index is down around ten percent since January, the worst first half I can remember in decades — and the usual playbook of hiding in US mega-caps while the currency does the work is simply not paying. For the first time in a long while, international equities are beating the S&P: European banks and defense names have ripped, the DAX is out front, and even Japanese stocks in dollar terms are keeping pace. I keep hearing it dismissed as a weak-dollar trade, but flows tell another story — global funds that have underweighted the rest of the world for a decade are quietly rebuilding non-US positions. Call it dollar weakness, call it valuation relief; either way, the crowd is on the wrong side of it.\n",
+    "summary": "The commentary describes a roughly ten percent year-to-date decline in the dollar index alongside international equity outperformance versus the S&P 500. European banks, European defense companies, the DAX, and Japanese equities in dollar terms are identified as notable areas of strength. The relative performance is attributed not only to dollar weakness and valuation relief but also to global funds rebuilding non-US equity exposure after a prolonged period of underweighting, though the durability and precise cause of the shift remain uncertain."
+  },
+  "interpretation": {
+    "confidence": "unsupported",
+    "dominant_themes": [
+      "dollar weakness",
+      "non-US equity leadership",
+      "cross-border fund flows",
+      "surface-only retrieval overlap"
+    ],
+    "summary": "No candidate is supported by the packet. The observed dollar decline, international equity leadership, regional sector strength, and movement of global funds toward non-US markets are not described by the retrieved states. Apparent similarities to trend, international equity, banking, sector, January, or return-premium records do not supply the measured behavior those records name."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T23:09:20Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:af4e7bc9caa1df5da322726c1362c76c63bed751bdb81b45c8df96ba9a00abf9"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "policy_amihud_timeseries_premium_003",
+        "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+      },
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "retrieval_score": 0.808435,
+      "state_id": "state_amihud_timeseries_premium_003",
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "closest_on": {
+        "record_id": "failure_nguyen_pesr_nonstationarity_001",
+        "text_snippet": "The PESR metric relies on a transition matrix A estimated from training data and held fixed for the duration of the OOS period. If true regime transition…"
+      },
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "retrieval_score": 0.808233,
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_amihud_crosssection_premium_002",
+        "text_snippet": "In monthly Fama-MacBeth cross-sectional regressions, expected stock returns are positively related to expected illiquidity: the ILLIQ coefficient is 0.162…"
+      },
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "retrieval_score": 0.807248,
+      "state_id": "state_amihud_crosssection_premium_002",
+      "title": "Cross-Sectional Illiquidity Premium State"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_billio_crisis_pca_collapse_002",
+        "text_snippet": "The sustained elevation of the first principal component variance share above 80% throughout the 2007-2009 financial crisis, compared to a 1994-2000 baseline…"
+      },
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "retrieval_score": 0.807026,
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_ang_2011_fat_tails_mixture_001",
+        "text_snippet": "model_specification When modeling equity return distributions with regime-switching models, within-regime Gaussian innovations are sufficient to produce…"
+      },
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "retrieval_score": 0.805418,
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    }
+  ],
+  "no_match_rationale": "No candidate describes the observed combination of sustained dollar weakness, non-US equity leadership, European and Japanese strength, and cross-border funds rebuilding non-US exposure. The nearest records concern bear-regime correlation, futures-based trend-following performance, long-horizon mean reversion, pair-spread convergence, or liquidity effects. The packet does not supply the correlation, strategy-return, autocorrelation, convergence, or liquidity behavior those states require.",
+  "non_matches": [
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The state describes elevated international equity correlation during a bear regime and market downturns. The packet instead reports pronounced international, European, and Japanese equity strength relative to the S&P 500, which is inconsistent with the downturn direction that activates this state.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_ang_bekaert_bear_correlation_002",
+          "text_snippet": "International equity return correlations approximately 20 percentage points higher during identified bear regime periods versus normal regime periods. Measured…"
+        },
+        {
+          "record_id": "claim_ang_bekaert_bear_correlation_002",
+          "text_snippet": "International equity return correlations are approximately 20 percentage points higher in the bear regime than in the normal regime, demonstrating systematic…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "reason": "The state concerns the statistical insignificance of option volume for option bid-ask spreads after liquidity controls. The packet contains no option-volume or option-spread observations and describes a different market mechanism.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_volume_insignificant_001",
+      "surfaced_by": [
+        {
+          "record_id": "claim_cho_engle_volume_insignificant_001",
+          "text_snippet": "Option trading volume is not a statistically significant determinant of option bid-ask spreads in the CBOE S&P100 market. After controlling for other spread…"
+        },
+        {
+          "record_id": "policy_cho_engle_volume_insignificant_001",
+          "text_snippet": "feature_selection Option trading volume should not be used as a primary feature for predicting option bid-ask spread width. Features derived from equity market…"
+        }
+      ],
+      "title": "Volume-Insensitive Options Spread Environment"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The state is defined by risk-adjusted performance of time-series momentum signals in diversified futures portfolios. The packet reports movements in a dollar index and regional equity markets rather than futures-portfolio signal returns.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hurst_tsmom_horizon_sharpe_001",
+          "text_snippet": "Observable monotone gradient of individual-asset Sharpe ratios with time-series momentum look-back horizon, combined with a large diversification benefit in a…"
+        },
+        {
+          "record_id": "signature_hurst_tsmom_smile_004",
+          "text_snippet": "Conditional return profile of time-series momentum strategies exhibiting a \"smile\" shape with respect to market regime, confirming trend-following…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "reason": "The state describes option spreads being driven by delta-scaled hedging costs in the underlying asset. Dollar weakness and international equity leadership do not evidence this derivative-liquidity linkage.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "surfaced_by": [
+        {
+          "record_id": "policy_cho_engle_underlying_spread_002",
+          "text_snippet": "feature_selection When modeling option bid-ask spreads, include the underlying asset's bid-ask spread as a feature, ideally scaled by option delta to reflect…"
+        },
+        {
+          "record_id": "claim_cho_engle_underlying_spread_002",
+          "text_snippet": "Option bid-ask spreads are positively and significantly related to the bid-ask spread of the underlying asset (S&P100 index). This result supports the…"
+        }
+      ],
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The state requires measured cross-market correlations during elevated source-country variance and a heteroscedasticity correction. The packet supplies neither correlation behavior nor variance changes from which the stated bias could be assessed.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_forbes_bias_correction_001",
+          "text_snippet": "confidence_calibration Always compute the relative source-country variance increase (delta = sigma^2_high / sigma^2_low - 1) when measuring cross-market…"
+        },
+        {
+          "record_id": "signature_forbes_no_contagion_adjusted_002",
+          "text_snippet": "The near-complete disappearance of statistically significant cross-market contagion after applying the Forbes-Rigobon (2002) heteroscedasticity correction to…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The state requires a change from positive short-horizon serial correlation to negative serial correlation over three-to-eight-year horizons. Current year-to-date regional performance supplies no multi-horizon autocorrelation or transitory-variance evidence.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_poterba_summers_horizon_regime_switch_001",
+          "text_snippet": "regime_switch The sign reversal in equity return autocorrelation from positive (sub-annual) to negative (3–8 year) requires a horizon-conditional regime-switch…"
+        },
+        {
+          "record_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+          "text_snippet": "A market condition in which equity returns exhibit positive serial correlation at horizons shorter than one year and negative serial correlation (mean…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The state requires pair-level price spreads that diverge and subsequently converge within six-month windows. The sector and market ranking in the packet is only categorical resemblance and does not evidence pair-spread behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "claim_gatev_pairs_sector_returns_005",
+          "text_snippet": "Pairs trading is profitable across all four major CRSP industry sectors, with Utilities showing the highest average 6-month excess returns (5.04%), followed by…"
+        },
+        {
+          "record_id": "failure_gatev_pairs_formation_sensitivity_001",
+          "text_snippet": "The pairs formation methodology (minimum sum-of-squared normalized price differences over a 12-month formation window) is sensitive to the choice of formation…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "The state is identified by increasing density and strength of Granger-causal links among financial institutions. Strength in European banks does not evidence predictive network-link buildup across banks, insurers, brokers, and hedge funds.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "surfaced_by": [
+        {
+          "record_id": "state_billio_granger_systemic_buildup_002",
+          "text_snippet": "A market condition characterized by a growing density of Granger-causal predictive relationships among return series of financial sector institutions (hedge…"
+        },
+        {
+          "record_id": "signature_billio_granger_network_density_001",
+          "text_snippet": "The density and directionality of Granger-causal links among return series of U.S. financial sector institutions (approximately 100 per sector across hedge…"
+        }
+      ],
+      "title": "Systemic Risk Network Buildup State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The state requires estimated world-equity mean, volatility, transition probabilities, and filtered regime probabilities. The packet reports relative market performance but none of those regime measurements.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "surfaced_by": [
+        {
+          "record_id": "state_ang_bekaert_regime_params_001",
+          "text_snippet": "A two-state Markov-switching market condition for international equity returns characterized by empirically estimated regime-level parameters: normal regime…"
+        },
+        {
+          "record_id": "signature_ang_bekaert_regime_params_001",
+          "text_snippet": "Regime-conditional return distribution shift in international equity returns: normal regime characterized by mean monthly return ~0.90% and volatility ~2.81%;…"
+        }
+      ],
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "The state requires weekly variance ratios and positive first-order autocorrelation, including a market-capitalization gradient. The packet supplies directional performance only and no weekly predictability statistics.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_lo_mackinlay_size_gradient_liquidity_003",
+          "text_snippet": "The size-autocorrelation gradient documented by Lo and MacKinlay (1988)—with the smallest market-cap quintile exhibiting ρ(1) ≈ 0.42 versus ρ(1) ≈ 0.14 for the…"
+        },
+        {
+          "record_id": "failure_lo_mackinlay_nontrading_overattribution_005",
+          "text_snippet": "Models that attribute the observed short-horizon weekly return autocorrelation primarily or entirely to non-synchronous trading (non-trading days inducing…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "reason": "The state concerns wider proportional spreads and reduced price improvement in out-of-the-money options. The packet contains no option moneyness, quoted-spread, or execution-cost evidence.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_moneyness_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_cho_engle_moneyness_003",
+          "text_snippet": "Proportional bid-ask spread (spread divided by midpoint) as a function of option moneyness category (ATM vs. OTM) serves as a measurable indicator of…"
+        },
+        {
+          "record_id": "policy_cho_engle_moneyness_003",
+          "text_snippet": "confidence_calibration Moneyness category (ATM vs. OTM) must be included as a feature or segmentation variable in option spread models. OTM options should be…"
+        }
+      ],
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    },
+    {
+      "entry_id": "entry_hasbrouck_taq_correlation_002",
+      "reason": "The state describes rank correlation between Gibbs effective-cost estimates and TAQ spread benchmarks. It is an estimator-validation property unrelated to regional equity leadership or cross-border fund flows.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_taq_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hasbrouck_taq_correlation_002",
+          "text_snippet": "The cross-sectional rank correlation between annual Gibbs effective cost estimates and TAQ-derived intraday effective spread estimates across NYSE-listed…"
+        },
+        {
+          "record_id": "state_hasbrouck_taq_correlation_002",
+          "text_snippet": "A structural property of the Gibbs-based effective cost estimator: when cross-sectionally compared against TAQ-derived intraday effective spread benchmarks…"
+        }
+      ],
+      "title": "Gibbs Estimator Validated as TAQ-Equivalent Effective Cost Proxy"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "The state requires stocks sorted by measured effective trading costs to show higher subsequent returns for less-liquid names. Regional outperformance and valuation relief supply neither cost measurements nor the required liquidity-sorted return behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_return_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hasbrouck_return_premium_003",
+          "text_snippet": "A positive return spread across portfolios sorted by annual Gibbs effective cost estimates: stocks in higher-cost deciles earn higher subsequent returns than…"
+        },
+        {
+          "record_id": "claim_hasbrouck_return_premium_003",
+          "text_snippet": "Effective trading cost estimated by the Gibbs sampler is positively related to future stock returns over the period 1926-2006, providing empirical evidence for…"
+        }
+      ],
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The state requires an illiquidity return premium concentrated specifically in January. A year-to-date comparison beginning in January does not evidence seasonal concentration, effective trading costs, or liquidity-sorted future returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        },
+        {
+          "record_id": "claim_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional relationship between effective trading costs and stock returns is concentrated in January. Outside of January, the illiquidity premium in…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The state describes a U-shaped relationship between option transaction rates and option bid-ask spreads. The packet reports neither option-market activity nor spread widening in fast and slow trading regimes.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_market_conditions_004",
+      "surfaced_by": [
+        {
+          "record_id": "failure_cho_engle_market_conditions_004",
+          "text_snippet": "Models that assume a monotonic relationship between trading activity and option bid-ask spreads fail to capture the non-monotonic (U-shaped) pattern observed…"
+        },
+        {
+          "record_id": "policy_cho_engle_market_conditions_004",
+          "text_snippet": "regime_switch Intraday transaction rate relative to the daily average should be monitored and used to classify market activity regime (fast/slow/normal). This…"
+        }
+      ],
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "currency trend",
+      "direction": "weakening",
+      "index": 0,
+      "magnitude": "strongest decline in years",
+      "statement": "Dollar index down roughly ten percent since January"
+    },
+    {
+      "dimension": "regional equity leadership",
+      "direction": "shifting outside the United States",
+      "index": 1,
+      "magnitude": "notable",
+      "statement": "International equities outperforming the S&P 500"
+    },
+    {
+      "dimension": "European sector performance",
+      "direction": "rising",
+      "index": 2,
+      "magnitude": "strong",
+      "statement": "European banks and defense companies showing pronounced strength"
+    },
+    {
+      "dimension": "equity index leadership",
+      "direction": "outperforming",
+      "index": 3,
+      "magnitude": "prominent",
+      "statement": "DAX leading among cited equity markets"
+    },
+    {
+      "dimension": "currency-adjusted equity performance",
+      "direction": "resilient",
+      "index": 4,
+      "magnitude": "comparable",
+      "statement": "Japanese equities keeping pace in dollar terms"
+    },
+    {
+      "dimension": "cross-border fund flows",
+      "direction": "moving toward non-US markets",
+      "index": 5,
+      "magnitude": "gradual",
+      "statement": "Global funds rebuilding non-US equity exposure"
+    },
+    {
+      "dimension": "performance drivers",
+      "direction": "mixed",
+      "index": 6,
+      "magnitude": "uncertain",
+      "statement": "Dollar weakness and valuation relief both offered as explanations"
+    },
+    {
+      "dimension": "investor consensus",
+      "direction": "lagging",
+      "index": 7,
+      "magnitude": "broad",
+      "statement": "Prevailing market consensus viewed as misaligned with the shift"
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_13ot5m3c/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_13ot5m3c/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_13ot5m3c",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "caveats": [
+    "The packet evidences an extended, synchronized upswing, supporting a trending activation environment, but it does not measure TSMOM returns, Sharpe-by-horizon behavior, signal lookbacks, or persistence beyond the reported episode.",
+    "Positive returns across several asset classes supply the bull-state return sign, but the packet provides no return-moment estimates, volatility classification, HMM probabilities, or transition evidence."
+  ],
+  "constraints": [
+    "low_confidence_match: entry_hurst_tsmom_trend_following_001",
+    "low_confidence_match: entry_nguyen_three_state_hmm_001"
+  ],
+  "failure_modes": [
+    "weak_match:entry_hurst_tsmom_trend_following_001",
+    "weak_match:entry_nguyen_three_state_hmm_001"
+  ],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_hurst_tsmom_horizon_sharpe_001"
+        }
+      ],
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "evidence_caveats": "The packet evidences an extended, synchronized upswing, supporting a trending activation environment, but it does not measure TSMOM returns, Sharpe-by-horizon behavior, signal lookbacks, or persistence beyond the reported episode.",
+      "failure_modes": [],
+      "match_strength": "weak",
+      "matched_observations": [
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    },
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_nguyen_hmm_regime_states_001"
+        }
+      ],
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "evidence_caveats": "Positive returns across several asset classes supply the bull-state return sign, but the packet provides no return-moment estimates, volatility classification, HMM probabilities, or transition evidence.",
+      "failure_modes": [],
+      "match_strength": "weak",
+      "matched_observations": [
+        3,
+        5,
+        6,
+        8
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    }
+  ],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "The equity rally and small-cap breadth do not evidence weekly return autocorrelation, variance ratios, or the state's size-sorted autocorrelation gradient.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "January positioning and small-cap leadership do not evidence the required relationship between effective trading costs and subsequent January stock returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "The packet supplies no aggregate ILLIQ series, monthly persistence estimate, or lagged-liquidity behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_illiq_persistence_004"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "A year-end rally with uncertain durability does not evidence the state's autocorrelation reversal between sub-annual and three-to-eight-year horizons.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "The packet contains no effective-cost measurements or cross-sectional evidence that higher-cost stocks earned higher subsequent returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_return_premium_003"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Broad equity gains do not evidence temporary pair-level spread divergence followed by convergence within the specified trading window.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The state requires elevated bear-regime probability during an equity downturn, whereas the packet reports a strong equity rally near a record and bearish capitulation rather than bear-regime returns.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "The packet does not measure expected or unexpected aggregate illiquidity, so neither the future-return premium nor the contemporaneous price effect is evidenced.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The state concerns option bid-ask spreads under fast or slow option transaction rates, while the packet's asset scope contains no options market observations.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_market_conditions_004"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "Sharp macro moves and uncertain rally durability do not evidence clustered squared returns, persistent conditional variance, or large GARCH persistence parameters.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "Synchronized gains do not evidence an unadjusted correlation estimate, an elevated source-country variance, or a change after heteroscedasticity correction.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The state is specific to smoothed hedge-fund returns and marked-to-model positions, while hedge funds are absent from the packet's asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    },
+    {
+      "entry_id": "entry_hasbrouck_taq_correlation_002",
+      "reason": "The estimator-validation property concerns Gibbs and TAQ effective-cost measurements, neither of which appears in the observed rates-led cross-asset rally.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_taq_correlation_002"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2023-12-15",
+      "observation_horizon": "late 2023 into January 2024",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "US Treasury yields",
+      "US equities",
+      "gold",
+      "bitcoin",
+      "investment-grade credit",
+      "high-yield credit"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "credit issuance",
+      "cross-asset performance",
+      "digital assets",
+      "equity performance",
+      "investor positioning",
+      "long-term interest rates",
+      "market breadth",
+      "market catalyst",
+      "monetary policy expectations",
+      "precious metals",
+      "short-term interest rates",
+      "uncertainty"
+    ],
+    "observation_id": "obs_9b426b118c07",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "regime_dependent"
+  ],
+  "raw_input_hash": "sha256:9b426b118c074fcc85d94d531257c74315bf2343fe63e9d207e4ad8f859aacba",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "weakly_supported",
+    "dominant_themes": [
+      "rates-led cross-asset upswing",
+      "positive multi-asset return regime",
+      "trend activation without model diagnostics"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "regime_dependent"
+    ]
+  },
+  "run_id": "connector_run_k9438_ak",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

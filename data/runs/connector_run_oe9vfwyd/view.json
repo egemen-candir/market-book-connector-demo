@@ -1,0 +1,531 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [
+      "The extreme fixed-income yield move supports the high-volatility component, but the packet provides no HMM state probability, EWMM moment estimate, or multi-day confirmation."
+    ],
+    "constraints": [
+      "low_confidence_match: entry_nguyen_three_state_hmm_001"
+    ],
+    "failure_modes": [
+      "single-session signal",
+      "model activation unverified",
+      "weak_match:entry_nguyen_three_state_hmm_001"
+    ],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "regime_dependent"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "weakly_supported",
+      "dominant_themes": [
+        "fixed-income volatility",
+        "forced liquidation",
+        "liquidity deterioration",
+        "scope limitations"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "regime_dependent"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "within one week",
+      "timezone": "America/New_York"
+    },
+    "asset_scope": [
+      "UK government bonds",
+      "pound sterling",
+      "UK corporate debt",
+      "pension liability-driven strategies"
+    ],
+    "raw_text": "I have never seen gilts trade like this. The mini-budget landed Friday and the verdict has been merciless — thirty-year yields moving fifty basis points in a session, five-sigma in a market that ticks in ones and twos. The story on every dealing floor is the pension funds: liability-driven strategies hedging with leveraged gilt positions, facing margin calls as collateral collapses, forced to sell the very gilts that are falling. That is a doom loop and everyone knows it. Sterling is hit again and the Bank of England so far refuses to rescue the fiscal experiment with hikes, leaving a vacuum. My inbox is full of funds asking about counterparty risk with LDI managers, and UK corporate issuance has stopped. This has gone beyond a judgment on fiscal policy into a liquidity crisis in the benchmark safe asset. I saw 1994; nothing compares to this pace. Something gives this week.\n",
+    "summary": "Extreme long-dated UK government bond volatility is interacting with pension collateral calls and forced liquidation, creating a self-reinforcing deterioration in benchmark-market liquidity. Sterling is weakening, UK corporate issuance has halted, counterparty concerns around pension liability managers are rising, and the commentary describes no offsetting central-bank rate response. The immediate outcome remains uncertain, but market strain is expected to reach a critical point within the week."
+  },
+  "interpretation": {
+    "confidence": "weakly_supported",
+    "dominant_themes": [
+      "fixed-income volatility",
+      "forced liquidation",
+      "liquidity deterioration",
+      "scope limitations"
+    ],
+    "summary": "One candidate receives weak support because the extreme fixed-income move is consistent with its high-volatility regime component. The remaining candidates either lack their named behavioral evidence, describe unrelated mechanisms, or cover different asset scopes."
+  },
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "policy_implication",
+          "record_id": "policy_nguyen_hmm_regime_switching_001",
+          "text": "regime_switch Use EWMM features (first and second moments of daily returns with span=30) as inputs to a three-state HMM for real-time regime identification across multi- asset futures. The normalized EWMM observation vector is applicable across commodity, currency, equity, and fixed income asset classes without modification, enabling a consistent cross-asset regime identification framework. HMM-filtered state probabilities (bull, bear, high-volatility) serve as the primary regime features for downstream position sizing and risk control. The three-state HMM (bull/bear/high-volatility) trained per instrument provides the regime state probability estimates used as model inputs. The PESR decision rule (PESR = ESR^T * alpha_{n+h|n}) translates h-step-ahead predicted regime probabilities into a scalar risk-adjusted return forecast. OOS evidence supports substantially higher Sharpe ratios than buy-and-hold for most of 15 futures instruments at 5bps transaction costs (Jan 2016–Oct 2019). Three-state structure selected via greedy approach; alternative state counts require validation before use in production. Confidence in HMM regime signal quality should be conditioned on EWMM span calibration: span=30 provides a favorable SR/turnover tradeoff in the OOS test period. High-confidence long positions are indicated when PESR is substantially positive; positions should be exited or reduced when PESR approaches zero or turns negative. Source is a preprint; confidence in robustness of OOS results requires corroboration from additional validation periods and asset classes. Suppress activity when HMM assigns high posterior probability to the high-volatility state (bear or high-vol dominant); reduce or close long positions when the predicted regime over the h-step horizon is unfavorable. OOS test period is approximately 4 years (Jan 2016 – Oct 2019); short window may not adequately capture multiple full market cycles. Results are from a preprint, not peer-reviewed. Long-only strategy design limits applicability to directional long strategies; extension to long/short requires separate validation. Transaction cost sensitivity should be tested at costs above 5bps."
+        }
+      ],
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "evidence_caveats": "The extreme fixed-income yield move supports the high-volatility component, but the packet provides no HMM state probability, EWMM moment estimate, or multi-day confirmation.",
+      "failure_modes": [
+        "single-session signal",
+        "model activation unverified"
+      ],
+      "match_strength": "weak",
+      "matched_observations": [
+        {
+          "dimension": "long-term rate volatility",
+          "direction": "rising",
+          "index": 0,
+          "statement": "Fifty-basis-point session move in thirty-year UK government bond yields"
+        }
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "state_summary": "A three-state hidden Markov model (HMM) regime structure applied asset- independently to daily futures returns across commodity, currency, equity, and fixed income classes. The three states are labeled bull (positive return, moderate volatility), bear (negative or flat return, elevated volatility), and high-volatility (extreme variance). The model uses EWMM (exponentially weighted moving moment) features of first and second return moments, normalized and concatenated independently per instrument, as the observation vector. Applied uniformly to 15 futures instruments (4 commodity, 4 currency, 4 equity, 3 fixed income) using 4972 daily observations (January 2000 – October 2019). Three states selected via greedy model selection. The PESR metric (Predicted Expected Sharpe Ratio) translates HMM-predicted state probabilities into a forward-looking scalar risk-adjusted return forecast by combining state-level SR estimates with h-step-ahead transition matrix powers. OOS long-only strategy (Jan 2016 – Oct 2019) achieves substantially higher Sharpe ratios than buy-and-hold across most instruments at 5bps transaction costs (e.g., EQ4: SR=3.0 vs. 1.0 B&H). EWMM span=30 provides a favorable SR/turnover tradeoff (Nguyen 2021 preprint).\n",
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    }
+  ],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T22:36:16Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:caeb51e21a77eebea5cc485a862b1b486f7ec1b0b01b7e8850ced8a2a0eead8a"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "state_cho_engle_moneyness_003",
+        "text_snippet": "A structural market condition in which out-of-the-money (OTM) options carry wider proportional bid-ask spreads than at-the-money (ATM) options, reflecting…"
+      },
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "retrieval_score": 0.82151,
+      "state_id": "state_cho_engle_moneyness_003",
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_lo_mackinlay_model_weighting_rw_001",
+        "text_snippet": "model_weighting The decisive rejection of the random walk for short-horizon equity returns (z-statistics 7.18–18.46 for equal-weighted portfolios; z=3.84 for…"
+      },
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "retrieval_score": 0.820436,
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_billio_granger_network_density_001",
+        "text_snippet": "The density and directionality of Granger-causal links among return series of U.S. financial sector institutions (approximately 100 per sector across hedge…"
+      },
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "retrieval_score": 0.819618,
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "title": "Systemic Risk Network Buildup State"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_hasbrouck_return_premium_003",
+        "text_snippet": "Effective trading cost estimated by the Gibbs sampler is positively related to future stock returns over the period 1926-2006, providing empirical evidence for…"
+      },
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "retrieval_score": 0.819548,
+      "state_id": "state_hasbrouck_return_premium_003",
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_cho_engle_underlying_spread_002",
+        "text_snippet": "feature_selection When modeling option bid-ask spreads, include the underlying asset's bid-ask spread as a feature, ideally scaled by option delta to reflect…"
+      },
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "retrieval_score": 0.814758,
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    }
+  ],
+  "no_match_rationale": null,
+  "non_matches": [
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "The packet reports counterparty concern but supplies no financial-institution return co-movement, PC1 variance share, or broker-dealer loading behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_crisis_pca_collapse_002",
+          "text_snippet": "The sustained elevation of the first principal component variance share above 80% throughout the 2007-2009 financial crisis, compared to a 1994-2000 baseline…"
+        },
+        {
+          "record_id": "policy_billio_comovement_risk_control_001",
+          "text_snippet": "risk_control Include rolling PC1 variance share across financial sector return indices as a systemic co-movement feature. Threshold PC1 at approximately 80% to…"
+        }
+      ],
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The record concerns multi-year equity-return autocorrelation reversal, while the packet describes an acute UK bond-market liquidity crisis within one week.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_poterba_summers_transitory_position_sizing_002",
+          "text_snippet": "position_sizing The transitory component magnitude—standard deviation 15–25% for the NYSE value-weighted index and up to 37% for the equal-weighted index…"
+        },
+        {
+          "record_id": "signature_poterba_summers_power_calibration_004",
+          "text_snippet": "Observable power-calibration signal for long-horizon variance ratio tests, quantifying the likelihood that a non-rejection of the random walk reflects true…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "Acute directional moves do not establish a time-series momentum signal, sustained trend horizon, or associated cross-futures performance.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hurst_tsmom_horizon_sharpe_001",
+          "text_snippet": "Observable monotone gradient of individual-asset Sharpe ratios with time-series momentum look-back horizon, combined with a large diversification benefit in a…"
+        },
+        {
+          "record_id": "policy_hurst_tsmom_diversified_001",
+          "text_snippet": "model_weighting When the multi-asset trend following state is classified as active, emphasize: (1) diversified TSMOM signals across all available asset classes…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "The record measures persistent monthly NYSE illiquidity, whereas the packet covers acute liquidity deterioration in UK government bonds.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_amihud_illiq_persistence_004",
+      "surfaced_by": [
+        {
+          "record_id": "gloss_state_amihud_illiq_persistence_004",
+          "text_snippet": null
+        },
+        {
+          "record_id": "policy_amihud_illiq_persistence_004",
+          "text_snippet": "feature_selection Lagged market-level ILLIQ (prior-month aggregate) is a valid proxy for expected current-period illiquidity given AR(1) coefficient 0.945 and…"
+        }
+      ],
+      "title": "Aggregate Illiquidity Persistence State"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "No equity-pair divergence, historical spread, or subsequent convergence appears in the packet.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_gatev_pairs_market_neutral_sizing_002",
+          "text_snippet": "position_sizing The annualized Sharpe ratio range of 1.5–2.1 and portfolio volatility of 4–6% annualized for top-5 pairs portfolios (gross, pre-cost) establish…"
+        },
+        {
+          "record_id": "failure_gatev_pairs_time_decay_004",
+          "text_snippet": "Pairs trading profitability undergoes secular decay over time due to arbitrage competition, rendering historical performance statistics materially unreliable…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "Elevated volatility alone does not evidence an unadjusted cross-market correlation estimate or heteroscedasticity-induced correlation bias.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_forbes_unadjusted_correlation_bias_001",
+          "text_snippet": "The positive upward bias in unadjusted conditional cross-market correlations computed during high-volatility crisis periods relative to the true unconditional…"
+        },
+        {
+          "record_id": "state_forbes_heteroscedasticity_bias_001",
+          "text_snippet": "A measurement distortion condition that arises when cross-market correlations are computed during periods of elevated source-country variance without applying…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The packet contains neither international equity correlations nor an elevated filtered bear-regime probability.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_bekaert_model_selection_004",
+          "text_snippet": "Constant-parameter international equity allocation models (static mean-variance with unconditional means and covariances) fail to exploit regime-conditional…"
+        },
+        {
+          "record_id": "signature_ang_bekaert_rs_sharpe_003",
+          "text_snippet": "Out-of-sample Sharpe ratio improvement when conditioning portfolio weights on filtered regime probabilities rather than using static mean-variance weights.…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "One extreme bond-market move does not establish return-distribution excess kurtosis, negative skewness, or a Gaussian regime mixture.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "model_specification When modeling equity return distributions with regime-switching models, within-regime Gaussian innovations are sufficient to produce…"
+        },
+        {
+          "record_id": "signature_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "Unconditional excess kurtosis (kurtosis > 3) and negative skewness in equity return distributions that persist even when within-regime innovations are assumed…"
+        }
+      ],
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "The packet does not measure joint left-tail and right-tail correlations across assets or estimate separate bear-regime correlation parameters.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "model_selection Include exceedance correlation asymmetry (left-tail minus right-tail exceedance correlation) as a model validation diagnostic when evaluating…"
+        },
+        {
+          "record_id": "failure_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "GARCH-DCC models with symmetric correlation specification fail to capture left-tail exceedance correlation asymmetry in multi-asset equity portfolios. When…"
+        }
+      ],
+      "title": "Regime-Conditional Tail Correlation Asymmetry State"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "The illiquidity-shock and negative-price behavior is relevant, but the record is confined to monthly NYSE equity-market returns rather than UK government bonds.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_amihud_timeseries_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_timeseries_premium_003",
+          "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+        },
+        {
+          "record_id": "signature_amihud_timeseries_premium_003",
+          "text_snippet": "Time-series regression of NYSE market returns on decomposed illiquidity yields two observable signals: expected illiquidity coefficient g1=10.226 (t=2.68)…"
+        }
+      ],
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The record's normal and bear parameters describe international equity returns, not the packet's UK bond, sterling, corporate-debt, and pension-strategy scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_bekaert_regime_params_001",
+          "text_snippet": "model_calibration Use Ang-Bekaert (2004) regime parameter estimates as calibration anchors when initializing two-state RS models for international equity…"
+        },
+        {
+          "record_id": "state_ang_bekaert_regime_params_001",
+          "text_snippet": "A two-state Markov-switching market condition for international equity returns characterized by empirically estimated regime-level parameters: normal regime…"
+        }
+      ],
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The record concerns hedge-fund return smoothing and marked-to-model positions, while the packet concerns pension liability-driven strategies and collateral liquidation.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "surfaced_by": [
+        {
+          "record_id": "failure_billio_hedge_fund_autocorr_proxy_001",
+          "text_snippet": "Return autocorrelation as a proxy for hedge fund position illiquidity conflates two distinct sources of serial persistence: (1) stale or infrequent pricing of…"
+        },
+        {
+          "record_id": "signature_billio_hedge_fund_autocorr_001",
+          "text_snippet": "Elevated first-order serial autocorrelation in hedge fund monthly returns (rho1=0.22), substantially above levels observed in banks (rho1=0.02), broker-dealers…"
+        }
+      ],
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The packet supplies no January stock-return seasonality or cross-sectional relationship between effective trading costs and future returns.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hasbrouck_january_effect_004",
+          "text_snippet": "activity_suppression Condition the illiquidity return premium feature on calendar month. In January, the illiquidity premium feature may be included at full…"
+        },
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "The packet supplies one extreme session move but no sequence of large shocks, squared-return autocorrelation, or persistent GARCH parameters.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+        },
+        {
+          "record_id": "claim_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "GARCH(1,1) captures the empirical stylized fact of volatility clustering— large shocks followed by large shocks and small shocks followed by small…"
+        }
+      ],
+      "title": "GARCH Volatility Clustering Persistence State"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "long-term rate volatility",
+      "direction": "rising",
+      "index": 0,
+      "magnitude": "extreme",
+      "statement": "Fifty-basis-point session move in thirty-year UK government bond yields"
+    },
+    {
+      "dimension": "collateral pressure",
+      "direction": "intensifying",
+      "index": 1,
+      "magnitude": "severe",
+      "statement": "Pension collateral calls driving forced UK government bond liquidation"
+    },
+    {
+      "dimension": "market feedback loop",
+      "direction": "deteriorating",
+      "index": 2,
+      "magnitude": "strong",
+      "statement": "Falling bond prices and forced liquidation reinforcing each other"
+    },
+    {
+      "dimension": "safe-asset liquidity",
+      "direction": "weakening",
+      "index": 3,
+      "magnitude": "critical",
+      "statement": "Benchmark UK government bond liquidity under acute strain"
+    },
+    {
+      "dimension": "currency performance",
+      "direction": "falling",
+      "index": 4,
+      "magnitude": "marked",
+      "statement": "Renewed weakness in pound sterling"
+    },
+    {
+      "dimension": "monetary-policy response",
+      "direction": "absent",
+      "index": 5,
+      "magnitude": null,
+      "statement": "No offsetting Bank of England rate response described"
+    },
+    {
+      "dimension": "counterparty risk",
+      "direction": "rising",
+      "index": 6,
+      "magnitude": "substantial",
+      "statement": "Growing fund concern about pension liability-manager counterparties"
+    },
+    {
+      "dimension": "primary-market access",
+      "direction": "closed",
+      "index": 7,
+      "magnitude": "complete",
+      "statement": "Halt in UK corporate debt issuance"
+    },
+    {
+      "dimension": "uncertainty",
+      "direction": "unclear",
+      "index": 8,
+      "magnitude": "high",
+      "statement": "Near-term resolution expected without a specified outcome"
+    }
+  ],
+  "outcome": "matched",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_oe9vfwyd/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_oe9vfwyd/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_oe9vfwyd",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

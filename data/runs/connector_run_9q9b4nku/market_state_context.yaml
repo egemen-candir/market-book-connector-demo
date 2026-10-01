@@ -1,0 +1,133 @@
+caveats: []
+constraints: []
+failure_modes: []
+market_book_version: stage6_accepted
+matched_states: []
+missing_evidence: []
+non_matches:
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: Possible withdrawal contagion does not evidence unadjusted cross-market
+    correlation bias, a source-market variance increase, or the disappearance of contagion
+    after heteroscedasticity correction.
+  reason_code: insufficient_evidence
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: The packet contains no historically paired equity spread crossing a threshold
+    and subsequently converging toward equilibrium.
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_nguyen_three_state_hmm_001
+  reason: Falling crypto prices and severe stress do not establish the EWMM return
+    moments, HMM state probabilities, or transition behavior defined for the futures
+    regime.
+  reason_code: insufficient_evidence
+  state_id: state_nguyen_three_state_hmm_001
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: The packet supplies no aggregate ILLIQ measurement or decomposition into
+    expected and unexpected components linked to the two specified return effects.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: An acute weekly decline does not evidence sustained look-back trends, trend-following
+    returns, or the stated performance pattern across market regimes.
+  reason_code: insufficient_evidence
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_amihud_illiq_persistence_004
+  reason: Stablecoin strain and withdrawals do not supply a monthly aggregate ILLIQ
+    history demonstrating near-unit-root persistence.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_illiq_persistence_004
+- entry_id: entry_billio_financial_sector_comovement_001
+  reason: Concern about crypto-institution contagion does not evidence a dominant
+    return principal component or collapsed diversification across the specified financial
+    sectors.
+  reason_code: insufficient_evidence
+  state_id: state_billio_financial_sector_comovement_001
+- entry_id: entry_cho_engle_market_conditions_004
+  reason: The packet reports neither option bid-ask spreads nor the U-shaped spread
+    behavior associated with fast and slow transaction-rate regimes.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_market_conditions_004
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: Concurrent crypto price declines do not establish elevated international-equity
+    correlations or an elevated filtered bear-regime probability.
+  reason_code: insufficient_evidence
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_cho_engle_moneyness_003
+  reason: No ATM-versus-OTM option spread differential, execution-at-quote frequency,
+    or moneyness behavior appears in the packet.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_moneyness_003
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: The acute decline supplies no three-to-eight-year autocorrelation reversal,
+    transitory variance estimate, or subsequent mean-reverting behavior.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_ang_2011_exceedance_asymmetry_003
+  reason: A list of simultaneously falling crypto assets does not evidence left-tail
+    correlation exceeding right-tail correlation or activation through a regime-switching
+    correlation model.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_exceedance_asymmetry_003
+- entry_id: entry_billio_granger_systemic_buildup_002
+  reason: Prospective withdrawal contagion does not demonstrate a growing density
+    or strength of Granger-predictive links among institutional return series.
+  reason_code: insufficient_evidence
+  state_id: state_billio_granger_systemic_buildup_002
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: One week of crypto losses does not establish positive weekly return autocorrelation,
+    a variance-ratio departure, or the stated size gradient.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_cho_engle_underlying_spread_002
+  reason: Negative funding is not evidence of option-spread transmission from an underlying
+    asset through delta-scaled hedging costs.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_underlying_spread_002
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: acute multi-day market dislocation
+    timezone: UTC
+  asset_scope:
+  - crypto markets
+  - centralized exchanges
+  - crypto lenders
+  - exchange tokens
+  - stablecoins
+  narrative_summary: ''
+  normalized_features:
+  - contagion uncertainty
+  - custody preference
+  - derivatives funding
+  - exchange solvency
+  - exchange-token valuation
+  - institutional support
+  - major-asset price
+  - stablecoin stability
+  observation_id: obs_20078fcc9195
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- no_actionable_posture
+raw_input_hash: sha256:20078fcc919567b19fbc6f89a96cc375a515f7ea616f27f3b1c4992c7fa517ab
+required_validations: []
+risk_posture:
+  confidence: well_supported
+  dominant_themes:
+  - centralized-exchange solvency stress
+  - crypto withdrawal-run risk
+  - broad crypto price dislocation
+  - stablecoin and funding strain
+  posture_count: 1
+  postures:
+  - no_actionable_posture
+run_id: connector_run_9q9b4nku
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

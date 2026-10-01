@@ -1,0 +1,579 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [
+      "Concurrent extreme losses across UK and continental banks evidence common movement, but the packet does not quantify a principal-component variance share or cover broker-dealers, insurers, and hedge funds.",
+      "Severe bank losses and the large FTSE decline followed by partial recovery evidence negative, volatile equity behavior, but monthly regime parameters and filtered state probabilities are unavailable.",
+      "Same-session losses across UK, Italian, and Spanish bank equities provide limited evidence of downturn co-movement, but no normal-regime baseline, correlation change, or filtered bear probability is supplied."
+    ],
+    "constraints": [
+      "low_confidence_match: entry_billio_financial_sector_comovement_001",
+      "low_confidence_match: entry_ang_bekaert_regime_params_001",
+      "low_confidence_match: entry_ang_bekaert_bear_correlation_002"
+    ],
+    "failure_modes": [
+      "weak_match:entry_billio_financial_sector_comovement_001",
+      "weak_match:entry_ang_bekaert_regime_params_001",
+      "weak_match:entry_ang_bekaert_bear_correlation_002"
+    ],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "regime_dependent",
+      "risk_off_monitoring"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "weakly_supported",
+      "dominant_themes": [
+        "cross-border bank co-movement",
+        "bear-regime equity stress",
+        "incomplete model diagnostics"
+      ],
+      "posture_count": 2,
+      "postures": [
+        "regime_dependent",
+        "risk_off_monitoring"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "immediate market session described in raw input",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "sterling",
+      "UK equities",
+      "European banks",
+      "gold",
+      "UK rates"
+    ],
+    "raw_text": "We woke up to a different country. Sterling is down eight big figures, trading at levels not seen since the mid-eighties, and the board is a mess — every time a count comes in from a Leave area the pound ticks lower. European bank shares are in freefall: RBS is down more than a third, Barclays isn't much better, and the Italian and Spanish banks are limit-down. The FTSE opened about eight percent lower and has clawed back half of that, which tells you equities at least see this as a sterling and bank problem first. Gold is up better than a hundred dollars. Carney has been on the wires promising £250 billion of support if needed, and that has steadied rates somewhat. A vote that was supposed to be a coin flip is being traded as a regime change.\n",
+    "summary": "Sterling fell sharply to levels last seen in the mid-1980s as referendum results favored Leave, while European bank shares suffered severe losses, UK equities partially recovered from an eight-percent opening decline, gold rose by more than one hundred dollars, and announced central-bank support helped steady rates amid broad repricing toward regime-change uncertainty."
+  },
+  "interpretation": {
+    "confidence": "weakly_supported",
+    "dominant_themes": [
+      "cross-border bank co-movement",
+      "bear-regime equity stress",
+      "incomplete model diagnostics"
+    ],
+    "summary": "The packet weakly supports three bear-stress states through concurrent European bank losses and a sharp, volatile UK equity decline, while model-derived correlations, factor shares, and filtered regime probabilities remain unavailable."
+  },
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_billio_pc1_variance_share_001",
+          "text": "The share of total return variance explained by the first principal component (PC1) across U.S. financial sector monthly returns (banks, broker-dealers, insurers, hedge funds). PC1 variance share of approximately 77% signals the baseline systemic co-movement regime (1994-2000); values rising toward or above 80% signal elevated interconnectedness (2001-2008 average: 83%). The cross-sector PC1 factor loading differential—broker-dealers loading at 0.79 vs. hedge funds at 0.13—identifies broker-dealers as the dominant systemic node. PC1 is computable from rolling PCA on monthly sector return series. Values above 90% indicate extreme stress events (e.g., August 1998 LTCM: 93%). pc1_variance_share; broker_dealer_pc1_loading; hedge_fund_pc1_loading; rolling_pca_window PC1 share thresholds: baseline ~77%, elevated ~83%, extreme stress >90%. Broker-dealer PC1 loading (0.79) vs. hedge fund (0.13) is a structural cross-sector signature; the contrast reflects balance sheet leverage exposure vs. strategy idiosyncrasy. Applicable to rolling window monitoring of systemic interconnectedness in financial sector return data."
+        }
+      ],
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "evidence_caveats": "Concurrent extreme losses across UK and continental banks evidence common movement, but the packet does not quantify a principal-component variance share or cover broker-dealers, insurers, and hedge funds.",
+      "failure_modes": [],
+      "match_strength": "weak",
+      "matched_observations": [
+        {
+          "dimension": "UK banking stress",
+          "direction": "deteriorating",
+          "index": 2,
+          "statement": "Losses exceeding one-third in RBS alongside comparable Barclays weakness"
+        },
+        {
+          "dimension": "continental banking stress",
+          "direction": "falling",
+          "index": 3,
+          "statement": "Limit-down conditions among Italian and Spanish banks"
+        },
+        {
+          "dimension": "market breadth",
+          "direction": "concentrated",
+          "index": 5,
+          "statement": "Relative concentration of stress in sterling and banking shares"
+        }
+      ],
+      "policy_posture": "risk_off_monitoring",
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "state_summary": "A market condition in which the returns of major financial sector institutions (banks, broker-dealers, insurers, and hedge funds) are driven predominantly by a single common factor, as measured by the first principal component (PC1) explaining a high share of cross-sector return variance. During normal periods PC1 explains approximately 77% of variance (1994-2000); during crisis periods it rises to 83% on average (2001-2008) and peaks at 93% (August 1998, LTCM crisis) and exceeds 80% throughout the 2007-2009 financial crisis. Broker- dealers load heavily on PC1 (loading=0.79) indicating they are the primary drivers of systemic common variation, while hedge funds load weakly (0.13). The state reflects collapsed cross-sector diversification and concentrated systemic exposure. Estimated on U.S. monthly financial sector returns 1994-2008 (Billio et al. 2012).\n",
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "citations": [
+        {
+          "kind": "extracted_claim",
+          "record_id": "claim_ang_bekaert_regime_params_001",
+          "text": "A two-regime Markov-switching model identifies a normal regime (monthly mean μ=0.90%, volatility σ=2.81%) and a bear regime (monthly mean μ=0.13%, volatility σ=5.04%) in international equity returns. The bear regime exhibits approximately 80% higher volatility and near-zero mean returns compared to the normal regime. Tables 2 and 3, p.5-6. Estimated on world equity index data at monthly frequency. Normal regime corresponds to typical equity conditions; bear regime captures high-volatility drawdown periods. Transition probabilities govern regime persistence."
+        }
+      ],
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "evidence_caveats": "Severe bank losses and the large FTSE decline followed by partial recovery evidence negative, volatile equity behavior, but monthly regime parameters and filtered state probabilities are unavailable.",
+      "failure_modes": [],
+      "match_strength": "weak",
+      "matched_observations": [
+        {
+          "dimension": "UK banking stress",
+          "direction": "deteriorating",
+          "index": 2,
+          "statement": "Losses exceeding one-third in RBS alongside comparable Barclays weakness"
+        },
+        {
+          "dimension": "continental banking stress",
+          "direction": "falling",
+          "index": 3,
+          "statement": "Limit-down conditions among Italian and Spanish banks"
+        },
+        {
+          "dimension": "equity-market recovery",
+          "direction": "partially recovering",
+          "index": 4,
+          "statement": "FTSE recovery of roughly half its initial eight-percent decline"
+        }
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "state_summary": "A two-state Markov-switching market condition for international equity returns characterized by empirically estimated regime-level parameters: normal regime (monthly mean μ=0.90%, volatility σ=2.81%) and bear regime (monthly mean μ=0.13%, volatility σ=5.04%). The bear regime exhibits approximately 80% higher volatility and near-zero mean returns relative to the normal regime. Transition probabilities govern regime persistence; the Hamilton filter provides real-time probability estimates of the active regime. Estimated on world equity index data at monthly frequency (Ang and Bekaert 2004, Tables 2-3).\n",
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    },
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_ang_bekaert_bear_correlation_002",
+          "text": "International equity return correlations approximately 20 percentage points higher during identified bear regime periods versus normal regime periods. Measured as the difference in regime-conditional correlation estimates from a two-state Markov-switching model: corr_bear - corr_normal ≈ +0.20. Observable in rolling correlation estimates that co-move with the Hamilton filter's bear-regime probability: when bear probability is high, realized rolling correlations across international equity pairs are systematically elevated. This pattern confirms diversification benefit collapse during downturns. regime_conditional_correlation_bear; regime_conditional_correlation_normal; bear_minus_normal_correlation_diff; rolling_correlation_vs_regime_probability Empirically documented in Ang-Bekaert (2004) Tables 2-3. The ~20pp correlation differential is the key observable linking regime identification to portfolio diversification failure. Rolling 12-month international equity correlations serve as a real-time proxy observable for this signature."
+        }
+      ],
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "evidence_caveats": "Same-session losses across UK, Italian, and Spanish bank equities provide limited evidence of downturn co-movement, but no normal-regime baseline, correlation change, or filtered bear probability is supplied.",
+      "failure_modes": [],
+      "match_strength": "weak",
+      "matched_observations": [
+        {
+          "dimension": "UK banking stress",
+          "direction": "deteriorating",
+          "index": 2,
+          "statement": "Losses exceeding one-third in RBS alongside comparable Barclays weakness"
+        },
+        {
+          "dimension": "continental banking stress",
+          "direction": "falling",
+          "index": 3,
+          "statement": "Limit-down conditions among Italian and Spanish banks"
+        }
+      ],
+      "policy_posture": "risk_off_monitoring",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "state_summary": "A market condition in which international equity return correlations are approximately 20 percentage points higher during the bear regime than during the normal regime. The elevated correlation reduces diversification benefits precisely when they are most needed—during market downturns. This regime-conditional correlation asymmetry is identified by a two-state Markov-switching model on world equity index data (Ang and Bekaert 2004, Tables 2-3). The state is active whenever the filtered bear-regime probability is elevated.\n",
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    }
+  ],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T22:15:16Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:bd25112c1addfd7e2534f8d59152e7316f075c106a0465ed700c987ddd90f959"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "signature_cho_engle_market_conditions_004",
+        "text_snippet": "Intraday transaction rate relative to the day's average transaction rate serves as a measurable indicator of options market activity regime (fast/slow/normal).…"
+      },
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "retrieval_score": 0.819825,
+      "state_id": "state_cho_engle_market_conditions_004",
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_cho_engle_moneyness_003",
+        "text_snippet": "Proportional bid-ask spread (spread divided by midpoint) as a function of option moneyness category (ATM vs. OTM) serves as a measurable indicator of…"
+      },
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "retrieval_score": 0.819366,
+      "state_id": "state_cho_engle_moneyness_003",
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_cho_engle_volume_insignificant_001",
+        "text_snippet": "Option trading volume is not a statistically significant determinant of option bid-ask spreads in the CBOE S&P100 market. After controlling for other spread…"
+      },
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "retrieval_score": 0.817733,
+      "state_id": "state_cho_engle_volume_insignificant_001",
+      "title": "Volume-Insensitive Options Spread Environment"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_hamilton_arch_volatility_clustering_004",
+        "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+      },
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "retrieval_score": 0.816234,
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_ang_2011_fat_tails_mixture_001",
+        "text_snippet": "model_specification When modeling equity return distributions with regime-switching models, within-regime Gaussian innovations are sufficient to produce…"
+      },
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "retrieval_score": 0.814562,
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    }
+  ],
+  "no_match_rationale": null,
+  "non_matches": [
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The record describes a January concentration in the relationship between effective trading costs and subsequent stock returns, whereas the packet contains no seasonal or trading-cost evidence.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "claim_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional relationship between effective trading costs and stock returns is concentrated in January. Outside of January, the illiquidity premium in…"
+        },
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "Repeated sterling weakness within one session does not evidence time-series momentum performance, look-back-horizon behavior, or diversified futures results.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hurst_mf_diversification_risk_control_002",
+          "text_snippet": "risk_control The ~4.7x diversification benefit (individual-asset Sharpe 0.38 → diversified portfolio Sharpe 1.8 gross) documented by Hurst et al. (2013)…"
+        },
+        {
+          "record_id": "signature_hurst_tsmom_horizon_sharpe_001",
+          "text_snippet": "Observable monotone gradient of individual-asset Sharpe ratios with time-series momentum look-back horizon, combined with a large diversification benefit in a…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The intraday FTSE recovery does not supply the three-to-eight-year autocorrelation reversal or transitory-variance behavior described by the state.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_poterba_summers_transitory_variance_002",
+          "text_snippet": "Observable magnitude of the transitory (mean-reverting) component of equity prices as estimated through variance ratio decomposition, quantifying the economic…"
+        },
+        {
+          "record_id": "policy_poterba_summers_risk_model_selection_005",
+          "text_snippet": "model_weighting The Poterba-Summers calibration showing that a pure time-varying risk premium explanation requires 5–15%+ annual required return…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The state is constructed from daily futures returns and exponentially weighted moment features, while the packet does not identify futures instruments or their model features.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_nguyen_pesr_nonstationarity_001",
+          "text_snippet": "The PESR metric relies on a transition matrix A estimated from training data and held fixed for the duration of the OOS period. If true regime transition…"
+        },
+        {
+          "record_id": "failure_nguyen_hmm_state_count_001",
+          "text_snippet": "The three-state HMM structure (bull, bear, high-volatility) was selected via a greedy model selection procedure applied uniformly across all 15 futures…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "The packet does not measure aggregate illiquidity or separate expected illiquidity from unexpected shocks, so neither return relationship is evidenced.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_timeseries_premium_003",
+          "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+        },
+        {
+          "record_id": "claim_amihud_timeseries_premium_003",
+          "text_snippet": "In time-series regressions of NYSE market returns on illiquidity, the expected illiquidity coefficient is g1=10.226 (t=2.68), confirming a positive illiquidity…"
+        }
+      ],
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "An aggregate-index rebound and simultaneous bank losses do not evidence a paired-equity spread divergence followed by convergence.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_gatev_pairs_convergence_001",
+          "text_snippet": "Observable convergence of co-integrated equity pair price spreads following a 2-standard-deviation divergence trigger, generating measurable excess returns.…"
+        },
+        {
+          "record_id": "failure_gatev_pairs_formation_sensitivity_001",
+          "text_snippet": "The pairs formation methodology (minimum sum-of-squared normalized price differences over a 12-month formation window) is sensitive to the choice of formation…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "Elevated market stress is reported, but the packet supplies no conditional correlation estimate, variance adjustment, or corrected contagion comparison.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_forbes_unadjusted_correlation_bias_001",
+          "text_snippet": "The positive upward bias in unadjusted conditional cross-market correlations computed during high-volatility crisis periods relative to the true unconditional…"
+        },
+        {
+          "record_id": "claim_forbes_correction_formula_002",
+          "text_snippet": "The heteroscedasticity-adjusted correlation is computed as: rho = rho_u / sqrt[1 + delta*(1 - rho_u^2)], where rho_u is the unadjusted conditional correlation…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "The packet describes an equity index partially reversing its opening decline, whereas the state describes positive short-horizon return persistence.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_lo_mackinlay_size_gradient_liquidity_003",
+          "text_snippet": "The size-autocorrelation gradient documented by Lo and MacKinlay (1988)—with the smallest market-cap quintile exhibiting ρ(1) ≈ 0.42 versus ρ(1) ≈ 0.14 for the…"
+        },
+        {
+          "record_id": "signature_lo_mackinlay_variance_ratio_001",
+          "text_snippet": "Observable excess variance ratio above unity and statistically significant positive first-order autocorrelation in weekly equity portfolio returns, providing a…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_taq_correlation_002",
+      "reason": "The packet contains neither Gibbs effective-cost estimates nor TAQ spread benchmarks whose rank correlation could validate the proxy.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_taq_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hasbrouck_taq_correlation_002",
+          "text_snippet": "The cross-sectional rank correlation between annual Gibbs effective cost estimates and TAQ-derived intraday effective spread estimates across NYSE-listed…"
+        },
+        {
+          "record_id": "claim_hasbrouck_taq_correlation_002",
+          "text_snippet": "Gibbs-sampler daily effective cost estimates correlate 0.965 with TAQ-based intraday effective spread estimates across NYSE stocks, validating the Gibbs…"
+        }
+      ],
+      "title": "Gibbs Estimator Validated as TAQ-Equivalent Effective Cost Proxy"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The state is specific to smoothed hedge-fund returns and latent hedge-fund position illiquidity, neither of which belongs to the packet asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_hedge_fund_autocorr_001",
+          "text_snippet": "Elevated first-order serial autocorrelation in hedge fund monthly returns (rho1=0.22), substantially above levels observed in banks (rho1=0.02), broker-dealers…"
+        },
+        {
+          "record_id": "policy_billio_hedge_fund_illiquidity_001",
+          "text_snippet": "confidence_calibration Include hedge fund return autocorrelation (AR(1) coefficient) as a systemic risk feature for financial stability monitoring. Values of…"
+        }
+      ],
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "The packet supplies no effective trading-cost rankings or subsequent cross-sectional stock returns needed to evidence an illiquidity premium.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_return_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "claim_hasbrouck_return_premium_003",
+          "text_snippet": "Effective trading cost estimated by the Gibbs sampler is positively related to future stock returns over the period 1926-2006, providing empirical evidence for…"
+        },
+        {
+          "record_id": "policy_hasbrouck_return_premium_003",
+          "text_snippet": "model_weighting Gibbs effective cost decile rank should be included as a positive return predictor in the cross-section. Stocks in higher effective cost…"
+        }
+      ],
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "A single-session shock does not evidence a growing time-series density of Granger-predictive links among financial institutions.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_granger_network_density_001",
+          "text_snippet": "The density and directionality of Granger-causal links among return series of U.S. financial sector institutions (approximately 100 per sector across hedge…"
+        },
+        {
+          "record_id": "claim_billio_granger_network_005",
+          "text_snippet": "Granger-causality-based network measures of return predictability quantify financial sector interconnectedness and systemic risk. The number and strength of…"
+        }
+      ],
+      "title": "Systemic Risk Network Buildup State"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "currency dislocation",
+      "direction": "falling",
+      "index": 0,
+      "magnitude": "severe",
+      "statement": "Sterling decline of eight big figures to mid-1980s-era levels"
+    },
+    {
+      "dimension": "political-result sensitivity",
+      "direction": "weakening",
+      "index": 1,
+      "magnitude": "persistent",
+      "statement": "Repeated sterling weakness following results from Leave areas"
+    },
+    {
+      "dimension": "UK banking stress",
+      "direction": "deteriorating",
+      "index": 2,
+      "magnitude": "extreme",
+      "statement": "Losses exceeding one-third in RBS alongside comparable Barclays weakness"
+    },
+    {
+      "dimension": "continental banking stress",
+      "direction": "falling",
+      "index": 3,
+      "magnitude": "extreme",
+      "statement": "Limit-down conditions among Italian and Spanish banks"
+    },
+    {
+      "dimension": "equity-market recovery",
+      "direction": "partially recovering",
+      "index": 4,
+      "magnitude": "substantial",
+      "statement": "FTSE recovery of roughly half its initial eight-percent decline"
+    },
+    {
+      "dimension": "market breadth",
+      "direction": "concentrated",
+      "index": 5,
+      "magnitude": "pronounced",
+      "statement": "Relative concentration of stress in sterling and banking shares"
+    },
+    {
+      "dimension": "defensive-asset demand",
+      "direction": "rising",
+      "index": 6,
+      "magnitude": "strong",
+      "statement": "Gold increase exceeding one hundred dollars"
+    },
+    {
+      "dimension": "monetary backstop response",
+      "direction": "stabilizing",
+      "index": 7,
+      "magnitude": "meaningful",
+      "statement": "Greater rate stability after a pledge of £250 billion in potential support"
+    },
+    {
+      "dimension": "political and policy uncertainty",
+      "direction": "elevated",
+      "index": 8,
+      "magnitude": "high",
+      "statement": "Abrupt repricing from near-even expectations toward regime-change uncertainty"
+    }
+  ],
+  "outcome": "matched",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_21uuqc46/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_21uuqc46/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_21uuqc46",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

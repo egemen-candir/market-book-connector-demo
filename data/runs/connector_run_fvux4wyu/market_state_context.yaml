@@ -1,0 +1,137 @@
+caveats: []
+constraints: []
+failure_modes: []
+market_book_version: stage6_accepted
+matched_states: []
+missing_evidence: []
+non_matches:
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: The rising parabolic move agrees with the state's sustained bull-trend activation
+    condition, but the record covers diversified multi-asset futures portfolios and
+    supplies no Bitcoin coverage.
+  reason_code: out_of_scope
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: The record describes measured autocorrelation reversal over three-to-eight-year
+    equity horizons, whereas the packet covers a two-week Bitcoin rise with only uncertain
+    reversal timing.
+  reason_code: out_of_scope
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: The state requires divergence and subsequent convergence of a co-moving
+    equity pair; the packet observes one Bitcoin series and no paired spread.
+  reason_code: out_of_scope
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: Exchange strain from account signups is operational capacity pressure, not
+    evidence of the NYSE ILLIQ decomposition or its expected and unexpected return
+    effects.
+  reason_code: coincidental_neighbor
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_ang_2011_exceedance_asymmetry_003
+  reason: The state describes dominant joint left-tail co-movement in a bear regime,
+    while the packet reports a strongly rising single-asset move rather than joint
+    downside exceedances.
+  reason_code: direction_discordant
+  state_id: state_ang_2011_exceedance_asymmetry_003
+- entry_id: entry_nguyen_three_state_hmm_001
+  reason: The positive move is directionally compatible with a bull state, but the
+    model's stated universe is commodity, currency, equity, and fixed-income futures
+    rather than Bitcoin.
+  reason_code: out_of_scope
+  state_id: state_nguyen_three_state_hmm_001
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: The record represents positive weekly return autocorrelation in equity portfolios,
+    but it does not extend that behavior to Bitcoin and the packet does not measure
+    autocorrelation.
+  reason_code: out_of_scope
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_cho_engle_market_conditions_004
+  reason: The record concerns a U-shaped option bid-ask-spread response to transaction
+    rates; the packet's exchange capacity strain concerns Bitcoin access and reports
+    no option spreads.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_market_conditions_004
+- entry_id: entry_ang_bekaert_regime_params_001
+  reason: The state supplies normal and bear parameters for international equity indexes,
+    not Bitcoin, and the packet contains no filtered regime probability or comparable
+    parameter estimates.
+  reason_code: out_of_scope
+  state_id: state_ang_bekaert_regime_params_001
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: The packet reports no cross-market correlation estimate, source-country
+    variance shift, or heteroscedasticity correction needed for the record's measurement-bias
+    mechanism.
+  reason_code: coincidental_neighbor
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_hamilton_arch_volatility_clustering_004
+  reason: One large cumulative advance and stated reversal risk do not evidence repeated
+    large shocks, significant squared-return autocorrelation, or persistent GARCH
+    parameters.
+  reason_code: insufficient_evidence
+  state_id: state_hamilton_arch_volatility_clustering_004
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: The record activates during a bear regime with elevated downside-period
+    international equity correlation, while the packet describes a parabolic upward
+    Bitcoin move.
+  reason_code: direction_discordant
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_billio_financial_sector_comovement_001
+  reason: The record requires a high first-principal-component variance share across
+    banks, brokers, insurers, and hedge funds; the packet contains no institutional
+    return panel or co-movement measure.
+  reason_code: coincidental_neighbor
+  state_id: state_billio_financial_sector_comovement_001
+- entry_id: entry_cho_engle_volume_insignificant_001
+  reason: Account growth and public attention do not establish that option volume
+    is statistically insignificant after controlling for moneyness, maturity, and
+    activity regime.
+  reason_code: coincidental_neighbor
+  state_id: state_cho_engle_volume_insignificant_001
+- entry_id: entry_cho_engle_moneyness_003
+  reason: The state concerns wider proportional spreads and limited price improvement
+    in out-of-the-money options, while the Bitcoin packet reports futures access and
+    no option-moneyness observations.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_moneyness_003
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: two weeks
+    timezone: America/New_York
+  asset_scope:
+  - Bitcoin
+  narrative_summary: ''
+  normalized_features:
+  - institutional market access
+  - price momentum
+  - public enthusiasm
+  - retail participation
+  - uncertainty
+  - valuation framework
+  observation_id: obs_a635e60aa13f
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- no_actionable_posture
+raw_input_hash: sha256:a635e60aa13ff8a5e69c1071670edd752ac6a9b0d3329ac4c654a2caea071d1a
+required_validations: []
+risk_posture:
+  confidence: partially_supported
+  dominant_themes:
+  - Bitcoin scope boundary
+  - parabolic upward momentum
+  - unmeasured reversal dynamics
+  - traditional-market evidence
+  posture_count: 1
+  postures:
+  - no_actionable_posture
+run_id: connector_run_fvux4wyu
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

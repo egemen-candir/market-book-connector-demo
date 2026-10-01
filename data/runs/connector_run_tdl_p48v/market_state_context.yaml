@@ -1,0 +1,154 @@
+caveats:
+- The packet evidences an extended low-volatility run, but uses implied volatility
+  and qualitative persistence rather than squared-return autocorrelation, Ljung-Box
+  statistics, or estimated GARCH persistence.
+constraints:
+- 'low_confidence_match: entry_hamilton_arch_volatility_clustering_004'
+failure_modes:
+- implied-versus-realized volatility
+- absent GARCH estimates
+- absent squared-return diagnostics
+- weak_match:entry_hamilton_arch_volatility_clustering_004
+market_book_version: stage6_accepted
+matched_states:
+- citations:
+  - kind: observable_signature
+    record_id: signature_hamilton_arch_volatility_clustering_004
+  entry_id: entry_hamilton_arch_volatility_clustering_004
+  evidence_caveats: The packet evidences an extended low-volatility run, but uses
+    implied volatility and qualitative persistence rather than squared-return autocorrelation,
+    Ljung-Box statistics, or estimated GARCH persistence.
+  failure_modes:
+  - implied-versus-realized volatility
+  - absent GARCH estimates
+  - absent squared-return diagnostics
+  match_strength: weak
+  matched_observations:
+  - 1
+  - 9
+  policy_posture: regime_dependent
+  state_id: state_hamilton_arch_volatility_clustering_004
+missing_evidence: []
+non_matches:
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: Broad index highs do not evidence temporary divergence and subsequent convergence
+    of co-moving equity-pair spreads.
+  reason_code: insufficient_evidence
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: The record concerns measured time-series momentum performance across diversified
+    futures, while the packet supplies cash-market observations without futures-signal
+    returns.
+  reason_code: out_of_scope
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_lo_mackinlay_short_horizon_predictability_001
+  reason: The packet supplies no weekly return autocorrelation, variance ratio, or
+    capitalization-dependent autocorrelation gradient.
+  reason_code: insufficient_evidence
+  state_id: state_lo_mackinlay_short_horizon_predictability_001
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: Record highs and expectations of a correction do not evidence the stated
+    autocorrelation reversal between subannual and three-to-eight-year horizons.
+  reason_code: insufficient_evidence
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_nguyen_three_state_hmm_001
+  reason: The record applies EWMM features and a three-state HMM to futures instruments,
+    while the packet supplies no futures feature vectors, state probabilities, or
+    transition estimates.
+  reason_code: out_of_scope
+  state_id: state_nguyen_three_state_hmm_001
+- entry_id: entry_cho_engle_volume_insignificant_001
+  reason: The record concerns option volume and option bid-ask spreads, whereas the
+    packet describes stock-market volume and price sensitivity without options data.
+  reason_code: out_of_scope
+  state_id: state_cho_engle_volume_insignificant_001
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: Falling, very low volatility and stabilized sentiment run opposite to the
+    record's elevated source-country variance condition.
+  reason_code: direction_discordant
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_ang_2011_fat_tails_mixture_001
+  reason: The packet supplies no return-distribution kurtosis, negative skewness,
+    Gaussian-mixture fit, or multi-regime data-generating evidence.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_fat_tails_mixture_001
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: Rising equities, record highs, falling volatility, and persistent calm are
+    inconsistent with the record's bear-regime downturn and elevated-correlation condition.
+  reason_code: direction_discordant
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_billio_financial_sector_comovement_001
+  reason: The packet supplies no financial-institution return panel, principal-component
+    variance share, or evidence of collapsed cross-sector diversification.
+  reason_code: insufficient_evidence
+  state_id: state_billio_financial_sector_comovement_001
+- entry_id: entry_ang_bekaert_regime_params_001
+  reason: The record requires international-equity regime parameters and filtered
+    probabilities, while the packet's equity scope is limited to the United States.
+  reason_code: out_of_scope
+  state_id: state_ang_bekaert_regime_params_001
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: Thin volume and elevated price sensitivity do not supply the defining AR
+    decomposition or the opposite-signed expected and unexpected illiquidity coefficients.
+  reason_code: insufficient_evidence
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_billio_hedge_fund_illiquidity_003
+  reason: The record is specific to hedge-fund return smoothing and marked-to-model
+    position illiquidity, neither of which appears in the packet's asset scope.
+  reason_code: out_of_scope
+  state_id: state_billio_hedge_fund_illiquidity_003
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: A mid-August liquidity observation does not evidence the record's January-concentrated
+    relationship between effective trading costs and future stock returns.
+  reason_code: insufficient_evidence
+  state_id: state_hasbrouck_january_effect_004
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: 2026-09-01
+    observation_horizon: historical_mid_august_snapshot
+    timezone: UTC
+  asset_scope:
+  - US equities
+  - US equity volatility
+  - US Treasuries
+  - European sovereign bonds
+  - UK monetary policy
+  narrative_summary: ''
+  normalized_features:
+  - European sovereign yields
+  - benchmark sovereign yields
+  - cross-asset capital flow
+  - equity market level
+  - long-term sovereign yields
+  - market liquidity
+  - market resilience
+  - market volatility
+  - monetary policy response
+  - price sensitivity
+  - uncertainty
+  observation_id: obs_0c502a7b0c2a
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- regime_dependent
+raw_input_hash: sha256:0c502a7b0c2ac616077e312fbe56a80f3ddfcdfbf292dd819af789b6a780512e
+required_validations: []
+risk_posture:
+  confidence: weakly_supported
+  dominant_themes:
+  - persistent low volatility
+  - thin equity liquidity
+  - calm post-shock conditions
+  - missing model diagnostics
+  posture_count: 1
+  postures:
+  - regime_dependent
+run_id: connector_run_tdl_p48v
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

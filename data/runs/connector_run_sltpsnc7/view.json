@@ -1,0 +1,549 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "well_supported",
+      "dominant_themes": [
+        "speculative enthusiasm",
+        "issuance demand",
+        "extreme valuations",
+        "retail participation",
+        "weak price discipline"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "current conditions described by the source",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "SPACs",
+      "profitless software companies",
+      "pre-production electric-vehicle companies",
+      "new equity listings",
+      "equity options"
+    ],
+    "raw_text": "Everything speculative is bid and I mean everything. Roughly three hundred blank-check SPACs have IPO'd this year, pulling in north of ninety billion dollars, and sponsor track records now matter more than the target itself — shares pop on the announcement, hold through the merger, and the deal machine feeds on itself. Chamath launches a new vehicle and it's oversubscribed in hours. Profitless software names trade at twenty times revenue, unprofitable EV companies that went public via reverse mergers are worth tens of billions pre-production, and Coinbase just listed directly at a hundred billion dollars. Retail is the marginal buyer by a mile — record account openings, options volumes, Reddit threads, Cathie Wood as folk hero. My institutional book looks stodgy next to this. Spreads on new issues are trivial, quality is an afterthought, and anyone pointing at valuations has been wrong for a year. The tape doesn't punish anything.\n",
+    "summary": "Extreme speculative enthusiasm spans SPACs, profitless software companies, pre-production electric-vehicle companies, and prominent new listings. Elevated valuations, rapid oversubscription, tight new-issue spreads, and limited differentiation by quality accompany strong retail participation and record options activity. The commentary portrays speculative assets as facing little price discipline despite persistent valuation concerns."
+  },
+  "interpretation": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "speculative enthusiasm",
+      "issuance demand",
+      "extreme valuations",
+      "retail participation",
+      "weak price discipline"
+    ],
+    "summary": "No candidate clears the evidence floor for the speculative-enthusiasm phenomenon. Superficial overlap in equities, options activity, liquidity, or price persistence does not supply the specific behaviors or activation conditions described by the retrieved states."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T22:48:14Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:6968e88d7530b6f346560e00fd1488e352ead16e7626bf0d3b22071476c6dd98"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "signature_forbes_unadjusted_correlation_bias_001",
+        "text_snippet": "The positive upward bias in unadjusted conditional cross-market correlations computed during high-volatility crisis periods relative to the true unconditional…"
+      },
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "retrieval_score": 0.829144,
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "closest_on": {
+        "record_id": "state_cho_engle_volume_insignificant_001",
+        "text_snippet": "A market condition in which option trading volume is not a statistically significant determinant of option bid-ask spreads, after controlling for other spread…"
+      },
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "retrieval_score": 0.82902,
+      "state_id": "state_cho_engle_volume_insignificant_001",
+      "title": "Volume-Insensitive Options Spread Environment"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_amihud_size_interaction_005",
+        "text_snippet": "The expected return sensitivity to illiquidity is decreasing in firm size. The illiquidity premium is larger for small-cap stocks than for large-cap stocks,…"
+      },
+      "entry_id": "entry_amihud_size_interaction_005",
+      "retrieval_score": 0.828819,
+      "state_id": "state_amihud_size_interaction_005",
+      "title": "Size-Stratified Illiquidity Premium State"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_amihud_crosssection_premium_002",
+        "text_snippet": "In monthly Fama-MacBeth cross-sectional regressions, expected stock returns are positively related to expected illiquidity: the ILLIQ coefficient is 0.162…"
+      },
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "retrieval_score": 0.828551,
+      "state_id": "state_amihud_crosssection_premium_002",
+      "title": "Cross-Sectional Illiquidity Premium State"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_ang_2011_exceedance_asymmetry_003",
+        "text_snippet": "Exceedance correlation asymmetry: the conditional correlation between two assets given both returns simultaneously fall below the q-th quantile (left-tail…"
+      },
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "retrieval_score": 0.825181,
+      "state_id": "state_ang_2011_exceedance_asymmetry_003",
+      "title": "Regime-Conditional Tail Correlation Asymmetry State"
+    }
+  ],
+  "no_match_rationale": "The candidates do not describe the packet's combination of speculative issuance, sponsor-driven pricing, extreme valuations, retail-led demand, oversubscription, and weakening price discipline. The options-market candidates require an intraday U-shaped bid-ask-spread pattern or delta-mediated coupling between option and underlying spreads; aggregate record options activity and minimal new-issue spreads do not evidence either behavior or the specified intraday activation condition. The trend, autocorrelation, and mean-reversion candidates require measured return dynamics at defined horizons, while the liquidity candidates require January seasonality or aggregate illiquidity-return relationships. The remaining candidates require regime probabilities, volatility clustering, return-distribution moments, international correlations, or financial-institution network behavior that the packet does not supply.",
+  "non_matches": [
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The state concerns a January-concentrated relationship between effective trading costs and future stock returns; the packet supplies neither January seasonality nor that return relationship.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hasbrouck_january_effect_004",
+          "text_snippet": "activity_suppression Condition the illiquidity return premium feature on calendar month. In January, the illiquidity premium feature may be included at full…"
+        },
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "Persistent SPAC price gains do not establish time-series-momentum risk-adjusted returns, horizon-dependent Sharpe ratios, or the multi-asset futures performance pattern described by the state.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hurst_mf_regime_conditional_activity_004",
+          "text_snippet": "activity_suppression The smile pattern of TSMOM returns documented by Hurst et al. (2013)—best performance during sustained bull and bear markets, worst during…"
+        },
+        {
+          "record_id": "signature_hurst_tsmom_horizon_sharpe_001",
+          "text_snippet": "Observable monotone gradient of individual-asset Sharpe ratios with time-series momentum look-back horizon, combined with a large diversification benefit in a…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The packet reports prices remaining elevated through mergers, whereas the state requires temporary pair-price divergences to converge toward historical spreads.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_gatev_pairs_transaction_cost_gate_003",
+          "text_snippet": "risk_control Transaction cost gatekeeping features must be evaluated before classifying the pairs mean reversion state as actionable. Key features: (1)…"
+        },
+        {
+          "record_id": "signature_gatev_pairs_convergence_001",
+          "text_snippet": "Observable convergence of co-integrated equity pair price spreads following a 2-standard-deviation divergence trigger, generating measurable excess returns.…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The packet provides no daily futures return moments, volatility measurements, HMM state probabilities, or PESR behavior needed to identify the described regime.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_nguyen_oos_window_length_001",
+          "text_snippet": "The out-of-sample test window used to validate the HMM long-only strategy (January 2016 – October 2019, approximately 4 years) is short and covers a…"
+        },
+        {
+          "record_id": "claim_nguyen_three_state_hmm_001",
+          "text_snippet": "A three-state hidden Markov model applied asset-independently to daily futures returns on 15 instruments across commodity, currency, equity, and fixed income…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The state is activated by an elevated bear-regime probability during a downturn, while the packet describes rising enthusiasm, persistent appreciation, and intense demand.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "claim_ang_bekaert_bear_correlation_002",
+          "text_snippet": "International equity return correlations are approximately 20 percentage points higher in the bear regime than in the normal regime, demonstrating systematic…"
+        },
+        {
+          "record_id": "state_ang_bekaert_bear_correlation_002",
+          "text_snippet": "A market condition in which international equity return correlations are approximately 20 percentage points higher during the bear regime than during the…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "The packet does not measure weekly return autocorrelation, variance ratios, or the market-capitalization gradient required by the state.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_lo_mackinlay_size_tilting_003",
+          "text_snippet": "position_sizing Size-based position sizing should reflect the empirically documented autocorrelation gradient: short-horizon return predictability is strongest…"
+        },
+        {
+          "record_id": "failure_lo_mackinlay_size_gradient_liquidity_003",
+          "text_snippet": "The size-autocorrelation gradient documented by Lo and MacKinlay (1988)—with the smallest market-cap quintile exhibiting ρ(1) ≈ 0.42 versus ρ(1) ≈ 0.14 for the…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "Retail-led speculative demand does not evidence growing Granger-causal return links among hedge funds, banks, broker-dealers, and insurers.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_granger_network_density_001",
+          "text_snippet": "The density and directionality of Granger-causal links among return series of U.S. financial sector institutions (approximately 100 per sector across hedge…"
+        },
+        {
+          "record_id": "failure_billio_granger_structural_causation_001",
+          "text_snippet": "Granger-causality-based systemic risk measures reflect predictive relationships among return series but do not establish structural causation or transmission…"
+        }
+      ],
+      "title": "Systemic Risk Network Buildup State"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "Minimal new-issue spreads do not establish the state's aggregate ILLIQ forecasts of future returns or negative contemporaneous responses to unexpected illiquidity shocks.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_timeseries_premium_003",
+          "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+        },
+        {
+          "record_id": "state_amihud_timeseries_premium_003",
+          "text_snippet": "A market condition in which aggregate market illiquidity predicts market-level returns in two distinct ways: (1) higher expected illiquidity predicts higher…"
+        }
+      ],
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The qualitative enthusiasm observations supply neither monthly return means and volatility nor filtered probabilities for the normal and bear regimes.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_ang_bekaert_regime_params_001",
+          "text_snippet": "Regime-conditional return distribution shift in international equity returns: normal regime characterized by mean monthly return ~0.90% and volatility ~2.81%;…"
+        },
+        {
+          "record_id": "state_ang_bekaert_regime_params_001",
+          "text_snippet": "A two-state Markov-switching market condition for international equity returns characterized by empirically estimated regime-level parameters: normal regime…"
+        }
+      ],
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "One year of ineffective valuation concerns does not measure positive subannual return autocorrelation or negative serial correlation over the state's three-to-eight-year horizon.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "claim_poterba_summers_international_003",
+          "text_snippet": "Long-horizon mean reversion in equity returns is confirmed in 15 of 17 international equity markets studied. Markets with less sophisticated investor bases or…"
+        },
+        {
+          "record_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+          "text_snippet": "A market condition in which equity returns exhibit positive serial correlation at horizons shorter than one year and negative serial correlation (mean…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "Record aggregate options activity does not establish intraday transaction rates relative to daily averages or the required U-shaped option bid-ask-spread behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_cho_engle_market_conditions_004",
+      "surfaced_by": [
+        {
+          "record_id": "claim_cho_engle_market_conditions_004",
+          "text_snippet": "Both fast markets (high trading activity) and slow markets (low trading activity) exhibit wider option bid-ask spreads than normal market conditions. This…"
+        },
+        {
+          "record_id": "state_cho_engle_market_conditions_004",
+          "text_snippet": "A market condition regime in which option bid-ask spreads exhibit a non-monotonic (U-shaped) relationship with trading activity: both fast markets (high…"
+        }
+      ],
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    },
+    {
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "reason": "The packet does not compare option spreads with underlying-asset spreads or evidence the delta-mediated hedge-cost linkage described by the state.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_cho_engle_underlying_spread_002",
+          "text_snippet": "The bid-ask spread of the underlying asset (e.g., S&P100 index) serves as a measurable indicator of options spread width via the derivative hedge mechanism.…"
+        },
+        {
+          "record_id": "policy_cho_engle_underlying_spread_002",
+          "text_snippet": "feature_selection When modeling option bid-ask spreads, include the underlying asset's bid-ask spread as a feature, ideally scaled by option delta to reflect…"
+        }
+      ],
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "Extreme valuations and enthusiasm do not evidence clustered return shocks, significant squared-return autocorrelation, or persistent GARCH conditional variance.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "surfaced_by": [
+        {
+          "record_id": "claim_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "GARCH(1,1) captures the empirical stylized fact of volatility clustering— large shocks followed by large shocks and small shocks followed by small…"
+        },
+        {
+          "record_id": "policy_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+        }
+      ],
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "The packet contains no return-distribution evidence of excess kurtosis, negative skewness, or a multi-regime Gaussian mixture.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "model_specification When modeling equity return distributions with regime-switching models, within-regime Gaussian innovations are sufficient to produce…"
+        },
+        {
+          "record_id": "state_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "A market condition characterized by unconditional fat tails (excess kurtosis) and negative skewness in equity return distributions that arise as a natural…"
+        }
+      ],
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The packet concerns speculative equities and listings rather than hedge-fund return smoothing, monthly serial autocorrelation, or marked-to-model position illiquidity.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_hedge_fund_autocorr_001",
+          "text_snippet": "Elevated first-order serial autocorrelation in hedge fund monthly returns (rho1=0.22), substantially above levels observed in banks (rho1=0.02), broker-dealers…"
+        },
+        {
+          "record_id": "failure_billio_hedge_fund_autocorr_proxy_001",
+          "text_snippet": "Return autocorrelation as a proxy for hedge fund position illiquidity conflates two distinct sources of serial persistence: (1) stale or infrequent pricing of…"
+        }
+      ],
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "speculative sentiment",
+      "direction": "rising",
+      "index": 0,
+      "magnitude": "extreme",
+      "statement": "Broad speculative enthusiasm across equity markets"
+    },
+    {
+      "dimension": "SPAC issuance",
+      "direction": "rising",
+      "index": 1,
+      "magnitude": "very large",
+      "statement": "Roughly three hundred SPAC offerings raising more than ninety billion dollars this year"
+    },
+    {
+      "dimension": "SPAC valuation drivers",
+      "direction": "shifting toward sponsors",
+      "index": 2,
+      "magnitude": "strong",
+      "statement": "Sponsor reputation outweighing target fundamentals in SPAC pricing"
+    },
+    {
+      "dimension": "deal-price momentum",
+      "direction": "persistent",
+      "index": 3,
+      "magnitude": "strong",
+      "statement": "SPAC prices rising after announcements and remaining elevated through mergers"
+    },
+    {
+      "dimension": "new-issue demand",
+      "direction": "rising",
+      "index": 4,
+      "magnitude": "intense",
+      "statement": "Newly launched vehicles becoming oversubscribed within hours"
+    },
+    {
+      "dimension": "software valuation",
+      "direction": "elevated",
+      "index": 5,
+      "magnitude": "extreme",
+      "statement": "Profitless software companies valued near twenty times revenue"
+    },
+    {
+      "dimension": "electric-vehicle valuation",
+      "direction": "elevated",
+      "index": 6,
+      "magnitude": "extreme",
+      "statement": "Pre-production electric-vehicle companies valued in the tens of billions"
+    },
+    {
+      "dimension": "listing valuation",
+      "direction": "elevated",
+      "index": 7,
+      "magnitude": "very large",
+      "statement": "Coinbase direct listing valued near one hundred billion dollars"
+    },
+    {
+      "dimension": "retail participation",
+      "direction": "rising",
+      "index": 8,
+      "magnitude": "record",
+      "statement": "Record retail account openings and options activity"
+    },
+    {
+      "dimension": "buyer composition",
+      "direction": "retail-led",
+      "index": 9,
+      "magnitude": "strong",
+      "statement": "Retail participants dominating marginal demand"
+    },
+    {
+      "dimension": "pricing discipline",
+      "direction": "weakening",
+      "index": 10,
+      "magnitude": "strong",
+      "statement": "Minimal new-issue spreads and limited quality differentiation"
+    },
+    {
+      "dimension": "valuation sensitivity",
+      "direction": "weakening",
+      "index": 11,
+      "magnitude": "persistent",
+      "statement": "Valuation concerns remaining ineffective over the prior year"
+    },
+    {
+      "dimension": "downside discipline",
+      "direction": "weakening",
+      "index": 12,
+      "magnitude": "broad",
+      "statement": "Little visible price penalty for speculative assets"
+    },
+    {
+      "dimension": "uncertainty",
+      "direction": "unclear",
+      "index": 13,
+      "magnitude": "material",
+      "statement": "Approximate figures and emphatic breadth descriptions"
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_sltpsnc7/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_sltpsnc7/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_sltpsnc7",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

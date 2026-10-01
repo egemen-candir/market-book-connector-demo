@@ -1,0 +1,514 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "well_supported",
+      "dominant_themes": [
+        "European gas scarcity",
+        "pipeline disruption",
+        "LNG competition",
+        "emergency policy response",
+        "candidate evidence mismatch"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "current conditions and approaching winter",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "European natural gas",
+      "Dutch TTF front-month",
+      "Atlantic LNG",
+      "European utilities",
+      "European heavy industry"
+    ],
+    "raw_text": "European gas has gone vertical. Dutch TTF front-month traded through €300/MWh this week and touched roughly €340, more than ten times the pre-crisis norm and a level nobody modeled. Gazprom has cut Nord Stream 1 flows to about twenty percent of capacity, citing turbine excuses few in Berlin believe, and every hiccup in the pipeline now trades like a full shutdown. Utilities and industrials are bidding for cargoes that may not exist; American LNG is crossing the Atlantic at record premiums as Asia steps aside. Germany is finalizing a levy on consumers to rescue gas importers while bracing for rationing, and governments across the EU are drafting emergency measures — price caps, windfall taxes, demand mandates. Storage is filling toward targets, but only because heavy industry has quietly curtailed output. This is an energy economy repricing in real time, and the winter decisions are being made now, in August.",
+    "summary": "European natural-gas prices have surged to extreme levels as sharply reduced Nord Stream 1 flows, acute cargo competition, and fear of a complete supply interruption reshape the regional energy economy. Storage is advancing toward targets alongside industrial demand curtailment, while Germany and other European governments prepare consumer levies, importer support, rationing contingencies, price controls, taxes, and demand measures ahead of winter."
+  },
+  "interpretation": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "European gas scarcity",
+      "pipeline disruption",
+      "LNG competition",
+      "emergency policy response",
+      "candidate evidence mismatch"
+    ],
+    "summary": "No candidate represents the observed European gas-supply disruption. Commodity-capable candidates lack their required quantitative return evidence, while the other candidates describe equity or financial-sector mechanisms outside the packet's scope."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T23:17:57Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:d0b8d0d3bd8d5e4c4ced2352ad93e239b53b8bd8fc92c450bf6eaee617f70fef"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "policy_cho_engle_underlying_spread_002",
+        "text_snippet": "feature_selection When modeling option bid-ask spreads, include the underlying asset's bid-ask spread as a feature, ideally scaled by option delta to reflect…"
+      },
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "retrieval_score": 0.798259,
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    },
+    {
+      "closest_on": {
+        "record_id": "state_hasbrouck_return_premium_003",
+        "text_snippet": "A persistent cross-sectional market state in which stocks with higher effective trading costs (as measured by the Gibbs estimator) earn systematically higher…"
+      },
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "retrieval_score": 0.795746,
+      "state_id": "state_hasbrouck_return_premium_003",
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_hamilton_arch_volatility_clustering_004",
+        "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+      },
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "retrieval_score": 0.794082,
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "closest_on": {
+        "record_id": "state_amihud_illiq_formula_001",
+        "text_snippet": "A market condition in which the price impact of a trade is measurable as the average daily ratio of absolute return to dollar volume (ILLIQ), defined as…"
+      },
+      "entry_id": "entry_amihud_illiq_formula_001",
+      "retrieval_score": 0.792856,
+      "state_id": "state_amihud_illiq_formula_001",
+      "title": "Equity Price Impact State (ILLIQ)"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_cho_engle_market_conditions_004",
+        "text_snippet": "regime_switch Intraday transaction rate relative to the daily average should be monitored and used to classify market activity regime (fast/slow/normal). This…"
+      },
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "retrieval_score": 0.792777,
+      "state_id": "state_cho_engle_market_conditions_004",
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    }
+  ],
+  "no_match_rationale": "The packet describes a European natural-gas supply dislocation involving reduced pipeline flows, scarce LNG cargoes, extreme TTF prices, industrial curtailment, and emergency government measures. The two candidates with commodity coverage require measured momentum-strategy performance or HMM return-moment behavior, neither of which the packet supplies. The remaining records concern equity, financial-institution, hedge-fund, correlation, or stock-illiquidity behavior rather than physical gas scarcity and supply interruption. None of the candidate text represents the observed energy-supply phenomenon.",
+  "non_matches": [
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The gas-price surge is directionally compatible with an upward trend, but the packet does not evidence persistent TSMOM excess returns, horizon-dependent Sharpe behavior, CTA factor loading, or sustained trend-conditioned strategy performance.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "state_hurst_tsmom_trend_following_001",
+          "text_snippet": "A market condition in which time-series momentum (TSMOM) signals deliver persistent risk-adjusted excess returns across diversified multi-asset futures…"
+        },
+        {
+          "record_id": "signature_hurst_mf_cta_factor_loading_005",
+          "text_snippet": "Observable pattern in managed futures fund TSMOM factor loadings revealing systematic underexposure to the individually optimal long-horizon (12-month) signal…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "This record requires a high first-principal-component variance share across financial institutions; the packet reports physical gas scarcity and policy responses without financial-sector return co-movement measurements.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_billio_comovement_risk_control_001",
+          "text_snippet": "risk_control Include rolling PC1 variance share across financial sector return indices as a systemic co-movement feature. Threshold PC1 at approximately 80% to…"
+        },
+        {
+          "record_id": "signature_billio_pc1_variance_share_001",
+          "text_snippet": "The share of total return variance explained by the first principal component (PC1) across U.S. financial sector monthly returns (banks, broker-dealers,…"
+        }
+      ],
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The record describes temporary relative-price divergences and subsequent convergence among selected equity pairs, whereas the packet describes an outright natural-gas price surge without paired spreads or reversion.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_gatev_pairs_sector_homogeneity_005",
+          "text_snippet": "Cross-sector variation in pairs trading profitability reflecting differential mean-reversion strength across industry groupings. The signature is observable as…"
+        },
+        {
+          "record_id": "policy_gatev_pairs_sector_feature_selection_005",
+          "text_snippet": "feature_selection Sector homogeneity is a primary feature for differentiating mean reversion signal quality within the pairs trading state. Features to…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "The record concerns expected and unexpected NYSE market illiquidity and its relationship to equity returns, outside the packet's European natural-gas and LNG scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_amihud_timeseries_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_timeseries_premium_003",
+          "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+        },
+        {
+          "record_id": "state_amihud_timeseries_premium_003",
+          "text_snippet": "A market condition in which aggregate market illiquidity predicts market-level returns in two distinct ways: (1) higher expected illiquidity predicts higher…"
+        }
+      ],
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "Although the model can cover commodity futures, the packet supplies no EWMM return moments, estimated HMM state probabilities, transition behavior, extreme return variance, or PESR output.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "claim_nguyen_oos_sharpe_003",
+          "text_snippet": "In out-of-sample testing (January 2016 – October 2019), the HMM long-only strategy with EWMM span=30 achieves Sharpe ratios substantially above buy-and-hold…"
+        },
+        {
+          "record_id": "failure_nguyen_span_turnover_001",
+          "text_snippet": "Low EWMM span values (e.g., s=15) make the HMM observation features overly responsive to recent returns, causing frequent regime transitions and high portfolio…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The normal and bear parameters are defined for monthly international equity returns, not European natural-gas prices, pipeline flows, or LNG availability.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_ang_bekaert_regime_params_001",
+          "text_snippet": "Regime-conditional return distribution shift in international equity returns: normal regime characterized by mean monthly return ~0.90% and volatility ~2.81%;…"
+        },
+        {
+          "record_id": "policy_ang_bekaert_regime_params_001",
+          "text_snippet": "model_calibration Use Ang-Bekaert (2004) regime parameter estimates as calibration anchors when initializing two-state RS models for international equity…"
+        }
+      ],
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The record requires multi-year equity-return autocorrelation and transitory-variance evidence, while the packet concerns a current European gas-supply shock.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_poterba_summers_transitory_variance_002",
+          "text_snippet": "Observable magnitude of the transitory (mean-reverting) component of equity prices as estimated through variance ratio decomposition, quantifying the economic…"
+        },
+        {
+          "record_id": "policy_poterba_summers_transitory_position_sizing_002",
+          "text_snippet": "position_sizing The transitory component magnitude—standard deviation 15–25% for the NYSE value-weighted index and up to 37% for the equal-weighted index…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "The state is defined by weekly equity-index variance ratios and positive autocorrelation, which are outside the packet's natural-gas asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_lo_mackinlay_fads_vr_profile_004",
+          "text_snippet": "Observable returns-fads structure in weekly equity returns identified by the shape of the variance ratio profile VR(q) across aggregation horizons q = 2, 4, 8,…"
+        },
+        {
+          "record_id": "signature_lo_mackinlay_variance_ratio_001",
+          "text_snippet": "Observable excess variance ratio above unity and statistically significant positive first-order autocorrelation in weekly equity portfolio returns, providing a…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The record concerns serially smoothed hedge-fund returns and marked-to-model position illiquidity, not scarcity in physical gas or LNG markets.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_hedge_fund_autocorr_001",
+          "text_snippet": "Elevated first-order serial autocorrelation in hedge fund monthly returns (rho1=0.22), substantially above levels observed in banks (rho1=0.02), broker-dealers…"
+        },
+        {
+          "record_id": "policy_billio_hedge_fund_illiquidity_001",
+          "text_snippet": "confidence_calibration Include hedge fund return autocorrelation (AR(1) coefficient) as a systemic risk feature for financial stability monitoring. Values of…"
+        }
+      ],
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The record describes bias in cross-market correlation estimates during high-variance periods; the packet contains no correlation estimate, variance correction, or contagion test.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_forbes_bias_correction_001",
+          "text_snippet": "confidence_calibration Always compute the relative source-country variance increase (delta = sigma^2_high / sigma^2_low - 1) when measuring cross-market…"
+        },
+        {
+          "record_id": "signature_forbes_unadjusted_correlation_bias_001",
+          "text_snippet": "The positive upward bias in unadjusted conditional cross-market correlations computed during high-volatility crisis periods relative to the true unconditional…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "The record requires growing Granger-causal link density among U.S. financial institutions, outside the packet's European energy-market scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_billio_granger_network_density_001",
+          "text_snippet": "The density and directionality of Granger-causal links among return series of U.S. financial sector institutions (approximately 100 per sector across hedge…"
+        },
+        {
+          "record_id": "policy_billio_granger_early_warning_001",
+          "text_snippet": "risk_control Include Granger-causality network density among financial sector return series as a systemic risk buildup feature for medium-term monitoring. Use…"
+        }
+      ],
+      "title": "Systemic Risk Network Buildup State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The state concerns a January concentration of the stock illiquidity premium associated with small-cap equities, not the approaching-winter European gas disruption.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        },
+        {
+          "record_id": "signature_hasbrouck_january_effect_004",
+          "text_snippet": "Calendar month = January as the conditioning signal for the illiquidity return premium. The return-cost relationship is substantially stronger in January than…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "reason": "The record describes higher expected returns among stocks with higher expected ILLIQ, outside the packet's physical and derivative natural-gas scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_amihud_crosssection_premium_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_amihud_crosssection_premium_002",
+          "text_snippet": "In monthly Fama-MacBeth regressions, the ILLIQ coefficient on expected stock returns is 0.162 (t=6.55) after controlling for size, past returns, and dividend…"
+        },
+        {
+          "record_id": "claim_amihud_crosssection_premium_002",
+          "text_snippet": "In monthly Fama-MacBeth cross-sectional regressions, expected stock returns are positively related to expected illiquidity: the ILLIQ coefficient is 0.162…"
+        }
+      ],
+      "title": "Cross-Sectional Illiquidity Premium State"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "The record concerns fat tails and negative skewness generated by Gaussian mixtures in equity returns; the packet does not provide return-distribution evidence and covers European gas.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "model_specification When modeling equity return distributions with regime-switching models, within-regime Gaussian innovations are sufficient to produce…"
+        },
+        {
+          "record_id": "state_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "A market condition characterized by unconditional fat tails (excess kurtosis) and negative skewness in equity return distributions that arise as a natural…"
+        }
+      ],
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The state requires elevated international equity correlations and a high filtered bear-regime probability, neither of which pertains to the packet's natural-gas scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_ang_bekaert_bear_correlation_002",
+          "text_snippet": "International equity return correlations approximately 20 percentage points higher during identified bear regime periods versus normal regime periods. Measured…"
+        },
+        {
+          "record_id": "failure_ang_bekaert_model_selection_004",
+          "text_snippet": "Constant-parameter international equity allocation models (static mean-variance with unconditional means and covariances) fail to exploit regime-conditional…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "natural-gas pricing",
+      "direction": "surging",
+      "index": 0,
+      "magnitude": "extreme",
+      "statement": "Dutch TTF front-month above €300/MWh with a peak near €340/MWh"
+    },
+    {
+      "dimension": "pipeline supply",
+      "direction": "reduced",
+      "index": 1,
+      "magnitude": "severe",
+      "statement": "Nord Stream 1 flows near one-fifth of capacity"
+    },
+    {
+      "dimension": "supply-risk sensitivity",
+      "direction": "heightened",
+      "index": 2,
+      "magnitude": "extreme",
+      "statement": "Pipeline disruptions priced as potential complete interruptions"
+    },
+    {
+      "dimension": "physical gas availability",
+      "direction": "tightening",
+      "index": 3,
+      "magnitude": "acute",
+      "statement": "Utilities and industrial firms competing for scarce LNG cargoes"
+    },
+    {
+      "dimension": "global LNG flows",
+      "direction": "shifting toward Europe",
+      "index": 4,
+      "magnitude": "record",
+      "statement": "American LNG crossing the Atlantic at record premiums as Asian demand recedes"
+    },
+    {
+      "dimension": "energy-cost transmission",
+      "direction": "rising",
+      "index": 5,
+      "magnitude": "substantial",
+      "statement": "German consumer levy under preparation to support gas importers"
+    },
+    {
+      "dimension": "policy response",
+      "direction": "expanding",
+      "index": 6,
+      "magnitude": "broad",
+      "statement": "European governments drafting emergency price, tax, and demand measures"
+    },
+    {
+      "dimension": "storage and industrial demand",
+      "direction": "mixed",
+      "index": 7,
+      "magnitude": "significant",
+      "statement": "Storage approaching targets alongside curtailed heavy-industrial output"
+    },
+    {
+      "dimension": "winter uncertainty",
+      "direction": "unclear",
+      "index": 8,
+      "magnitude": "high",
+      "statement": "Winter supply outcomes remain exposed to pipeline reliability and cargo availability"
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_6_g4i8e0/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_6_g4i8e0/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_6_g4i8e0",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

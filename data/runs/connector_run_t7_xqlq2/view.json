@@ -1,0 +1,513 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "well_supported",
+      "dominant_themes": [
+        "sovereign-confidence shock",
+        "redenomination concern",
+        "widening sovereign spread",
+        "Bund haven demand",
+        "Italian financial weakness"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "near term",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "Italian government bonds",
+      "German Bunds",
+      "Italian bank equities",
+      "FTSE MIB"
+    ],
+    "raw_text": "Ten-year BTPs are above three per cent and the spread to Bunds has blown out toward three hundred basis points, the fastest widening since the euro crisis, and it is all politics. The coalition's insistence on Paolo Savona at the economy ministry, with his history of plan B currency talk, has investors pricing genuine redenomination risk into Italian assets. Two-year yields have gone from a rounding error to north of two and a half per cent in days, Italian bank stocks are being sold hard and the FTSE MIB is the worst major index in Europe. Bunds are bid as the safe haven, so the spread overshoots whatever the true fundamental story is. Foreign holders are cutting Italian exposure at any price and those who cannot are hedging, because until Rome clarifies its commitment to the euro every rally in BTPs is a trade, not a home.",
+    "summary": "Italian sovereign stress has intensified amid political uncertainty and perceived redenomination risk, with sharply higher short- and long-term yields, a rapidly widening spread to German Bunds, pronounced weakness in Italian banks and equities, strong safe-haven demand for Bunds, and foreign investor withdrawal and hedging. The commentary suggests that haven flows may be amplifying the spread beyond underlying fundamentals while uncertainty persists over Rome's commitment to the euro."
+  },
+  "interpretation": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "sovereign-confidence shock",
+      "redenomination concern",
+      "widening sovereign spread",
+      "Bund haven demand",
+      "Italian financial weakness"
+    ],
+    "summary": "The packet clearly describes an acute Italian sovereign-confidence shock with yield repricing, market fragmentation, haven flows, cross-border withdrawal, and domestic financial-sector weakness. None of the retrieved states captures that combined behavior with the required evidence."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T23:25:09Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:cb4a243507c7c8f12d7227fb5da31146eae199b11c3b188af3ed23dc2de95c50"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "policy_amihud_timeseries_premium_003",
+        "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+      },
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "retrieval_score": 0.81171,
+      "state_id": "state_amihud_timeseries_premium_003",
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "closest_on": {
+        "record_id": "failure_cho_engle_volume_insignificant_001",
+        "text_snippet": "Asymmetric information models that assign trading volume a central role in explaining bid-ask spread variation fail when applied to options markets. In the…"
+      },
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "retrieval_score": 0.809104,
+      "state_id": "state_cho_engle_volume_insignificant_001",
+      "title": "Volume-Insensitive Options Spread Environment"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_hamilton_arch_volatility_clustering_004",
+        "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+      },
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "retrieval_score": 0.8056,
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_cho_engle_moneyness_003",
+        "text_snippet": "confidence_calibration Moneyness category (ATM vs. OTM) must be included as a feature or segmentation variable in option spread models. OTM options should be…"
+      },
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "retrieval_score": 0.805595,
+      "state_id": "state_cho_engle_moneyness_003",
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_amihud_size_interaction_005",
+        "text_snippet": "The expected return sensitivity to illiquidity is decreasing in firm size. The illiquidity premium is larger for small-cap stocks than for large-cap stocks,…"
+      },
+      "entry_id": "entry_amihud_size_interaction_005",
+      "retrieval_score": 0.80496,
+      "state_id": "state_amihud_size_interaction_005",
+      "title": "Size-Stratified Illiquidity Premium State"
+    }
+  ],
+  "no_match_rationale": "No candidate represents Italian sovereign-redenomination stress expressed through simultaneous short- and long-term yield jumps, rapid Italy-Germany spread widening, Bund haven demand, foreign withdrawal, and Italian bank and equity weakness. The nearest equity and systemic-risk records instead require measured regime probabilities, conditional correlations, principal-component concentration, Granger-network density, return dependence, or distributional behavior that the packet does not supply.",
+  "non_matches": [
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "Concurrent market stress does not establish that joint lower-tail correlations exceed corresponding upper-tail correlations or provide separate bear-regime correlation estimates.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "GARCH-DCC models with symmetric correlation specification fail to capture left-tail exceedance correlation asymmetry in multi-asset equity portfolios. When…"
+        },
+        {
+          "record_id": "policy_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "model_selection Include exceedance correlation asymmetry (left-tail minus right-tail exceedance correlation) as a model validation diagnostic when evaluating…"
+        }
+      ],
+      "title": "Regime-Conditional Tail Correlation Asymmetry State"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The suggested amplification beyond fundamentals does not evidence an unadjusted cross-market correlation, an elevated source-country variance, or the stated heteroscedasticity-corrected comparison.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_forbes_interdependence_regime_001",
+          "text_snippet": "regime_switch Distinguish between pre-existing interdependence (stable high cross-market correlation amplified by heteroscedasticity during crises) and true…"
+        },
+        {
+          "record_id": "policy_forbes_bias_correction_001",
+          "text_snippet": "confidence_calibration Always compute the relative source-country variance increase (delta = sigma^2_high / sigma^2_low - 1) when measuring cross-market…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "Weak Italian bank shares and broad equity underperformance do not supply principal-component variance shares or common-factor loadings across banks, broker-dealers, insurers, and hedge funds.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_billio_broker_loading_concentration_001",
+          "text_snippet": "Risk models that treat all financial sub-sectors as equivalent contributors to the systemic co-movement state fail by not differentiating the structural…"
+        },
+        {
+          "record_id": "signature_billio_crisis_pca_collapse_002",
+          "text_snippet": "The sustained elevation of the first principal component variance share above 80% throughout the 2007-2009 financial crisis, compared to a 1994-2000 baseline…"
+        }
+      ],
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "The near-term stress episode supplies no positive subannual autocorrelation, negative three-to-eight-year autocorrelation, or measured transitory equity-price component.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_poterba_summers_transitory_position_sizing_002",
+          "text_snippet": "position_sizing The transitory component magnitude—standard deviation 15–25% for the NYSE value-weighted index and up to 37% for the equal-weighted index…"
+        },
+        {
+          "record_id": "policy_poterba_summers_risk_model_selection_005",
+          "text_snippet": "model_weighting The Poterba-Summers calibration showing that a pure time-varying risk premium explanation requires 5–15%+ annual required return…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The Italy-Germany sovereign yield spread is widening, whereas this record concerns selected co-moving equity pairs whose temporary price divergences subsequently converge toward historical equilibrium spreads.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_gatev_pairs_formation_sensitivity_001",
+          "text_snippet": "The pairs formation methodology (minimum sum-of-squared normalized price differences over a 12-month formation window) is sensitive to the choice of formation…"
+        },
+        {
+          "record_id": "policy_gatev_pairs_market_neutral_sizing_002",
+          "text_snippet": "position_sizing The annualized Sharpe ratio range of 1.5–2.1 and portfolio volatility of 4–6% annualized for top-5 pairs portfolios (gross, pre-cost) establish…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "Sharp market movements do not establish excess kurtosis, negative skewness, or a multi-regime Gaussian mixture process in equity returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "model_specification When modeling equity return distributions with regime-switching models, within-regime Gaussian innovations are sufficient to produce…"
+        },
+        {
+          "record_id": "state_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "A market condition characterized by unconditional fat tails (excess kurtosis) and negative skewness in equity return distributions that arise as a natural…"
+        }
+      ],
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "Italian equity weakness agrees with a bearish direction, but the packet provides neither the stated monthly mean and volatility behavior nor a Hamilton-filtered bear-regime probability.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_bekaert_regime_params_001",
+          "text_snippet": "model_calibration Use Ang-Bekaert (2004) regime parameter estimates as calibration anchors when initializing two-state RS models for international equity…"
+        },
+        {
+          "record_id": "state_ang_bekaert_regime_params_001",
+          "text_snippet": "A two-state Markov-switching market condition for international equity returns characterized by empirically estimated regime-level parameters: normal regime…"
+        }
+      ],
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The record is specific to autocorrelated hedge-fund returns and illiquid marked-to-model positions, while hedge funds are outside the packet's government-bond and Italian-equity scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_billio_hedge_fund_illiquidity_001",
+          "text_snippet": "confidence_calibration Include hedge fund return autocorrelation (AR(1) coefficient) as a systemic risk feature for financial stability monitoring. Values of…"
+        },
+        {
+          "record_id": "failure_billio_hedge_fund_autocorr_proxy_001",
+          "text_snippet": "Return autocorrelation as a proxy for hedge fund position illiquidity conflates two distinct sources of serial persistence: (1) stale or infrequent pricing of…"
+        }
+      ],
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The downturn is compatible with a bear label, but Italian underperformance does not evidence international equity correlations rising by roughly twenty percentage points or an elevated filtered bear-regime probability.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_bekaert_model_selection_004",
+          "text_snippet": "Constant-parameter international equity allocation models (static mean-variance with unconditional means and covariances) fail to exploit regime-conditional…"
+        },
+        {
+          "record_id": "policy_ang_bekaert_bear_correlation_002",
+          "text_snippet": "portfolio_construction Include regime-conditional correlation estimates (bear and normal regime separately) as features in portfolio risk models for…"
+        }
+      ],
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "A near-term equity decline does not establish positive weekly return autocorrelation, a variance ratio above one, or the stated capitalization gradient.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_lo_mackinlay_short_horizon_001",
+          "text_snippet": "feature_selection When the short-horizon return predictability state is active (weekly autocorrelation statistically significant and VR(2) > 1.0 for…"
+        },
+        {
+          "record_id": "policy_lo_mackinlay_size_tilting_003",
+          "text_snippet": "position_sizing Size-based position sizing should reflect the empirically documented autocorrelation gradient: short-horizon return predictability is strongest…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The August observation contains no January concentration, effective trading-cost relationship, tax-loss selling effect, or seasonal future-return premium.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "claim_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional relationship between effective trading costs and stock returns is concentrated in January. Outside of January, the illiquidity premium in…"
+        },
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "The record describes option bid-ask spreads under fast and slow transaction-rate regimes, while options are absent from the packet's asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_market_conditions_004",
+      "surfaced_by": [
+        {
+          "record_id": "failure_cho_engle_market_conditions_004",
+          "text_snippet": "Models that assume a monotonic relationship between trading activity and option bid-ask spreads fail to capture the non-monotonic (U-shaped) pattern observed…"
+        },
+        {
+          "record_id": "policy_cho_engle_market_conditions_004",
+          "text_snippet": "regime_switch Intraday transaction rate relative to the daily average should be monitored and used to classify market activity regime (fast/slow/normal). This…"
+        }
+      ],
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The record models daily commodity, currency, equity, and fixed-income futures, while the packet covers cash government bonds and Italian equities rather than the modeled futures universe.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "state_nguyen_three_state_hmm_001",
+          "text_snippet": "A three-state hidden Markov model (HMM) regime structure applied asset- independently to daily futures returns across commodity, currency, equity, and fixed…"
+        },
+        {
+          "record_id": "signature_nguyen_hmm_regime_states_001",
+          "text_snippet": "The filtered probability distribution across three hidden Markov model states (bull, bear, high-volatility) estimated from EWMM features of daily futures…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "Italian bank weakness and foreign withdrawal do not evidence growing Granger-causal link density or increasing return predictability across financial institutions.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "surfaced_by": [
+        {
+          "record_id": "failure_billio_granger_structural_causation_001",
+          "text_snippet": "Granger-causality-based systemic risk measures reflect predictive relationships among return series but do not establish structural causation or transmission…"
+        },
+        {
+          "record_id": "state_billio_granger_systemic_buildup_002",
+          "text_snippet": "A market condition characterized by a growing density of Granger-causal predictive relationships among return series of financial sector institutions (hedge…"
+        }
+      ],
+      "title": "Systemic Risk Network Buildup State"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The directional market movements resemble a stressed trend environment, but the record covers time-series-momentum behavior and performance across diversified futures portfolios rather than the packet's cash instruments.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_hurst_mf_horizon_bias_005",
+          "text_snippet": "Managed futures managers systematically underexpose their portfolios to the individually optimal 12-month look-back horizon signal, operating predominantly at…"
+        },
+        {
+          "record_id": "failure_hurst_mf_short_horizon_underperformance_001",
+          "text_snippet": "Portfolios constructed with a dominant 1-month TSMOM signal (individual-asset Sharpe 0.29) systematically underperform those using a 12-month dominant signal…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "sovereign yields",
+      "direction": "rising",
+      "index": 0,
+      "magnitude": "strong",
+      "statement": "Ten-year Italian yields above three per cent"
+    },
+    {
+      "dimension": "sovereign risk spread",
+      "direction": "widening",
+      "index": 1,
+      "magnitude": "exceptionally rapid",
+      "statement": "Italy-Germany spread near three hundred basis points"
+    },
+    {
+      "dimension": "political risk",
+      "direction": "intensifying",
+      "index": 2,
+      "magnitude": "material",
+      "statement": "Political uncertainty driving perceived redenomination risk"
+    },
+    {
+      "dimension": "short-term funding stress",
+      "direction": "rising",
+      "index": 3,
+      "magnitude": "sharp",
+      "statement": "Two-year Italian yields above two and a half per cent after a rapid surge"
+    },
+    {
+      "dimension": "bank equity performance",
+      "direction": "falling",
+      "index": 4,
+      "magnitude": "strong",
+      "statement": "Heavy weakness in Italian bank shares"
+    },
+    {
+      "dimension": "relative equity performance",
+      "direction": "weakening",
+      "index": 5,
+      "magnitude": "pronounced",
+      "statement": "FTSE MIB trailing major European indexes"
+    },
+    {
+      "dimension": "safe-haven flows",
+      "direction": "strengthening",
+      "index": 6,
+      "magnitude": "strong",
+      "statement": "Safe-haven demand supporting German Bunds"
+    },
+    {
+      "dimension": "cross-border investor flows",
+      "direction": "outflow",
+      "index": 7,
+      "magnitude": "aggressive",
+      "statement": "Foreign holders withdrawing or hedging Italian exposure"
+    },
+    {
+      "dimension": "uncertainty",
+      "direction": "unclear",
+      "index": 8,
+      "magnitude": "high",
+      "statement": "Uncertain separation between political overshoot and fundamental risk"
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_t7_xqlq2/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_t7_xqlq2/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_t7_xqlq2",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

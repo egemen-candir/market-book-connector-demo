@@ -1,0 +1,513 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "well_supported",
+      "dominant_themes": [
+        "WTI expiry dislocation",
+        "physical storage scarcity",
+        "contango mechanics",
+        "equity resilience",
+        "absent state coverage"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2020-04-21",
+      "observation_horizon": "immediate",
+      "timezone": "America/New_York"
+    },
+    "asset_scope": [
+      "May WTI crude",
+      "June WTI crude",
+      "S&P 500",
+      "Nasdaq"
+    ],
+    "raw_text": "Yesterday May WTI settled at minus $37 a barrel — negative, a first in history — and the equity market barely flinched. The S&P has rallied hard off the March lows, the Nasdaq has clawed back to positive for the year, and the tapes tell two different stories. The oil collapse is largely plumbing: the May contract expired with Cushing storage nearly full, longs had nowhere to roll in a vicious contango, and index-ETF mechanics amplified the squeeze. June crude trades back in the twenties, a wide premium that says the dislocation was expiry arithmetic as much as demand. Meanwhile stimulus checks are landing, reopening chatter grows louder by the day, and equities are pricing the other side of the shutdown, storage tanks notwithstanding.\n",
+    "summary": "May WTI's unprecedented negative settlement reflected an expiring contract, scarce Cushing storage, steep contango, and index-fund mechanics amid weak demand, while June crude remained above zero in the twenties. Equities showed limited reaction to the oil disruption, with the S&P rebounding sharply from March lows and the Nasdaq recovering to positive territory for the year as stimulus payments and reopening expectations supported optimism beyond the shutdown."
+  },
+  "interpretation": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "WTI expiry dislocation",
+      "physical storage scarcity",
+      "contango mechanics",
+      "equity resilience",
+      "absent state coverage"
+    ],
+    "summary": "The retrieved Market Book candidates do not represent the expiry-specific WTI dislocation and its limited equity spillover. Apparent neighbors lack the measured behavior required by their state definitions."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T22:26:49Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:2a9d0d9c9d2e68601a7d407310363d01774454f5be055bba99c72748050617e2"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "policy_amihud_size_interaction_005",
+        "text_snippet": "position_sizing When the size-stratified illiquidity premium state is active, illiquidity features should be interacted with firm size. ILLIQ alone understates…"
+      },
+      "entry_id": "entry_amihud_size_interaction_005",
+      "retrieval_score": 0.829719,
+      "state_id": "state_amihud_size_interaction_005",
+      "title": "Size-Stratified Illiquidity Premium State"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_cho_engle_moneyness_003",
+        "text_snippet": "Out-of-the-money (OTM) options have wider proportional bid-ask spreads than at-the-money (ATM) options. Furthermore, 75% of ATM transactions and 81% of OTM…"
+      },
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "retrieval_score": 0.829553,
+      "state_id": "state_cho_engle_moneyness_003",
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_lo_mackinlay_variance_ratio_001",
+        "text_snippet": "Observable excess variance ratio above unity and statistically significant positive first-order autocorrelation in weekly equity portfolio returns, providing a…"
+      },
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "retrieval_score": 0.829363,
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_ang_bekaert_bear_correlation_002",
+        "text_snippet": "International equity return correlations approximately 20 percentage points higher during identified bear regime periods versus normal regime periods. Measured…"
+      },
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "retrieval_score": 0.829153,
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_amihud_crosssection_premium_002",
+        "text_snippet": "In monthly Fama-MacBeth regressions, the ILLIQ coefficient on expected stock returns is 0.162 (t=6.55) after controlling for size, past returns, and dividend…"
+      },
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "retrieval_score": 0.827846,
+      "state_id": "state_amihud_crosssection_premium_002",
+      "title": "Cross-Sectional Illiquidity Premium State"
+    }
+  ],
+  "no_match_rationale": "The candidates describe equity-pair convergence, financial-sector principal-component co-movement, corrected contagion correlations, trend-signal performance, long-horizon equity autocorrelation, volatility clustering, statistical regimes, equity illiquidity premia, and option bid-ask determinants. None describes an expiring WTI contract settling below zero under Cushing storage scarcity, contango, and index-fund mechanics, together with resilient equity indexes. The packet also lacks the measured spreads, correlations, conditional variances, serial dependencies, regime probabilities, illiquidity series, and option-market variables required by the retrieved records.",
+  "non_matches": [
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Broad S&P and Nasdaq recovery without co-moving equity-pair divergence or reversion to historical spreads",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "signature_gatev_pairs_convergence_001",
+          "text_snippet": "Observable convergence of co-integrated equity pair price spreads following a 2-standard-deviation divergence trigger, generating measurable excess returns.…"
+        },
+        {
+          "record_id": "policy_gatev_pairs_mean_reversion_001",
+          "text_snippet": "feature_selection When the cross-sectional pairs mean reversion state is classified as active, emphasize features capturing: (1) normalized price spread…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "Limited equity reaction without bank, broker-dealer, insurer, or hedge-fund returns, PC1 variance share, or common-factor loadings",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_billio_comovement_risk_control_001",
+          "text_snippet": "risk_control Include rolling PC1 variance share across financial sector return indices as a systemic co-movement feature. Threshold PC1 at approximately 80% to…"
+        },
+        {
+          "record_id": "policy_billio_broker_dealer_exposure_001",
+          "text_snippet": "feature_selection Prioritize broker-dealer sector return data (PC1 loading=0.79) as a high-weight input to systemic risk features; broker-dealer returns are…"
+        }
+      ],
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "Limited cross-market reaction without source-country variance changes, conditional correlations, or Forbes-Rigobon correction results",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "state_forbes_heteroscedasticity_bias_001",
+          "text_snippet": "A measurement distortion condition that arises when cross-market correlations are computed during periods of elevated source-country variance without applying…"
+        },
+        {
+          "record_id": "policy_forbes_bias_correction_001",
+          "text_snippet": "confidence_calibration Always compute the relative source-country variance increase (delta = sigma^2_high / sigma^2_low - 1) when measuring cross-market…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "Rising equity indexes without TSMOM signal returns, horizon Sharpe behavior, multi-asset portfolio performance, or CTA factor loading",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hurst_mf_regime_conditional_activity_004",
+          "text_snippet": "activity_suppression The smile pattern of TSMOM returns documented by Hurst et al. (2013)—best performance during sustained bull and bear markets, worst during…"
+        },
+        {
+          "record_id": "signature_hurst_mf_cta_factor_loading_005",
+          "text_snippet": "Observable pattern in managed futures fund TSMOM factor loadings revealing systematic underexposure to the individually optimal long-horizon (12-month) signal…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "Cushing storage scarcity rather than hedge-fund return autocorrelation or marked-to-model smoothing",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "surfaced_by": [
+        {
+          "record_id": "state_billio_hedge_fund_illiquidity_003",
+          "text_snippet": "A market condition specific to hedge fund returns in which high first-order serial autocorrelation (rho1=0.22) indicates return smoothing consistent with…"
+        },
+        {
+          "record_id": "policy_billio_hedge_fund_illiquidity_001",
+          "text_snippet": "confidence_calibration Include hedge fund return autocorrelation (AR(1) coefficient) as a systemic risk feature for financial stability monitoring. Values of…"
+        }
+      ],
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "Short-horizon equity recovery without a three-to-eight-year autocorrelation reversal, variance ratios, or a measured transitory component",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+          "text_snippet": "A market condition in which equity returns exhibit positive serial correlation at horizons shorter than one year and negative serial correlation (mean…"
+        },
+        {
+          "record_id": "policy_poterba_summers_transitory_position_sizing_002",
+          "text_snippet": "position_sizing The transitory component magnitude—standard deviation 15–25% for the NYSE value-weighted index and up to 37% for the equal-weighted index…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "Negative crude settlement and physical storage pressure without NYSE aggregate ILLIQ, its expected component, or an unexpected illiquidity shock",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_timeseries_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "state_amihud_timeseries_premium_003",
+          "text_snippet": "A market condition in which aggregate market illiquidity predicts market-level returns in two distinct ways: (1) higher expected illiquidity predicts higher…"
+        },
+        {
+          "record_id": "policy_amihud_timeseries_premium_003",
+          "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+        }
+      ],
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "A single historic crude-price event without repeated squared-return dependence or persistent GARCH conditional variance",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+        },
+        {
+          "record_id": "signature_hamilton_arch_volatility_clustering_004",
+          "text_snippet": "Volatility clustering in financial return time series: significant positive autocorrelation in squared returns (|r_t|^2) and absolute returns (|r_t|) at short…"
+        }
+      ],
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "reason": "WTI calendar-price separation without option bid-ask spreads, underlying bid-ask costs, delta scaling, or derivative hedging",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "surfaced_by": [
+        {
+          "record_id": "signature_cho_engle_underlying_spread_002",
+          "text_snippet": "The bid-ask spread of the underlying asset (e.g., S&P100 index) serves as a measurable indicator of options spread width via the derivative hedge mechanism.…"
+        },
+        {
+          "record_id": "policy_cho_engle_underlying_spread_002",
+          "text_snippet": "feature_selection When modeling option bid-ask spreads, include the underlying asset's bid-ask spread as a feature, ideally scaled by option delta to reflect…"
+        }
+      ],
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "April 2020 observations without January stock returns, effective trading costs, tax-loss selling, or small-cap seasonality",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        },
+        {
+          "record_id": "claim_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional relationship between effective trading costs and stock returns is concentrated in January. Outside of January, the illiquidity premium in…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "Cross-asset directional moves without EWMM moment vectors, HMM state probabilities, transition dynamics, or PESR behavior",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_nguyen_pesr_position_sizing_001",
+          "text_snippet": "position_sizing Use the PESR scalar metric as the primary position-sizing signal for multi-asset futures strategies. PESR = (ESR)^T * alpha_{n+h|n} combines…"
+        },
+        {
+          "record_id": "failure_nguyen_oos_window_length_001",
+          "text_snippet": "The out-of-sample test window used to validate the HMM long-only strategy (January 2016 – October 2019, approximately 4 years) is short and covers a…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "Equity-index recovery without cross-sectional stock effective costs or subsequent-return sorts",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_return_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hasbrouck_return_premium_003",
+          "text_snippet": "A positive return spread across portfolios sorted by annual Gibbs effective cost estimates: stocks in higher-cost deciles earn higher subsequent returns than…"
+        },
+        {
+          "record_id": "state_hasbrouck_return_premium_003",
+          "text_snippet": "A persistent cross-sectional market state in which stocks with higher effective trading costs (as measured by the Gibbs estimator) earn systematically higher…"
+        }
+      ],
+      "title": "Hasbrouck Illiquidity Return Premium"
+    },
+    {
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "reason": "Oil contract mechanics and index-fund references without option volume, option bid-ask spreads, moneyness, or maturity controls",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_volume_insignificant_001",
+      "surfaced_by": [
+        {
+          "record_id": "claim_cho_engle_volume_insignificant_001",
+          "text_snippet": "Option trading volume is not a statistically significant determinant of option bid-ask spreads in the CBOE S&P100 market. After controlling for other spread…"
+        },
+        {
+          "record_id": "failure_cho_engle_volume_insignificant_001",
+          "text_snippet": "Asymmetric information models that assign trading volume a central role in explaining bid-ask spread variation fail when applied to options markets. In the…"
+        }
+      ],
+      "title": "Volume-Insensitive Options Spread Environment"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "Strong equity recovery without monthly world-equity mean and volatility estimates or Hamilton-filter regime probabilities",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_bekaert_regime_params_001",
+          "text_snippet": "model_calibration Use Ang-Bekaert (2004) regime parameter estimates as calibration anchors when initializing two-state RS models for international equity…"
+        },
+        {
+          "record_id": "state_ang_bekaert_regime_params_001",
+          "text_snippet": "A two-state Markov-switching market condition for international equity returns characterized by empirically estimated regime-level parameters: normal regime…"
+        }
+      ],
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "Physical oil-storage tightness without a monthly NYSE ILLIQ series, AR(1) persistence, or lagged illiquidity predictability",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_amihud_illiq_persistence_004",
+      "surfaced_by": [
+        {
+          "record_id": "signature_amihud_illiq_persistence_004",
+          "text_snippet": "Monthly NYSE aggregate ILLIQ fitted by AR(1) yields coefficient 0.945 with R²=0.89. These statistics signal that aggregate market illiquidity is in a…"
+        },
+        {
+          "record_id": "claim_amihud_illiq_persistence_004",
+          "text_snippet": "Monthly market illiquidity displays strong time-series persistence: the AR(1) coefficient is 0.945 with R²=0.89. Lagged illiquidity explains 89% of the…"
+        }
+      ],
+      "title": "Aggregate Illiquidity Persistence State"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "crude oil pricing",
+      "direction": "negative",
+      "index": 0,
+      "magnitude": "historic",
+      "statement": "Unprecedented negative settlement in May WTI"
+    },
+    {
+      "dimension": "physical storage",
+      "direction": "tightening",
+      "index": 1,
+      "magnitude": "severe",
+      "statement": "Near-capacity Cushing storage around May expiry"
+    },
+    {
+      "dimension": "contract mechanics",
+      "direction": "intensifying",
+      "index": 2,
+      "magnitude": "strong",
+      "statement": "Expiry pressure amplified by contango and index-fund mechanics"
+    },
+    {
+      "dimension": "oil term structure",
+      "direction": "upward",
+      "index": 3,
+      "magnitude": "wide",
+      "statement": "June crude priced in the twenties above the expiring May contract"
+    },
+    {
+      "dimension": "cross-market response",
+      "direction": "resilient",
+      "index": 4,
+      "magnitude": "notable",
+      "statement": "Limited equity reaction to the oil-market disruption"
+    },
+    {
+      "dimension": "equity momentum",
+      "direction": "rising",
+      "index": 5,
+      "magnitude": "strong",
+      "statement": "Sharp S&P recovery from March lows"
+    },
+    {
+      "dimension": "technology equity performance",
+      "direction": "improving",
+      "index": 6,
+      "magnitude": "substantial",
+      "statement": "Nasdaq recovery into positive year-to-date territory"
+    },
+    {
+      "dimension": "market expectations",
+      "direction": "strengthening",
+      "index": 7,
+      "magnitude": "moderate",
+      "statement": "Growing optimism tied to stimulus payments and reopening expectations"
+    },
+    {
+      "dimension": "uncertainty",
+      "direction": "mixed",
+      "index": 8,
+      "magnitude": "material",
+      "statement": "Uncertain balance between technical oil dislocation and underlying demand weakness"
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_3llr2795/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_3llr2795/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_3llr2795",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

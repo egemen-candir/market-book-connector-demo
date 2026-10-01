@@ -1,0 +1,160 @@
+{
+  "caveats": [],
+  "constraints": [],
+  "failure_modes": [],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Broad market declines do not evidence divergence and subsequent convergence of selected equity-pair spreads.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_amihud_size_interaction_005",
+      "reason": "Small-cap underperformance supplies a size ranking but not greater price impact, higher ILLIQ, or a larger illiquidity premium.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_size_interaction_005"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The state is estimated on a world equity index, while the packet describes specific U.S. equity segments without comparable filtered regime parameters.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_regime_params_001"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "The packet does not measure weekly positive autocorrelation, variance ratios, or the stated capitalization-conditioned autocorrelation gradient.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "The state is defined on instrument-level daily futures returns, whereas the packet does not identify corresponding futures observations or HMM state probabilities.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The record concerns diversified futures trend signals and their risk-adjusted returns, outside the packet's stated instruments and measurements.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "A December drawdown and uncertain seasonal rebound do not establish the stated three-to-eight-year negative serial correlation or transitory variance.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "December pressure and uncertain seasonality do not evidence a January-concentrated relationship between effective trading costs and subsequent returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "Thin volume does not establish persistent monthly aggregate ILLIQ or the stated near-unit-root autoregressive behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_illiq_persistence_004"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The packet provides no cross-country conditional correlations, source-country variance increase, or heteroscedasticity correction behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "The state requires co-movement among banks, broker-dealers, insurers, and hedge funds, none of which defines the packet's asset scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "The record describes elevated correlations among international equity markets, while the packet covers U.S. segments without international correlation observations.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "Thin volume and falling prices do not measure expected or unexpected aggregate ILLIQ or its specified predictive and contemporaneous return effects.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "The packet does not supply effective trading-cost sorts or systematically higher subsequent returns for higher-cost stocks.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_return_premium_003"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "Simultaneous declines do not establish quantile-conditioned left-tail correlation exceeding comparable right-tail correlation.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "December market commentary",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "S&P 500",
+      "U.S. small-cap equities",
+      "U.S. technology equities",
+      "Apple",
+      "FAANG complex",
+      "U.S. Treasury yield curve",
+      "crude oil"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "company-specific pressure",
+      "energy-market performance",
+      "growth-equity performance",
+      "large-cap equity performance",
+      "liquidity and sentiment",
+      "market breadth",
+      "monetary policy expectations",
+      "near-term uncertainty",
+      "sector leadership",
+      "short-rate expectations",
+      "yield-curve shape"
+    ],
+    "observation_id": "obs_f022e7739f69",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "no_actionable_posture"
+  ],
+  "raw_input_hash": "sha256:f022e7739f693f47cfb0948cc077e24fb0913943167f15420d9568f174bd98e5",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "scope-mismatched regime models",
+      "missing behavioral measurements",
+      "broad U.S. market stress"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "no_actionable_posture"
+    ]
+  },
+  "run_id": "connector_run_qoy2loiz",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

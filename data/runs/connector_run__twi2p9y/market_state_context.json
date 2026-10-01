@@ -1,0 +1,245 @@
+{
+  "caveats": [
+    "The sustained upward environment supplies the stated trend activation condition, but the packet does not measure TSMOM performance, horizon Sharpe patterns, or diversified futures behavior.",
+    "The month-long suppression of meaningful declines and persistently subdued volatility evidence an extended low-volatility run, but GARCH persistence parameters and squared-return autocorrelations are unavailable.",
+    "Positive returns and subdued volatility resemble the bull-state behavior, but the packet supplies no EWMM moment measurements, filtered state probabilities, or direct futures-return evidence.",
+    "The strong positive return direction and low volatility resemble the normal-regime behavior, but world-equity monthly parameters, transition probabilities, and filtered regime probabilities are not supplied."
+  ],
+  "constraints": [
+    "low_confidence_match: entry_hurst_tsmom_trend_following_001",
+    "low_confidence_match: entry_nguyen_three_state_hmm_001",
+    "low_confidence_match: entry_ang_bekaert_regime_params_001"
+  ],
+  "failure_modes": [
+    "unmeasured TSMOM performance",
+    "unverified multi-asset breadth",
+    "weak_match:entry_hurst_tsmom_trend_following_001",
+    "unmeasured GARCH persistence",
+    "untested squared-return autocorrelation",
+    "unestimated state probabilities",
+    "unmeasured EWMM moments",
+    "weak_match:entry_nguyen_three_state_hmm_001",
+    "unestimated regime probabilities",
+    "missing world-index parameters",
+    "weak_match:entry_ang_bekaert_regime_params_001"
+  ],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "policy_implication",
+          "record_id": "policy_hurst_mf_regime_conditional_activity_004"
+        }
+      ],
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "evidence_caveats": "The sustained upward environment supplies the stated trend activation condition, but the packet does not measure TSMOM performance, horizon Sharpe patterns, or diversified futures behavior.",
+      "failure_modes": [
+        "unmeasured TSMOM performance",
+        "unverified multi-asset breadth"
+      ],
+      "match_strength": "weak",
+      "matched_observations": [
+        0,
+        2,
+        9,
+        10
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    },
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_hamilton_arch_volatility_clustering_004"
+        }
+      ],
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "evidence_caveats": "The month-long suppression of meaningful declines and persistently subdued volatility evidence an extended low-volatility run, but GARCH persistence parameters and squared-return autocorrelations are unavailable.",
+      "failure_modes": [
+        "unmeasured GARCH persistence",
+        "untested squared-return autocorrelation"
+      ],
+      "match_strength": "moderate",
+      "matched_observations": [
+        2,
+        8,
+        9
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_hamilton_arch_volatility_clustering_004"
+    },
+    {
+      "citations": [
+        {
+          "kind": "policy_implication",
+          "record_id": "policy_nguyen_hmm_regime_switching_001"
+        }
+      ],
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "evidence_caveats": "Positive returns and subdued volatility resemble the bull-state behavior, but the packet supplies no EWMM moment measurements, filtered state probabilities, or direct futures-return evidence.",
+      "failure_modes": [
+        "unestimated state probabilities",
+        "unmeasured EWMM moments"
+      ],
+      "match_strength": "weak",
+      "matched_observations": [
+        0,
+        8,
+        10
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    },
+    {
+      "citations": [
+        {
+          "kind": "extracted_claim",
+          "record_id": "claim_ang_bekaert_regime_params_001"
+        }
+      ],
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "evidence_caveats": "The strong positive return direction and low volatility resemble the normal-regime behavior, but world-equity monthly parameters, transition probabilities, and filtered regime probabilities are not supplied.",
+      "failure_modes": [
+        "unestimated regime probabilities",
+        "missing world-index parameters"
+      ],
+      "match_strength": "weak",
+      "matched_observations": [
+        0,
+        8
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_ang_bekaert_regime_params_001"
+    }
+  ],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Rapid recovery of broad-index dips does not evidence divergence and convergence of identified equity-pair spreads around historical equilibria.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "A strong January advance does not establish the state's autocorrelation reversal from positive subannual behavior to negative correlation over three to eight years or its transitory-variance magnitude.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "Persistent gains during one month do not establish significant weekly first-order autocorrelation, an elevated variance ratio, or the capitalization gradient described by the state.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The state requires elevated source-country variance that inflates measured cross-market correlation, while the packet reports volatility near the bottom of its range.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "Equity-fund inflows do not evidence aggregate ILLIQ, expected illiquidity predicting future returns, or an unexpected illiquidity shock causing a contemporaneous price effect.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "Broad equity-fund inflows and low market volatility do not measure option transaction rates or the U-shaped bid-ask spread response to fast and slow markets.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_market_conditions_004"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "January timing alone is topical resemblance and does not evidence a cross-sectional relationship between effective trading costs and subsequent stock returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The state is specific to serially smoothed monthly hedge-fund returns and marked-to-model illiquidity, whereas the packet covers broad U.S. equity indexes and economic growth.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "Suppressed downside during a rising month does not establish that joint left-tail correlation exceeds joint right-tail correlation or supply separate bear-regime correlation estimates.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "Historical crash analogues do not evidence excess kurtosis, negative skewness, or a multi-regime Gaussian mixture in the observed return distribution.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_fat_tails_mixture_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "The packet supplies no effective trading-cost estimates, cost-sorted stock portfolios, or subsequent return spread demonstrating an illiquidity premium.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_return_premium_003"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "January commentary with year unspecified",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "Dow Jones Industrial Average",
+      "S&P 500",
+      "U.S. equities",
+      "global economic growth"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "corporate earnings",
+      "corporate policy effects",
+      "dip recovery",
+      "downside frequency",
+      "global economic cycle",
+      "investor flows",
+      "major index levels",
+      "market momentum",
+      "market volatility",
+      "price trajectory",
+      "strategist expectations",
+      "uncertainty"
+    ],
+    "observation_id": "obs_58efbd2a0c67",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "regime_dependent"
+  ],
+  "raw_input_hash": "sha256:58efbd2a0c67c42c60f71d9276d57ba678175bb921cd745db2df7aeaa44c309f",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "partially_supported",
+    "dominant_themes": [
+      "depressed volatility persistence",
+      "exceptional equity momentum",
+      "rapid pullback absorption",
+      "incomplete model evidence"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "regime_dependent"
+    ]
+  },
+  "run_id": "connector_run__twi2p9y",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}

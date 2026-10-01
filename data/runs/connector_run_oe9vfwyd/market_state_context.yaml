@@ -1,0 +1,146 @@
+caveats:
+- The extreme fixed-income yield move supports the high-volatility component, but
+  the packet provides no HMM state probability, EWMM moment estimate, or multi-day
+  confirmation.
+constraints:
+- 'low_confidence_match: entry_nguyen_three_state_hmm_001'
+failure_modes:
+- single-session signal
+- model activation unverified
+- weak_match:entry_nguyen_three_state_hmm_001
+market_book_version: stage6_accepted
+matched_states:
+- citations:
+  - kind: policy_implication
+    record_id: policy_nguyen_hmm_regime_switching_001
+  entry_id: entry_nguyen_three_state_hmm_001
+  evidence_caveats: The extreme fixed-income yield move supports the high-volatility
+    component, but the packet provides no HMM state probability, EWMM moment estimate,
+    or multi-day confirmation.
+  failure_modes:
+  - single-session signal
+  - model activation unverified
+  match_strength: weak
+  matched_observations:
+  - 0
+  policy_posture: regime_dependent
+  state_id: state_nguyen_three_state_hmm_001
+missing_evidence: []
+non_matches:
+- entry_id: entry_billio_financial_sector_comovement_001
+  reason: The packet reports counterparty concern but supplies no financial-institution
+    return co-movement, PC1 variance share, or broker-dealer loading behavior.
+  reason_code: insufficient_evidence
+  state_id: state_billio_financial_sector_comovement_001
+- entry_id: entry_poterba_summers_long_horizon_mean_reversion_001
+  reason: The record concerns multi-year equity-return autocorrelation reversal, while
+    the packet describes an acute UK bond-market liquidity crisis within one week.
+  reason_code: coincidental_neighbor
+  state_id: state_poterba_summers_long_horizon_mean_reversion_001
+- entry_id: entry_hurst_tsmom_trend_following_001
+  reason: Acute directional moves do not establish a time-series momentum signal,
+    sustained trend horizon, or associated cross-futures performance.
+  reason_code: insufficient_evidence
+  state_id: state_hurst_tsmom_trend_following_001
+- entry_id: entry_amihud_illiq_persistence_004
+  reason: The record measures persistent monthly NYSE illiquidity, whereas the packet
+    covers acute liquidity deterioration in UK government bonds.
+  reason_code: out_of_scope
+  state_id: state_amihud_illiq_persistence_004
+- entry_id: entry_gatev_pairs_mean_reversion_001
+  reason: No equity-pair divergence, historical spread, or subsequent convergence
+    appears in the packet.
+  reason_code: coincidental_neighbor
+  state_id: state_gatev_pairs_mean_reversion_001
+- entry_id: entry_forbes_heteroscedasticity_bias_001
+  reason: Elevated volatility alone does not evidence an unadjusted cross-market correlation
+    estimate or heteroscedasticity-induced correlation bias.
+  reason_code: insufficient_evidence
+  state_id: state_forbes_heteroscedasticity_bias_001
+- entry_id: entry_ang_bekaert_bear_correlation_002
+  reason: The packet contains neither international equity correlations nor an elevated
+    filtered bear-regime probability.
+  reason_code: coincidental_neighbor
+  state_id: state_ang_bekaert_bear_correlation_002
+- entry_id: entry_ang_2011_fat_tails_mixture_001
+  reason: One extreme bond-market move does not establish return-distribution excess
+    kurtosis, negative skewness, or a Gaussian regime mixture.
+  reason_code: insufficient_evidence
+  state_id: state_ang_2011_fat_tails_mixture_001
+- entry_id: entry_ang_2011_exceedance_asymmetry_003
+  reason: The packet does not measure joint left-tail and right-tail correlations
+    across assets or estimate separate bear-regime correlation parameters.
+  reason_code: coincidental_neighbor
+  state_id: state_ang_2011_exceedance_asymmetry_003
+- entry_id: entry_amihud_timeseries_premium_003
+  reason: The illiquidity-shock and negative-price behavior is relevant, but the record
+    is confined to monthly NYSE equity-market returns rather than UK government bonds.
+  reason_code: out_of_scope
+  state_id: state_amihud_timeseries_premium_003
+- entry_id: entry_ang_bekaert_regime_params_001
+  reason: The record's normal and bear parameters describe international equity returns,
+    not the packet's UK bond, sterling, corporate-debt, and pension-strategy scope.
+  reason_code: out_of_scope
+  state_id: state_ang_bekaert_regime_params_001
+- entry_id: entry_billio_hedge_fund_illiquidity_003
+  reason: The record concerns hedge-fund return smoothing and marked-to-model positions,
+    while the packet concerns pension liability-driven strategies and collateral liquidation.
+  reason_code: out_of_scope
+  state_id: state_billio_hedge_fund_illiquidity_003
+- entry_id: entry_hasbrouck_january_effect_004
+  reason: The packet supplies no January stock-return seasonality or cross-sectional
+    relationship between effective trading costs and future returns.
+  reason_code: coincidental_neighbor
+  state_id: state_hasbrouck_january_effect_004
+- entry_id: entry_hamilton_arch_volatility_clustering_004
+  reason: The packet supplies one extreme session move but no sequence of large shocks,
+    squared-return autocorrelation, or persistent GARCH parameters.
+  reason_code: insufficient_evidence
+  state_id: state_hamilton_arch_volatility_clustering_004
+not_trading_instruction: true
+observation_summary:
+  as_of:
+    date: '2026-08-31'
+    observation_horizon: within one week
+    timezone: America/New_York
+  asset_scope:
+  - UK government bonds
+  - pound sterling
+  - UK corporate debt
+  - pension liability-driven strategies
+  narrative_summary: ''
+  normalized_features:
+  - collateral pressure
+  - counterparty risk
+  - currency performance
+  - long-term rate volatility
+  - market feedback loop
+  - monetary-policy response
+  - primary-market access
+  - safe-asset liquidity
+  - uncertainty
+  observation_id: obs_caeb51e21a77
+  unavailable_features: []
+  unsupported_statements: []
+policy_posture:
+- regime_dependent
+raw_input_hash: sha256:caeb51e21a77eebea5cc485a862b1b486f7ec1b0b01b7e8850ced8a2a0eead8a
+required_validations: []
+risk_posture:
+  confidence: weakly_supported
+  dominant_themes:
+  - fixed-income volatility
+  - forced liquidation
+  - liquidity deterioration
+  - scope limitations
+  posture_count: 1
+  postures:
+  - regime_dependent
+run_id: connector_run_oe9vfwyd
+source_artifacts:
+  candidate_entries: retrieval/candidate_entries.json
+  market_book_evaluation: evaluator/market_book_evaluation.yaml
+  market_book_evaluation_validation: validation/market_book_evaluation_validation.json
+  observation_packet: builder/market_observation_packet.yaml
+  observation_packet_validation: validation/observation_packet_validation.json
+  run_manifest: run_manifest.json

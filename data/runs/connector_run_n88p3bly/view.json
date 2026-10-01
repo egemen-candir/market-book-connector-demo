@@ -1,0 +1,528 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [],
+    "constraints": [],
+    "failure_modes": [],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "no_actionable_posture"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "well_supported",
+      "dominant_themes": [
+        "cryptocurrency contraction",
+        "severe drawdowns",
+        "weak participation",
+        "external asset scope",
+        "missing measured behaviors"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "no_actionable_posture"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2018-12-01",
+      "observation_horizon": "late-2018 market snapshot",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "Bitcoin",
+      "Ethereum",
+      "ICO tokens",
+      "cryptocurrency exchanges",
+      "cryptocurrency mining"
+    ],
+    "raw_text": "Bitcoin sits near $4,000, down more than eighty percent from December's peak, and there is no bid anywhere. The ICO market that was the story a year ago has simply evaporated: issuance has dried to a trickle, and most of last year's token sales trade down ninety percent or more from their raises, with founders quietly returning funds or fighting regulators. Ethereum — the rail nearly every ICO was launched on — is back under $110, and the projects that promised to build on it are running out of runway as their treasuries melt. Exchanges are cutting staff, miners are capitulating as margins go negative, and the fork wars in November only deepened the cynicism. For the first time since the mania began, nobody I talk to is buying the dip. That quiet, more than any price, is the story.\n",
+    "summary": "Bitcoin and Ethereum were deeply depressed after the prior market peak amid vanishing token issuance, severe losses across earlier token sales, shrinking project treasuries, exchange layoffs, unprofitable mining, fork-related cynicism, weak demand, and broad participant disengagement."
+  },
+  "interpretation": {
+    "confidence": "well_supported",
+    "dominant_themes": [
+      "cryptocurrency contraction",
+      "severe drawdowns",
+      "weak participation",
+      "external asset scope",
+      "missing measured behaviors"
+    ],
+    "summary": "The packet strongly describes a cryptocurrency bear-market contraction and disengagement episode. Retrieved records contain analogous bear-trend and slow-activity concepts only in futures, equities, or options, while the remaining records require behaviors absent from the observations."
+  },
+  "matched_states": [],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T23:13:41Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:7a2430be250a491525d230239298fba16f2249ae38f1d9cfbf16658dcc138007"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "policy_ang_2011_fat_tails_mixture_001",
+        "text_snippet": "model_specification When modeling equity return distributions with regime-switching models, within-regime Gaussian innovations are sufficient to produce…"
+      },
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "retrieval_score": 0.802143,
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    },
+    {
+      "closest_on": {
+        "record_id": "failure_ang_bekaert_model_selection_004",
+        "text_snippet": "Constant-parameter international equity allocation models (static mean-variance with unconditional means and covariances) fail to exploit regime-conditional…"
+      },
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "retrieval_score": 0.801199,
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_billio_hedge_fund_autocorr_001",
+        "text_snippet": "Elevated first-order serial autocorrelation in hedge fund monthly returns (rho1=0.22), substantially above levels observed in banks (rho1=0.02), broker-dealers…"
+      },
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "retrieval_score": 0.799706,
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_amihud_size_interaction_005",
+        "text_snippet": "The expected return sensitivity to illiquidity is decreasing in firm size. The illiquidity premium is larger for small-cap stocks than for large-cap stocks,…"
+      },
+      "entry_id": "entry_amihud_size_interaction_005",
+      "retrieval_score": 0.799615,
+      "state_id": "state_amihud_size_interaction_005",
+      "title": "Size-Stratified Illiquidity Premium State"
+    },
+    {
+      "closest_on": {
+        "record_id": "policy_hamilton_arch_volatility_clustering_004",
+        "text_snippet": "model_specification Include the GARCH persistence parameter sum (alpha + delta) as a feature for characterizing the volatility clustering state. Values near 1…"
+      },
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "retrieval_score": 0.797588,
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "title": "GARCH Volatility Clustering Persistence State"
+    }
+  ],
+  "no_match_rationale": "The severe cryptocurrency decline and unusually quiet participation resemble the bear-trend, bear-regime, and slow-market conditions described by the Hurst, Nguyen, Ang-Bekaert, and Cho-Engle records, but those states cover diversified futures, international equities, or options rather than Bitcoin, Ethereum, ICO tokens, cryptocurrency exchanges, or mining. Other candidates require measured spread convergence, return autocorrelation, aggregate illiquidity, principal-component concentration, Granger-network density, or correlation bias behavior that the packet does not report.",
+  "non_matches": [
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "The packet reports an ecosystem-wide cryptocurrency decline, not temporary divergences and subsequent convergence among selected co-moving equity pairs.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_gatev_pairs_transaction_costs_003",
+          "text_snippet": "Pairs trading returns are highly sensitive to transaction cost assumptions; the gross convergence signal fails to generate positive net returns under high-cost…"
+        },
+        {
+          "record_id": "signature_gatev_pairs_sector_homogeneity_005",
+          "text_snippet": "Cross-sector variation in pairs trading profitability reflecting differential mean-reversion strength across industry groupings. The signature is observable as…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "Unusually quiet participation resembles the record's slow-market activation condition, but the described widening of option bid-ask spreads applies to options and is outside the packet's cryptocurrency scope.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_cho_engle_market_conditions_004",
+      "surfaced_by": [
+        {
+          "record_id": "claim_cho_engle_market_conditions_004",
+          "text_snippet": "Both fast markets (high trading activity) and slow markets (low trading activity) exhibit wider option bid-ask spreads than normal market conditions. This…"
+        },
+        {
+          "record_id": "state_cho_engle_market_conditions_004",
+          "text_snippet": "A market condition regime in which option bid-ask spreads exhibit a non-monotonic (U-shaped) relationship with trading activity: both fast markets (high…"
+        }
+      ],
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "A drawdown from a prior peak does not establish the record's positive subannual and negative three-to-eight-year equity return autocorrelation pattern.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_poterba_summers_test_power_004",
+          "text_snippet": "Long-horizon variance ratio tests and related statistical procedures have severely limited power to detect the long-horizon mean reversion state even when it…"
+        },
+        {
+          "record_id": "policy_poterba_summers_long_horizon_001",
+          "text_snippet": "confidence_calibration When the long-horizon mean reversion state is classified as active, emphasize: (1) long-horizon variance ratio features at 3–8 year…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "The packet provides price declines but no weekly return sequence, variance ratio, or size-dependent autocorrelation behavior.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "claim_lo_mackinlay_nontrading_bound_005",
+          "text_snippet": "Non-synchronous trading can induce spurious positive autocorrelation in portfolio returns, but at empirically realistic non-trading probabilities it accounts…"
+        },
+        {
+          "record_id": "signature_lo_mackinlay_fads_vr_profile_004",
+          "text_snippet": "Observable returns-fads structure in weekly equity returns identified by the shape of the variance ratio profile VR(q) across aggregation horizons q = 2, 4, 8,…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "Broad cryptocurrency distress resembles a common downside environment, but the record measures principal-component concentration across United States banks, broker-dealers, insurers, and hedge funds.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "surfaced_by": [
+        {
+          "record_id": "failure_billio_crisis_diversification_collapse_001",
+          "text_snippet": "Cross-sector financial diversification fails as a risk-reduction strategy during systemic co-movement episodes. When PC1 variance share exceeds 80% (as during…"
+        },
+        {
+          "record_id": "signature_billio_pc1_variance_share_001",
+          "text_snippet": "The share of total return variance explained by the first principal component (PC1) across U.S. financial sector monthly returns (banks, broker-dealers,…"
+        }
+      ],
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "The severe decline is compatible with a sustained bear trend, but the record concerns momentum behavior and performance across diversified liquid futures rather than the packet's cryptocurrency assets and businesses.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_hurst_mf_regime_conditional_activity_004",
+          "text_snippet": "activity_suppression The smile pattern of TSMOM returns documented by Hurst et al. (2013)—best performance during sustained bull and bear markets, worst during…"
+        },
+        {
+          "record_id": "failure_hurst_mf_short_horizon_underperformance_001",
+          "text_snippet": "Portfolios constructed with a dominant 1-month TSMOM signal (individual-asset Sharpe 0.29) systematically underperform those using a 12-month dominant signal…"
+        }
+      ],
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The December cryptocurrency snapshot does not describe a January-concentrated relationship between stock trading costs and future returns.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        },
+        {
+          "record_id": "policy_hasbrouck_january_effect_004",
+          "text_snippet": "activity_suppression Condition the illiquidity return premium feature on calendar month. In January, the illiquidity premium feature may be included at full…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "reason": "Falling prices are directionally compatible with the record's bear-state label, but its state parameters and transition probabilities apply to commodity, currency, equity, and fixed-income futures rather than cryptocurrency.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "surfaced_by": [
+        {
+          "record_id": "claim_nguyen_oos_sharpe_003",
+          "text_snippet": "In out-of-sample testing (January 2016 – October 2019), the HMM long-only strategy with EWMM span=30 achieves Sharpe ratios substantially above buy-and-hold…"
+        },
+        {
+          "record_id": "failure_nguyen_span_turnover_001",
+          "text_snippet": "Low EWMM span values (e.g., s=15) make the HMM observation features overly responsive to recent returns, causing frequent regime transitions and high portfolio…"
+        }
+      ],
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "reason": "Declining participation does not show that option volume is statistically insignificant for bid-ask spreads after controlling for moneyness, maturity, and activity.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_cho_engle_volume_insignificant_001",
+      "surfaced_by": [
+        {
+          "record_id": "claim_cho_engle_volume_insignificant_001",
+          "text_snippet": "Option trading volume is not a statistically significant determinant of option bid-ask spreads in the CBOE S&P100 market. After controlling for other spread…"
+        },
+        {
+          "record_id": "policy_cho_engle_volume_insignificant_001",
+          "text_snippet": "feature_selection Option trading volume should not be used as a primary feature for predicting option bid-ask spread width. Features derived from equity market…"
+        }
+      ],
+      "title": "Volume-Insensitive Options Spread Environment"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "Weak demand and falling prices resemble the direction of an adverse illiquidity shock, but the record's expected and unexpected ILLIQ relationships are estimated for the NYSE market portfolio.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_amihud_timeseries_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_timeseries_premium_003",
+          "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+        },
+        {
+          "record_id": "signature_amihud_timeseries_premium_003",
+          "text_snippet": "Time-series regression of NYSE market returns on decomposed illiquidity yields two observable signals: expected illiquidity coefficient g1=10.226 (t=2.68)…"
+        }
+      ],
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "entry_id": "entry_cho_engle_moneyness_003",
+      "reason": "The packet contains no options, moneyness categories, proportional spreads, or execution-at-quote behavior.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_moneyness_003",
+      "surfaced_by": [
+        {
+          "record_id": "claim_cho_engle_moneyness_003",
+          "text_snippet": "Out-of-the-money (OTM) options have wider proportional bid-ask spreads than at-the-money (ATM) options. Furthermore, 75% of ATM transactions and 81% of OTM…"
+        },
+        {
+          "record_id": "state_cho_engle_moneyness_003",
+          "text_snippet": "A structural market condition in which out-of-the-money (OTM) options carry wider proportional bid-ask spreads than at-the-money (ATM) options, reflecting…"
+        }
+      ],
+      "title": "Moneyness-Dependent Options Liquidity Differential"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "reason": "Quiet participation and weak demand do not establish a monthly aggregate ILLIQ series with near-unit-root persistence.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_illiq_persistence_004",
+      "surfaced_by": [
+        {
+          "record_id": "gloss_state_amihud_illiq_persistence_004",
+          "text_snippet": null
+        },
+        {
+          "record_id": "policy_amihud_illiq_persistence_004",
+          "text_snippet": "feature_selection Lagged market-level ILLIQ (prior-month aggregate) is a valid proxy for expected current-period illiquidity given AR(1) coefficient 0.945 and…"
+        }
+      ],
+      "title": "Aggregate Illiquidity Persistence State"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The depressed prices are compatible with a broad bear-regime interpretation, but the record's mean, volatility, and transition parameters describe international equities rather than cryptocurrency.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_bekaert_regime_params_001",
+          "text_snippet": "model_calibration Use Ang-Bekaert (2004) regime parameter estimates as calibration anchors when initializing two-state RS models for international equity…"
+        },
+        {
+          "record_id": "signature_ang_bekaert_regime_params_001",
+          "text_snippet": "Regime-conditional return distribution shift in international equity returns: normal regime characterized by mean monthly return ~0.90% and volatility ~2.81%;…"
+        }
+      ],
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    },
+    {
+      "entry_id": "entry_billio_granger_systemic_buildup_002",
+      "reason": "Concurrent treasury, exchange, and mining stress does not evidence growing Granger-causal link density among institutional return series.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_billio_granger_systemic_buildup_002",
+      "surfaced_by": [
+        {
+          "record_id": "claim_billio_granger_network_005",
+          "text_snippet": "Granger-causality-based network measures of return predictability quantify financial sector interconnectedness and systemic risk. The number and strength of…"
+        },
+        {
+          "record_id": "state_billio_granger_systemic_buildup_002",
+          "text_snippet": "A market condition characterized by a growing density of Granger-causal predictive relationships among return series of financial sector institutions (hedge…"
+        }
+      ],
+      "title": "Systemic Risk Network Buildup State"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The packet reports no cross-market correlation estimate, source-country variance increase, or corrected contagion comparison.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_forbes_bias_correction_001",
+          "text_snippet": "confidence_calibration Always compute the relative source-country variance increase (delta = sigma^2_high / sigma^2_low - 1) when measuring cross-market…"
+        },
+        {
+          "record_id": "claim_forbes_correction_formula_002",
+          "text_snippet": "The heteroscedasticity-adjusted correlation is computed as: rho = rho_u / sqrt[1 + delta*(1 - rho_u^2)], where rho_u is the unadjusted conditional correlation…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "Bitcoin price drawdown",
+      "direction": "falling",
+      "index": 0,
+      "magnitude": "severe",
+      "statement": "Bitcoin near $4,000 and over eighty percent below its December peak"
+    },
+    {
+      "dimension": "market demand",
+      "direction": "weakening",
+      "index": 1,
+      "magnitude": "extreme",
+      "statement": "Visible demand broadly absent"
+    },
+    {
+      "dimension": "token issuance",
+      "direction": "contracting",
+      "index": 2,
+      "magnitude": "severe",
+      "statement": "ICO issuance reduced to a trickle"
+    },
+    {
+      "dimension": "ICO performance",
+      "direction": "falling",
+      "index": 3,
+      "magnitude": "extreme",
+      "statement": "Most prior-year token sales down ninety percent or more from their raises"
+    },
+    {
+      "dimension": "project resolution uncertainty",
+      "direction": "mixed",
+      "index": 4,
+      "magnitude": "substantial",
+      "statement": "Project outcomes split between returned funds and regulatory disputes"
+    },
+    {
+      "dimension": "Ethereum price level",
+      "direction": "falling",
+      "index": 5,
+      "magnitude": "severe",
+      "statement": "Ethereum below $110"
+    },
+    {
+      "dimension": "project financing",
+      "direction": "deteriorating",
+      "index": 6,
+      "magnitude": "strong",
+      "statement": "Project runways shrinking as treasury values decline"
+    },
+    {
+      "dimension": "exchange operating conditions",
+      "direction": "contracting",
+      "index": 7,
+      "magnitude": "notable",
+      "statement": "Cryptocurrency exchanges reducing staff"
+    },
+    {
+      "dimension": "mining economics",
+      "direction": "deteriorating",
+      "index": 8,
+      "magnitude": "strong",
+      "statement": "Mining margins negative and miner participation under pressure"
+    },
+    {
+      "dimension": "participant sentiment",
+      "direction": "weakening",
+      "index": 9,
+      "magnitude": "strong",
+      "statement": "November fork conflicts deepening market cynicism"
+    },
+    {
+      "dimension": "participant engagement",
+      "direction": "declining",
+      "index": 10,
+      "magnitude": "pronounced",
+      "statement": "Market participation unusually quiet"
+    }
+  ],
+  "outcome": "no_match",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run_n88p3bly/market_state_context.json",
+      "context_yaml": "data/runs/connector_run_n88p3bly/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run_n88p3bly",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

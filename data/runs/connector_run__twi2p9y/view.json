@@ -1,0 +1,646 @@
+{
+  "banner": "Research context for analyst review — not a trading instruction.",
+  "context": {
+    "caveats": [
+      "The sustained upward environment supplies the stated trend activation condition, but the packet does not measure TSMOM performance, horizon Sharpe patterns, or diversified futures behavior.",
+      "The month-long suppression of meaningful declines and persistently subdued volatility evidence an extended low-volatility run, but GARCH persistence parameters and squared-return autocorrelations are unavailable.",
+      "Positive returns and subdued volatility resemble the bull-state behavior, but the packet supplies no EWMM moment measurements, filtered state probabilities, or direct futures-return evidence.",
+      "The strong positive return direction and low volatility resemble the normal-regime behavior, but world-equity monthly parameters, transition probabilities, and filtered regime probabilities are not supplied."
+    ],
+    "constraints": [
+      "low_confidence_match: entry_hurst_tsmom_trend_following_001",
+      "low_confidence_match: entry_nguyen_three_state_hmm_001",
+      "low_confidence_match: entry_ang_bekaert_regime_params_001"
+    ],
+    "failure_modes": [
+      "unmeasured TSMOM performance",
+      "unverified multi-asset breadth",
+      "weak_match:entry_hurst_tsmom_trend_following_001",
+      "unmeasured GARCH persistence",
+      "untested squared-return autocorrelation",
+      "unestimated state probabilities",
+      "unmeasured EWMM moments",
+      "weak_match:entry_nguyen_three_state_hmm_001",
+      "unestimated regime probabilities",
+      "missing world-index parameters",
+      "weak_match:entry_ang_bekaert_regime_params_001"
+    ],
+    "missing_evidence": [],
+    "not_trading_instruction": true,
+    "policy_posture": [
+      "regime_dependent"
+    ],
+    "required_validations": [],
+    "risk_posture": {
+      "confidence": "partially_supported",
+      "dominant_themes": [
+        "depressed volatility persistence",
+        "exceptional equity momentum",
+        "rapid pullback absorption",
+        "incomplete model evidence"
+      ],
+      "posture_count": 1,
+      "postures": [
+        "regime_dependent"
+      ]
+    }
+  },
+  "input": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "January commentary with year unspecified",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "Dow Jones Industrial Average",
+      "S&P 500",
+      "U.S. equities",
+      "global economic growth"
+    ],
+    "raw_text": "January is delivering one of the strongest starts I've ever seen. The Dow punched through 26,000 this week, the S&P is knocking on 2,900, and we haven't had a meaningful down day all month. The fuel is unmistakable: tax reform flowing straight into guidance and buyback announcements, earnings beating at the best rate in years, and global growth synchronized. Retail money is coming in off the sidelines at a record pace — equity fund inflows just set records — and strategists are queuing up to raise year-end targets, more than one now calling for 3,000. Volatility sits asleep at the bottom of its range and every dip is a buy within the hour. This is melt-up behavior, full stop. I keep trimming into it and kicking myself the next morning. Parabolic moves like this don't turn on a schedule, but the ghosts of 1987 and 2000 are whispering.\n",
+    "summary": "Commentary describes an exceptionally strong January advance in U.S. equities, marked by major index milestones, an absence of meaningful declines, favorable corporate guidance, strong earnings, synchronized global growth, record fund inflows, rising strategist targets, and unusually low volatility. Rapid recoveries from brief dips and increasingly parabolic price behavior suggest melt-up conditions, while the timing of any reversal remains uncertain and historical comparisons with 1987 and 2000 temper the optimism."
+  },
+  "interpretation": {
+    "confidence": "partially_supported",
+    "dominant_themes": [
+      "depressed volatility persistence",
+      "exceptional equity momentum",
+      "rapid pullback absorption",
+      "incomplete model evidence"
+    ],
+    "summary": "The packet moderately supports a persistent depressed-volatility state and weakly supports a sustained-trend condition, bull-regime behavior, and normal international-equity regime resemblance; the other candidates require behaviors, measurements, horizons, or scopes absent from the observations."
+  },
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "policy_implication",
+          "record_id": "policy_hurst_mf_regime_conditional_activity_004",
+          "text": "activity_suppression The smile pattern of TSMOM returns documented by Hurst et al. (2013)—best performance during sustained bull and bear markets, worst during trendless choppy markets—implies that activity should be conditioned on the current equity market regime. Features for regime-conditional TSMOM activity: (1) trailing equity market return over 3–12 months as a regime indicator— directional markets (strong positive or strong negative trailing returns) correspond to the \"smile tails\" where TSMOM performs best; (2) equity market volatility regime indicator—high volatility combined with low directional trend (choppy regime) signals the worst environment for TSMOM; (3) conditional return decile rank of trailing equity return—TSMOM performs best in the top and bottom deciles, worst in the middle deciles; (4) S&P 500 unconditional correlation monitor (~-0.02 target)—a significant positive deviation signals unintended directional equity exposure that may distort the smile pattern. Do not assume TSMOM delivers uniform returns across market regimes. Condition model confidence and signal weighting on the current equity market regime: increase TSMOM signal weight during sustained directional regimes (top or bottom decile of trailing equity returns) and reduce weight during choppy indeterminate regimes. The 1.8 gross Sharpe is an unconditional average; regime-conditional expected Sharpe varies substantially above and below this level. Near-zero S&P 500 correlation (~-0.02) is the target; sustained positive correlation indicates the portfolio has drifted from its diversifying character. Confidence in TSMOM state returns is highest in sustained directional market environments (both bull and bear, consistent with the smile tails). Reduce confidence in trendless or high-volatility choppy regimes where TSMOM historically shows near-zero or negative returns. Activity suppression is warranted in confirmed choppy regimes where trailing equity return occupies the middle deciles for 3+ consecutive months. Suppress full TSMOM activity allocation when the trailing equity market return occupies middle deciles (approximately 4th through 7th deciles) for sustained periods (3+ months), signaling a trendless choppy regime inconsistent with the smile pattern's optimal conditions. Maintain reduced-activity (not zero) allocation to preserve exposure for the transition back to a sustained directional regime, as the smile pattern requires maintained positioning to benefit from sudden trend emergence. The smile pattern is a conditional average, not a regime classifier with a sharp entry/exit threshold. The practical implication is proportional weighting adjustment rather than binary on/off switching. The near-zero S&P 500 unconditional correlation (~-0.02) applies over the full 1985–2012 sample; within the smile pattern, TSMOM is positively correlated to equities during bull markets (both moving in the same direction) and negatively correlated during bear markets (where TSMOM profits from short positions)."
+        }
+      ],
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "evidence_caveats": "The sustained upward environment supplies the stated trend activation condition, but the packet does not measure TSMOM performance, horizon Sharpe patterns, or diversified futures behavior.",
+      "failure_modes": [
+        "unmeasured TSMOM performance",
+        "unverified multi-asset breadth"
+      ],
+      "match_strength": "weak",
+      "matched_observations": [
+        {
+          "dimension": "market momentum",
+          "direction": "rising",
+          "index": 0,
+          "statement": "Exceptionally strong January U.S. equity advance"
+        },
+        {
+          "dimension": "downside frequency",
+          "direction": "suppressed",
+          "index": 2,
+          "statement": "No meaningful down day during the month"
+        },
+        {
+          "dimension": "dip recovery",
+          "direction": "persistent",
+          "index": 9,
+          "statement": "Rapid intraday recoveries from brief declines"
+        },
+        {
+          "dimension": "price trajectory",
+          "direction": "accelerating",
+          "index": 10,
+          "statement": "Melt-up and parabolic price behavior"
+        }
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_hurst_tsmom_trend_following_001",
+      "state_summary": "A market condition in which time-series momentum (TSMOM) signals deliver persistent risk-adjusted excess returns across diversified multi-asset futures portfolios. Characterized by: (1) individual-asset Sharpe ratios that increase monotonically with signal look-back horizon—0.29 (1-month), 0.36 (3-month), 0.38 (12-month)—averaged across 58 liquid futures contracts; (2) a diversified 58-instrument TSMOM portfolio achieving ~1.8 gross annualized Sharpe at 10% vol target (January 1985–June 2012); (3) a \"smile\" return pattern—best performance in sustained trending environments (strong bull or bear markets), worst in trendless choppy markets—with near-zero S&P 500 correlation (~-0.02); (4) after controlling for a simple diversified TSMOM factor, all managed futures fund net-of-fee alphas become negative under 2-and-20 fee structures (~6% average annual fee drag). Most CTAs exhibit dominant exposure to the 3-month TSMOM signal rather than the individually optimal 12-month horizon, and systematically overweight fixed income. Evidence from Hurst, Ooi, and Pedersen (2013/2010), evidence_tier 2 (practitioner paper with direct empirical content).\n",
+      "title": "Multi-Asset Time-Series Momentum Trend Following State"
+    },
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_hamilton_arch_volatility_clustering_004",
+          "text": "Volatility clustering in financial return time series: significant positive autocorrelation in squared returns (|r_t|^2) and absolute returns (|r_t|) at short to medium lags, indicating that large-magnitude returns tend to cluster in time. Measured by the Ljung-Box Q-statistic on squared residuals and the autocorrelation function (ACF) of squared returns. In GARCH(1,1) terms, high persistence (delta close to 1, alpha+delta near 1) produces slow mean-reversion of conditional variance after shocks. Observable as extended runs of high-volatility or low-volatility trading days in any major financial return series. squared_return_autocorrelation; absolute_return_autocorrelation; ljung_box_q_stat_squared_residuals; garch_persistence_parameter_sum Foundational observable motivating GARCH modeling. The ACF of squared returns (not raw returns) is the primary diagnostic; raw returns are approximately uncorrelated while squared returns exhibit significant autocorrelation. This distinguishes GARCH effects from mean autocorrelation."
+        }
+      ],
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "evidence_caveats": "The month-long suppression of meaningful declines and persistently subdued volatility evidence an extended low-volatility run, but GARCH persistence parameters and squared-return autocorrelations are unavailable.",
+      "failure_modes": [
+        "unmeasured GARCH persistence",
+        "untested squared-return autocorrelation"
+      ],
+      "match_strength": "moderate",
+      "matched_observations": [
+        {
+          "dimension": "downside frequency",
+          "direction": "suppressed",
+          "index": 2,
+          "statement": "No meaningful down day during the month"
+        },
+        {
+          "dimension": "market volatility",
+          "direction": "subdued",
+          "index": 8,
+          "statement": "Volatility near the bottom of its range"
+        },
+        {
+          "dimension": "dip recovery",
+          "direction": "persistent",
+          "index": 9,
+          "statement": "Rapid intraday recoveries from brief declines"
+        }
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_hamilton_arch_volatility_clustering_004",
+      "state_summary": "A market condition characterized by persistent clustering of return volatility— large shocks followed by further large shocks and small shocks followed by further small shocks—captured by a GARCH(1,1) conditional variance process h_t = omega + alpha * u_{t-1}^2 + delta * h_{t-1}. High persistence (alpha + delta near 1, delta close to 1) implies slow mean-reversion of conditional variance following a shock, producing extended periods of elevated or depressed volatility. The state is active whenever GARCH persistence parameters are large and squared-return autocorrelations are significant.\n",
+      "title": "GARCH Volatility Clustering Persistence State"
+    },
+    {
+      "citations": [
+        {
+          "kind": "policy_implication",
+          "record_id": "policy_nguyen_hmm_regime_switching_001",
+          "text": "regime_switch Use EWMM features (first and second moments of daily returns with span=30) as inputs to a three-state HMM for real-time regime identification across multi- asset futures. The normalized EWMM observation vector is applicable across commodity, currency, equity, and fixed income asset classes without modification, enabling a consistent cross-asset regime identification framework. HMM-filtered state probabilities (bull, bear, high-volatility) serve as the primary regime features for downstream position sizing and risk control. The three-state HMM (bull/bear/high-volatility) trained per instrument provides the regime state probability estimates used as model inputs. The PESR decision rule (PESR = ESR^T * alpha_{n+h|n}) translates h-step-ahead predicted regime probabilities into a scalar risk-adjusted return forecast. OOS evidence supports substantially higher Sharpe ratios than buy-and-hold for most of 15 futures instruments at 5bps transaction costs (Jan 2016–Oct 2019). Three-state structure selected via greedy approach; alternative state counts require validation before use in production. Confidence in HMM regime signal quality should be conditioned on EWMM span calibration: span=30 provides a favorable SR/turnover tradeoff in the OOS test period. High-confidence long positions are indicated when PESR is substantially positive; positions should be exited or reduced when PESR approaches zero or turns negative. Source is a preprint; confidence in robustness of OOS results requires corroboration from additional validation periods and asset classes. Suppress activity when HMM assigns high posterior probability to the high-volatility state (bear or high-vol dominant); reduce or close long positions when the predicted regime over the h-step horizon is unfavorable. OOS test period is approximately 4 years (Jan 2016 – Oct 2019); short window may not adequately capture multiple full market cycles. Results are from a preprint, not peer-reviewed. Long-only strategy design limits applicability to directional long strategies; extension to long/short requires separate validation. Transaction cost sensitivity should be tested at costs above 5bps."
+        }
+      ],
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "evidence_caveats": "Positive returns and subdued volatility resemble the bull-state behavior, but the packet supplies no EWMM moment measurements, filtered state probabilities, or direct futures-return evidence.",
+      "failure_modes": [
+        "unestimated state probabilities",
+        "unmeasured EWMM moments"
+      ],
+      "match_strength": "weak",
+      "matched_observations": [
+        {
+          "dimension": "market momentum",
+          "direction": "rising",
+          "index": 0,
+          "statement": "Exceptionally strong January U.S. equity advance"
+        },
+        {
+          "dimension": "market volatility",
+          "direction": "subdued",
+          "index": 8,
+          "statement": "Volatility near the bottom of its range"
+        },
+        {
+          "dimension": "price trajectory",
+          "direction": "accelerating",
+          "index": 10,
+          "statement": "Melt-up and parabolic price behavior"
+        }
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_nguyen_three_state_hmm_001",
+      "state_summary": "A three-state hidden Markov model (HMM) regime structure applied asset- independently to daily futures returns across commodity, currency, equity, and fixed income classes. The three states are labeled bull (positive return, moderate volatility), bear (negative or flat return, elevated volatility), and high-volatility (extreme variance). The model uses EWMM (exponentially weighted moving moment) features of first and second return moments, normalized and concatenated independently per instrument, as the observation vector. Applied uniformly to 15 futures instruments (4 commodity, 4 currency, 4 equity, 3 fixed income) using 4972 daily observations (January 2000 – October 2019). Three states selected via greedy model selection. The PESR metric (Predicted Expected Sharpe Ratio) translates HMM-predicted state probabilities into a forward-looking scalar risk-adjusted return forecast by combining state-level SR estimates with h-step-ahead transition matrix powers. OOS long-only strategy (Jan 2016 – Oct 2019) achieves substantially higher Sharpe ratios than buy-and-hold across most instruments at 5bps transaction costs (e.g., EQ4: SR=3.0 vs. 1.0 B&H). EWMM span=30 provides a favorable SR/turnover tradeoff (Nguyen 2021 preprint).\n",
+      "title": "Three-State HMM Market Regime (Bull / Bear / High-Volatility)"
+    },
+    {
+      "citations": [
+        {
+          "kind": "extracted_claim",
+          "record_id": "claim_ang_bekaert_regime_params_001",
+          "text": "A two-regime Markov-switching model identifies a normal regime (monthly mean μ=0.90%, volatility σ=2.81%) and a bear regime (monthly mean μ=0.13%, volatility σ=5.04%) in international equity returns. The bear regime exhibits approximately 80% higher volatility and near-zero mean returns compared to the normal regime. Tables 2 and 3, p.5-6. Estimated on world equity index data at monthly frequency. Normal regime corresponds to typical equity conditions; bear regime captures high-volatility drawdown periods. Transition probabilities govern regime persistence."
+        }
+      ],
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "evidence_caveats": "The strong positive return direction and low volatility resemble the normal-regime behavior, but world-equity monthly parameters, transition probabilities, and filtered regime probabilities are not supplied.",
+      "failure_modes": [
+        "unestimated regime probabilities",
+        "missing world-index parameters"
+      ],
+      "match_strength": "weak",
+      "matched_observations": [
+        {
+          "dimension": "market momentum",
+          "direction": "rising",
+          "index": 0,
+          "statement": "Exceptionally strong January U.S. equity advance"
+        },
+        {
+          "dimension": "market volatility",
+          "direction": "subdued",
+          "index": 8,
+          "statement": "Volatility near the bottom of its range"
+        }
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_ang_bekaert_regime_params_001",
+      "state_summary": "A two-state Markov-switching market condition for international equity returns characterized by empirically estimated regime-level parameters: normal regime (monthly mean μ=0.90%, volatility σ=2.81%) and bear regime (monthly mean μ=0.13%, volatility σ=5.04%). The bear regime exhibits approximately 80% higher volatility and near-zero mean returns relative to the normal regime. Transition probabilities govern regime persistence; the Hamilton filter provides real-time probability estimates of the active regime. Estimated on world equity index data at monthly frequency (Ang and Bekaert 2004, Tables 2-3).\n",
+      "title": "Two-State International Equity Regime State (Normal / Bear Parameters)"
+    }
+  ],
+  "meta": {
+    "backend": "codex_exec",
+    "backend_profiles": {
+      "market_book_evaluator": "codex_exec",
+      "observation_packet_builder": "codex_exec"
+    },
+    "created_at_utc": "2026-08-31T22:45:03Z",
+    "evaluation_version": "0.2",
+    "market_book_version": "stage6_accepted",
+    "raw_input_hash": "sha256:58efbd2a0c67c42c60f71d9276d57ba678175bb921cd745db2df7aeaa44c309f"
+  },
+  "near_miss_band": [
+    {
+      "closest_on": {
+        "record_id": "signature_ang_bekaert_bear_correlation_002",
+        "text_snippet": "International equity return correlations approximately 20 percentage points higher during identified bear regime periods versus normal regime periods. Measured…"
+      },
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "retrieval_score": 0.830167,
+      "state_id": "state_ang_bekaert_bear_correlation_002",
+      "title": "Bear-Regime Elevated International Equity Correlation State"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_billio_crisis_pca_004",
+        "text_snippet": "The first principal component of financial sector returns exceeded 80% of total variance throughout the 2007-2009 financial crisis, reflecting extreme…"
+      },
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "retrieval_score": 0.829895,
+      "state_id": "state_billio_financial_sector_comovement_001",
+      "title": "Financial Sector Systemic Co-movement State"
+    },
+    {
+      "closest_on": {
+        "record_id": "gloss_state_amihud_illiq_persistence_004",
+        "text_snippet": null
+      },
+      "entry_id": "entry_amihud_illiq_persistence_004",
+      "retrieval_score": 0.829221,
+      "state_id": "state_amihud_illiq_persistence_004",
+      "title": "Aggregate Illiquidity Persistence State"
+    },
+    {
+      "closest_on": {
+        "record_id": "claim_amihud_crosssection_premium_002",
+        "text_snippet": "In monthly Fama-MacBeth cross-sectional regressions, expected stock returns are positively related to expected illiquidity: the ILLIQ coefficient is 0.162…"
+      },
+      "entry_id": "entry_amihud_crosssection_premium_002",
+      "retrieval_score": 0.824163,
+      "state_id": "state_amihud_crosssection_premium_002",
+      "title": "Cross-Sectional Illiquidity Premium State"
+    },
+    {
+      "closest_on": {
+        "record_id": "signature_cho_engle_underlying_spread_002",
+        "text_snippet": "The bid-ask spread of the underlying asset (e.g., S&P100 index) serves as a measurable indicator of options spread width via the derivative hedge mechanism.…"
+      },
+      "entry_id": "entry_cho_engle_underlying_spread_002",
+      "retrieval_score": 0.822515,
+      "state_id": "state_cho_engle_underlying_spread_002",
+      "title": "Options Spread Cross-Market Coupling via Derivative Hedge"
+    }
+  ],
+  "no_match_rationale": null,
+  "non_matches": [
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Rapid recovery of broad-index dips does not evidence divergence and convergence of identified equity-pair spreads around historical equilibria.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_gatev_pairs_market_neutral_sizing_002",
+          "text_snippet": "position_sizing The annualized Sharpe ratio range of 1.5–2.1 and portfolio volatility of 4–6% annualized for top-5 pairs portfolios (gross, pre-cost) establish…"
+        },
+        {
+          "record_id": "failure_gatev_pairs_time_decay_004",
+          "text_snippet": "Pairs trading profitability undergoes secular decay over time due to arbitrage competition, rendering historical performance statistics materially unreliable…"
+        }
+      ],
+      "title": "Cross-Sectional Pairs Trading Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "A strong January advance does not establish the state's autocorrelation reversal from positive subannual behavior to negative correlation over three to eight years or its transitory-variance magnitude.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_poterba_summers_transitory_position_sizing_002",
+          "text_snippet": "position_sizing The transitory component magnitude—standard deviation 15–25% for the NYSE value-weighted index and up to 37% for the equal-weighted index…"
+        },
+        {
+          "record_id": "state_poterba_summers_long_horizon_mean_reversion_001",
+          "text_snippet": "A market condition in which equity returns exhibit positive serial correlation at horizons shorter than one year and negative serial correlation (mean…"
+        }
+      ],
+      "title": "Long-Horizon Equity Mean Reversion State"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "Persistent gains during one month do not establish significant weekly first-order autocorrelation, an elevated variance ratio, or the capitalization gradient described by the state.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_lo_mackinlay_short_horizon_001",
+          "text_snippet": "feature_selection When the short-horizon return predictability state is active (weekly autocorrelation statistically significant and VR(2) > 1.0 for…"
+        },
+        {
+          "record_id": "failure_lo_mackinlay_nontrading_overattribution_005",
+          "text_snippet": "Models that attribute the observed short-horizon weekly return autocorrelation primarily or entirely to non-synchronous trading (non-trading days inducing…"
+        }
+      ],
+      "title": "Short-Horizon Weekly Return Predictability State"
+    },
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The state requires elevated source-country variance that inflates measured cross-market correlation, while the packet reports volatility near the bottom of its range.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_forbes_heteroscedasticity_bias_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_forbes_bias_correction_001",
+          "text_snippet": "confidence_calibration Always compute the relative source-country variance increase (delta = sigma^2_high / sigma^2_low - 1) when measuring cross-market…"
+        },
+        {
+          "record_id": "failure_forbes_unadjusted_contagion_test_001",
+          "text_snippet": "Standard unadjusted cross-market correlation tests systematically overstate crisis-period correlations and produce false contagion findings whenever…"
+        }
+      ],
+      "title": "Heteroscedasticity-Induced Correlation Bias State"
+    },
+    {
+      "entry_id": "entry_amihud_timeseries_premium_003",
+      "reason": "Equity-fund inflows do not evidence aggregate ILLIQ, expected illiquidity predicting future returns, or an unexpected illiquidity shock causing a contemporaneous price effect.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_timeseries_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_amihud_timeseries_premium_003",
+          "text_snippet": "regime_switch Decompose aggregate ILLIQ into expected (lagged AR(1) forecast) and unexpected (residual) components before using in time-series market-return…"
+        },
+        {
+          "record_id": "claim_amihud_timeseries_premium_003",
+          "text_snippet": "In time-series regressions of NYSE market returns on illiquidity, the expected illiquidity coefficient is g1=10.226 (t=2.68), confirming a positive illiquidity…"
+        }
+      ],
+      "title": "Market-Level Illiquidity Premium State (Time Series)"
+    },
+    {
+      "entry_id": "entry_cho_engle_market_conditions_004",
+      "reason": "Broad equity-fund inflows and low market volatility do not measure option transaction rates or the U-shaped bid-ask spread response to fast and slow markets.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_market_conditions_004",
+      "surfaced_by": [
+        {
+          "record_id": "signature_cho_engle_market_conditions_004",
+          "text_snippet": "Intraday transaction rate relative to the day's average transaction rate serves as a measurable indicator of options market activity regime (fast/slow/normal).…"
+        },
+        {
+          "record_id": "policy_cho_engle_market_conditions_004",
+          "text_snippet": "regime_switch Intraday transaction rate relative to the daily average should be monitored and used to classify market activity regime (fast/slow/normal). This…"
+        }
+      ],
+      "title": "Options Market Activity Regime — Non-Monotonic Spread Pattern"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "January timing alone is topical resemblance and does not evidence a cross-sectional relationship between effective trading costs and subsequent stock returns.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_january_effect_004",
+      "surfaced_by": [
+        {
+          "record_id": "failure_hasbrouck_january_effect_004",
+          "text_snippet": "The cross-sectional illiquidity return premium is substantially weaker or absent outside of January. A model or feature relying on the return-cost relationship…"
+        },
+        {
+          "record_id": "state_hasbrouck_january_effect_004",
+          "text_snippet": "A seasonal market state in which the cross-sectional relationship between effective trading costs and future stock returns is concentrated in January. Outside…"
+        }
+      ],
+      "title": "January-Concentrated Illiquidity Premium Seasonal Regime"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The state is specific to serially smoothed monthly hedge-fund returns and marked-to-model illiquidity, whereas the packet covers broad U.S. equity indexes and economic growth.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_hedge_fund_illiquidity_003",
+      "surfaced_by": [
+        {
+          "record_id": "policy_billio_hedge_fund_illiquidity_001",
+          "text_snippet": "confidence_calibration Include hedge fund return autocorrelation (AR(1) coefficient) as a systemic risk feature for financial stability monitoring. Values of…"
+        },
+        {
+          "record_id": "failure_billio_hedge_fund_autocorr_proxy_001",
+          "text_snippet": "Return autocorrelation as a proxy for hedge fund position illiquidity conflates two distinct sources of serial persistence: (1) stale or infrequent pricing of…"
+        }
+      ],
+      "title": "Hedge Fund Return Smoothing / Position Illiquidity State"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "Suppressed downside during a rising month does not establish that joint left-tail correlation exceeds joint right-tail correlation or supply separate bear-regime correlation estimates.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003",
+      "surfaced_by": [
+        {
+          "record_id": "failure_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "GARCH-DCC models with symmetric correlation specification fail to capture left-tail exceedance correlation asymmetry in multi-asset equity portfolios. When…"
+        },
+        {
+          "record_id": "policy_ang_2011_exceedance_asymmetry_003",
+          "text_snippet": "model_selection Include exceedance correlation asymmetry (left-tail minus right-tail exceedance correlation) as a model validation diagnostic when evaluating…"
+        }
+      ],
+      "title": "Regime-Conditional Tail Correlation Asymmetry State"
+    },
+    {
+      "entry_id": "entry_ang_2011_fat_tails_mixture_001",
+      "reason": "Historical crash analogues do not evidence excess kurtosis, negative skewness, or a multi-regime Gaussian mixture in the observed return distribution.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_fat_tails_mixture_001",
+      "surfaced_by": [
+        {
+          "record_id": "policy_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "model_specification When modeling equity return distributions with regime-switching models, within-regime Gaussian innovations are sufficient to produce…"
+        },
+        {
+          "record_id": "signature_ang_2011_fat_tails_mixture_001",
+          "text_snippet": "Unconditional excess kurtosis (kurtosis > 3) and negative skewness in equity return distributions that persist even when within-regime innovations are assumed…"
+        }
+      ],
+      "title": "Mixture-Induced Leptokurtosis and Negative Skewness State"
+    },
+    {
+      "entry_id": "entry_hasbrouck_return_premium_003",
+      "reason": "The packet supplies no effective trading-cost estimates, cost-sorted stock portfolios, or subsequent return spread demonstrating an illiquidity premium.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hasbrouck_return_premium_003",
+      "surfaced_by": [
+        {
+          "record_id": "signature_hasbrouck_return_premium_003",
+          "text_snippet": "A positive return spread across portfolios sorted by annual Gibbs effective cost estimates: stocks in higher-cost deciles earn higher subsequent returns than…"
+        },
+        {
+          "record_id": "policy_hasbrouck_return_premium_003",
+          "text_snippet": "model_weighting Gibbs effective cost decile rank should be included as a positive return predictor in the cross-section. Stocks in higher effective cost…"
+        }
+      ],
+      "title": "Hasbrouck Illiquidity Return Premium"
+    }
+  ],
+  "observations": [
+    {
+      "dimension": "market momentum",
+      "direction": "rising",
+      "index": 0,
+      "magnitude": "exceptional",
+      "statement": "Exceptionally strong January U.S. equity advance"
+    },
+    {
+      "dimension": "major index levels",
+      "direction": "higher",
+      "index": 1,
+      "magnitude": "notable",
+      "statement": "Dow above 26,000 and S&P 500 near 2,900"
+    },
+    {
+      "dimension": "downside frequency",
+      "direction": "suppressed",
+      "index": 2,
+      "magnitude": "pronounced",
+      "statement": "No meaningful down day during the month"
+    },
+    {
+      "dimension": "corporate policy effects",
+      "direction": "supportive",
+      "index": 3,
+      "magnitude": "strong",
+      "statement": "Tax reform support for corporate guidance and repurchase announcements"
+    },
+    {
+      "dimension": "corporate earnings",
+      "direction": "strengthening",
+      "index": 4,
+      "magnitude": "strong",
+      "statement": "Earnings outperformance at a multiyear high"
+    },
+    {
+      "dimension": "global economic cycle",
+      "direction": "expanding",
+      "index": 5,
+      "magnitude": "broad",
+      "statement": "Synchronized global growth backdrop"
+    },
+    {
+      "dimension": "investor flows",
+      "direction": "accelerating",
+      "index": 6,
+      "magnitude": "record",
+      "statement": "Record retail and equity-fund inflows"
+    },
+    {
+      "dimension": "strategist expectations",
+      "direction": "rising",
+      "index": 7,
+      "magnitude": "material",
+      "statement": "Upward revisions to year-end index targets"
+    },
+    {
+      "dimension": "market volatility",
+      "direction": "subdued",
+      "index": 8,
+      "magnitude": "extreme",
+      "statement": "Volatility near the bottom of its range"
+    },
+    {
+      "dimension": "dip recovery",
+      "direction": "persistent",
+      "index": 9,
+      "magnitude": "rapid",
+      "statement": "Rapid intraday recoveries from brief declines"
+    },
+    {
+      "dimension": "price trajectory",
+      "direction": "accelerating",
+      "index": 10,
+      "magnitude": "intense",
+      "statement": "Melt-up and parabolic price behavior"
+    },
+    {
+      "dimension": "uncertainty",
+      "direction": "unclear",
+      "index": 11,
+      "magnitude": "meaningful",
+      "statement": "Uncertain reversal timing despite historical crash analogues"
+    }
+  ],
+  "outcome": "matched",
+  "provenance": {
+    "downloads": {
+      "context_json": "data/runs/connector_run__twi2p9y/market_state_context.json",
+      "context_yaml": "data/runs/connector_run__twi2p9y/market_state_context.yaml"
+    },
+    "source_artifacts": {
+      "candidate_entries": "retrieval/candidate_entries.json",
+      "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+      "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+      "observation_packet": "builder/market_observation_packet.yaml",
+      "observation_packet_validation": "validation/observation_packet_validation.json",
+      "run_manifest": "run_manifest.json"
+    }
+  },
+  "run_id": "connector_run__twi2p9y",
+  "steps": [
+    {
+      "name": "capture_raw_input",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "observation_packet_builder",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_observation_packet",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "retrieve_candidate_entries",
+      "status": "ok",
+      "valid": null
+    },
+    {
+      "name": "market_book_evaluator",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "validate_market_book_evaluation",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "export_signal_context",
+      "status": "ok",
+      "valid": true
+    },
+    {
+      "name": "render_dashboard_report",
+      "status": "ok",
+      "valid": null
+    }
+  ],
+  "validation": {
+    "market_book_evaluation": {
+      "errors": [],
+      "valid": true
+    },
+    "observation_packet": {
+      "errors": [],
+      "valid": true
+    },
+    "signal_context": {
+      "errors": [],
+      "valid": true
+    }
+  }
+}

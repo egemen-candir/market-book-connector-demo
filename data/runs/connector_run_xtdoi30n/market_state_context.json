@@ -1,0 +1,180 @@
+{
+  "caveats": [
+    "Negative equity and property-linked returns supply the bear-state return behavior, while Treasury strength supplies a contrasting positive fixed-income direction. Elevated return variance is only indirectly indicated by implied-volatility demand, and neither HMM probabilities nor EWMM features are supplied."
+  ],
+  "constraints": [
+    "low_confidence_match: entry_nguyen_three_state_hmm_001"
+  ],
+  "failure_modes": [
+    "weak_match:entry_nguyen_three_state_hmm_001"
+  ],
+  "market_book_version": "stage6_accepted",
+  "matched_states": [
+    {
+      "citations": [
+        {
+          "kind": "observable_signature",
+          "record_id": "signature_nguyen_hmm_regime_states_001"
+        }
+      ],
+      "entry_id": "entry_nguyen_three_state_hmm_001",
+      "evidence_caveats": "Negative equity and property-linked returns supply the bear-state return behavior, while Treasury strength supplies a contrasting positive fixed-income direction. Elevated return variance is only indirectly indicated by implied-volatility demand, and neither HMM probabilities nor EWMM features are supplied.",
+      "failure_modes": [],
+      "match_strength": "weak",
+      "matched_observations": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "policy_posture": "regime_dependent",
+      "state_id": "state_nguyen_three_state_hmm_001"
+    }
+  ],
+  "missing_evidence": [],
+  "non_matches": [
+    {
+      "entry_id": "entry_forbes_heteroscedasticity_bias_001",
+      "reason": "The packet describes contagion risk as rising in market prices, whereas the state describes near-zero true contagion after heteroscedasticity adjustment and attributes apparent contagion to pre-existing interdependence.",
+      "reason_code": "direction_discordant",
+      "state_id": "state_forbes_heteroscedasticity_bias_001"
+    },
+    {
+      "entry_id": "entry_ang_2011_exceedance_asymmetry_003",
+      "reason": "Broad downside pressure does not establish that joint lower-tail correlation exceeds joint upper-tail correlation, and no quantile-exceedance comparison or regime-specific correlation estimate is supplied.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_2011_exceedance_asymmetry_003"
+    },
+    {
+      "entry_id": "entry_billio_financial_sector_comovement_001",
+      "reason": "The state concerns common-factor concentration across United States banks, broker-dealers, insurers, and hedge funds, while the packet covers Chinese property-linked markets, broader equities, commodities, Asian credit, volatility, and Treasuries.",
+      "reason_code": "out_of_scope",
+      "state_id": "state_billio_financial_sector_comovement_001"
+    },
+    {
+      "entry_id": "entry_hurst_tsmom_trend_following_001",
+      "reason": "A sharp intraday risk-off move does not evidence persistent time-series momentum returns, look-back-horizon performance, or the sustained-trend smile behavior described by the state.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hurst_tsmom_trend_following_001"
+    },
+    {
+      "entry_id": "entry_hasbrouck_january_effect_004",
+      "reason": "The observation is dated August and supplies no relationship between effective trading costs and future stock returns; the state's January-concentrated illiquidity premium is a different mechanism.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_hasbrouck_january_effect_004"
+    },
+    {
+      "entry_id": "entry_billio_hedge_fund_illiquidity_003",
+      "reason": "The packet supplies no hedge-fund return autocorrelation, return smoothing, marked-to-model behavior, or delayed loss recognition.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_billio_hedge_fund_illiquidity_003"
+    },
+    {
+      "entry_id": "entry_gatev_pairs_mean_reversion_001",
+      "reason": "Directional market selling does not evidence a temporary spread divergence between selected equity pairs followed by convergence toward their historical relationship.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_gatev_pairs_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_hamilton_arch_volatility_clustering_004",
+      "reason": "Rising demand for implied volatility supplies no sequence showing large return shocks clustering over time, significant squared-return autocorrelation, or persistent GARCH parameters.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_hamilton_arch_volatility_clustering_004"
+    },
+    {
+      "entry_id": "entry_poterba_summers_long_horizon_mean_reversion_001",
+      "reason": "An intraday decline supplies neither the sub-annual positive autocorrelation nor the three-to-eight-year negative autocorrelation required for the state's horizon-dependent reversal pattern.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_poterba_summers_long_horizon_mean_reversion_001"
+    },
+    {
+      "entry_id": "entry_cho_engle_volume_insignificant_001",
+      "reason": "Implied-volatility demand does not establish that option volume is statistically insignificant in explaining option bid-ask spreads after controlling for moneyness, maturity, and market activity.",
+      "reason_code": "coincidental_neighbor",
+      "state_id": "state_cho_engle_volume_insignificant_001"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_bear_correlation_002",
+      "reason": "Simultaneous risk-off observations do not measure the state's approximately twenty-percentage-point increase in international equity correlation or an elevated filtered bear-regime probability.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_bear_correlation_002"
+    },
+    {
+      "entry_id": "entry_ang_bekaert_regime_params_001",
+      "reason": "The intraday equity decline and implied-volatility demand do not supply the monthly world-equity mean and realized-volatility parameters or Hamilton-filter probability that identify the two-state regime.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_ang_bekaert_regime_params_001"
+    },
+    {
+      "entry_id": "entry_lo_mackinlay_short_horizon_predictability_001",
+      "reason": "One lower equity opening cannot evidence positive weekly first-order autocorrelation, an elevated two-period variance ratio, or the market-capitalization gradient described by the state.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_lo_mackinlay_short_horizon_predictability_001"
+    },
+    {
+      "entry_id": "entry_amihud_illiq_formula_001",
+      "reason": "Price declines without dollar-volume observations do not supply the absolute-return-to-dollar-volume ratio that defines the state's measurable price impact.",
+      "reason_code": "insufficient_evidence",
+      "state_id": "state_amihud_illiq_formula_001"
+    }
+  ],
+  "not_trading_instruction": true,
+  "observation_summary": {
+    "as_of": {
+      "date": "2026-08-31",
+      "observation_horizon": "intraday",
+      "timezone": "UTC"
+    },
+    "asset_scope": [
+      "global equities",
+      "Chinese property",
+      "iron ore",
+      "Australian miners",
+      "Hong Kong developers",
+      "Asian high-yield credit",
+      "equity volatility",
+      "United States Treasuries"
+    ],
+    "narrative_summary": "",
+    "normalized_features": [
+      "contagion risk",
+      "credit spreads",
+      "equity price action",
+      "implied volatility",
+      "investor positioning",
+      "policy uncertainty",
+      "property-linked market stress",
+      "safe-haven demand"
+    ],
+    "observation_id": "obs_cb5ca4651b22",
+    "unavailable_features": [],
+    "unsupported_statements": []
+  },
+  "policy_posture": [
+    "regime_dependent"
+  ],
+  "raw_input_hash": "sha256:cb5ca4651b221717a5b69146270eba7b6c35db4a7eaa23efe03ae55623d74cb2",
+  "required_validations": [],
+  "risk_posture": {
+    "confidence": "weakly_supported",
+    "dominant_themes": [
+      "cross-asset risk-off",
+      "equity downside",
+      "volatility demand",
+      "defensive Treasury flows"
+    ],
+    "posture_count": 1,
+    "postures": [
+      "regime_dependent"
+    ]
+  },
+  "run_id": "connector_run_xtdoi30n",
+  "source_artifacts": {
+    "candidate_entries": "retrieval/candidate_entries.json",
+    "market_book_evaluation": "evaluator/market_book_evaluation.yaml",
+    "market_book_evaluation_validation": "validation/market_book_evaluation_validation.json",
+    "observation_packet": "builder/market_observation_packet.yaml",
+    "observation_packet_validation": "validation/observation_packet_validation.json",
+    "run_manifest": "run_manifest.json"
+  }
+}
