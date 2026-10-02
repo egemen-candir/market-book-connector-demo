@@ -102,6 +102,12 @@
       </div>
 
       <div class="form-group">
+        <label for="saved-commentary">Commentary</label>
+        <textarea id="saved-commentary" rows="8" readonly
+          placeholder="Choose a saved result to see its commentary."></textarea>
+      </div>
+
+      <div class="form-group">
         <label for="recent-select">Recent runs</label>
         <select id="recent-select">
           <option value="">(none yet)</option>
@@ -124,6 +130,12 @@
 
     <!-- Evaluate: submit new commentary through the pipeline -->
     <div id="mode-evaluate" class="mode-panel" role="tabpanel" aria-labelledby="tab-evaluate" hidden>
+      <div id="static-evaluate-note" class="mock-notice" role="note">
+        This is a static page, so evaluations can't run here. To evaluate your own
+        commentary, run the dashboard locally:
+        <a href="https://github.com/egemen-candir/market-book-connector">https://github.com/egemen-candir/market-book-connector</a>
+      </div>
+
       <div class="form-group">
         <label for="example-select">1. Start from an example (optional)</label>
         <select id="example-select">

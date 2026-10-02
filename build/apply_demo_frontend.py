@@ -12,6 +12,32 @@ MESSAGE = ("Static demo: recorded runs only. To analyse your own commentary, "
            "run the dashboard locally:")
 MAIN_REPO = "https://github.com/egemen-candir/market-book-connector"
 
+COMMENTARY_ANCHOR = '''      <div class="form-group">
+        <label for="recent-select">Recent runs</label>'''
+COMMENTARY_REPLACEMENT = '''      <div class="form-group">
+        <label for="saved-commentary">Commentary</label>
+        <textarea id="saved-commentary" rows="8" readonly
+          placeholder="Choose a saved result to see its commentary."></textarea>
+      </div>
+
+''' + COMMENTARY_ANCHOR
+
+EVALUATE_ANCHOR = '''    <div id="mode-evaluate" class="mode-panel" role="tabpanel" aria-labelledby="tab-evaluate" hidden>
+'''
+EVALUATE_REPLACEMENT = EVALUATE_ANCHOR + f'''      <div id="static-evaluate-note" class="mock-notice" role="note">
+        This is a static page, so evaluations can't run here. To evaluate your own
+        commentary, run the dashboard locally:
+        <a href="{MAIN_REPO}">{MAIN_REPO}</a>
+      </div>
+
+'''
+
+VIEW_ANCHOR = '''      _active.view = view;
+      renderNowViewing();'''
+VIEW_REPLACEMENT = '''      _active.view = view;
+      document.getElementById("saved-commentary").value = (view.input || {}).raw_text || "";
+      renderNowViewing();'''
+
 FETCH_ANCHOR = '''function fetchJSON(url) {
   return fetch(url).then(function (resp) {'''
 FETCH_REPLACEMENT = '''var STATIC_DEMO_MESSAGE = document.getElementById("static-demo-banner").textContent.trim();
@@ -98,11 +124,14 @@ def patched_sources(source_code):
             ("disabled run button",
              '<button id="run-button" type="button" aria-describedby="run-message">',
              '<button id="run-button" type="button" aria-describedby="run-message" disabled>'),
+            ("saved commentary tile", COMMENTARY_ANCHOR, COMMENTARY_REPLACEMENT),
+            ("evaluate static-page note", EVALUATE_ANCHOR, EVALUATE_REPLACEMENT),
         ],
         "app.js": [
             ("static request mapping", FETCH_ANCHOR, FETCH_REPLACEMENT),
             ("persistent disabled state and message", STATE_ANCHOR, STATE_REPLACEMENT),
             ("submit message without POST", SUBMIT_ANCHOR, SUBMIT_REPLACEMENT),
+            ("show opened run commentary", VIEW_ANCHOR, VIEW_REPLACEMENT),
         ],
     }
     # Read and validate ALL anchors before any destination is written.

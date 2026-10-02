@@ -1350,6 +1350,7 @@ function loadView(runId) {
     .then(function (view) {
       if (runId !== _active.runId) return;  // a newer run was opened meanwhile
       _active.view = view;
+      document.getElementById("saved-commentary").value = (view.input || {}).raw_text || "";
       renderNowViewing();
       updateGuideContext(view.outcome);
       resetPaneScroll();
